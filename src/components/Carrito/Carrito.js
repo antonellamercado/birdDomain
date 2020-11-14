@@ -17,7 +17,7 @@ const Carrito = () => {
         }
         getBuys();
         const getTours = async ()=>{
-            const response = await axios.get("http://localhost:5000/Tours")
+            await axios.get("http://localhost:5000/Tours")
             .then(response =>{
                 setTours(response.data)
             });
@@ -25,25 +25,15 @@ const Carrito = () => {
         getTours();
     },[])
     const updateProduct = async (product)=> {
+        await axios.patch(`http://localhost:5000/users/1`, {buys:[...products, product]});
         setProducts([...products, product]);
-        await axios.patch(`http://localhost:5000/users/1`, {buys:products});
-        console.log("agregar", products)
     }
+    
     const deleteProduct = async (e)=>{
-        const id = e.target.id;
-        console.log(id)
-        for(let i = 0; i < products.length; i++) {
-            if(products[i].id == id) {
-                products.splice(i, 1);
-            }
-        }
-        setProducts(products);
-        console.log("delete",products)
-        await axios.patch(`http://localhost:5000/users/1`, {buys:products});
-        
+        const newProducts = products.filter(product => product.id !== Number(e.target.id));
+        setProducts(newProducts);
+        await axios.patch(`http://localhost:5000/users/1`, {buys:newProducts});
     };
-    //axios.patch(`http://localhost:5000/users/1`, {buys:products});
-    console.log("final",products)
     return (
         <>
             <Navbar bg="light" expand="lg">      
@@ -100,7 +90,6 @@ const Carrito = () => {
                                                     especies:tour.especies
                                                 }
                                                 updateProduct(product);
-
                                             }
                                         } >Buy Tour</button>
                                         </div>

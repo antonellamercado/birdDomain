@@ -9,7 +9,26 @@
       "img": "/img/user1.jpg",
       "admin": true,
       "favoritos": [],
-      "buys": []
+      "buys": [
+        {
+          "id": 1,
+          "title": "Yungas - Parque Nacional Calilegua",
+          "body": "Asthenes maculicauda - Sp endemica",
+          "img": "/img/Tour1.jpg",
+          "price": "1500U$",
+          "dias": 7,
+          "especies": 300
+        },
+        {
+          "id": 2,
+          "title": "Yungas - Parque Nacional Aconquija",
+          "body": "Asthenes maculicauda - Sp endemica",
+          "img": "/img/Tour2.jpg",
+          "price": "1500U$",
+          "dias": 7,
+          "especies": 300
+        }
+      ]
     },
     {
       "id": 2,
