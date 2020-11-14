@@ -1,219 +1,223 @@
 {
-    "usuarios": [
-      {
-        "id": 1,
-        "name": "Lucas",
-        "lastname":"Rodriguez",
-        "email":"lucasrodriguez@gmail.com",
-        "pass":"1234",
-        "img": "/img/user1.jpg",
-        "admin":true,
-        "favoritos":[]
-      },
-      {
-          "id": 2,
-          "name": "Pia",
-          "lastname":"Lopez",
-          "email":"pia@gmail.com",
-          "pass":"1234",
-          "img": "/img/user2.jpg",
-          "admin":false,
-          "favoritos":[]
-      },
-      {
-          "id": 3,
-          "name": "Juan",
-          "lastname":"Lopez",
-          "pass":"1234",
-          "email":"Juanlopez@gmail.com",
-          "img": "/img/user3.jpg",
-          "admin":false,
-          "favoritos":[]
-      },
-      {
-          "id": 4,
-          "name": "Maria",
-          "lastname":"Lopez",
-          "pass":"1234",
-          "email":"MLopez@gmail.com",
-          "img": "/img/user4.jpg",
-          "admin":false,
-          "favoritos":[]
-      }
-    ],
-    "Aves": [
-      {
-        "id": 1,
-        "title":"Asthenes maculicauda",
-        "body": "Asthenes maculicauda - Sp endemica",
-        "img": "/img/Fig1.jpg"
-      },
-      {
-        "id": 2,
-        "title":"Chlorostilbon lucidus",
-        "body": "Chlorostilbon lucidus - Sp no endemica",
-        "img": "/img/Fig2.jpg"
-      },
-      {
-        "id": 3,
-        "title":"Chunga burmeisteri",
-        "body": "Chunga burmeisteri - Sp no endemica",
-        "img": "/img/Fig3.jpg"
-      },
-      {
-        "id": 4,
-        "title":"Nyctibius griseus",
-        "body": "Heliomaster furcier - Sp no endemica",
-        "img": "/img/Fig4.jpg"
-      },
-      {
-          "id": 5,
-          "title":"Megascops hoyi",
-          "body": "Chunga burmeisteri - Sp no endemica",
-          "img": "/img/Fig5.jpg"
-        },
-        {
-          "id": 6,
-          "title":"Microstilbon burmeisteri",
-          "body": "Chunga burmeisteri - Sp no endemica",
-          "img": "/img/Fig6.jpg"
-        },
-        {
-          "id": 7,
-          "title":"Heliomaster furcifer",
-          "body": "Chunga burmeisteri - Sp no endemica",
-          "img": "/img/Fig7.jpg"
-        },
-        {
-          "id": 8,
-          "title":"Campephilus magellanicus",
-          "body": "Chunga burmeisteri - Sp no endemica",
-          "img": "/img/Fig8.jpg"
-        },
-        {
-          "id": 9,
-          "title":"Atlapetes citrinellus",
-          "body": "Chunga burmeisteri - Sp no endemica",
-          "img": "/img/Fig9.jpg"
-        },
-        {
-          "id": 10,
-          "title":"Cariama cristata",
-          "body": "Chunga burmeisteri - Sp no endemica",
-          "img": "/img/Fig10.jpg"
-        },
-        {
-          "id": 11,
-          "title":"Picumnus cirratus",
-          "body": "Chunga burmeisteri - Sp no endemica",
-          "img": "/img/Fig11.jpg"
-        },
-        {
-          "id": 12,
-          "title":"Setophaga pitiayumi",
-          "body": "Chunga burmeisteri - Sp no endemica",
-          "img": "/img/Fig12.jpg"
-        }
-    ],
-    "Tours": [
-      {
-        "id": 1,
-        "title":"Yungas - Parque Nacional Calilegua",
-        "body": "Asthenes maculicauda - Sp endemica",
-        "img": "/img/Tour1.jpg",
-        "map":"img/map1.jpg",
-        "price":"1500U$",
-        "dias":7,
-        "Ecoregiones":"Yungas",
-        "especies":300
-      },
-      {
-          "id": 2,
-          "title":"Yungas - Parque Nacional Aconquija",
-          "body": "Asthenes maculicauda - Sp endemica",
-          "img": "/img/Tour2.jpg",
-          "map":"img/map2.jpg",
-          "price":"1500U$",
-          "dias":7,
-          "Ecoregiones":"Yungas",
-          "especies":300
-      },
-      {
-          "id": 3,
-          "title":"Puna - Parque Nacional Los Cardones",
-          "body": "Asthenes maculicauda - Sp endemica",
-          "img": "/img/Tour3.jpg",
-          "map":"img/map3.jpg",
-          "price":"1500U$",
-          "dias":7,
-          "Ecoregiones":"Prepuna y puna",
-          "especies":300
-      },
-      {
-          "id": 4,
-          "title":"Patagonia - El Chalten",
-          "body": "Asthenes maculicauda - Sp endemica",
-          "img": "/img/Tour4.jpg",
-          "map":"img/map4.jpg",
-          "price":"1500U$",
-          "dias":7,
-          "Ecoregiones":"Patagonia",
-          "especies":300
-      },
-      {
-          "id": 5,
-          "title":"El fin del Mundo - Ushuaia",
-          "body": "Asthenes maculicauda - Sp endemica",
-          "img": "/img/Tour5.jpg",
-          "map":"img/map5.jpg",
-          "price":"1500U$",
-          "dias":7,
-          "Ecoregiones":"Bosque y Mar",
-          "especies":300
-      },
-      {
-          "id": 6,
-          "title":"Neuquen - Parque Nacional San Guillermo",
-          "body": "Asthenes maculicauda - Sp endemica",
-          "img": "/img/Tour6.jpg",
-          "map":"img/map6.jpg",
-          "price":"1500U$",
-          "dias":7,
-          "Ecoregiones":"Puna",
-          "especies":300
-      },
-      {
-          "id": 7,
-          "title":"Las Aves y el Vino - Mendoza",
-          "body": "Asthenes maculicauda - Sp endemica",
-          "img": "/img/Tour7.jpg",
-          "map":"img/map7.jpg",
-          "price":"1500U$",
-          "dias":7,
-          "Ecoregiones":"Altos Andes y Desierto de Monte",
-          "especies":300
-      },
-      {
-          "id": 8,
-          "title":"Humedales del Ibera",
-          "body": "Asthenes maculicauda - Sp endemica",
-          "img": "/img/Tour8.jpg",
-          "map":"img/map8.jpg",
-          "price":"1500U$",
-          "dias":7,
-          "Ecoregiones":"Humedales",
-          "especies":300
-      },
-      {
-          "id": 9,
-          "title":"Selva Atlantica - Parque Nacional Iguazu",
-          "body": "Asthenes maculicauda - Sp endemica",
-          "img": "/img/Tour9.jpg",
-          "map":"img/map9.jpg",
-          "price":"1500U$",
-          "dias":7,
-          "Ecoregiones":"Selva Atlantica",
-          "especies":300
-      }
-    ]
-  }
+  "users": [
+    {
+      "id": 1,
+      "name": "Lucas",
+      "lastname": "Rodriguez",
+      "email": "lucasrodriguez@gmail.com",
+      "pass": "1234",
+      "img": "/img/user1.jpg",
+      "admin": true,
+      "favoritos": [],
+      "buys": []
+    },
+    {
+      "id": 2,
+      "name": "Pia",
+      "lastname": "Lopez",
+      "email": "pia@gmail.com",
+      "pass": "1234",
+      "img": "/img/user2.jpg",
+      "admin": false,
+      "favoritos": [],
+      "buys": []
+    },
+    {
+      "id": 3,
+      "name": "Juan",
+      "lastname": "Lopez",
+      "pass": "1234",
+      "email": "Juanlopez@gmail.com",
+      "img": "/img/user3.jpg",
+      "admin": false,
+      "favoritos": [],
+      "buys": []
+    },
+    {
+      "id": 4,
+      "name": "Maria",
+      "lastname": "Lopez",
+      "pass": "1234",
+      "email": "MLopez@gmail.com",
+      "img": "/img/user4.jpg",
+      "admin": false,
+      "favoritos": [],
+      "buys": []
+    }
+  ],
+  "Aves": [
+    {
+      "id": 1,
+      "title": "Asthenes maculicauda",
+      "body": "Asthenes maculicauda - Sp endemica",
+      "img": "/img/Fig1.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Chlorostilbon lucidus",
+      "body": "Chlorostilbon lucidus - Sp no endemica",
+      "img": "/img/Fig2.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Chunga burmeisteri",
+      "body": "Chunga burmeisteri - Sp no endemica",
+      "img": "/img/Fig3.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Nyctibius griseus",
+      "body": "Heliomaster furcier - Sp no endemica",
+      "img": "/img/Fig4.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Megascops hoyi",
+      "body": "Chunga burmeisteri - Sp no endemica",
+      "img": "/img/Fig5.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Microstilbon burmeisteri",
+      "body": "Chunga burmeisteri - Sp no endemica",
+      "img": "/img/Fig6.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Heliomaster furcifer",
+      "body": "Chunga burmeisteri - Sp no endemica",
+      "img": "/img/Fig7.jpg"
+    },
+    {
+      "id": 8,
+      "title": "Campephilus magellanicus",
+      "body": "Chunga burmeisteri - Sp no endemica",
+      "img": "/img/Fig8.jpg"
+    },
+    {
+      "id": 9,
+      "title": "Atlapetes citrinellus",
+      "body": "Chunga burmeisteri - Sp no endemica",
+      "img": "/img/Fig9.jpg"
+    },
+    {
+      "id": 10,
+      "title": "Cariama cristata",
+      "body": "Chunga burmeisteri - Sp no endemica",
+      "img": "/img/Fig10.jpg"
+    },
+    {
+      "id": 11,
+      "title": "Picumnus cirratus",
+      "body": "Chunga burmeisteri - Sp no endemica",
+      "img": "/img/Fig11.jpg"
+    },
+    {
+      "id": 12,
+      "title": "Setophaga pitiayumi",
+      "body": "Chunga burmeisteri - Sp no endemica",
+      "img": "/img/Fig12.jpg"
+    }
+  ],
+  "Tours": [
+    {
+      "id": 1,
+      "title": "Yungas - Parque Nacional Calilegua",
+      "body": "Asthenes maculicauda - Sp endemica",
+      "img": "/img/Tour1.jpg",
+      "map": "img/map1.jpg",
+      "price": "1500U$",
+      "dias": 7,
+      "Ecoregiones": "Yungas",
+      "especies": 300
+    },
+    {
+      "id": 2,
+      "title": "Yungas - Parque Nacional Aconquija",
+      "body": "Asthenes maculicauda - Sp endemica",
+      "img": "/img/Tour2.jpg",
+      "map": "img/map2.jpg",
+      "price": "1500U$",
+      "dias": 7,
+      "Ecoregiones": "Yungas",
+      "especies": 300
+    },
+    {
+      "id": 3,
+      "title": "Puna - Parque Nacional Los Cardones",
+      "body": "Asthenes maculicauda - Sp endemica",
+      "img": "/img/Tour3.jpg",
+      "map": "img/map3.jpg",
+      "price": "1500U$",
+      "dias": 7,
+      "Ecoregiones": "Prepuna y puna",
+      "especies": 300
+    },
+    {
+      "id": 4,
+      "title": "Patagonia - El Chalten",
+      "body": "Asthenes maculicauda - Sp endemica",
+      "img": "/img/Tour4.jpg",
+      "map": "img/map4.jpg",
+      "price": "1500U$",
+      "dias": 7,
+      "Ecoregiones": "Patagonia",
+      "especies": 300
+    },
+    {
+      "id": 5,
+      "title": "El fin del Mundo - Ushuaia",
+      "body": "Asthenes maculicauda - Sp endemica",
+      "img": "/img/Tour5.jpg",
+      "map": "img/map5.jpg",
+      "price": "1500U$",
+      "dias": 7,
+      "Ecoregiones": "Bosque y Mar",
+      "especies": 300
+    },
+    {
+      "id": 6,
+      "title": "Neuquen - Parque Nacional San Guillermo",
+      "body": "Asthenes maculicauda - Sp endemica",
+      "img": "/img/Tour6.jpg",
+      "map": "img/map6.jpg",
+      "price": "1500U$",
+      "dias": 7,
+      "Ecoregiones": "Puna",
+      "especies": 300
+    },
+    {
+      "id": 7,
+      "title": "Las Aves y el Vino - Mendoza",
+      "body": "Asthenes maculicauda - Sp endemica",
+      "img": "/img/Tour7.jpg",
+      "map": "img/map7.jpg",
+      "price": "1500U$",
+      "dias": 7,
+      "Ecoregiones": "Altos Andes y Desierto de Monte",
+      "especies": 300
+    },
+    {
+      "id": 8,
+      "title": "Humedales del Ibera",
+      "body": "Asthenes maculicauda - Sp endemica",
+      "img": "/img/Tour8.jpg",
+      "map": "img/map8.jpg",
+      "price": "1500U$",
+      "dias": 7,
+      "Ecoregiones": "Humedales",
+      "especies": 300
+    },
+    {
+      "id": 9,
+      "title": "Selva Atlantica - Parque Nacional Iguazu",
+      "body": "Asthenes maculicauda - Sp endemica",
+      "img": "/img/Tour9.jpg",
+      "map": "img/map9.jpg",
+      "price": "1500U$",
+      "dias": 7,
+      "Ecoregiones": "Selva Atlantica",
+      "especies": 300
+    }
+  ]
+}
