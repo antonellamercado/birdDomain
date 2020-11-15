@@ -44,30 +44,35 @@
     "Aves": [
       {
         "id": 1,
+        "name":"Espertillero estriado",
         "title":"Asthenes maculicauda",
         "body": "Asthenes maculicauda - Sp endemica",
         "img": "/img/Fig1.jpg"
       },
       {
         "id": 2,
+        "name":"Picaflor verde",
         "title":"Chlorostilbon lucidus",
         "body": "Chlorostilbon lucidus - Sp no endemica",
         "img": "/img/Fig2.jpg"
       },
       {
         "id": 3,
+        "name":"Chuña patas negras",
         "title":"Chunga burmeisteri",
         "body": "Chunga burmeisteri - Sp no endemica",
         "img": "/img/Fig3.jpg"
       },
       {
         "id": 4,
+        "name":"Kakuy",
         "title":"Nyctibius griseus",
         "body": "Heliomaster furcier - Sp no endemica",
         "img": "/img/Fig4.jpg"
       },
       {
           "id": 5,
+          "name":"Alilicucu Yungueño",
           "title":"Megascops hoyi",
           "body": "Chunga burmeisteri - Sp no endemica",
           "img": "/img/Fig5.jpg"
@@ -80,36 +85,42 @@
         },
         {
           "id": 7,
+          "name":"Picaflor de barbijo",
           "title":"Heliomaster furcifer",
           "body": "Chunga burmeisteri - Sp no endemica",
           "img": "/img/Fig7.jpg"
         },
         {
           "id": 8,
-          "title":"Campephilus magellanicus",
+          "name":"Carpintero lomo blanco",
+          "title":"Campephilus leucopogon",
           "body": "Chunga burmeisteri - Sp no endemica",
           "img": "/img/Fig8.jpg"
         },
         {
           "id": 9,
+          "name":"Cerquero amarillo",
           "title":"Atlapetes citrinellus",
           "body": "Chunga burmeisteri - Sp no endemica",
           "img": "/img/Fig9.jpg"
         },
         {
           "id": 10,
+          "name":"Chuña patas rojas",
           "title":"Cariama cristata",
           "body": "Chunga burmeisteri - Sp no endemica",
           "img": "/img/Fig10.jpg"
         },
         {
           "id": 11,
+          "name":"Carpinterito bataraz",
           "title":"Picumnus cirratus",
           "body": "Chunga burmeisteri - Sp no endemica",
           "img": "/img/Fig11.jpg"
         },
         {
           "id": 12,
+          "name":"Pitiayumi",
           "title":"Setophaga pitiayumi",
           "body": "Chunga burmeisteri - Sp no endemica",
           "img": "/img/Fig12.jpg"
@@ -119,11 +130,11 @@
       {
         "id": 1,
         "title":"Yungas - Parque Nacional Calilegua",
-        "body": "Asthenes maculicauda - Sp endemica",
+        "body": "El parque nacional Calilegua es un área natural protegida situada sobre las faldas orientales de la sierra de Calilegua, en el sudeste de la provincia de Jujuy en el noroeste de la República Argentina. Es una zona fantastica que permite visualizar un imponente y pristino paisaje",
         "img": "/img/Tour1.jpg",
         "map":"img/map1.jpg",
-        "price":"1500U$",
-        "dias":7,
+        "price":"400U$",
+        "dias":4,
         "Ecoregiones":"Yungas",
         "especies":300
       },
