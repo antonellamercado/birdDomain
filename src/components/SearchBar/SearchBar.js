@@ -1,25 +1,32 @@
+import React, {useState, useEffect} from 'react';
+import {Link} from 'react-router-dom';
+import "bootstrap/dist/css/bootstrap.css";
+import './SearchBar.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
+// import axios from 'axios';
+
+
+const SearchBar = () => {
+    return (
+  <div>
+      <form className="d-flex d-block">
+          <input type="search" 
+            id="searchBar" 
+            className="inputSearch"
+            placeholder="Search...">
+            </input> 
+            <button className="btn btn-primary"><FontAwesomeIcon  icon={faSearch} /></button>
+      </form>
+
+  </div>
+    );
+}
+
+export default SearchBar;
 
 
 
 
 
 
-
-
-
-
-<div class="d-flex justify-content-center searchInputWrapper searchmodal my-3 mx-auto">
-    <form id="inputFather" class="withinSearchInput" >
-  <input
-        type="search" 
-        id="searchBar" 
-        class="inputSearch"
-        placeholder="Buscar juegos"
-        id="inputPopver"
-        class="form-control" data-toggle="popover" data-trigger="focus" data-timeout="2000" data-placement="top" data-content="Puedes buscar por nombre, categoria o estilo">
-    </input> 
-<button id="searchBtn" class="searchButton" >Borrar búsqueda</button>
-    </form>
-</div>
-<br>
-<div id = "gamesList" class = "row resultContainer justify-content-center"> </div>
