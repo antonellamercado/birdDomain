@@ -35,7 +35,7 @@ useEffect(()=>{
 
 
     return (
-        <div className="carousel-wrapper carrousel_card">
+        <div className="carousel-wrapper">
             <Carousel showStatus={true} showThumbs={false} centerMode={true} infiniteLoop={true}>
                 {                                
                     tours.length === 0 ? 'No hay Tours disponible' : 
