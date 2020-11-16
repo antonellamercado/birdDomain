@@ -1,9 +1,9 @@
 import React from 'react';
 import {BrowserRouter as Router, Switch,Route} from 'react-router-dom';
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
 //components
-import Map from './components/Maps/MapT1'
+//import Map from './components/Maps/MapT1'
 import Header from './components/Header/Header';
 //views
 import Home from './views/Home/Home';
@@ -12,6 +12,7 @@ import Contacto from './views/Contacto/Contacto';
 import Favoritos from './views/Favoritos/Favoritos';
 import Carrito from './views/Carrito/Carrito';
 import DetalleTour from './views/DetalleTour/DetalleTour';
+
 
 function App() {
   return (

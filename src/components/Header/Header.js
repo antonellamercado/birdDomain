@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import '../Header/Header.css'
+//import '../Header/Header.css'
+import '../Header/MyNav'
 import logo from '../Header/logo.png'
 
 const Header = () => {
