@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {Modal,Nav,Navbar,NavDropdown,Form,FormControl,Button} from 'react-bootstrap';
-import './myNav.css'
+import './Header.css'
 import logo from '../Header/logo.png';
 import {Link} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -11,7 +11,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import HelpModal from '../HelpModal/HelpModal.js'
 
 
-const MyNav = () => {
+const Header = () => {
     const [modalShow, setModalShow] = React.useState(false);
 
     return (
@@ -71,4 +71,4 @@ const MyNav = () => {
             );
 }
 
-export default MyNav;
+export default Header;
