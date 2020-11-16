@@ -5,7 +5,7 @@ const Contacto = () => {
 
     return (
         <Link to = '/Contacto'>
-<div>Contacto</div>
+            <div>Contacto</div>
         </Link>
     );
 }

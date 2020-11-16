@@ -1,16 +1,15 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import img from './Tour2.jpg'
+import Carrousel from '../../components/Carrousel/Carrousel'
 
-const Home = () => {
+const Home = () => (
+    <Link to = '/'>
+        <div className="bg-secondary p-4">Hero Image</div>
+        <Carrousel/>
+        <div className="bg-secondary p-4">Galeria de imagenes</div>
+        <div className="bg-secondary p-4">Publicidad</div>
+    </Link>
+);
 
-    return (
-        <Link to = '/'>
-<div>Home
-</div>
-<img className="container-fluid" src = {img} alt = "..."></img>
-        </Link>
-    );
-}
 
 export default Home;
