@@ -13,6 +13,7 @@ import Favoritos from './views/Favoritos/Favoritos';
 import Carrito from './views/Carrito/Carrito';
 import DetalleTour from './views/DetalleTour/DetalleTour';
 
+
 function App() {
   return (
     <div className="App">
