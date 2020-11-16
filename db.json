@@ -47,83 +47,83 @@
         "name":"Espertillero estriado",
         "title":"Asthenes maculicauda",
         "body": "Asthenes maculicauda - Sp endemica",
-        "img": "/img/Fig1.jpg"
+        "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Fig1.jpg?alt=media&token=b7a63dea-8285-4d00-b016-469d4fa47054"
       },
       {
         "id": 2,
         "name":"Picaflor verde",
         "title":"Chlorostilbon lucidus",
         "body": "Chlorostilbon lucidus - Sp no endemica",
-        "img": "/img/Fig2.jpg"
+        "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Fig2.jpg?alt=media&token=b7a63dea-8285-4d00-b016-469d4fa47054"
       },
       {
         "id": 3,
         "name":"Chuña patas negras",
         "title":"Chunga burmeisteri",
         "body": "Chunga burmeisteri - Sp no endemica",
-        "img": "/img/Fig3.jpg"
+        "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Fig3.jpg?alt=media&token=b7a63dea-8285-4d00-b016-469d4fa47054"
       },
       {
         "id": 4,
         "name":"Kakuy",
         "title":"Nyctibius griseus",
         "body": "Heliomaster furcier - Sp no endemica",
-        "img": "/img/Fig4.jpg"
+        "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Fig4.jpg?alt=media&token=b7a63dea-8285-4d00-b016-469d4fa47054"
       },
       {
           "id": 5,
           "name":"Alilicucu Yungueño",
           "title":"Megascops hoyi",
           "body": "Chunga burmeisteri - Sp no endemica",
-          "img": "/img/Fig5.jpg"
+          "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Fig5.jpg?alt=media&token=b7a63dea-8285-4d00-b016-469d4fa47054"
         },
         {
           "id": 6,
           "title":"Microstilbon burmeisteri",
           "body": "Chunga burmeisteri - Sp no endemica",
-          "img": "/img/Fig6.jpg"
+          "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Fig6.jpg?alt=media&token=b7a63dea-8285-4d00-b016-469d4fa47054"
         },
         {
           "id": 7,
           "name":"Picaflor de barbijo",
           "title":"Heliomaster furcifer",
           "body": "Chunga burmeisteri - Sp no endemica",
-          "img": "/img/Fig7.jpg"
+          "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Fig7.jpg?alt=media&token=b7a63dea-8285-4d00-b016-469d4fa47054"
         },
         {
           "id": 8,
           "name":"Carpintero lomo blanco",
           "title":"Campephilus leucopogon",
           "body": "Chunga burmeisteri - Sp no endemica",
-          "img": "/img/Fig8.jpg"
+          "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Fig8.jpg?alt=media&token=b7a63dea-8285-4d00-b016-469d4fa47054"
         },
         {
           "id": 9,
           "name":"Cerquero amarillo",
           "title":"Atlapetes citrinellus",
           "body": "Chunga burmeisteri - Sp no endemica",
-          "img": "/img/Fig9.jpg"
+          "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Fig9.jpg?alt=media&token=b7a63dea-8285-4d00-b016-469d4fa47054"
         },
         {
           "id": 10,
           "name":"Chuña patas rojas",
           "title":"Cariama cristata",
           "body": "Chunga burmeisteri - Sp no endemica",
-          "img": "/img/Fig10.jpg"
+          "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Fig10.jpg?alt=media&token=b7a63dea-8285-4d00-b016-469d4fa47054"
         },
         {
           "id": 11,
           "name":"Carpinterito bataraz",
           "title":"Picumnus cirratus",
           "body": "Chunga burmeisteri - Sp no endemica",
-          "img": "/img/Fig11.jpg"
+          "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Fig11.jpg?alt=media&token=b7a63dea-8285-4d00-b016-469d4fa47054"
         },
         {
           "id": 12,
           "name":"Pitiayumi",
           "title":"Setophaga pitiayumi",
           "body": "Chunga burmeisteri - Sp no endemica",
-          "img": "/img/Fig12.jpg"
+          "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Fig12.jpg?alt=media&token=b7a63dea-8285-4d00-b016-469d4fa47054"
         }
     ],
     "Tours": [
@@ -131,7 +131,7 @@
         "id": 1,
         "title":"Yungas - Parque Nacional Calilegua",
         "body": "El parque nacional Calilegua es un área natural protegida situada sobre las faldas orientales de la sierra de Calilegua, en el sudeste de la provincia de Jujuy en el noroeste de la República Argentina. Es una zona fantastica que permite visualizar un imponente y pristino paisaje",
-        "img": "/img/Tour1.jpg",
+        "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour1.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b",
         "map":"img/map1.jpg",
         "price":"400U$",
         "dias":4,
@@ -142,7 +142,7 @@
           "id": 2,
           "title":"Yungas - Parque Nacional Aconquija",
           "body": "Asthenes maculicauda - Sp endemica",
-          "img": "/img/Tour2.jpg",
+          "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour2.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b",
           "map":"img/map2.jpg",
           "price":"1500U$",
           "dias":7,
@@ -153,7 +153,7 @@
           "id": 3,
           "title":"Puna - Parque Nacional Los Cardones",
           "body": "Asthenes maculicauda - Sp endemica",
-          "img": "/img/Tour3.jpg",
+          "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour3.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b",
           "map":"img/map3.jpg",
           "price":"1500U$",
           "dias":7,
@@ -164,7 +164,7 @@
           "id": 4,
           "title":"Patagonia - El Chalten",
           "body": "Asthenes maculicauda - Sp endemica",
-          "img": "/img/Tour4.jpg",
+          "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour4.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b",
           "map":"img/map4.jpg",
           "price":"1500U$",
           "dias":7,
@@ -175,7 +175,7 @@
           "id": 5,
           "title":"El fin del Mundo - Ushuaia",
           "body": "Asthenes maculicauda - Sp endemica",
-          "img": "/img/Tour5.jpg",
+          "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour5.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b",
           "map":"img/map5.jpg",
           "price":"1500U$",
           "dias":7,
@@ -186,7 +186,7 @@
           "id": 6,
           "title":"Neuquen - Parque Nacional San Guillermo",
           "body": "Asthenes maculicauda - Sp endemica",
-          "img": "/img/Tour6.jpg",
+          "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour6.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b",
           "map":"img/map6.jpg",
           "price":"1500U$",
           "dias":7,
@@ -197,7 +197,7 @@
           "id": 7,
           "title":"Las Aves y el Vino - Mendoza",
           "body": "Asthenes maculicauda - Sp endemica",
-          "img": "/img/Tour7.jpg",
+          "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour7.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b",
           "map":"img/map7.jpg",
           "price":"1500U$",
           "dias":7,
@@ -208,7 +208,7 @@
           "id": 8,
           "title":"Humedales del Ibera",
           "body": "Asthenes maculicauda - Sp endemica",
-          "img": "/img/Tour8.jpg",
+          "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour8.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b",
           "map":"img/map8.jpg",
           "price":"1500U$",
           "dias":7,
@@ -219,7 +219,7 @@
           "id": 9,
           "title":"Selva Atlantica - Parque Nacional Iguazu",
           "body": "Asthenes maculicauda - Sp endemica",
-          "img": "/img/Tour9.jpg",
+          "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour9.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b",
           "map":"img/map9.jpg",
           "price":"1500U$",
           "dias":7,

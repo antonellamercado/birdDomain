@@ -12,6 +12,7 @@
     "react-dom": "^16.14.0",
     "react-is": "^16.8.6",
     "react-leaflet": "^3.0.2",
+    "react-responsive-carousel": "^3.2.10",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.0",
     "styled-components": "^5.0.0",
