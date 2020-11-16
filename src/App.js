@@ -24,7 +24,7 @@ function App() {
           <Route path="/Tour/:id" exact component={DetalleTour}></Route>
           <Route path="/Destacado" exact component={Destacado}></Route>
           <Route path="/Contacto" exact component={Contacto}></Route>
-          <Route path="/Favoritos" exact component={Favoritos}></Route>
+          <Route path="/Favorito" exact component={Favoritos}></Route>
           <Route path="/Carrito" exact component={Carrito}></Route>
         </Switch>
       </div>

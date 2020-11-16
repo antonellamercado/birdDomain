@@ -36,7 +36,7 @@ const Header = () => {
                     <li className="nav-links-links">Favoritos</li>
                     </Link>
                     <Link to = '/Carrito'>
-                    <li className="nav-links-links">Carrito</li>
+                    <li className="nav-links-links">Carrrito</li>
                     </Link>
                 </ul>
                 </div>
