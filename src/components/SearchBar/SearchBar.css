@@ -1,5 +1,10 @@
 .inputSearch{
-    border-radius:3px;
+    border-radius:5px;
     background-color:none;
-    padding:5px;
+    padding:20px;
+    height: 20px;
+}
+
+.searchForm{
+    padding:10px;
 }

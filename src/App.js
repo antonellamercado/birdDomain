@@ -12,6 +12,7 @@ import Contacto from './views/Contacto/Contacto';
 import Favoritos from './views/Favoritos/Favoritos';
 import Carrito from './views/Carrito/Carrito';
 import DetalleTour from './views/DetalleTour/DetalleTour';
+import Footer from './components/Footer/Footer';
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
           <Route path="/Carrito" exact component={Carrito}></Route>
         </Switch>
       </div>
+      <Footer/>
     </Router>
     
     </div>

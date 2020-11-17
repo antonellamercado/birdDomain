@@ -1,8 +1,8 @@
 import React from 'react';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './fontawesome';
 import './Footer.css'
-import logo from '../logo.png'
+import logo from '../Header/logo.png'
 
 function Footer () {
     return ( 
