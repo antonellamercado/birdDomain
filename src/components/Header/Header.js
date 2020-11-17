@@ -9,6 +9,7 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import HelpModal from '../HelpModal/HelpModal.js'
+import SearchBar from '../SearchBar/SearchBar';
 
 
 const Header = () => {
@@ -34,12 +35,9 @@ const Header = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ml-auto d-flex justify-content-around">
-
-            <Form inline>
-              <FormControl type="search" placeholder="Search" className="mr-sm-2" />
-              <Button variant="outline-success"><FontAwesomeIcon  icon={faSearch} /></Button>
-            </Form>
-
+            
+            <SearchBar/>
+           
                 <Link to = '/'>
                 <li className="nav-links-links">Home</li>
                 </Link>
