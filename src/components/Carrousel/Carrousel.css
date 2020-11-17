@@ -1,0 +1,10 @@
+.carousel .slide .legend  {
+font-style: italic;
+}
+
+.carrousel_card{
+    opacity: 1;
+    width: 100%;
+    height: 50%;
+    margin: auto;
+}
