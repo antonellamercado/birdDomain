@@ -13,10 +13,10 @@ background: rgba(12, 11, 11, 0.3);
 }
 
 .carrousel_cont{
-    width: 90%;
     padding: 0;
     margin:0;
 }
+
 
 @media screen and (max-width: 400px){
     .carousel .slide .legend{

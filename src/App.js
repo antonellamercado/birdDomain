@@ -5,6 +5,7 @@ import './App.css';
 //components
 //import Map from './components/Maps/MapT1'
 import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 //views
 import Home from './views/Home/Home';
 import Destacado from './views/Destacado/Destacado';
@@ -12,6 +13,7 @@ import Contacto from './views/Contacto/Contacto';
 import Favoritos from './views/Favoritos/Favoritos';
 import Carrito from './views/Carrito/Carrito';
 import DetalleTour from './views/DetalleTour/DetalleTour';
+
 
 
 function App() {
@@ -29,6 +31,7 @@ function App() {
           <Route path="/Carrito" exact component={Carrito}></Route>
         </Switch>
       </div>
+      <Footer/>
     </Router>
     
     </div>
