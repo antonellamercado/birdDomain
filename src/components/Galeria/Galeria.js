@@ -6,7 +6,7 @@ import clienteAxios from '../../config/axios';
 //style
 import '../Galeria/Galeria.css';
 //libreria
-import {Card, CardImg, CardTitle} from 'reactstrap';
+import {Card, CardBody, CardImg, CardTitle} from 'reactstrap';
 
 const Galeria = () => {
 
@@ -33,10 +33,12 @@ useEffect(()=>{
                     galeria.length === 0 ? 'No hay Aves disponible' : 
                     (galeria.map((ave, index) => 
                         <Link>
+                        <CardBody>
                         <div key={index} className="col-12 col-md-4 col-lg-3 my-3">
                             <CardImg  width="25%" src={ave.img}  alt="img-aves"/>
                             <CardTitle tag="h5">{ave.title}</CardTitle>
                         </div>
+                        </CardBody>
                         </Link> 
                     ))
                 }     
