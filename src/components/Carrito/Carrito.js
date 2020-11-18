@@ -1,18 +1,18 @@
 import { useState, useEffect } from 'react';
 import axios from "axios";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
+import {Link} from 'react-router-dom';
+import "../Carrito/Carrito.css"
 
 const Carrito = () => {
     const [products, setProducts] = useState([]);
     const [tours, setTours] = useState([]);
+    const [totalPrice, setTotalPrice] = useState([])
 
     useEffect(()=>{
         const getBuys = async ()=>{
             await axios.get(`http://localhost:5000/usuarios/1`)
             .then(response =>{
-                setProducts(response.data.buys)
+                setProducts(response.data.buys)              
             });
         }
         getBuys();
@@ -34,33 +34,59 @@ const Carrito = () => {
         setProducts(newProducts);
         await axios.patch(`http://localhost:5000/usuarios/1`, {buys:newProducts});
     };
+    function buyListOnOff(){
+        let buyListOnOff = document.getElementById("buyListOnOff");
+        if (buyListOnOff.classList.value ==="d-none"){
+            buyListOnOff.classList.remove("d-none");
+            buyListOnOff.classList.add("d-inline");
+        }else{
+            buyListOnOff.classList.remove("d-inline");
+            buyListOnOff.classList.add("d-none");
+        }
+    }
+    function sumar (){
+        let total=0;
+        let i = 0;
+        for(i=0;i<products.length;i++){
+            total+=products[i].price
+        }
+        return(total)
+    }
     return (
-        <>
-            <Navbar bg="light" expand="lg">                      
-                    <Nav className="m-auto">
-                        <div className="d-flex">
-                            <svg width="3em" height="3em" viewBox="0 0 16 16" className="bi bi-cart" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path fillRule="evenodd" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
-                            </svg>
-                            <NavDropdown title=""id="basic-nav-dropdown" >
-                                <NavDropdown.Item >
-                                {
-                                    products.length === 0 ? 'No hay productos' : (
-                                        products.map((product, index) => 
-                                            <div key={index} className="d-flex justify-content-between my-3">
-                                                <div >
-                                                    <p>{product.title}</p>
-                                                </div>
-                                                <button id={product.id} className="btn btn-dark ml-4" onClick={deleteProduct}>Quitar Compra</button>
-                                            </div>
-                                        )
-                                    )
-                                }
-                                </NavDropdown.Item>
-                            </NavDropdown>
-                        </div>
-                    </Nav>
-            </Navbar>
+        <>                               
+            <div className="d-flex justify-content-end my-4 mr-5">
+                <i className="fas fa-shopping-bag d-flex" onClick={buyListOnOff}>
+                    {
+                        products.length > 0 ? <div id="buyMessage">{products.length}</div>:(<div></div>)
+                    }
+                </i>
+            </div>
+            <div id="buyListOnOff" className="d-none">
+                {
+                    products.length === 0 ? 'No hay productos' : (
+                        products.map((product, index) => 
+                            <div key={index} className="d-flex justify-content-end my-3 mr-4">
+                                <div >
+                                    <p className="priceProduct" value={product.price}>{product.title} - {product.price}U$D</p>
+                                </div>
+                                <div>
+                                    <i id={product.id} className="fas fa-trash ml-4" onClick={deleteProduct}></i>                                           
+                                </div>                                                                 
+                            </div>
+                        )                             
+                    )                          
+                }
+                <div className="d-flex justify-content-end mr-4 mb-4">
+                    <div className="d-flex justify-content-end mr-4">
+                        <p className="mt-2"><b>Total: {sumar()}U$D</b></p>
+                    </div>
+                    <div>
+                        <Link to = '/Checkout'>
+                            <button className="btn btn-success">Finalisar Compras</button>
+                        </Link>
+                    </div>
+                </div>
+            </div>
             <div className="container">
                 <div>
                     {
