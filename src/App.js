@@ -11,7 +11,7 @@ import Home from './views/Home/Home';
 import Destacado from './views/Destacado/Destacado';
 import Contacto from './views/Contacto/Contacto';
 import Favoritos from './views/Favoritos/Favoritos';
-import Carrito from './views/Carrito/Carrito';
+import Carrito from './components/Carrito/Carrito';
 import DetalleTour from './views/DetalleTour/DetalleTour';
 
 
