@@ -136,7 +136,9 @@
         "price":"400U$",
         "dias":4,
         "Ecoregiones":"Yungas",
-        "especies":300
+        "especies":300,
+        "Destacado":true,
+        "imgD":"img/DT1.jpg"
       },
       {
           "id": 2,
@@ -147,7 +149,9 @@
           "price":"1500U$",
           "dias":7,
           "Ecoregiones":"Yungas",
-          "especies":300
+          "especies":300,
+          "Destacado":false,
+          "imgD":"img/DT2.jpg"
       },
       {
           "id": 3,
@@ -158,7 +162,9 @@
           "price":"1500U$",
           "dias":7,
           "Ecoregiones":"Prepuna y puna",
-          "especies":300
+          "especies":300,
+          "Destacado":false,
+          "imgD":"img/DT3.jpg"
       },
       {
           "id": 4,
@@ -169,7 +175,9 @@
           "price":"1500U$",
           "dias":7,
           "Ecoregiones":"Patagonia",
-          "especies":300
+          "especies":300,
+          "Destacado":false,
+          "imgD":"img/DT4.jpg"
       },
       {
           "id": 5,
@@ -180,7 +188,9 @@
           "price":"1500U$",
           "dias":7,
           "Ecoregiones":"Bosque y Mar",
-          "especies":300
+          "especies":300,
+          "Destacado":false,
+          "imgD":"img/DT5.jpg"
       },
       {
           "id": 6,
@@ -191,7 +201,9 @@
           "price":"1500U$",
           "dias":7,
           "Ecoregiones":"Puna",
-          "especies":300
+          "especies":300,
+          "Destacado":false,
+          "imgD":"img/DT6.jpg"
       },
       {
           "id": 7,
@@ -202,7 +214,9 @@
           "price":"1500U$",
           "dias":7,
           "Ecoregiones":"Altos Andes y Desierto de Monte",
-          "especies":300
+          "especies":300,
+          "Destacado":false,
+          "imgD":"img/DT7.jpg"
       },
       {
           "id": 8,
@@ -213,7 +227,9 @@
           "price":"1500U$",
           "dias":7,
           "Ecoregiones":"Humedales",
-          "especies":300
+          "especies":300,
+          "Destacado":false,
+          "imgD":"img/DT8.jpg"
       },
       {
           "id": 9,
@@ -224,7 +240,9 @@
           "price":"1500U$",
           "dias":7,
           "Ecoregiones":"Selva Atlantica",
-          "especies":300
+          "especies":300,
+          "Destacado":false,
+          "imgD":"img/DT9.jpg"
       }
     ]
   }
