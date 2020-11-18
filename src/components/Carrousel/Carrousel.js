@@ -11,7 +11,7 @@ import '../Carrousel/Carrousel.css'
 const Carrousel = ({history, location, match}) => {
 
 const [tours, setTours] = useState([
-   { id: '',
+{ id: '',
     title: '',
     body: '',
     img: '',
@@ -37,12 +37,12 @@ useEffect(()=>{
     return (
         <div className="carousel-wrapper">
             <Carousel showStatus={true} showThumbs={false}
-             centerMode={true} infiniteLoop={true} 
-             centerSlidePercentage={35} autoPlay={true} onClickItem>
+                centerMode={true} infiniteLoop={true} 
+                centerSlidePercentage={35} autoPlay={true} onClickItem>
                 {                                
                     tours.length === 0 ? 'No hay Tours disponible' : 
                     (tours.map((tour, index) => 
-                        <Link to={`/Tours/:${tour.id}`}>
+                        <Link to={`/Tours/${tour.id}`}>
                         <div key={index} className="carrousel_cont">
                             <img src={tour.img}  alt="img-tour"/>
                             <p className="legend carrousel_legend">{tour.title}</p>
