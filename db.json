@@ -9,7 +9,35 @@
       "img": "/img/user1.jpg",
       "admin": true,
       "favoritos": [],
-      "buys": []
+      "buys": [
+        {
+          "id": 1,
+          "title": "Yungas - Parque Nacional Calilegua",
+          "body": "El parque nacional Calilegua es un área natural protegida situada sobre las faldas orientales de la sierra de Calilegua, en el sudeste de la provincia de Jujuy en el noroeste de la República Argentina. Es una zona fantastica que permite visualizar un imponente y pristino paisaje",
+          "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour1.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b",
+          "price": 400,
+          "dias": 4,
+          "especies": 300
+        },
+        {
+          "id": 2,
+          "title": "Yungas - Parque Nacional Aconquija",
+          "body": "Asthenes maculicauda - Sp endemica",
+          "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour2.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b",
+          "price": 1500,
+          "dias": 7,
+          "especies": 300
+        },
+        {
+          "id": 3,
+          "title": "Puna - Parque Nacional Los Cardones",
+          "body": "Asthenes maculicauda - Sp endemica",
+          "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour3.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b",
+          "price": 1500,
+          "dias": 7,
+          "especies": 300
+        }
+      ]
     },
     {
       "id": 2,
@@ -137,7 +165,7 @@
       "body": "El parque nacional Calilegua es un área natural protegida situada sobre las faldas orientales de la sierra de Calilegua, en el sudeste de la provincia de Jujuy en el noroeste de la República Argentina. Es una zona fantastica que permite visualizar un imponente y pristino paisaje",
       "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour1.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b",
       "map": "img/map1.jpg",
-      "price": "400U$",
+      "price": 400,
       "dias": 4,
       "Ecoregiones": "Yungas",
       "especies": 300
@@ -148,7 +176,7 @@
       "body": "Asthenes maculicauda - Sp endemica",
       "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour2.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b",
       "map": "img/map2.jpg",
-      "price": "1500U$",
+      "price": 1500,
       "dias": 7,
       "Ecoregiones": "Yungas",
       "especies": 300
@@ -159,7 +187,7 @@
       "body": "Asthenes maculicauda - Sp endemica",
       "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour3.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b",
       "map": "img/map3.jpg",
-      "price": "1500U$",
+      "price": 1500,
       "dias": 7,
       "Ecoregiones": "Prepuna y puna",
       "especies": 300
@@ -170,7 +198,7 @@
       "body": "Asthenes maculicauda - Sp endemica",
       "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour4.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b",
       "map": "img/map4.jpg",
-      "price": "1500U$",
+      "price": 1500,
       "dias": 7,
       "Ecoregiones": "Patagonia",
       "especies": 300
@@ -181,7 +209,7 @@
       "body": "Asthenes maculicauda - Sp endemica",
       "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour5.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b",
       "map": "img/map5.jpg",
-      "price": "1500U$",
+      "price": 1500,
       "dias": 7,
       "Ecoregiones": "Bosque y Mar",
       "especies": 300
@@ -192,7 +220,7 @@
       "body": "Asthenes maculicauda - Sp endemica",
       "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour6.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b",
       "map": "img/map6.jpg",
-      "price": "1500U$",
+      "price": 1500,
       "dias": 7,
       "Ecoregiones": "Puna",
       "especies": 300
@@ -203,7 +231,7 @@
       "body": "Asthenes maculicauda - Sp endemica",
       "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour7.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b",
       "map": "img/map7.jpg",
-      "price": "1500U$",
+      "price": 1500,
       "dias": 7,
       "Ecoregiones": "Altos Andes y Desierto de Monte",
       "especies": 300
@@ -214,7 +242,7 @@
       "body": "Asthenes maculicauda - Sp endemica",
       "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour8.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b",
       "map": "img/map8.jpg",
-      "price": "1500U$",
+      "price": 1500,
       "dias": 7,
       "Ecoregiones": "Humedales",
       "especies": 300
@@ -225,7 +253,7 @@
       "body": "Asthenes maculicauda - Sp endemica",
       "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour9.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b",
       "map": "img/map9.jpg",
-      "price": "1500U$",
+      "price": 1500,
       "dias": 7,
       "Ecoregiones": "Selva Atlantica",
       "especies": 300
