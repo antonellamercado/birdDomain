@@ -1,0 +1,29 @@
+.fa-shopping-bag {
+    color:#8fd3f4;
+    border: none;
+    background: none;
+    text-align: center;
+    text-decoration: none;
+    font-size: 50px;
+    
+}
+#buyListOnOff {
+    display: none;
+}
+#buyMessage {
+    background-color: red;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    color: white;
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+    margin-top: 30px;
+    margin-left: 30px;
+    position: absolute;
+    
+}
+.fa-trash {
+    font-size: 25px;
+}
