@@ -179,7 +179,7 @@
       "Ecoregiones": "Yungas",
       "especies": 300,
       "destacado": true,
-      "imgD": "img/DT1.jpg"
+      "imgD": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/DT1.jpg?alt=media&token=3e5ec858-73c5-48c5-916b-aec1243cb4d9"
     },
     {
       "id": 2,
@@ -187,15 +187,12 @@
       "body": "El parque nacional Aconquija es un área natural protegida de Argentina creada en la provincia de Tucumán. En una misma ruta se puede recorrer diferentes estratos altitudinales percibiendo como cambia la vegetacion junto a las aves que alli habitan",
       "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour2.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b",
       "map": "img/map2.jpg",
-
-      "price": "500U$",
-
-
+      "price": 500,
       "dias": 7,
       "Ecoregiones": "Yungas",
       "especies": 300,
       "destacado": false,
-      "imgD": "img/DT2.jpg"
+      "imgD": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/DT2.jpg?alt=media&token=3e5ec858-73c5-48c5-916b-aec1243cb4d9"
     },
     {
       "id": 3,
@@ -203,14 +200,12 @@
       "body": "El parque nacional Los Cardones (legalmente parque y reserva nacional Los Cardones) se encuentra cerca de la localidad de Payogasta en la región centro-sur de la provincia de Salta en Argentina. Es un ambiente de sierras secas, con altitudes de entre los 2600 msnm  hasta los 5226 msnm. El parque toma su nombre de la gran cantidad de ejemplares de cardón o pasacana (Trichocereus pasacana), una especie característica de los valles interandinos del sur de Bolivia y norte de Argentina y de Chile",
       "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour3.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b",
       "map": "img/map3.jpg",
-
-      "price": "700$",
-
+      "price": 700,
       "dias": 7,
       "Ecoregiones": "Prepuna y puna",
       "especies": 300,
       "destacado": false,
-      "imgD": "img/DT3.jpg"
+      "imgD": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/DT3.jpg?alt=media&token=3e5ec858-73c5-48c5-916b-aec1243cb4d9"
     },
     {
       "id": 4,
@@ -219,12 +214,11 @@
       "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour4.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b",
       "map": "img/map4.jpg",
       "price": 1500,
-
       "dias": 7,
       "Ecoregiones": "Patagonia",
       "especies": 300,
       "destacado": false,
-      "imgD": "img/DT4.jpg"
+      "imgD": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/DT4.jpg?alt=media&token=3e5ec858-73c5-48c5-916b-aec1243cb4d9"
     },
     {
       "id": 5,
@@ -237,7 +231,7 @@
       "Ecoregiones": "Bosque y Mar",
       "especies": 300,
       "destacado": false,
-      "imgD": "img/DT5.jpg"
+      "imgD": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/DT5.jpg?alt=media&token=3e5ec858-73c5-48c5-916b-aec1243cb4d9"
     },
     {
       "id": 6,
@@ -250,7 +244,7 @@
       "Ecoregiones": "Puna",
       "especies": 300,
       "destacado": false,
-      "imgD": "img/DT6.jpg"
+      "imgD": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/DT6.jpg?alt=media&token=3e5ec858-73c5-48c5-916b-aec1243cb4d9"
     },
     {
       "id": 7,
@@ -263,7 +257,7 @@
       "Ecoregiones": "Altos Andes y Desierto de Monte",
       "especies": 300,
       "destacado": false,
-      "imgD": "img/DT7.jpg"
+      "imgD": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/DT7.jpg?alt=media&token=3e5ec858-73c5-48c5-916b-aec1243cb4d9"
     },
     {
       "id": 8,
@@ -276,7 +270,7 @@
       "Ecoregiones": "Humedales",
       "especies": 300,
       "destacado": false,
-      "imgD": "img/DT8.jpg"
+      "imgD": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/DT8.jpg?alt=media&token=3e5ec858-73c5-48c5-916b-aec1243cb4d9"
     },
     {
       "id": 9,
@@ -289,7 +283,7 @@
       "Ecoregiones": "Selva Atlantica",
       "especies": 300,
       "destacado": false,
-      "imgD": "img/DT9.jpg"
+      "imgD": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/DT9.jpg?alt=media&token=3e5ec858-73c5-48c5-916b-aec1243cb4d9"
     }
   ]
 }
