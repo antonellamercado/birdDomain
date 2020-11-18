@@ -1,5 +1,5 @@
 import React from 'react';
-import Harpia3 from '../../img/Harpia3.jpg';
+import Harpia3 from '../../img/DT1.jpg';
 import './HeroImg.css'
 
 export const HeroImg = () => {

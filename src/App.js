@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Switch,Route} from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
 //components
-import Map from './components/Maps/MapT1'
+// import Map from './components/Maps/MapT3'
 import Header from './components/Header/Header';
 //views
 import Home from './views/Home/Home';
