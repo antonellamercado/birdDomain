@@ -3,3 +3,10 @@
 }
 
 .leaflet-container {  width: 100vw;  height: 100vh; }
+
+.home_separador{
+  background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+ /*background-color: black;*/
+  height: 20px;
+  display: block;
+}

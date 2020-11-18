@@ -15,7 +15,7 @@
           "title": "Patagonia - El Chalten",
           "body": "Asthenes maculicauda - Sp endemica",
           "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour4.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b",
-          "price": "1500U$",
+          "price": 1500,
           "dias": 7,
           "especies": 300
         },

@@ -1,0 +1,10 @@
+.detalle_imagen{
+    border-radius: 10%;
+    box-shadow: 8px 10px 8px black;
+}
+
+.detalle_descripcion{
+    font-style: italic;
+    z-index: 5;
+    font-size: 1em;
+}

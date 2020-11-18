@@ -11,12 +11,12 @@ import '../Carrousel/Carrousel.css'
 const Carrousel = ({history, location, match}) => {
 
 const [tours, setTours] = useState([
-{ id: '',
+   { id: '',
     title: '',
     body: '',
     img: '',
     map: '',
-    price: '',
+    price: 0,
     dias: 0,
     Ecoregiones:'',
     especies:0}
@@ -37,8 +37,8 @@ useEffect(()=>{
     return (
         <div className="carousel-wrapper">
             <Carousel showStatus={true} showThumbs={false}
-                centerMode={true} infiniteLoop={true} 
-                centerSlidePercentage={35} autoPlay={true} onClickItem>
+             centerMode={true} infiniteLoop={true} 
+             centerSlidePercentage={35} autoPlay={true} onClickItem>
                 {                                
                     tours.length === 0 ? 'No hay Tours disponible' : 
                     (tours.map((tour, index) => 

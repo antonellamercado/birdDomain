@@ -9,7 +9,9 @@ const Home = () => (
     
     <Link to = '/'>
         <HeroImg/>
+        <div className="home_separador"></div>
         <Carrousel/>
+        <div className="home_separador"></div>
         <Galeria/>
         <div className="bg-secondary p-4">Publicidad</div>
     </Link>

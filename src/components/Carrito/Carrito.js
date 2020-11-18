@@ -82,7 +82,7 @@ const Carrito = () => {
                     </div>
                     <div>
                         <Link to = '/Checkout'>
-                            <button className="btn btn-success">Finalisar Compras</button>
+                            <button className="btn btn-success">Finalizar Compras</button>
                         </Link>
                     </div>
                 </div>
