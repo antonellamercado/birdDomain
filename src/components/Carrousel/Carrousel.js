@@ -8,7 +8,7 @@ import clienteAxios from '../../config/axios';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import '../Carrousel/Carrousel.css'
 
-const Carrousel = () => {
+const Carrousel = ({history, location, match}) => {
 
 const [tours, setTours] = useState([
    { id: '',
@@ -42,7 +42,7 @@ useEffect(()=>{
                 {                                
                     tours.length === 0 ? 'No hay Tours disponible' : 
                     (tours.map((tour, index) => 
-                        <Link>
+                        <Link to={`/Tours/:${tour.id}`}>
                         <div key={index} className="carrousel_cont">
                             <img src={tour.img}  alt="img-tour"/>
                             <p className="legend carrousel_legend">{tour.title}</p>
