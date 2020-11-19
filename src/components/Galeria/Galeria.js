@@ -27,14 +27,13 @@ useEffect(()=>{
 
 
     return (
-<div  className='row d-flex'>
-<div className='col-xl-3 col-lg-3 col-md-6 col-sm-12'>
+<div  className='cardContainer d-flex justify-content-center row mx-0'>
+
                 {                             
                     galeria.length === 0 ? 'No hay Aves disponible' : 
-                    (galeria.map((ave, index) => 
-
-                        <Link>
-                        <Card >
+                    (galeria.map((ave, index) =>
+                        <Link className="ml-3 mr-3 mb-3 newCardsResults col-xs-12 col-sm-12 col-md-6 col-lg-3">
+                        <Card>
                         <CardBody>
                             <div key={index} className="">
                                 <CardImg className="" width="20%" src={ave.img}  alt="img-aves"/>
@@ -47,7 +46,7 @@ useEffect(()=>{
                         </Link> 
                     ))
                 } 
-</div>          
+        
 </div>
             );
 }
