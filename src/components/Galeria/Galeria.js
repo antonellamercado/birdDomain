@@ -27,7 +27,7 @@ useEffect(()=>{
 
 
     return (
-<div  className='row  resultContainer'>
+<div  className='row d-flex'>
 <div className='col-xl-3 col-lg-3 col-md-6 col-sm-12'>
                 {                             
                     galeria.length === 0 ? 'No hay Aves disponible' : 
