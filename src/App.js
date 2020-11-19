@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Switch,Route} from 'react-router-dom';
 //import logo from './logo.svg';
 import './App.css';
 //components
-//import Map from './components/Maps/MapT1'
+// import Map from './components/Maps/MapT1'
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 //views
@@ -13,7 +13,7 @@ import Contacto from './views/Contacto/Contacto';
 import Favoritos from './views/Favoritos/Favoritos';
 import Carrito from './components/Carrito/Carrito';
 import DetalleTour from './views/DetalleTour/DetalleTour';
-
+import RecoverPass from './views/RecoverPass/RecoverPass';
 
 
 
@@ -31,6 +31,7 @@ function App() {
           <Route path="/Contacto" exact component={Contacto}></Route>
           <Route path="/Favorito" exact component={Favoritos}></Route>
           <Route path="/Carrito" exact component={Carrito}></Route>
+          <Route path="/Recover" exact component={RecoverPass}></Route>
         </Switch>
       </div>
       <Footer/>

@@ -12,3 +12,9 @@
     display:flex;
     justify-content: space-between;
 }
+
+.cardContainer {  
+    margin-top: 1cm;
+    display:flex;
+    justify-content: space-between;
+    }
