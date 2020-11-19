@@ -1,9 +1,8 @@
 import React from 'react';
 import {Modal, Button, Form} from 'react-bootstrap';
-import {Link} from 'react-router-dom';
-import img from '../../img/Fig3.jpg'
-import './ModalCuenta.css'
-
+import {Link, useHistory} from 'react-router-dom';
+import img from '../../img/Fig3.jpg';
+import './ModalCuenta.css';
 
 
 export const ModalIng = (props) => {
