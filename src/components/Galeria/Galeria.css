@@ -3,7 +3,12 @@
 }
 
 .galeria_imagen{
-    width:40%;
-    height: 40%;
+    width:30%;
+    height: 30%;
 
+}
+
+.resultContainer{
+    display:flex;
+    justify-content: space-between;
 }

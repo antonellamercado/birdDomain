@@ -27,25 +27,28 @@ useEffect(()=>{
 
 
     return (
-        <div>
-  <Card>
-                {                               
+<div  className='row  resultContainer'>
+<div className='col-xl-3 col-lg-3 col-md-6 col-sm-12'>
+                {                             
                     galeria.length === 0 ? 'No hay Aves disponible' : 
                     (galeria.map((ave, index) => 
+
                         <Link>
+                        <Card >
                         <CardBody>
                             <div key={index} className="">
-                                <CardImg className="galeria_imagen " width="20%" src={ave.img}  alt="img-aves"/>
+                                <CardImg className="" width="20%" src={ave.img}  alt="img-aves"/>
                                 <div className="card-img-overlay">
                                 <CardTitle className="text-muted">{ave.title}</CardTitle>
                                 </div>
                             </div>
                         </CardBody>
+                        </Card>
                         </Link> 
                     ))
-                }     
-</Card>
-        </div>
+                } 
+</div>          
+</div>
             );
 }
 
