@@ -6,6 +6,7 @@ import './App.css';
 // import Map from './components/Maps/MapT1'
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
+import Layout from './components/Layout/Layout';
 //views
 import Home from './views/Home/Home';
 import Destacado from './views/Destacado/Destacado';
@@ -22,7 +23,7 @@ function App() {
   return (
     <div className="App">
     <Router>
-      <Header/>
+      <Layout>
       <div className="app">
         <Switch>
           <Route path="/" exact component={Home}></Route>
@@ -34,7 +35,7 @@ function App() {
           <Route path="/recover" exact component={RecoverPass}></Route>
         </Switch>
       </div>
-      <Footer/>
+      </Layout>
     </Router>
     
     </div>
