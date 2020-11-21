@@ -27,11 +27,11 @@ getGaleria();
                     galeria.length === 0 ? <p>No hay Aves disponible</p> : 
                     (galeria.map((ave, index) =>
                         <Link className=" col-xs-12 col-sm-12 col-md-4 col-lg-3 m-0 p-0">
-                        <Card className="p-0 -m0">
+                        <Card className="p-0 -m0 card-ave">
                         <CardBody  className="p-0 -m0">
                             <div key={index} className="">
                                 <CardImg className="imagen_pequeña" src={ave.img}  alt="img-aves"/>
-                                <div className="">
+                                <div className="p-0 -m0">
                                 <CardTitle className="detalle_ave">{ave.title}</CardTitle>
                                 </div>
                             </div>
