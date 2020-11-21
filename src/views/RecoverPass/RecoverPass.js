@@ -1,19 +1,26 @@
+
 import React from 'react';
 import './RecoverPass.css'
 import {Form, Button} from 'react-bootstrap';
 import img from '../../img/DT9.jpg'
+import {useHistory} from 'react-router-dom';
+
+
 
  const RecoverPass = () => {
-    const handleOnClick = e => {
-        e.preventDefault();
-        console.log("funciona")
-    }
+    const history = useHistory();
 
+    function handleClick(e) {
+        e.preventDefault();
+        console.log('The link was clicked.');
+        alert("Se ha enviado una notificacion al email provisto")
+        history.push("/");
+      }
 
     return (
         <>
         <div className="recoverBg">
-            <Form  className="mt-0 mb-2" id="form">
+            <form  className="mt-0 mb-2" id="form">
             <h3>Recupera tu contraseña</h3>
             <div className="form-group">
                 <label for="username" className="mt-0 mr-sm-2">Coloca tu email y te enviaremos los pasos a seguir</label>
@@ -22,9 +29,9 @@ import img from '../../img/DT9.jpg'
                 <div id="error"></div>
                 <br></br>
                 <br></br>
-                <Button onClick={handleOnClick}>Enviar email</Button>
+                <Button type="submit" onClick={ handleClick }>Enviar email</Button>
             </div>
-        </Form> 
+        </form> 
         <div>
         </div>
         <img className="container" src={img}></img>
@@ -35,3 +42,22 @@ import img from '../../img/DT9.jpg'
 }
 
 export default RecoverPass;
+
+
+// async function handleOnSubmit(e) {
+//     e.preventDefault();
+//     try {
+//       await Auth.signIn(email, password);
+//       userHasAuthenticated(true);
+//       history.push("/");
+//     } catch (e) {
+//       alert(e.message);
+//     }
+  // const history = useHistory();
+    
+
+    // const handleOnclick = e => {
+    //     e.preventDefault();
+    //     history.push("/");
+    //                 }
+    //onClick={handleOnclick}
