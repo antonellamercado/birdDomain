@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 const Contacto = () => {
 
     return (
-        <Link to = '/Contacto'>
+        <Link to = '/contacto'>
             <div>Contacto</div>
         </Link>
     );

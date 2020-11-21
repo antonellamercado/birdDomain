@@ -10,17 +10,7 @@ import '../Carrousel/Carrousel.css'
 
 const Carrousel = ({history, location, match}) => {
 
-const [tours, setTours] = useState([
-   { id: '',
-    title: '',
-    body: '',
-    img: '',
-    map: '',
-    price: 0,
-    dias: 0,
-    Ecoregiones:'',
-    especies:0}
-]);
+const [tours, setTours] = useState([]);
 
 useEffect(()=>{
     const getTour = async ()=>{
@@ -31,7 +21,7 @@ useEffect(()=>{
     }
     getTour();
     },[]);
-    console.log(tours);
+ 
 
 
     return (
@@ -40,9 +30,9 @@ useEffect(()=>{
              centerMode={true} infiniteLoop={true} 
              centerSlidePercentage={35} autoPlay={true} onClickItem>
                 {                                
-                    tours.length === 0 ? 'No hay Tours disponible' : 
+                    tours.length === 0 ? <p>'No hay Tours disponible' </p>: 
                     (tours.map((tour, index) => 
-                        <Link to={`/Tours/${tour.id}`}>
+                        <Link to={`/tours/${tour.id}`}>
                         <div key={index} className="carrousel_cont">
                             <img src={tour.img}  alt="img-tour"/>
                             <p className="legend carrousel_legend">{tour.title}</p>

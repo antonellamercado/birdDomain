@@ -15,9 +15,8 @@ import Map from '../../components/Maps/MapT1';
 
 
 const DetalleTour = ({match, history}) => {
-    const idp = match.params.id;
-    console.log('idp', idp);
-    const [tour, setTour] = useState([{
+    const idtour = match.params.id;
+    const [tour, setTour] = useState({
         id: '',
         title: '',
         body: '',
@@ -27,7 +26,7 @@ const DetalleTour = ({match, history}) => {
         dias: 0,
         Ecoregiones:'',
         especies:0
-    }]);
+    });
 
     useEffect(()=>{
         const getTourByID = async id  =>{
@@ -37,13 +36,12 @@ const DetalleTour = ({match, history}) => {
         console.log('response',response.data);
         });
         }
-        getTourByID(idp);
+        getTourByID(idtour);
         }, []);
-    console.log('tour',tour);
+
 
 return (
-<div>
-                {                                
+<div>                                 
                     <div className='row'>
                         <Card>
                             <CardBody>
@@ -62,9 +60,7 @@ return (
                             <Button className='my-3 d-block mx-auto'>Comprar</Button>
                             </CardBody>
                         </Card>
-                        </div>    
-                    
-                }     
+                        </div>                 
 </div>
 );
 }

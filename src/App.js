@@ -26,12 +26,12 @@ function App() {
       <div className="app">
         <Switch>
           <Route path="/" exact component={Home}></Route>
-          <Route path="/Tours/:id" exact component={DetalleTour}></Route>
-          <Route path="/Destacado" exact component={Destacado}></Route>
-          <Route path="/Contacto" exact component={Contacto}></Route>
-          <Route path="/Favorito" exact component={Favoritos}></Route>
-          <Route path="/Carrito" exact component={Carrito}></Route>
-          <Route path="/Recover" exact component={RecoverPass}></Route>
+          <Route path="/tours/:id" exact component={DetalleTour}></Route>
+          <Route path="/destacado" exact component={Destacado}></Route>
+          <Route path="/contacto" exact component={Contacto}></Route>
+          <Route path="/favorito" exact component={Favoritos}></Route>
+          <Route path="/carrito" exact component={Carrito}></Route>
+          <Route path="/recover" exact component={RecoverPass}></Route>
         </Switch>
       </div>
       <Footer/>

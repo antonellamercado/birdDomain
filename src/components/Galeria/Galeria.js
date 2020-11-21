@@ -33,7 +33,11 @@ console.log(galeria);
 
 
     return (
-        <div  className='cardContainer d-flex justify-content-center row mx-0'>
+
+        <div className="d-flex justify-content-center row mx-0">
+          <ImagenMediana/>  
+          <div  className='cardContainer col-lg-6 flex-wrap'>
+           
                 {                             
                     galeria.length === 0 ? 'No hay Aves disponible' : 
                     (galeria.map((ave, index) =>
@@ -41,7 +45,7 @@ console.log(galeria);
                         <Card>
                         <CardBody>
                             <div key={index} className="">
-                                <CardImg className="" width="20%" src={ave.img}  alt="img-aves"/>
+                                <CardImg className="" width="10%" src={ave.img}  alt="img-aves"/>
                                 <div className="card-img-overlay">
                                 <CardTitle className="detalle_ave">{ave.title}</CardTitle>
                                 </div>
@@ -51,8 +55,10 @@ console.log(galeria);
                         </Link>         
                     ))      
                 } 
-                <ImagenMediana/>
-</div>
+             
+        </div>
+        </div>
+        
             );
 }
 
