@@ -1,0 +1,12 @@
+.detalle_ave{
+    background: rgba(12, 11, 11, 0.3);
+    color: white;
+    font-style: bold;
+    height: 30px;
+    }
+
+    .imagen_pequeña{
+        width:30%;
+        height: 30%;
+    }
+    
