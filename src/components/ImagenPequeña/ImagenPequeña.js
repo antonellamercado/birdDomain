@@ -10,7 +10,7 @@ import {Card, CardBody, CardImg, CardTitle} from 'reactstrap';
 const ImagenPequeña = () => {
 
 
-const [galeria, setGaleria] = useState([{}]);
+const [galeria, setGaleria] = useState([]);
 useEffect(()=>{
     const getGaleria = async ()=>{
     await clienteAxios.get("/Aves")
@@ -22,7 +22,7 @@ getGaleria();
 },[]);
 
     return (
-        <div className="d-flex row flex-wrap col-lg-6 col-md-6">
+        <div className="d-flex row flex-wrap col-lg-6 col-md-6 mt-5">
                 {                             
                     galeria.length === 0 ? <p>No hay Aves disponible</p> : 
                     (galeria.map((ave, index) =>
