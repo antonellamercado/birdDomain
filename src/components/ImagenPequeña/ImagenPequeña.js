@@ -31,8 +31,8 @@ getGaleria();
                         <CardBody  className="p-0 -m0">
                             <div key={index} className="">
                                 <CardImg className="imagen_pequeña" src={ave.img}  alt="img-aves"/>
-                                <div className="p-0 -m0">
-                                <CardTitle className="detalle_ave">{ave.title}</CardTitle>
+                                <div className="p-0 m-0">
+                                <CardTitle className="detalle_ave p-0 m-0">{ave.title}</CardTitle>
                                 </div>
                             </div>
                         </CardBody>
