@@ -32,7 +32,7 @@ function App() {
           <Route path="/destacado" exact component={Destacado}></Route>
           <Route path="/contacto" exact component={Contacto}></Route>
           <Route path="/favorito" exact component={Favoritos}></Route>
-          <Route path="/carrito" exact component={Cart}></Route>
+          <Route path="/cart" exact component={Cart}></Route>
           <Route path="/recover" exact component={RecoverPass}></Route>
           <Route path="/panelAdmin" exact component={PanelAdmin}></Route>
         </Switch>

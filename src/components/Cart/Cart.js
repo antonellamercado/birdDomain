@@ -49,15 +49,13 @@ const Cart = () => {
         let i=0;
         for(i=0;i<products.length;i++){
             if(id===products[i].id){
-                return (products[i].id)
-                //return true
-            }//else {
-                //return false
-            //}
+                return (products[i].id)       
+            }
         }
     }
     return (
-        <>                               
+        <> 
+            <div id="buyBag">                              
             <div className="d-flex justify-content-end my-4 mr-5">
                 <i className="fas fa-shopping-bag d-flex" onClick={buyListOnOff}>
                     {
@@ -66,11 +64,11 @@ const Cart = () => {
                 </i>
             </div>
             { cartList===false?null:
-                <div className="d-inline">
+                <div className="listCart px-2">
                     {
                         products.length === 0 ? 'No hay productos' : (
                             products.map((product, index) => 
-                                <div key={index} className="d-flex justify-content-end my-3 mr-5">
+                                <div key={index} className="d-flex justify-content-end my-3">
                                     <div >
                                         <p className="priceProduct" value={product.price}>{product.title} - {product.price}U$D</p>
                                     </div>
@@ -93,28 +91,29 @@ const Cart = () => {
                     </div>
                 </div>
             }
+            </div>
             <div className="container">
                 <div>
                     {
                         tours.length === 0 ?  "No hay tours": (
                             tours.map((tour, index) => 
-                                <div key={index}>
-                                    <div id={tour.id} className="card mb-3">
-                                        <h4 id={tour.title} className="card-header">{tour.title}</h4>
-                                        <img src={tour.img} className="card-img-top" alt="..."/>
-                                        <div className="card-body">
-                                            <h5 className="card-title">{tour.body}</h5>
-                                            <p className="card-text">Precio por persona: {tour.price}</p>
-                                            <p className="card-text">Duracion del Tour: {tour.dias}</p>                               
-                                        </div>
-                                        <div className="card-footer">
-                                            {
-                                                checkBuy(tour.id)!==tour.id || checkBuy(tour.id)==null?<button id={tour.id} className="btn btn-success" onClick={ e =>{updateProduct(tour)} }>Buy Tour</button>:
-                                                <button className="btn btn-success disabled">Comprado</button>
-                                            }
-                                            
-                                        </div>
-                                    </div>
+                                <div  key={index}>
+                                        <div className="card bg-dark text-white my-4 cardsTour">
+                                            <img src={tour.img} className="card-img" alt="..."/>
+                                            <div className="card-img-overlay d-flex flex-column-reverse text-left">
+                                                <Link to={`/tours/${tour.id}`} className="text-warning">                             
+                                                <h5 className="card-title">{tour.title}</h5>
+                                                </Link>
+                                                <p className="card-text">Precio por persona: {tour.price}U$D</p>
+                                                <p className="card-text">Duracion del Tour: {tour.dias}</p>                                  
+                                                <div className="btnBuyTour">
+                                                    {
+                                                        checkBuy(tour.id)!==tour.id || checkBuy(tour.id)==null?<button id={tour.id} className="btn btn-success" onClick={ e =>{updateProduct(tour)} }>Buy Tour</button>:
+                                                        <button className="btn btn-success disabled">Comprado</button>
+                                                    }                                             
+                                                </div>                                    
+                                            </div>
+                                        </div>                                                                
                                 </div>
                             )
                         )

@@ -7,7 +7,7 @@ import logo from './logo.png';
 function Footer () {
     return ( 
         <>
-            <div className="row" id="footer-container">
+            <div className="row mt-4" id="footer-container">
             <div className="col-sm-12 col-md-3 container-social-media">
                     <h4>Bird's Domain</h4>
                     <img src={logo} className="logo" alt="Logo"/>
