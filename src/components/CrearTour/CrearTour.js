@@ -1,13 +1,24 @@
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
+//estilo
 import '../CrearTour/CrearTour.css';
+//libreria
 import {Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Label, Input, Row, Col} from 'reactstrap';
-
+//config
+import clienteAxios from '../../config/axios';
 const CrearTour = () => {
     const [modal, setModal] = useState(false);
     const [nuevoTour, setNuevoTour] = useState({});
     const toggle = () => setModal(!modal);
 //const   showModalCrearTour = () => {
-
+    useEffect (()=> { 
+        const postNewTour = async()  =>{
+            await clienteAxios.post("/Tours")
+            .then(response =>{
+            setNuevoTour(response.data)
+            });
+            }
+            postNewTour();         
+        },[]);
 
 
     return (
@@ -26,7 +37,7 @@ const CrearTour = () => {
                         <Input type="textarea"></Input>
                     </FormGroup>
                     <FormGroup>
-                        <Label>Imagen Tour</Label>
+                        <Label>Imagen Portada Tour</Label>
                         <Input type="text"></Input>
                     </FormGroup>
                     <FormGroup>

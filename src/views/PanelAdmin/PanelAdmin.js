@@ -25,8 +25,11 @@ const PanelAdmin = () => {
         console.log('tour desde admin', listaAve);
     return(
         <>
+        <p className="text-dark font-weight-bold t-2">Bienvenido al panel de administracion.
+            Aqui podra <em className="initialism">Crear</em> nuevos tours, <em className="initialism">Editar</em> los mismos y cambiar la imagen destacada de la pagina principal, ademas de <em className="initialism">Eliminar</em> tours obsoletos.
+        </p>
         <Table dark bordered hover responsive>
-            <thead>
+            <thead className="h2 initialism">
                 <tr>
                 <th>Nombre</th>
                 <th>Ecoregion</th>
