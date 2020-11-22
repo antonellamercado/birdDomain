@@ -16,17 +16,7 @@ import Map from '../../components/Maps/MapT1';
 
 const DetalleTour = ({match, history}) => {
     const idtour = match.params.id;
-    const [tour, setTour] = useState({
-        id: '',
-        title: '',
-        body: '',
-        img: '',
-        map: '',
-        price: 0,
-        dias: 0,
-        Ecoregiones:'',
-        especies:0
-    });
+    const [tour, setTour] = useState({});
 
     useEffect(()=>{
         const getTourByID = async id  =>{

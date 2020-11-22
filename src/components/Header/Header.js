@@ -14,6 +14,7 @@ import ModalIng from '../ModalIng/Modalng'
 import ModalReg from '../ModalReg/ModalReg';
 
 
+
 const Header = () => {
     const [modalShow, setModalShow] = React.useState(false);
     const [modalShowIng, setModalShowIng] = React.useState(false);
@@ -49,17 +50,16 @@ const Header = () => {
             <Nav className="ml-auto d-flex justify-content-around">
             
             <SearchBar/>
-           
                 <Link to = '/'>
                 <li className="nav-links-links">Home</li>
                 </Link>
-                <Link to = '/Destacado'>
+                <Link to = '/destacado'>
                 <li className="nav-links-links">Destacado</li>
                 </Link>
-                <Link to = '/Contacto'>
+                <Link to = '/contacto'>
                 <li className="nav-links-links">Contacto</li>
                 </Link>
-                <Link to = '/Favoritos'>
+                <Link to = '/favoritos'>
                 <li className="nav-links-links"><FontAwesomeIcon  icon={faStar} /></li>
                 </Link>
                 <Link to = '/Carrito'>
@@ -67,8 +67,8 @@ const Header = () => {
                 </Link>
                 <div className="nav-links-links" onClick={() => setModalShow(true)}><FontAwesomeIcon  icon={faQuestionCircle} /></div>           
                 <HelpModal
-                 show={modalShow}
-                 onHide={() => setModalShow(false)}
+                  show={modalShow}
+                  onHide={() => setModalShow(false)}
                 />
             </Nav>
           </Navbar.Collapse>

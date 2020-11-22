@@ -4,8 +4,8 @@ import {BrowserRouter as Router, Switch,Route} from 'react-router-dom';
 import './App.css';
 //components
 // import Map from './components/Maps/MapT1'
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
+//import Header from './components/Header/Header';
+//import Footer from './components/Footer/Footer';
 import Layout from './components/Layout/Layout';
 //views
 import Home from './views/Home/Home';
@@ -15,6 +15,8 @@ import Favoritos from './views/Favoritos/Favoritos';
 import Carrito from './components/Carrito/Carrito';
 import DetalleTour from './views/DetalleTour/DetalleTour';
 import RecoverPass from './views/RecoverPass/RecoverPass';
+import PanelAdmin from './views/PanelAdmin/PanelAdmin';
+
 
 
 
@@ -33,6 +35,7 @@ function App() {
           <Route path="/favorito" exact component={Favoritos}></Route>
           <Route path="/carrito" exact component={Carrito}></Route>
           <Route path="/recover" exact component={RecoverPass}></Route>
+          <Route path="/panelAdmin" exact component={PanelAdmin}></Route>
         </Switch>
       </div>
       </Layout>

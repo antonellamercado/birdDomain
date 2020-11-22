@@ -176,7 +176,7 @@
       "map": "img/map1.jpg",
       "price": 400,
       "dias": 4,
-      "Ecoregiones": "Yungas",
+      "ecoregiones": "Yungas",
       "especies": 300,
       "destacado": true,
       "imgD": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/DT1.jpg?alt=media&token=3e5ec858-73c5-48c5-916b-aec1243cb4d9"
@@ -189,7 +189,7 @@
       "map": "img/map2.jpg",
       "price": 500,
       "dias": 7,
-      "Ecoregiones": "Yungas",
+      "ecoregiones": "Yungas",
       "especies": 300,
       "destacado": false,
       "imgD": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/DT2.jpg?alt=media&token=3e5ec858-73c5-48c5-916b-aec1243cb4d9"
@@ -202,7 +202,7 @@
       "map": "img/map3.jpg",
       "price": 700,
       "dias": 7,
-      "Ecoregiones": "Prepuna y puna",
+      "ecoregiones": "Prepuna y puna",
       "especies": 300,
       "destacado": false,
       "imgD": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/DT3.jpg?alt=media&token=3e5ec858-73c5-48c5-916b-aec1243cb4d9"
@@ -215,7 +215,7 @@
       "map": "img/map4.jpg",
       "price": 1500,
       "dias": 7,
-      "Ecoregiones": "Patagonia",
+      "ecoregiones": "Patagonia",
       "especies": 300,
       "destacado": false,
       "imgD": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/DT4.jpg?alt=media&token=3e5ec858-73c5-48c5-916b-aec1243cb4d9"
@@ -228,7 +228,7 @@
       "map": "img/map5.jpg",
       "price": 1500,
       "dias": 7,
-      "Ecoregiones": "Bosque y Mar",
+      "ecoregiones": "Bosque y Mar",
       "especies": 300,
       "destacado": false,
       "imgD": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/DT5.jpg?alt=media&token=3e5ec858-73c5-48c5-916b-aec1243cb4d9"
@@ -241,7 +241,7 @@
       "map": "img/map6.jpg",
       "price": 1500,
       "dias": 7,
-      "Ecoregiones": "Puna",
+      "ecoregiones": "Puna",
       "especies": 300,
       "destacado": false,
       "imgD": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/DT6.jpg?alt=media&token=3e5ec858-73c5-48c5-916b-aec1243cb4d9"
@@ -254,7 +254,7 @@
       "map": "img/map7.jpg",
       "price": 1500,
       "dias": 7,
-      "Ecoregiones": "Altos Andes y Desierto de Monte",
+      "ecoregiones": "Altos Andes y Desierto de Monte",
       "especies": 300,
       "destacado": false,
       "imgD": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/DT7.jpg?alt=media&token=3e5ec858-73c5-48c5-916b-aec1243cb4d9"
@@ -267,7 +267,7 @@
       "map": "img/map8.jpg",
       "price": 1500,
       "dias": 7,
-      "Ecoregiones": "Humedales",
+      "ecoregiones": "Humedales",
       "especies": 300,
       "destacado": false,
       "imgD": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/DT8.jpg?alt=media&token=3e5ec858-73c5-48c5-916b-aec1243cb4d9"
@@ -280,7 +280,7 @@
       "map": "img/map9.jpg",
       "price": 1500,
       "dias": 7,
-      "Ecoregiones": "Selva Atlantica",
+      "ecoregiones": "Selva Atlantica",
       "especies": 300,
       "destacado": false,
       "imgD": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/DT9.jpg?alt=media&token=3e5ec858-73c5-48c5-916b-aec1243cb4d9"

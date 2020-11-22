@@ -7,7 +7,9 @@ import '../Contacto/Contacto.css'
 
 
 const Contacto = () => {
-
+const cleanInput = () =>{
+    Input.value = "";
+}
     return (
     <Link to = '/contacto'>
         <Form className="formulario_contacto">
@@ -56,7 +58,7 @@ const Contacto = () => {
             <Label className="formulario_label" for="mensaje">Escribe tu mensaje</Label>
             <Input className="formulario_input" type="textarea" name="mensaje" id="mensaje" />
         </FormGroup>
-        <Button className="formulario_boton">Enviar</Button>
+        <Button className="formulario_boton" type="submit" onClick={cleanInput} >Enviar</Button>
         </Form>
         <div className="home_separador"></div>
         
