@@ -8,19 +8,9 @@ import clienteAxios from '../../config/axios';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import '../Carrousel/Carrousel.css'
 
-const Carrousel = () => {
+const Carrousel = ({history, location, match}) => {
 
-const [tours, setTours] = useState([
-   { id: '',
-    title: '',
-    body: '',
-    img: '',
-    map: '',
-    price: '',
-    dias: 0,
-    Ecoregiones:'',
-    especies:0}
-]);
+const [tours, setTours] = useState([]);
 
 useEffect(()=>{
     const getTour = async ()=>{
@@ -31,17 +21,19 @@ useEffect(()=>{
     }
     getTour();
     },[]);
-    console.log(tours);
+ 
 
 
     return (
-        <div className="carousel-wrapper carrousel_card">
-            <Carousel showStatus={true} showThumbs={false} centerMode={true} infiniteLoop={true}>
+        <div className="carousel-wrapper">
+            <Carousel showStatus={true} showThumbs={false}
+             centerMode={true} infiniteLoop={true} 
+             centerSlidePercentage={35} autoPlay={true} onClickItem>
                 {                                
-                    tours.length === 0 ? 'No hay Tours disponible' : 
+                    tours.length === 0 ? <p>'No hay Tours disponible' </p>: 
                     (tours.map((tour, index) => 
-                        <Link>
-                        <div key={index}>
+                        <Link to={`/tours/${tour.id}`}>
+                        <div key={index} className="carrousel_cont">
                             <img src={tour.img}  alt="img-tour"/>
                             <p className="legend carrousel_legend">{tour.title}</p>
                         </div>
