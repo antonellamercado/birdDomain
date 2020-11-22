@@ -7,6 +7,7 @@ import './App.css';
 //import Header from './components/Header/Header';
 //import Footer from './components/Footer/Footer';
 import Layout from './components/Layout/Layout';
+import Mapa from './components/Maps/Maps'
 //views
 import Home from './views/Home/Home';
 import Destacado from './views/Destacado/Destacado';
@@ -25,6 +26,8 @@ function App() {
     <div className="App">
     <Router>
       <Layout>
+      <Header/>
+      <Mapa/>
       <div className="app">
         <Switch>
           <Route path="/" exact component={Home}></Route>
