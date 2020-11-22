@@ -1,5 +1,5 @@
 .fa-shopping-bag {
-    color:#8fd3f4;
+    color: #f26522;
     border: none;
     background: none;
     text-align: center;
@@ -26,4 +26,7 @@
 }
 .fa-trash {
     font-size: 25px;
+}
+#listProducts{
+    border: 5px solid red;
 }

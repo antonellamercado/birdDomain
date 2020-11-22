@@ -12,7 +12,7 @@ import Home from './views/Home/Home';
 import Destacado from './views/Destacado/Destacado';
 import Contacto from './views/Contacto/Contacto';
 import Favoritos from './views/Favoritos/Favoritos';
-import Carrito from './components/Carrito/Carrito';
+import Cart from './components/Cart/Cart';
 import DetalleTour from './views/DetalleTour/DetalleTour';
 import RecoverPass from './views/RecoverPass/RecoverPass';
 import PanelAdmin from './views/PanelAdmin/PanelAdmin';
@@ -32,7 +32,7 @@ function App() {
           <Route path="/destacado" exact component={Destacado}></Route>
           <Route path="/contacto" exact component={Contacto}></Route>
           <Route path="/favorito" exact component={Favoritos}></Route>
-          <Route path="/carrito" exact component={Carrito}></Route>
+          <Route path="/carrito" exact component={Cart}></Route>
           <Route path="/recover" exact component={RecoverPass}></Route>
           <Route path="/panelAdmin" exact component={PanelAdmin}></Route>
         </Switch>
