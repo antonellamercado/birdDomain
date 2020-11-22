@@ -1,12 +1,11 @@
 import { useState, useEffect } from 'react';
 import axios from "axios";
 import {Link} from 'react-router-dom';
-import "../Carrito/Carrito.css"
+import "../Carrito/Carrito.css";
 
 const Carrito = () => {
     const [products, setProducts] = useState([]);
     const [tours, setTours] = useState([]);
-    const [totalPrice, setTotalPrice] = useState([])
 
     useEffect(()=>{
         const getBuys = async ()=>{
@@ -80,9 +79,9 @@ const Carrito = () => {
                     <div className="d-flex justify-content-end mr-4">
                         <p className="mt-2"><b>Total: {sumar()}U$D</b></p>
                     </div>
-                    <div>
-                        <Link to = '/Checkout'>
-                            <button className="btn btn-success">Finalisar Compras</button>
+                    <div>                   
+                        <Link to='/Checkout'>
+                            <button className="btn btn-success">Finalizar Compras</button>
                         </Link>
                     </div>
                 </div>

@@ -18,24 +18,6 @@
           "price": 400,
           "dias": 4,
           "especies": 300
-        },
-        {
-          "id": 2,
-          "title": "Yungas - Parque Nacional Aconquija",
-          "body": "Asthenes maculicauda - Sp endemica",
-          "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour2.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b",
-          "price": 1500,
-          "dias": 7,
-          "especies": 300
-        },
-        {
-          "id": 3,
-          "title": "Puna - Parque Nacional Los Cardones",
-          "body": "Asthenes maculicauda - Sp endemica",
-          "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour3.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b",
-          "price": 1500,
-          "dias": 7,
-          "especies": 300
         }
       ]
     },
