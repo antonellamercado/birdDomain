@@ -5,6 +5,10 @@ import { Table } from 'reactstrap';
 import clienteAxios from '../../config/axios';
 //estilo
 import '../PanelAdmin/PanelAdmin.css';
+//componente
+import CrearTour from '../../components/CrearTour/CrearTour';
+import EditarTour from '../../components/EditarTour/EditarTour';
+import EliminarTour from '../../components/EliminarTour/EliminarTour';
 
 const PanelAdmin = () => {
     const [listaAve, setListaAve] = useState([]);
@@ -20,7 +24,8 @@ const PanelAdmin = () => {
 
         console.log('tour desde admin', listaAve);
     return(
-        <Table dark bordered hover>
+        <>
+        <Table dark bordered hover responsive>
             <thead>
                 <tr>
                 <th>Nombre</th>
@@ -47,6 +52,10 @@ const PanelAdmin = () => {
               ))
             }
         </Table>
+        <CrearTour/>
+        <EditarTour/>
+        <EliminarTour/>
+        </>
     );
 }
 
