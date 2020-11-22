@@ -1,5 +1,6 @@
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
+import Banner from '../Publicidad/Banner'
 
 const Layout = ({children}) => {
 
@@ -9,6 +10,7 @@ const Layout = ({children}) => {
         <div>
             {children}
         </div>
+        <Banner/>
         <Footer/>
     </>
     )
