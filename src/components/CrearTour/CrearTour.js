@@ -5,10 +5,12 @@ import '../CrearTour/CrearTour.css';
 import {Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Label, Input, Row, Col} from 'reactstrap';
 //config
 import clienteAxios from '../../config/axios';
+
 const CrearTour = () => {
     const [modal, setModal] = useState(false);
     const [nuevoTour, setNuevoTour] = useState({});
     const toggle = () => setModal(!modal);
+
 
     const handleOnChange = e => {
         setNuevoTour({
@@ -18,26 +20,20 @@ const CrearTour = () => {
     }
     console.log('nuevo tour', nuevoTour);
 //const   showModalCrearTour = () => {
-    const handleOnSubmit = async e => {
+    const handleOnClick = async e => {
         e.preventDefault();
-        try {
-            await clienteAxios.post('/Tours', {nuevoTour})
-            .then(response =>{
-            console.log('nuevo post', response.data)
-            } )
+           const result = await clienteAxios.post('/Tours', nuevoTour);
+            console.log(result);
         }
-        catch (error) {
-            console.log(error.response);
-        }
-    } 
+    
         
     return (
     <>
-        <Button onClick={toggle}>Crear tour</Button>
+        <Button className="p-3"onClick={toggle}>Crear Nuevo tour</Button>
         <Modal isOpen={modal} toggle={toggle} className="formulario_modal">
             <ModalHeader toggle={toggle}>Nuevo Tour</ModalHeader>
             <ModalBody className="formulario_modal">
-                <Form className="formulario_modal  m-1 p-2" onSubmit={handleOnSubmit}>
+                <Form className="formulario_modal  m-1 p-2" onClick={handleOnClick}>
                     <FormGroup>
                         <Label>Titulo</Label>
                         <Input type="text" name="title" onChange={handleOnChange}></Input>

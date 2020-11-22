@@ -1,0 +1,9 @@
+.title-panelAdmin{
+    background: rgba(12, 11, 11, 0.2);
+    display: inline;
+    width: 20px;
+}
+
+.title-panelAdmin p {
+    font-size: 30px;
+}
