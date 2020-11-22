@@ -62,7 +62,7 @@ const Header = () => {
                 <Link to = '/favoritos'>
                 <li className="nav-links-links"><FontAwesomeIcon  icon={faStar} /></li>
                 </Link>
-                <Link to = '/Carrito'>
+                <Link to = '/cart'>
                 <li className="nav-links-links"><FontAwesomeIcon  icon={faShoppingCart} /></li>
                 </Link>
                 <div className="nav-links-links" onClick={() => setModalShow(true)}><FontAwesomeIcon  icon={faQuestionCircle} /></div>           
