@@ -11,8 +11,8 @@
 }
 
 .logo{
-    width: 70px; 
-    height: 90px; 
+    width: 100px; 
+    height: auto; 
     margin-left:20px;
     display:flex;
  } 
