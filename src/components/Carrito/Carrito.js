@@ -89,7 +89,7 @@ const Carrito = () => {
             <div className="container">
                 <div>
                     {
-                        tours.length === 0 ? "No hay tours": (
+                        tours.length === 0 ?  "No hay tours": (
                             tours.map((tour, index) => 
                                 <div key={index}>
                                     <div id={tour.id} className="card mb-3">

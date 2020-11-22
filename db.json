@@ -11,6 +11,15 @@
       "favoritos": [],
       "buys": [
         {
+          "id": 4,
+          "title": "Patagonia - El Chalten",
+          "body": "Asthenes maculicauda - Sp endemica",
+          "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour4.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b",
+          "price": 1500,
+          "dias": 7,
+          "especies": 300
+        },
+        {
           "id": 1,
           "title": "Yungas - Parque Nacional Calilegua",
           "body": "El parque nacional Calilegua es un área natural protegida situada sobre las faldas orientales de la sierra de Calilegua, en el sudeste de la provincia de Jujuy en el noroeste de la República Argentina. Es una zona fantastica que permite visualizar un imponente y pristino paisaje",
@@ -149,96 +158,114 @@
       "map": "img/map1.jpg",
       "price": 400,
       "dias": 4,
-      "Ecoregiones": "Yungas",
-      "especies": 300
+      "ecoregiones": "Yungas",
+      "especies": 300,
+      "destacado": true,
+      "imgD": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/DT1.jpg?alt=media&token=3e5ec858-73c5-48c5-916b-aec1243cb4d9"
     },
     {
       "id": 2,
       "title": "Yungas - Parque Nacional Aconquija",
-      "body": "Asthenes maculicauda - Sp endemica",
+      "body": "El parque nacional Aconquija es un área natural protegida de Argentina creada en la provincia de Tucumán. En una misma ruta se puede recorrer diferentes estratos altitudinales percibiendo como cambia la vegetacion junto a las aves que alli habitan",
       "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour2.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b",
       "map": "img/map2.jpg",
-      "price": 1500,
+      "price": 500,
       "dias": 7,
-      "Ecoregiones": "Yungas",
-      "especies": 300
+      "ecoregiones": "Yungas",
+      "especies": 300,
+      "destacado": false,
+      "imgD": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/DT2.jpg?alt=media&token=3e5ec858-73c5-48c5-916b-aec1243cb4d9"
     },
     {
       "id": 3,
       "title": "Puna - Parque Nacional Los Cardones",
-      "body": "Asthenes maculicauda - Sp endemica",
+      "body": "El parque nacional Los Cardones (legalmente parque y reserva nacional Los Cardones) se encuentra cerca de la localidad de Payogasta en la región centro-sur de la provincia de Salta en Argentina. Es un ambiente de sierras secas, con altitudes de entre los 2600 msnm  hasta los 5226 msnm. El parque toma su nombre de la gran cantidad de ejemplares de cardón o pasacana (Trichocereus pasacana), una especie característica de los valles interandinos del sur de Bolivia y norte de Argentina y de Chile",
       "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour3.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b",
       "map": "img/map3.jpg",
-      "price": 1500,
+      "price": 700,
       "dias": 7,
-      "Ecoregiones": "Prepuna y puna",
-      "especies": 300
+      "ecoregiones": "Prepuna y puna",
+      "especies": 300,
+      "destacado": false,
+      "imgD": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/DT3.jpg?alt=media&token=3e5ec858-73c5-48c5-916b-aec1243cb4d9"
     },
     {
       "id": 4,
       "title": "Patagonia - El Chalten",
-      "body": "Asthenes maculicauda - Sp endemica",
+      "body": "El Chaltén es una villa del Parque Nacional Los Glaciares, en la provincia argentina de Santa Cruz. Es una vía de acceso a los senderos que rodean las cimas del cerro Torre y el Monte Fitz Roy al noroeste. Cerca de Fitz Roy hay un sendero que llega al mirador Laguna de los Tres. Aqui se pueden observar aves y un imponente paisaje Glaciar",
       "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour4.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b",
       "map": "img/map4.jpg",
       "price": 1500,
       "dias": 7,
-      "Ecoregiones": "Patagonia",
-      "especies": 300
+      "ecoregiones": "Patagonia",
+      "especies": 300,
+      "destacado": false,
+      "imgD": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/DT4.jpg?alt=media&token=3e5ec858-73c5-48c5-916b-aec1243cb4d9"
     },
     {
       "id": 5,
       "title": "El fin del Mundo - Ushuaia",
-      "body": "Asthenes maculicauda - Sp endemica",
+      "body": "El parque nacional Tierra del Fuego es un parque nacional de Argentina situado en la provincia de Tierra del Fuego, Antártida e Islas del Atlántico Sur, en el extremo suroeste de la porción argentina de la isla Grande de Tierra del Fuego. Es uno de los pocos parques nacionales argentinos con costas marinas lo que permite observarlas en su ambiente natural junto a especies de mamiferos. ",
       "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour5.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b",
       "map": "img/map5.jpg",
       "price": 1500,
       "dias": 7,
-      "Ecoregiones": "Bosque y Mar",
-      "especies": 300
+      "ecoregiones": "Bosque y Mar",
+      "especies": 300,
+      "destacado": false,
+      "imgD": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/DT5.jpg?alt=media&token=3e5ec858-73c5-48c5-916b-aec1243cb4d9"
     },
     {
       "id": 6,
-      "title": "Neuquen - Parque Nacional San Guillermo",
-      "body": "Asthenes maculicauda - Sp endemica",
+      "title": "San Juan - Parque Nacional San Guillermo",
+      "body": "El parque nacional San Guillermo es un área natural protegida de Argentina, que está ubicada en el extremo noroeste de la provincia de San Juan, en el departamento Iglesia, a 455 km de la capital provincial. La vegetación se caracteriza por el predominio de formas preparadas para sobrevivir en condiciones de extrema aridez y gran altura. Sin embargo, permite observar la avifauna con facilidad y en especial especies únicas de la región. ",
       "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour6.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b",
       "map": "img/map6.jpg",
       "price": 1500,
       "dias": 7,
-      "Ecoregiones": "Puna",
-      "especies": 300
+      "ecoregiones": "Puna",
+      "especies": 300,
+      "destacado": false,
+      "imgD": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/DT6.jpg?alt=media&token=3e5ec858-73c5-48c5-916b-aec1243cb4d9"
     },
     {
       "id": 7,
       "title": "Las Aves y el Vino - Mendoza",
-      "body": "Asthenes maculicauda - Sp endemica",
+      "body": "Mendoza, que forma parte de la Región Cuyo, es considerada la provincia más relevante a nivel productivo de Argentina con 165.000 hectáreas de viñedos cultivados, representando aproximadamente el 66% de la producción vitivinícola del país. Ademas cuenta con ambientes unicos y picos de montañas que habilitan la observacion de especies endémicas",
       "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour7.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b",
       "map": "img/map7.jpg",
       "price": 1500,
       "dias": 7,
-      "Ecoregiones": "Altos Andes y Desierto de Monte",
-      "especies": 300
+      "ecoregiones": "Altos Andes y Desierto de Monte",
+      "especies": 300,
+      "destacado": false,
+      "imgD": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/DT7.jpg?alt=media&token=3e5ec858-73c5-48c5-916b-aec1243cb4d9"
     },
     {
       "id": 8,
       "title": "Humedales del Ibera",
-      "body": "Asthenes maculicauda - Sp endemica",
+      "body": "Los Esteros del Iberá, se ubican en el noreste de Argentina. Abarcando pantanos, ciénagas y lagunas y en especial pastizales inundables. En este tour nos sumergeremos en una canoa a recorrer los intricados pasajes en medio de los humedales, no faltaran Yacares y Garzas que complementan a los hermosos atardeceres",
       "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour8.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b",
       "map": "img/map8.jpg",
       "price": 1500,
       "dias": 7,
-      "Ecoregiones": "Humedales",
-      "especies": 300
+      "ecoregiones": "Humedales",
+      "especies": 300,
+      "destacado": false,
+      "imgD": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/DT8.jpg?alt=media&token=3e5ec858-73c5-48c5-916b-aec1243cb4d9"
     },
     {
       "id": 9,
       "title": "Selva Atlantica - Parque Nacional Iguazu",
-      "body": "Asthenes maculicauda - Sp endemica",
+      "body": "El Parque Nacional Iguazú abarca un área de bosque subtropical en la provincia de Misiones de Argentina, en la frontera con Brasil. Dentro del parque, en el río Iguazú, las famosas Cataratas del Iguazú poseen varias cascadas separadas, incluida la icónica Garganta del Diablo. Este nucleo de conservación es uno de los ultimos remanentes de la Mata Atlantica que permite visualizar su exquisita avifauna",
       "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour9.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b",
       "map": "img/map9.jpg",
       "price": 1500,
       "dias": 7,
-      "Ecoregiones": "Selva Atlantica",
-      "especies": 300
+      "ecoregiones": "Selva Atlantica",
+      "especies": 300,
+      "destacado": false,
+      "imgD": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/DT9.jpg?alt=media&token=3e5ec858-73c5-48c5-916b-aec1243cb4d9"
     }
   ]
 }

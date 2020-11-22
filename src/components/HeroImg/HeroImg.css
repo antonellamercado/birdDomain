@@ -8,4 +8,7 @@
     height: 100px;
     opacity: 0.8;
     z-index:10;
+    background: rgba(12, 11, 11, 0.3);
+    border-radius: 5px;
 }
+

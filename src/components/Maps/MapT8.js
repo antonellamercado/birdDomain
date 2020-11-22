@@ -25,7 +25,7 @@ var observacion = L.icon({
 export default class Map extends React.Component{
     componentDidMount(){
         this.map = L.map('map',{
-            center: [-24.1847222,-65.299166],
+            center: [-27.4494,-58.7577],
             zoom:6,
             zoomControl:false,
         });
@@ -36,12 +36,12 @@ export default class Map extends React.Component{
 	        ext: 'png'
         }).addTo(this.map);
  
-        L.marker([-24.19,-65.29],{icon:llegada}).addTo(this.map).bindPopup("Punto de retiro");
-        L.marker([-23.67, -64.87],{icon:observacion}).addTo(this.map).bindPopup("Punto de observacion");
+        L.marker([-27.4494,-58.7577],{icon:llegada}).addTo(this.map).bindPopup("Punto de retiro");
+        L.marker([-28.3216,-57.3691],{icon:observacion}).addTo(this.map).bindPopup("Punto de observacion");
     }
 
     render(){
-        return <Wrapper id="map"/>
+        return <Wrapper width="360px" height="300px" id="map"/>
     }
 }
 

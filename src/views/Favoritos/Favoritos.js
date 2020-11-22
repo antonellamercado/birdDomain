@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 const Favoritos = () => {
 
     return (
-        <Link to = '/Favoritos'>
+        <Link to = '/favoritos'>
 <div>Favoritos</div>
         </Link>
     );
