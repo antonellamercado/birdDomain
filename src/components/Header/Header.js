@@ -9,16 +9,16 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import SearchBar from '../SearchBar/SearchBar';
-import HelpModal from '../HelpModal/HelpModal.js'
-import ModalIng from '../ModalIng/Modalng'
-import ModalReg from '../ModalReg/ModalReg';
+import HelpModal from '../ModalFaqs/ModalFaqs.js'
+import ModalIng from '../ModalLogin/ModalLogin'
+import ModalReg from '../ModalRegister/ModalRegister';
 
 
 
 const Header = () => {
-    const [modalShow, setModalShow] = React.useState(false);
-    const [modalShowIng, setModalShowIng] = React.useState(false);
-    const [modalShowReg, setModalShowReg] = React.useState(false);
+    const [modalShow, setModalShow] = useState(false);
+    const [modalShowIng, setModalShowIng] = useState(false);
+    const [modalShowReg, setModalShowReg] = useState(false);
 
     return (
     <>

@@ -23,11 +23,11 @@ const SearchBar = () => {
          price: '',
          dias: 0,
          Ecoregiones:'',
-         especies:0}
+         especies:0 }
      ]);
      
-     useEffect(()=>{
-         const getTour = async ()=>{
+     useEffect ( () => {
+         const getTour = async () => {
          await clienteAxios.get("/Tours")
          .then(response =>{
          setToursSearch(response.data)

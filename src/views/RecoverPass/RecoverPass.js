@@ -1,24 +1,20 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import './RecoverPass.css'
 import {Form, Button} from 'react-bootstrap';
 import img from '../../img/DT9.jpg'
-import {useHistory} from 'react-router-dom';
 
+import ModalRecoverPass from './ModalRecoverPass'
 
 
  const RecoverPass = () => {
-    const history = useHistory();
+    
+    const [modalShowFaq, setModalShowFaq] = useState(false);
 
-    function handleClick(e) {
-        e.preventDefault();
-        console.log('The link was clicked.');
-        alert("Se ha enviado una notificacion al email provisto")
-        history.push("/");
-      }
+    
 
     return (
-        <>
+        
         <div className="recoverBg">
             <form  className="mt-0 mb-2" id="form">
             <h3>Recupera tu contraseña</h3>
@@ -29,7 +25,14 @@ import {useHistory} from 'react-router-dom';
                 <div id="error"></div>
                 <br></br>
                 <br></br>
-                <Button type="submit" onClick={ handleClick }>Enviar email</Button>
+                <Button type="submit" onClick={() => {
+          setModalShowFaq(true);
+        }}>
+            Enviar email</Button>
+                <ModalRecoverPass
+                    show={modalShowFaq}
+                    // onHide={() => setModalShowFaq(false)}
+                />
             </div>
         </form> 
         <div>
@@ -37,27 +40,10 @@ import {useHistory} from 'react-router-dom';
         <img className="container" src={img}></img>
         </div>
         
-        </>
+        
     )
 }
 
 export default RecoverPass;
 
 
-// async function handleOnSubmit(e) {
-//     e.preventDefault();
-//     try {
-//       await Auth.signIn(email, password);
-//       userHasAuthenticated(true);
-//       history.push("/");
-//     } catch (e) {
-//       alert(e.message);
-//     }
-  // const history = useHistory();
-    
-
-    // const handleOnclick = e => {
-    //     e.preventDefault();
-    //     history.push("/");
-    //                 }
-    //onClick={handleOnclick}
