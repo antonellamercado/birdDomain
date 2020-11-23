@@ -6,26 +6,29 @@ import clienteAxios from '../../config/axios';
 //estilo
 import '../PanelAdmin/PanelAdmin.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
-import { faEdit } from '@fortawesome/free-solid-svg-icons';
+import { faTimes,faEdit } from '@fortawesome/free-solid-svg-icons';
 //componente
 import CrearTour from '../../components/CrearTour/CrearTour';
 
 
-const PanelAdmin = () => {
-    const [listaAve, setListaAve] = useState([]);
+const PanelAdmin = (match) => {
+    const [listaTours, setListaTours] = useState([]);
     useEffect (()=> { 
         const getToursForList = async()  =>{
             await clienteAxios.get("/Tours")
             .then(response =>{
-            setListaAve(response.data)
+            setListaTours(response.data)
             });
             }
             getToursForList();         
         },[]);
 
-        console.log('tour desde admin', listaAve);   
+        console.log('tour desde admin', listaTours);   
         
+        const eliminarTour =  (id)=> {
+            console.log(id)
+        }
+
     return(
         <>
         <p className="text-dark font-weight-bold t-2 title-panelAdmin">Bienvenido al panel de administracion.
@@ -46,26 +49,25 @@ const PanelAdmin = () => {
                 </tr>
             </thead>
             {
-                listaAve.length === 0 ? <p>No hay tour disponible</p> :
-                (listaAve.map((ave, index) => 
+                listaTours.length === 0 ? <p>No hay tour disponible</p> :
+                (listaTours.map((tour, index) => 
                     <tbody key={index}>
                         <tr>
-                        <td>{ave.title}</td>
-                        <td>{ave.ecoregiones}</td>
-                        <td>{ave.price}</td>
-                        <td>{ave.dias}</td>
-                        <td>{ave.especies}</td>
-                        <td>{ave.destacado === true ? 'Si': 'No'}</td>
+                        <td>{tour.title}</td>
+                        <td>{tour.ecoregiones}</td>
+                        <td>{tour.price}</td>
+                        <td>{tour.dias}</td>
+                        <td>{tour.especies}</td>
+                        <td>{tour.destacado === true ? 'Si': 'No'}</td>
                         <td>
-                            <div className="btn btn-danger mr-2"><FontAwesomeIcon  icon={faTimes} /> </div>
+                            <div onClick={eliminarTour(index)} className="btn btn-danger mr-2" ><FontAwesomeIcon  icon={faTimes}  /> </div>
                             <div  className="btn btn-light"><FontAwesomeIcon  icon={faEdit} /></div>
                         </td>
                         </tr>
                     </tbody>    
             ))
             }
-        </Table>
-       
+        </Table> 
         </>
     );
 }

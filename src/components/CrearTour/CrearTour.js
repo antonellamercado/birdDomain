@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react';
+import {useState} from 'react';
 //estilo
 import '../CrearTour/CrearTour.css';
 //libreria
@@ -8,32 +8,53 @@ import clienteAxios from '../../config/axios';
 
 const CrearTour = () => {
     const [modal, setModal] = useState(false);
-    const [nuevoTour, setNuevoTour] = useState({});
+    const [dataValide, setDataValide] = useState(false);
+    const [nuevoTour, setNuevoTour] = useState({
+        title:'',
+        body:'',
+        img: '',
+        imgD:'',
+        price:0,
+        dias:0,
+        ecoregiones:'',
+        especies:0,
+        destacado:false
+    });
     const toggle = () => setModal(!modal);
-
-
+    
     const handleOnChange = e => {
         setNuevoTour({
             ...nuevoTour,
             [e.target.name]: e.target.value
         })
+        validarCampos();
     }
     console.log('nuevo tour', nuevoTour);
+
+    const validarCampos =()=>{
+        if(nuevoTour.title !== null && nuevoTour.body !== null && nuevoTour.img !== null && nuevoTour.imgD !== null && nuevoTour.price>0 && nuevoTour.dias >0 && nuevoTour.ecoregiones !== null  && nuevoTour.especies>0 && nuevoTour.destacado == null)
+        {setDataValide(true)}
+        else
+        {setDataValide(false)}
+    }
+
+
+
 //const   showModalCrearTour = () => {
-    const handleOnClick = async e => {
+    const handleOnSubmit = async e => {
         e.preventDefault();
-           const result = await clienteAxios.post('/Tours', nuevoTour);
-            console.log(result);
+        if(dataValide)
+            {const result = await clienteAxios.post('/Tours', nuevoTour);
+            console.log(result);}
         }
-    
         
     return (
     <>
-        <Button className="p-3"onClick={toggle}>Crear Nuevo tour</Button>
+        <Button className="modal_boton" onClick={toggle}>Crear Nuevo tour</Button>
         <Modal isOpen={modal} toggle={toggle} className="formulario_modal">
             <ModalHeader toggle={toggle}>Nuevo Tour</ModalHeader>
             <ModalBody className="formulario_modal">
-                <Form className="formulario_modal  m-1 p-2" onClick={handleOnClick}>
+                <Form className="formulario_modal  m-1 p-2" onSubmit={handleOnSubmit}>
                     <FormGroup>
                         <Label>Titulo</Label>
                         <Input type="text" name="title" onChange={handleOnChange}></Input>
@@ -92,14 +113,15 @@ const CrearTour = () => {
                     </FormGroup>
                     <FormGroup check>
                         <Label check>
-                        <Input type="checkbox" />{' '}
+                        <Input type="checkbox" name="destacado"/>{' '}
                         Destacada
                         </Label>
                     </FormGroup>
                 </Form>
             </ModalBody>
             <ModalFooter>
-                <Button color="primary" onClick={toggle}>Crear</Button>{' '}
+                {setDataValide? '' : <div className="text-alert">Complete el formulario correctamente</div>}
+                <Button type="submit" color="primary"  onClick={toggle}>Crear</Button>{' '}
                 <Button color="secondary" onClick={toggle}>Cancelar</Button>
             </ModalFooter>
         </Modal>

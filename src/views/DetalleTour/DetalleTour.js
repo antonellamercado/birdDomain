@@ -1,14 +1,13 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
+import {Link} from 'react-router-dom';
 //config
 import clienteAxios from '../../config/axios';
 //libreria
 import {Card, CardBody, CardTitle, CardImg, CardText, Button} from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDollarSign } from '@fortawesome/free-solid-svg-icons';
-import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
-import { faEye } from '@fortawesome/free-solid-svg-icons';
-import { faFeather } from '@fortawesome/free-solid-svg-icons';
+import { faDollarSign ,  faCalendarAlt, faEye, faFeather } from '@fortawesome/free-solid-svg-icons';
+
 //estilos
 import "../DetalleTour/DetalleTour.css";
 import Map from '../../components/Maps/MapT1';
@@ -47,7 +46,10 @@ return (
                             <CardText className="col-4 text-muted d-inline"> <FontAwesomeIcon  icon={faCalendarAlt} /> Duracion del tour: {tour.dias} dias
                             </CardText>
                             <CardText className="col-4 text-muted d-inline"> <FontAwesomeIcon  icon={faEye} /> Numero de especies probables en avistaje: {tour.especies} </CardText>
-                            <Button className='my-3 d-block mx-auto'>Comprar</Button>
+                            <Link to='/Checkout'>
+                            <Button className='col-6 my-3 d-block mx-auto'>Comprar ahora</Button>
+                            </Link>
+                            <Button className='col-6 my-3 d-block mx-auto'>Agregar al carrito</Button>
                             </CardBody>
                         </Card>
                         </div>                 

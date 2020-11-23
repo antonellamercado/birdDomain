@@ -15,3 +15,11 @@
     background-color: #343a40;
     color: rgb(212, 202, 202);
 }
+
+
+.modal_boton{
+    width: 50%;
+    padding: 5px;
+    margin-bottom: 3px;
+    margin-top: 3px;
+ }
