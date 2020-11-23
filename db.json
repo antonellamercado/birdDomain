@@ -11,19 +11,6 @@
       "favoritos": [],
       "buys": [
         {
-          "id": 1,
-          "title": "Yungas - Parque Nacional Calilegua",
-          "body": "El parque nacional Calilegua es un área natural protegida situada sobre las faldas orientales de la sierra de Calilegua, en el sudeste de la provincia de Jujuy en el noroeste de la República Argentina. Es una zona fantastica que permite visualizar un imponente y pristino paisaje",
-          "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour1.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b",
-          "map": "img/map1.jpg",
-          "price": 400,
-          "dias": 4,
-          "ecoregiones": "Yungas",
-          "especies": 300,
-          "destacado": true,
-          "imgD": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/DT1.jpg?alt=media&token=3e5ec858-73c5-48c5-916b-aec1243cb4d9"
-        },
-        {
           "id": 2,
           "title": "Yungas - Parque Nacional Aconquija",
           "body": "El parque nacional Aconquija es un área natural protegida de Argentina creada en la provincia de Tucumán. En una misma ruta se puede recorrer diferentes estratos altitudinales percibiendo como cambia la vegetacion junto a las aves que alli habitan",
@@ -35,6 +22,19 @@
           "especies": 300,
           "destacado": false,
           "imgD": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/DT2.jpg?alt=media&token=3e5ec858-73c5-48c5-916b-aec1243cb4d9"
+        },
+        {
+          "id": 3,
+          "title": "Puna - Parque Nacional Los Cardones",
+          "body": "El parque nacional Los Cardones (legalmente parque y reserva nacional Los Cardones) se encuentra cerca de la localidad de Payogasta en la región centro-sur de la provincia de Salta en Argentina. Es un ambiente de sierras secas, con altitudes de entre los 2600 msnm  hasta los 5226 msnm. El parque toma su nombre de la gran cantidad de ejemplares de cardón o pasacana (Trichocereus pasacana), una especie característica de los valles interandinos del sur de Bolivia y norte de Argentina y de Chile",
+          "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour3.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b",
+          "map": "img/map3.jpg",
+          "price": 700,
+          "dias": 7,
+          "ecoregiones": "Prepuna y puna",
+          "especies": 300,
+          "destacado": false,
+          "imgD": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/DT3.jpg?alt=media&token=3e5ec858-73c5-48c5-916b-aec1243cb4d9"
         }
       ]
     },

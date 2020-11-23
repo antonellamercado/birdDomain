@@ -10,7 +10,7 @@ function Footer () {
             <div className="row mt-4" id="footer-container">
             <div className="col-sm-12 col-md-3 container-social-media">
                     <h4>Bird's Domain</h4>
-                    <img src={logo} className="logo" alt="Logo"/>
+                    <img src={logo} className="logoFooter" alt="Logo"/>
                 </div>
                 <div className="vertical-line"></div>
                 <div className="col-sm-12 col-md-3 container-menu">
