@@ -66,7 +66,7 @@ const Cart = () => {
             { cartList===false?null:
                 <div className="listCart px-2">
                     {
-                        products.length === 0 ? 'No hay productos' : (
+                        products.length === 0 ? <p className="my-2">No hay productos</p> : (
                             products.map((product, index) => 
                                 <div key={index} className="d-flex justify-content-end my-3">
                                     <div >
@@ -102,7 +102,7 @@ const Cart = () => {
                                             <img src={tour.img} className="card-img" alt="..."/>
                                             <div className="card-img-overlay d-flex flex-column-reverse text-left">
                                                 <Link to={`/tours/${tour.id}`} className="text-warning">                             
-                                                <h5 className="card-title">{tour.title}</h5>
+                                                    <h5 className="card-title">{tour.title}</h5>
                                                 </Link>
                                                 <p className="card-text">Precio por persona: {tour.price}U$D</p>
                                                 <p className="card-text">Duracion del Tour: {tour.dias}</p>                                  
