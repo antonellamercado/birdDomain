@@ -16,7 +16,7 @@ import Cart from './components/Cart/Cart';
 import DetalleTour from './views/DetalleTour/DetalleTour';
 import RecoverPass from './views/RecoverPass/RecoverPass';
 import PanelAdmin from './views/PanelAdmin/PanelAdmin';
-
+import 'react-toastify/dist/ReactToastify.css';
 
 
 

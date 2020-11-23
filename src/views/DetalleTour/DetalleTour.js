@@ -36,9 +36,9 @@ return (
                             <CardBody>
                             <CardTitle tag="h3" className='font-weight-bold'>{tour.title}</CardTitle>
                             <div className='d-flex d-inline-block'>
-                            <CardImg className="col-6 detalle_imagen"  top width="80%" src={tour.img}  alt="img-tour"/>
-                            <div className="d-flex d-block col-6 detalle_imagen" >
-                            <Map  className='detalle_imagen'/>
+                            <CardImg className="col-sd-12 col-md-6 col-lg-6 detalle_imagen"  top width="80%" src={tour.img}  alt="img-tour"/>
+                            <div className="d-flex d-none d-sm-none d-md-block" >
+                            <Map  className='d-none d-sm-none d-md-block'/>
                             </div>
                             </div>
                             <CardText className="col-12 my-4 text-justify  detalle_descripcion">  <FontAwesomeIcon  icon={faFeather} /> {tour.body}</CardText>

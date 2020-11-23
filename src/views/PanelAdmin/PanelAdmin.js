@@ -1,6 +1,8 @@
 import {useState, useEffect} from 'react'
 //libreria
-import { Table } from 'reactstrap';
+import { Table } from 'react-bootstrap';
+import { ToastContainer, toast } from 'react-toastify';
+ import 'react-toastify/dist/ReactToastify.css';
 //config
 import clienteAxios from '../../config/axios';
 //estilo
@@ -10,24 +12,64 @@ import { faTimes,faEdit } from '@fortawesome/free-solid-svg-icons';
 //componente
 import CrearTour from '../../components/CrearTour/CrearTour';
 
+const PanelAdmin = () => {
 
-const PanelAdmin = (match) => {
+    //estados
     const [listaTours, setListaTours] = useState([]);
-    useEffect (()=> { 
+    const [currentId, setCurrentId] = useState("");
+    // funciones
+    
         const getToursForList = async()  =>{
             await clienteAxios.get("/Tours")
             .then(response =>{
             setListaTours(response.data)
             });
+            }  
+        //   
+        useEffect(() => {
+            getToursForList();
+            }, []);
+        //                
+        const addOrEditTour = async (tourObject) => {
+        if (currentId === '')
+            {
+            const result = await clienteAxios.post('/Tours', tourObject);
+            console.log('nuevo tour grabado', result);
+            toast("Nuevo tour agregado",
+            {   type: "success",
+                position: "top-center",
+                autoClose: 2000,
+            });
             }
-            getToursForList();         
-        },[]);
-
-        console.log('tour desde admin', listaTours);   
-        
-        const eliminarTour =  (id)=> {
-            console.log(id)
+        else
+            {
+            await clienteAxios.put(`/Tours/${currentId}`, tourObject);
+            toast("tour modificado",
+            {   type: "info",
+                position: "top-center",
+                autoClose: 2000,
+            });
+            setCurrentId('');
         }
+        }     
+        //
+        const onDeleteTour = async (id) => {
+            if(window.confirm("seguro que quieres eliminar?"))
+            {console.log('id para eliminar', id);
+            const tourEliminado = await clienteAxios.delete(`/Tours/${id}`);
+            console.log('tour eliminado', tourEliminado);
+            toast("Nuevo tour agregado",
+            {   type: "error",
+                position: "top-center",
+                autoClose: 2000,
+            });
+            }
+        }
+        
+ 
+                //const response = await clienteAxios.get(`/productos/${id}`);
+
+
 
     return(
         <>
@@ -35,8 +77,8 @@ const PanelAdmin = (match) => {
             Aqui podra <em className="initialism">Crear</em> nuevos tours, <em className="initialism">Editar</em> los mismos y cambiar la imagen destacada de la pagina principal, ademas de <em className="initialism">Eliminar</em> tours obsoletos.
         </p>
         <div></div>
-        <CrearTour/>
-        <Table dark bordered hover responsive>
+        <CrearTour {...{addOrEditTour, currentId,listaTours }}/>
+        <Table variant="dark" bordered hover responsive>
             <thead className="h2 initialism">
                 <tr>
                 <th>Nombre</th>
@@ -60,8 +102,14 @@ const PanelAdmin = (match) => {
                         <td>{tour.especies}</td>
                         <td>{tour.destacado === true ? 'Si': 'No'}</td>
                         <td>
-                            <div onClick={eliminarTour(index)} className="btn btn-danger mr-2" ><FontAwesomeIcon  icon={faTimes}  /> </div>
-                            <div  className="btn btn-light"><FontAwesomeIcon  icon={faEdit} /></div>
+                            <div 
+                            className="btn btn-danger mr-2"
+                            onClick={()=> onDeleteTour(tour.id)}
+                            ><FontAwesomeIcon  icon={faTimes}  /> </div>
+                            <div  
+                            className="btn btn-light"
+                            onClick={()=>setCurrentId(tour.id) }
+                            ><FontAwesomeIcon  icon={faEdit} /></div>
                         </td>
                         </tr>
                     </tbody>    

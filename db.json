@@ -165,7 +165,7 @@
       "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour1.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b",
       "map": "img/map1.jpg",
       "price": 400,
-      "dias": 4,
+      "dias": "5",
       "ecoregiones": "Yungas",
       "especies": 300,
       "destacado": true,
@@ -243,7 +243,7 @@
       "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour7.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b",
       "map": "img/map7.jpg",
       "price": 1500,
-      "dias": 7,
+      "dias": "8",
       "ecoregiones": "Altos Andes y Desierto de Monte",
       "especies": 300,
       "destacado": false,
@@ -274,6 +274,30 @@
       "especies": 300,
       "destacado": false,
       "imgD": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/DT9.jpg?alt=media&token=3e5ec858-73c5-48c5-916b-aec1243cb4d9"
+    },
+    {
+      "title": "nuevo tour",
+      "body": "body",
+      "img": "img ",
+      "imgD": "img",
+      "price": "10",
+      "dias": "2",
+      "ecoregiones": "puna",
+      "especies": "3",
+      "destacado": false,
+      "id": 10
+    },
+    {
+      "title": "nuevo",
+      "body": "ddd",
+      "img": "ddd",
+      "imgD": "ddd",
+      "price": "0444",
+      "dias": "0555",
+      "ecoregiones": "ggg",
+      "especies": "045",
+      "destacado": false,
+      "id": 11
     }
   ]
 }
