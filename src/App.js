@@ -1,12 +1,12 @@
 import React from 'react';
 import {BrowserRouter as Router, Switch,Route} from 'react-router-dom';
-//import logo from './logo.svg';
 import './App.css';
 //components
 // import Map from './components/Maps/MapT1'
 //import Header from './components/Header/Header';
 //import Footer from './components/Footer/Footer';
 import Layout from './components/Layout/Layout';
+// import Mapa from './components/Maps/Maps'
 //views
 import Home from './views/Home/Home';
 import Destacado from './views/Destacado/Destacado';
