@@ -28,7 +28,6 @@ const Cart = () => {
         await axios.patch(`http://localhost:5000/usuarios/1`, {buys:[...products, product]});
         setProducts([...products, product]);
     }
-    
     const deleteProduct = async (e)=>{
         const newProducts = products.filter(product => product.id !== Number(e.target.id));
         setProducts(newProducts);
@@ -123,4 +122,4 @@ const Cart = () => {
         </>
     )
 }
-export default Cart
+export default Cart;
