@@ -335,30 +335,6 @@
       "especies": 300,
       "destacado": false,
       "imgD": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/DT9.jpg?alt=media&token=3e5ec858-73c5-48c5-916b-aec1243cb4d9"
-    },
-    {
-      "title": "nuevo tour",
-      "body": "body",
-      "img": "img ",
-      "imgD": "img",
-      "price": "10",
-      "dias": "2",
-      "ecoregiones": "puna",
-      "especies": "3",
-      "destacado": false,
-      "id": 10
-    },
-    {
-      "title": "nuevo",
-      "body": "ddd",
-      "img": "ddd",
-      "imgD": "ddd",
-      "price": "0444",
-      "dias": "0555",
-      "ecoregiones": "ggg",
-      "especies": "045",
-      "destacado": false,
-      "id": 11
     }
   ]
 }

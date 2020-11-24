@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import Carrousel from '../../components/Carrousel/Carrousel';
 import Galeria from '../../components/Galeria/Galeria';
 import HeroImg from '../../components/HeroImg/HeroImg';
-import Banner from '../Publicidad/Banner'
+import Banner from '../../components/Publicidad/Banner'
 import '../Home/Home.css'
 
 
