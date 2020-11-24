@@ -8,7 +8,6 @@ import './ModalCuenta.css';
 export const ModalIng = (props) => {
     return (
         <div>
-            <>
             <Modal {...props}
       size="md"
       aria-labelledby="contained-modal-title-vcenter"
@@ -39,13 +38,11 @@ export const ModalIng = (props) => {
                 <Link to ='/Recover'>
                 <Button onClick={props.onHide}>Recuperar contraseña</Button>
                 </Link>
-                
             </div>
 </Form> 
       </Modal.Body>
      
     </Modal>
-      </>
         </div>
     )
 }

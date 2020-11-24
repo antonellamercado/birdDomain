@@ -20,5 +20,4 @@ const Home = () => (
     </Link>
 );
 
-
 export default Home;
