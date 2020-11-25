@@ -29,50 +29,46 @@ const PanelAdmin = () => {
         useEffect(() => {
             getToursForList();
             }, []);
-        //                
+        //  agregar o editar tour              
         const addOrEditTour = async (tourObject) => {
         if (currentId === '')
             {
             const result = await clienteAxios.post('/Tours', tourObject);
             console.log('nuevo tour grabado', result);
-            toast("Nuevo tour agregado",
-            {   type: "success",
+            toast("Tour editado correctamente", {
+                type: "success",
                 position: "top-center",
-                autoClose: 2000,
-            });
+                autoClose: 2000
+              });
             }
         else
             {
             await clienteAxios.put(`/Tours/${currentId}`, tourObject);
-            toast("tour modificado",
-            {   type: "info",
+            toast("Tour editado correctamente", {
+                type: "info",
                 position: "top-center",
-                autoClose: 2000,
+                autoClose: 2000
             });
             setCurrentId('');
         }
         }     
-        //
+        //eliminar tour
         const onDeleteTour = async (id) => {
             if(window.confirm("seguro que quieres eliminar?"))
             {console.log('id para eliminar', id);
             const tourEliminado = await clienteAxios.delete(`/Tours/${id}`);
             console.log('tour eliminado', tourEliminado);
-            toast("Nuevo tour agregado",
-            {   type: "error",
+            toast("Tour eliminado correctamente", {
+                type: "error",
                 position: "top-center",
-                autoClose: 2000,
+                autoClose: 2000
             });
             }
         }
-        
- 
-                //const response = await clienteAxios.get(`/productos/${id}`);
-
-
 
     return(
         <>
+      <ToastContainer />
         <p className="text-dark font-weight-bold t-2 title-panelAdmin">Bienvenido al panel de administracion.
             Aqui podra <em className="initialism">Crear</em> nuevos tours, <em className="initialism">Editar</em> los mismos y cambiar la imagen destacada de la pagina principal, ademas de <em className="initialism">Eliminar</em> tours obsoletos.
         </p>

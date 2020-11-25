@@ -3,7 +3,7 @@ import {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 //config
 import clienteAxios from '../../config/axios';
-import coment from '../../config/coment';
+//import coment from '../../config/coment';
 //libreria
 import {Card, Button, Accordion} from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -50,14 +50,14 @@ const DetalleTour = ({match, history}) => {
     }
 //
 
-const getComentary = async ()=> {
-    await coment.get('/comments?postId=3')
-    .then(response =>{
-    const listaComentarios= response.data;
-    console.log(listaComentarios)
-})
-};
-getComentary();
+//const getComentary = async ()=> {
+//    await coment.get('/comments?postId=3')
+//    .then(response =>{
+//    const listaComentarios= response.data;
+//    console.log(listaComentarios)
+//})
+//};
+//getComentary();
 
     return (
         <div>                                 
@@ -98,17 +98,6 @@ getComentary();
                         </Card.Header>
                         <Accordion.Collapse eventKey="0">
                             <Card.Body>Estos son los comentarios
-                                {
-                                listaComentarios.length === 0 ? <p>No hay comentarios disponibles</p> :
-                                {listaComentarios.map((comentario,index) => 
-                                (
-                                <div key={index} className="c_container border border-aqua">
-                                    <img src="https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/user2.jpg?alt=media&token=78dc2a38-85fe-4880-be68-9ef948e848d3" class="card-img rounded-circle w-100" alt="" />
-                                    <h5 className="card-title  mb-0">comentario.name</h5>
-                                    <p className="card-text text-muted">comentario.body</p>
-                                    <p className="card-text">comentario.email </p>
-                                </div>
-                                ))}}
                             </Card.Body>
                         </Accordion.Collapse>
                     </Card>
