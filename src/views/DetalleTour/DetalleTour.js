@@ -3,12 +3,14 @@ import {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 //config
 import clienteAxios from '../../config/axios';
-//import coment from '../../config/coment';
+import axios from "axios";
 //libreria
 import {Card, Button, Accordion} from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDollarSign ,  faCalendarAlt, faEye, faFeather } from '@fortawesome/free-solid-svg-icons';
-import axios from "axios";
+
+//componentes
+import Comentarios from '../../components/Comentarios/Comentarios';
 //estilos
 import "../DetalleTour/DetalleTour.css";
 import Map from '../../components/Maps/MapT1';
@@ -17,7 +19,6 @@ const DetalleTour = ({match, history}) => {
     const idtour = match.params.id;
     const [tour, setTour] = useState({});
     const [products, setProducts] = useState([]);
-    const [listaComentarios, setListaComentarios] = useState([]);
 //
     useEffect(()=>{
         const getTourByID = async id  =>{
@@ -51,14 +52,7 @@ const DetalleTour = ({match, history}) => {
     }
 //
 
-const getComentary = async ()=> {
-    await clienteAxios.get('/Comentarios')
-    .then(response =>{
-        setListaComentarios(response.data);
-    //setListaComentarios(response.data);
-})
-};
-getComentary();
+
 
     return (
         <div>                                 
@@ -98,18 +92,7 @@ getComentary();
                             </Accordion.Toggle>
                         </Card.Header>
                         <Accordion.Collapse eventKey="0">
-                            <Card.Body>Estos son los comentarios
-                                {
-                                listaComentarios.length === 0 ? <p>No hay comentarios disponibles</p> :
-                                (listaComentarios.map((comentario, index) =>
-                                {
-                                <div key={index} className="c_container border border-aqua">
-                                    <img src="https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/user2.jpg?alt=media&token=78dc2a38-85fe-4880-be68-9ef948e848d3" class="card-img rounded-circle w-100" alt="" />
-                                    <h5 className="card-title  mb-0">comentario.name</h5>
-                                    <p className="card-text text-muted">comentario.body</p>
-                                    <p className="card-text">comentario.email </p>
-                                </div>
-                                }))}
+                            <Card.Body>
                             </Card.Body>
                         </Accordion.Collapse>
                     </Card>
