@@ -3,20 +3,34 @@ import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import { Icon } from "leaflet";
 
 
-export const plane = new Icon({
-    iconUrl: 'Static/plane.png',
-    iconSize: [25, 25],
-    popupAnchor:  [-1, -20]
-  });
+// export const plane = new Icon({
+//     iconUrl: 'custom-icons/plane.png',
+//     iconSize: [25, 25],
+//     popupAnchor:  [-1, -20]
+//   });
 
-  export const bins = new Icon({
-    iconUrl: 'Static/bin.png',
-    iconSize: [25, 25],
-    popupAnchor:  [-1, -20]
-  });
+//   export const bins = new Icon({
+//     iconUrl: "https://www.flaticon.es/svg/static/icons/svg/425/425951.svg",
+//     iconSize: [25, 25],
+//     popupAnchor:  [-1, -20]
+//   });
 
 
 export const Mapa = (props) => {
+
+  const plane = new Icon({
+    iconUrl: "https://www.flaticon.com/svg/static/icons/svg/67/67076.svg",
+    iconSize: [25, 25],
+    popupAnchor:  [-1, -20]
+  });
+
+  const bins = new Icon({
+    iconUrl: "https://www.flaticon.es/svg/static/icons/svg/425/425951.svg",
+    iconSize: [25, 25],
+    popupAnchor:  [-1, -20]
+  });
+
+
 const position = [-24.1847222,-65.299166]
 const observation = [-23.67, -64.87]
     return (

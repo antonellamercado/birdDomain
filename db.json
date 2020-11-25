@@ -9,59 +9,7 @@
       "img": "/img/user1.jpg",
       "admin": true,
       "favoritos": [],
-      "buys": [
-        {
-          "id": 1,
-          "title": "Yungas - Parque Nacional Calilegua",
-          "body": "El parque nacional Calilegua es un área natural protegida situada sobre las faldas orientales de la sierra de Calilegua, en el sudeste de la provincia de Jujuy en el noroeste de la República Argentina. Es una zona fantastica que permite visualizar un imponente y pristino paisaje",
-          "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour1.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b",
-          "map": "img/map1.jpg",
-          "price": 400,
-          "Lat": -24.1847222,
-          "Long": -65.299166,
-          "Latobs": -23.67,
-          "Longobs": -64.87,
-          "dias": 4,
-          "ecoregiones": "Yungas",
-          "especies": 300,
-          "destacado": true,
-          "imgD": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/DT1.jpg?alt=media&token=3e5ec858-73c5-48c5-916b-aec1243cb4d9"
-        },
-        {
-          "id": 2,
-          "title": "Yungas - Parque Nacional Aconquija",
-          "body": "El parque nacional Aconquija es un área natural protegida de Argentina creada en la provincia de Tucumán. En una misma ruta se puede recorrer diferentes estratos altitudinales percibiendo como cambia la vegetacion junto a las aves que alli habitan",
-          "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour2.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b",
-          "map": "img/map2.jpg",
-          "price": 500,
-          "Lat": -26.8358,
-          "Long": -65.1077,
-          "Latobs": -27.2927,
-          "Longobs": -65.8625,
-          "dias": 7,
-          "ecoregiones": "Yungas",
-          "especies": 300,
-          "destacado": false,
-          "imgD": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/DT2.jpg?alt=media&token=3e5ec858-73c5-48c5-916b-aec1243cb4d9"
-        },
-        {
-          "id": 5,
-          "title": "El fin del Mundo - Ushuaia",
-          "body": "El parque nacional Tierra del Fuego es un parque nacional de Argentina situado en la provincia de Tierra del Fuego, Antártida e Islas del Atlántico Sur, en el extremo suroeste de la porción argentina de la isla Grande de Tierra del Fuego. Es uno de los pocos parques nacionales argentinos con costas marinas lo que permite observarlas en su ambiente natural junto a especies de mamiferos. ",
-          "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour5.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b",
-          "map": "img/map5.jpg",
-          "price": 1500,
-          "Lat": -54.8394,
-          "Long": -63.3122,
-          "Latobs": -54.843,
-          "Longobs": -68.5538,
-          "dias": 7,
-          "ecoregiones": "Bosque y Mar",
-          "especies": 300,
-          "destacado": false,
-          "imgD": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/DT5.jpg?alt=media&token=3e5ec858-73c5-48c5-916b-aec1243cb4d9"
-        }
-      ]
+      "buys": []
     },
     {
       "id": 2,

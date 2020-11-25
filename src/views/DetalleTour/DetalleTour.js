@@ -11,7 +11,7 @@ import { faDollarSign ,  faCalendarAlt, faEye, faFeather } from '@fortawesome/fr
 import axios from "axios";
 //estilos
 import "../DetalleTour/DetalleTour.css";
-import Map from '../../components/Maps/MapT1';
+import Map from '../../components/Maps/Maps';
 
 const DetalleTour = ({match, history}) => {
     const idtour = match.params.id;
@@ -63,13 +63,13 @@ const DetalleTour = ({match, history}) => {
         <div>                                 
             <div className='row'>
                 <Card>
-                    <Card.Body>
-                        <Card.Title tag="h3" className='font-weight-bold'>{tour.title}</Card.Title>
-                        <div className='d-flex'>
-                            <img className="d-block col-6 detalle_imagen"  src={tour.img}  alt="img-tour"/>
-                            <div className="d-flex d-block col-6 detalle_imagen" >
-                                <Map/>
-                            </div>
+                    <CardBody>
+                        <CardTitle tag="h3" className='font-weight-bold'>{tour.title}</CardTitle>
+                        <div className='d-flex d-inline-block'>
+                            <CardImg className="col-6 detalle_imagen mr-2 p-0"  top width="100%" src={tour.img}  alt="img-tour"/>
+                            {/* <div className="d-flex d-block col-6 detalle_imagen" > */}
+                                <Map  className='detalle_imagen'/>
+                            {/* </div> */}
                         </div>
                         <Card.Text className="col-12 my-4 text-justify  detalle_descripcion">  <FontAwesomeIcon  icon={faFeather} /> {tour.body}</Card.Text>
                         <Card.Text className="col-4 text-muted d-inline"> <FontAwesomeIcon  icon={faDollarSign} /> {tour.price}</Card.Text>
@@ -85,7 +85,7 @@ const DetalleTour = ({match, history}) => {
                         <Link to='/Checkout'>
                             <Button className='col-6 my-3 d-block mx-auto bg-warning'>Finalizar compras</Button>
                         </Link>
-                    </Card.Body>
+                    </CardBody>
                 </Card>
             </div> 
             <div>
@@ -104,6 +104,7 @@ const DetalleTour = ({match, history}) => {
                 </Accordion>  
             </div>                
         </div>
+    
     );
 }
 
