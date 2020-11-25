@@ -335,6 +335,18 @@
       "especies": 300,
       "destacado": false,
       "imgD": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/DT9.jpg?alt=media&token=3e5ec858-73c5-48c5-916b-aec1243cb4d9"
+    },
+    {
+      "title": "nuevo tour",
+      "body": "body",
+      "img": "img portada",
+      "imgD": "img destacada",
+      "price": "04",
+      "dias": "05",
+      "ecoregiones": "selva",
+      "especies": "04",
+      "destacado": false,
+      "id": 10
     }
   ]
 }

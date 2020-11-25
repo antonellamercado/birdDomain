@@ -48,7 +48,6 @@ const getTourById = async id => {
     try {
         const response = await clienteAxios.get(`/Tours/${id}`);
         setNuevoTour(response.data);
-        console.log('editando', response.data);
     } catch (error) {
         console.log(error.response)
     }
@@ -68,8 +67,18 @@ const getTourById = async id => {
         
     return (
     <div>
+    <Button variant="primary" onClick={handleShow}>
+        Crear nuevo tour
+    </Button>
 
-                <Form className="formulario_modal  m-1 p-2" onSubmit={handleOnSubmit}>
+    <Modal show={show} onHide={handleClose}>
+
+    <Form className="formulario_modal  m-1 p-2" onSubmit={handleOnSubmit}>
+    <Modal.Header closeButton>
+        Complete los campos para crear un nuevo tour
+    </Modal.Header>
+                    <Modal.Body>
+
                     <Form.Group controlId="title">
                         <Form.Label>Titulo</Form.Label>
                         <Form.Control type="text" 
@@ -141,10 +150,16 @@ const getTourById = async id => {
                     <Form.Group controlId="formBasicCheckbox" controlId="destacada">
                         <Form.Check type="checkbox" label="Destacada" />
                     </Form.Group>
-                    <Button type="submit">
+                    </Modal.Body>
+                    <Modal.Footer>
+                    <Button type="submit" onClick={handleShow}>
                         {props.currentId==='' ? "Crear" : "Editar"}
                     </Button>
+                    </Modal.Footer>
                 </Form>
+
+    </Modal>
+                
     </div>
     );
 }
