@@ -104,7 +104,7 @@ const PanelAdmin = () => {
                             ><FontAwesomeIcon  icon={faTimes}  /> </div>
                             <div  
                             className="btn btn-light"
-                            onClick={()=>setCurrentId(tour.id) }
+                            onClick={()=>setCurrentId(tour.id)}
                             ><FontAwesomeIcon  icon={faEdit} /></div>
                         </td>
                         </tr>

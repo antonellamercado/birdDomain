@@ -338,13 +338,13 @@
     },
     {
       "title": "nuevo tour",
-      "body": "body",
-      "img": "img portada",
-      "imgD": "img destacada",
-      "price": "04",
-      "dias": "05",
-      "ecoregiones": "selva",
-      "especies": "04",
+      "body": "nuevo ",
+      "img": "nuevo ",
+      "imgD": "nuevo ",
+      "price": "10",
+      "dias": "2",
+      "ecoregiones": "nuevo ",
+      "especies": "2",
       "destacado": false,
       "id": 10
     }

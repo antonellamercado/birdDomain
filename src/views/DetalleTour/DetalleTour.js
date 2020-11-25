@@ -79,7 +79,7 @@ const DetalleTour = ({match, history}) => {
                         <div className="mt-3">
                             {
                                 checkBuy(tour.id)!==tour.id || checkBuy(tour.id)==null?<button id={tour.id} className="btn bg-success col-6 my-3 d-block mx-auto " onClick={ e =>{updateProduct(tour)} }>Comprar tour</button>:
-                                <button className="btn btn-success disabled">Tour en carrito</button>
+                                <button className="d-block col-6 mx-auto btn btn-success disabled">Tour en carrito</button>
                             }
                         </div>   
                         <Link to='/Checkout'>

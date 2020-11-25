@@ -67,7 +67,7 @@ const getTourById = async id => {
         
     return (
     <div>
-    <Button variant="primary" onClick={handleShow}>
+    <Button className="modal_boton" onClick={handleShow}>
         Crear nuevo tour
     </Button>
 
@@ -152,7 +152,7 @@ const getTourById = async id => {
                     </Form.Group>
                     </Modal.Body>
                     <Modal.Footer>
-                    <Button type="submit" onClick={handleShow}>
+                    <Button type="submit">
                         {props.currentId==='' ? "Crear" : "Editar"}
                     </Button>
                     </Modal.Footer>
