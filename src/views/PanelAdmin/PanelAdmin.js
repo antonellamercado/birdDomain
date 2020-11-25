@@ -35,7 +35,7 @@ const PanelAdmin = () => {
             {
             const result = await clienteAxios.post('/Tours', tourObject);
             console.log('nuevo tour grabado', result);
-            toast("Tour editado correctamente", {
+            toast("Tour creado correctamente", {
                 type: "success",
                 position: "top-center",
                 autoClose: 2000

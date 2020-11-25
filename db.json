@@ -159,9 +159,9 @@
       "Long": -65.1077,
       "Latobs": -27.2927,
       "Longobs": -65.8625,
-      "dias": 7,
+      "dias": "9",
       "ecoregiones": "Yungas",
-      "especies": 300,
+      "especies": "307",
       "destacado": false,
       "imgD": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/DT2.jpg?alt=media&token=3e5ec858-73c5-48c5-916b-aec1243cb4d9"
     },
@@ -227,7 +227,7 @@
       "Long": -68.4247,
       "Latobs": -29.243,
       "Longobs": -69.3536,
-      "dias": 7,
+      "dias": "5",
       "ecoregiones": "Puna",
       "especies": 300,
       "destacado": false,
@@ -283,18 +283,6 @@
       "especies": 300,
       "destacado": false,
       "imgD": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/DT9.jpg?alt=media&token=3e5ec858-73c5-48c5-916b-aec1243cb4d9"
-    },
-    {
-      "title": "nuevo tour",
-      "body": "nuevo ",
-      "img": "nuevo ",
-      "imgD": "nuevo ",
-      "price": "10",
-      "dias": "2",
-      "ecoregiones": "nuevo ",
-      "especies": "2",
-      "destacado": false,
-      "id": 10
     }
   ]
 }
