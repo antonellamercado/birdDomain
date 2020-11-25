@@ -48,6 +48,7 @@ const getTourById = async id => {
     try {
         const response = await clienteAxios.get(`/Tours/${id}`);
         setNuevoTour(response.data);
+        setShow(true);
     } catch (error) {
         console.log(error.response)
     }
@@ -77,52 +78,51 @@ const getTourById = async id => {
     <Modal.Header closeButton>
         Complete los campos para crear un nuevo tour
     </Modal.Header>
-                    <Modal.Body>
-
-                    <Form.Group controlId="title">
-                        <Form.Label>Titulo</Form.Label>
-                        <Form.Control type="text" 
+    <Modal.Body>
+        <Form.Group controlId="title">
+            <Form.Label>Titulo</Form.Label>
+            <Form.Control type="text" 
                         name="title" 
                         onChange={handleOnChange}
                         value={nuevoTour.title}
                         /> 
-                    </Form.Group>
-                    <Form.Group controlId="body">
-                        <Form.Label>Descripcion</Form.Label>
-                        <Form.Control type="textarea" 
+            </Form.Group>
+            <Form.Group controlId="body">
+            <Form.Label>Descripcion</Form.Label>
+            <Form.Control type="textarea" 
                         name="body" 
                         onChange={handleOnChange}
                         value={nuevoTour.body}
                         />
-                    </Form.Group>
-                    <Form.Group controlId="img">
-                        <Form.Label>Imagen Portada Tour</Form.Label>
-                        <Form.Control type="text" 
+            </Form.Group>
+            <Form.Group controlId="img">
+            <Form.Label>Imagen Portada Tour</Form.Label>
+            <Form.Control type="text" 
                         name="img" 
                         onChange={handleOnChange}
                         value={nuevoTour.img}
                         />
-                    </Form.Group>
-                    <Form.Group controlId="imgD">
-                        <Form.Label>Imagen Ave destacada</Form.Label>
-                        <Form.Control type="text" 
+            </Form.Group>
+            <Form.Group controlId="imgD">
+            <Form.Label>Imagen Ave destacada</Form.Label>
+            <Form.Control type="text" 
                         name="imgD" 
                         onChange={handleOnChange}
                         value={nuevoTour.imgD}
                         />
-                    </Form.Group>
-                    <Form.Row>
-                    <Form.Group as={Col} controlId="price">
-                        <Form.Label>Precio</Form.Label>
-                        <Form.Control type="text" 
+            </Form.Group>
+            <Form.Row>
+            <Form.Group as={Col} controlId="price">
+            <Form.Label>Precio</Form.Label>
+            <Form.Control type="text" 
                         name="price" 
                         onChange={handleOnChange}
                         value={nuevoTour.price}
                         />
-                    </Form.Group>
-                    <Form.Group as={Col} controlId="dias">
-                        <Form.Label>Cantidad de dias</Form.Label>
-                        <Form.Control type="text" 
+            </Form.Group>
+            <Form.Group as={Col} controlId="dias">
+            <Form.Label>Cantidad de dias</Form.Label>
+            <Form.Control type="text" 
                         name="dias" 
                         onChange={handleOnChange}
                         value={nuevoTour.dias}
