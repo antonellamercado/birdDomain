@@ -26,8 +26,8 @@ const PanelAdmin = () => {
             });
             }  
         //   
-        useEffect(() => {
-            getToursForList();
+        useEffect(async () => {
+           await getToursForList();
             }, []);
         //  agregar o editar tour              
         const addOrEditTour = async (tourObject) => {
