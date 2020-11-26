@@ -87,8 +87,8 @@ const DetalleTour = ({match, history}) => {
                 <Accordion>
                     <Card>
                         <Card.Header>
-                            <Accordion.Toggle as={Button} variant="link" eventKey="0">
-                            Comentarios
+                            <Accordion.Toggle as={Card.Header}   eventKey="0">
+                                <strong>Comentarios</strong>
                             </Accordion.Toggle>
                         </Card.Header>
                         <Accordion.Collapse eventKey="0">

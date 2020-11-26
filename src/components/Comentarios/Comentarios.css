@@ -1,8 +1,11 @@
 .comentarios_caja{
     border: 1px solid black;
-    margin-bottom: 2px;
+    box-shadow: 3px 3px 3px 3px black;
+    z-index: 2;
+    margin:auto;
 }
 .comentarios_img{
     width: 60%;
     text-align: center;
+    border-radius: 60%;
 }

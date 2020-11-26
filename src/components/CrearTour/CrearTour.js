@@ -152,7 +152,7 @@ const getTourById = async id => {
                     </Form.Group>
                     </Modal.Body>
                     <Modal.Footer>
-                    <Button type="submit">
+                    <Button type="submit" onClick={handleClose}>
                         {props.currentId==='' ? "Crear" : "Editar"}
                     </Button>
                     </Modal.Footer>

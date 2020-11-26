@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react'
 //libreria
-import { Table } from 'react-bootstrap';
+import { Table, Modal,Button } from 'react-bootstrap';
 import { ToastContainer, toast } from 'react-toastify';
  import 'react-toastify/dist/ReactToastify.css';
 //config
@@ -15,6 +15,10 @@ import CrearTour from '../../components/CrearTour/CrearTour';
 const PanelAdmin = () => {
 
     //estados
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+    const [buttonYes, setButtonYes] = useState(false);
     const [listaTours, setListaTours] = useState([]);
     const [currentId, setCurrentId] = useState("");
     // funciones
@@ -34,16 +38,18 @@ const PanelAdmin = () => {
         if (currentId === '')
             {
             const result = await clienteAxios.post('/Tours', tourObject);
+            getToursForList();
             console.log('nuevo tour grabado', result);
             toast("Tour creado correctamente", {
                 type: "success",
                 position: "top-center",
                 autoClose: 2000
-              });
+            });
             }
         else
             {
             await clienteAxios.put(`/Tours/${currentId}`, tourObject);
+            getToursForList();
             toast("Tour editado correctamente", {
                 type: "info",
                 position: "top-center",
@@ -54,6 +60,7 @@ const PanelAdmin = () => {
         }     
         //eliminar tour
         const onDeleteTour = async (id) => {
+           // if (buttonYes)
             if(window.confirm("seguro que quieres eliminar?"))
             {console.log('id para eliminar', id);
             const tourEliminado = await clienteAxios.delete(`/Tours/${id}`);
@@ -64,6 +71,7 @@ const PanelAdmin = () => {
                 autoClose: 2000
             });
             }
+            getToursForList();
         }
 
     return(
@@ -100,7 +108,7 @@ const PanelAdmin = () => {
                         <td>
                             <div 
                             className="btn btn-danger mr-2"
-                            onClick={()=> onDeleteTour(tour.id)}
+                            onClick={()=> onDeleteTour(tour.id) }
                             ><FontAwesomeIcon  icon={faTimes}  /> </div>
                             <div  
                             className="btn btn-light"
@@ -112,7 +120,8 @@ const PanelAdmin = () => {
             ))
             }
         </Table> 
-        </>
+       
+    </>
     );
 }
 
