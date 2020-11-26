@@ -13,7 +13,8 @@ import { faDollarSign ,  faCalendarAlt, faEye, faFeather } from '@fortawesome/fr
 import Comentarios from '../../components/Comentarios/Comentarios';
 //estilos
 import "../DetalleTour/DetalleTour.css";
-import Map from '../../components/Maps/MapT1';
+import Map from '../../components/Maps/Maps';
+// import { latLng } from 'leaflet';
 
 const DetalleTour = ({match, history}) => {
     const idtour = match.params.id;
@@ -24,6 +25,7 @@ const DetalleTour = ({match, history}) => {
         const getTourByID = async id  =>{
         await clienteAxios.get(`/Tours/${id}`)
         .then(response =>{
+            console.log(response)
         setTour(response.data)
         });
         }
@@ -58,12 +60,17 @@ const DetalleTour = ({match, history}) => {
             <div className='row'>
                 <Card>
                     <Card.Body>
-                        <Card.Title tag="h3" className='font-weight-bold'>{tour.title}</Card.Title>
-                        <div className='d-flex'>
-                            <img className="d-block col-6 detalle_imagen"  src={tour.img}  alt="img-tour"/>
-                            <div className="d-flex d-block col-6 detalle_imagen" >
-                                <Map/>
-                            </div>
+                        <Card.Title tag="h3" className='font-weight-bold'>{tour.title} </Card.Title>
+                        <div className='d-flex d-inline-block'>
+        
+                            <Card.Img className="col-6 detalle_imagen mr-2 p-0"  top width="100%" src={tour.img}  alt="img-tour"/>
+                            {/* <div className="d-flex d-block col-6 detalle_imagen" > */}
+                                <Map  className='detalle_imagen'
+                                position={{lat:parseFloat(tour.Lat)
+                                    , lng:parseFloat(tour.Long)}}
+                                observation={{lat:parseFloat(tour.Lat)
+                                    , lng:parseFloat(tour.Long)}}/>
+                            {/* </div> */}
                         </div>
                         <Card.Text className="col-12 my-4 text-justify  detalle_descripcion">  <FontAwesomeIcon  icon={faFeather} /> {tour.body}</Card.Text>
                         <Card.Text className="col-4 text-muted d-inline"> <FontAwesomeIcon  icon={faDollarSign} /> {tour.price}</Card.Text>
@@ -99,6 +106,7 @@ const DetalleTour = ({match, history}) => {
                 </Accordion>  
             </div>                
         </div>
+    
     );
 }
 
