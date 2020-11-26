@@ -32,7 +32,7 @@ const CrearTour = (props) => {
     const handleOnChange = (e) => {
             const {name, value} = e.target;
             setNuevoTour({...nuevoTour, [name]:value});
-            console.log('nuevo tour', nuevoTour);
+            console.log('nuevo tour', nuevoTour);       
            // validarCampos();
         }
 //
