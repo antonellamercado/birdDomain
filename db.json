@@ -347,15 +347,14 @@
       "Long": -54.4761,
       "Latobs": -25.683,
       "Longobs": -54.4544,
-      "dias": 7,
+      "dias": "9",
       "ecoregiones": "Selva Atlantica",
       "especies": 300,
       "destacado": false,
       "imgD": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/DT9.jpg?alt=media&token=3e5ec858-73c5-48c5-916b-aec1243cb4d9"
     }
   ],
-  "Comentarios": 
-  [
+  "Comentarios": [
     {
       "id": 1,
       "name": "fugit labore quia mollitia quas deserunt nostrum sunt",
