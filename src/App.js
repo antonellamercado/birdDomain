@@ -6,7 +6,7 @@ import './App.css';
 //import Header from './components/Header/Header';
 //import Footer from './components/Footer/Footer';
 import Layout from './components/Layout/Layout';
-// import Mapa from './components/Maps/Maps'
+// import Map from './components/Maps/Maps'
 //views
 import Home from './views/Home/Home';
 import Destacado from './views/Destacado/Destacado';
