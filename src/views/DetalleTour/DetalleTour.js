@@ -93,6 +93,7 @@ const DetalleTour = ({match, history}) => {
                         </Card.Header>
                         <Accordion.Collapse eventKey="0">
                             <Card.Body>
+                                <Comentarios />
                             </Card.Body>
                         </Accordion.Collapse>
                     </Card>
