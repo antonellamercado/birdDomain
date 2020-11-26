@@ -24,8 +24,8 @@ useEffect(()=>{
             listaComentarios.length === 0 ? <p>No hay tour disponible</p> :
             (listaComentarios.map((comentario, index) => 
             <div key = {comentario.id} className="comentarios_caja d-flex row justify-content-center">
-                <div className='col-2 align-content-center'>
-                <img className = 'comentarios_img align-item-center' src={comentario.img}></img>
+                <div className='d-flex col-2 align-content-center'>
+                <img className = 'comentarios_img' src={comentario.img}></img>
                 </div> 
                     
                 <div className='col-10'>

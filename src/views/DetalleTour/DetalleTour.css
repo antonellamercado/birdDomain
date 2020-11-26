@@ -8,3 +8,13 @@
     z-index: 5;
     font-size: 1em;
 }
+
+
+/*
+ {/* <div className="d-flex d-block col-6 detalle_imagen" > */
+/* <Map  className='detalle_imagen'
+ position={{lat:parseFloat(tour.Lat)
+     , lng:parseFloat(tour.Long)}}
+ observation={{lat:parseFloat(tour.Lat)
+     , lng:parseFloat(tour.Long)}}/>*/
+

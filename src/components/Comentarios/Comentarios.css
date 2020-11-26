@@ -1,5 +1,6 @@
 .comentarios_caja{
     border: 1px solid black;
+    margin-bottom: 2px;
 }
 .comentarios_img{
     width: 60%;

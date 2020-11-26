@@ -352,6 +352,18 @@
       "especies": 300,
       "destacado": false,
       "imgD": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/DT9.jpg?alt=media&token=3e5ec858-73c5-48c5-916b-aec1243cb4d9"
+    },
+    {
+      "title": "Selvas amazonicas",
+      "body": "nuevo tour ",
+      "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour1.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b",
+      "imgD": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/DT1.jpg?alt=media&token=3e5ec858-73c5-48c5-916b-aec1243cb4d9",
+      "price": "10",
+      "dias": "2",
+      "ecoregiones": "yungas",
+      "especies": "23",
+      "destacado": false,
+      "id": 10
     }
   ],
   "Comentarios": [
