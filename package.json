@@ -15,6 +15,7 @@
     "axios": "^0.21.0",
     "bootstrap": "^4.5.3",
     "leaflet": "^1.7.1",
+    "mercadopago": "^1.5.1",
     "react": "^16.14.0",
     "react-bootstrap": "^1.4.0",
     "react-dom": "^16.14.0",

@@ -82,7 +82,7 @@ const Cart = () => {
                         <div className="d-flex justify-content-end mr-4">
                             <p className="mt-2"><b>Total: {addTotalPrice()}U$D</b></p>
                         </div>
-                        <div>                   
+                        <div>             
                             <Link to='/Checkout'>
                                 <button className="btn btn-success">Finalizar Compras</button>
                             </Link>
