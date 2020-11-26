@@ -14,6 +14,6 @@
 .leaflet-container{
   border-radius: 5px;
   box-shadow: 8px 10px 8px rgb(88, 86, 86);
-  width:80%;
+  width:100%;
   height:80vh;
 }

@@ -138,10 +138,14 @@
       "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour1.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b",
       "map": "img/map1.jpg",
       "price": 400,
-      "Lat": -24.1847222,
-      "Long": -65.299166,
-      "Latobs": -23.67,
-      "Longobs": -64.87,
+      "Lat": [
+        -24.1847222,
+        -65.299166
+      ],
+      "Latobs": [
+        -23.67,
+        -64.87
+      ],
       "dias": 4,
       "ecoregiones": "Yungas",
       "especies": 300,
@@ -155,10 +159,14 @@
       "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour2.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b",
       "map": "img/map2.jpg",
       "price": 500,
-      "Lat": -26.8358,
-      "Long": -65.1077,
-      "Latobs": -27.2927,
-      "Longobs": -65.8625,
+      "Lat": [
+        -26.8358,
+        -65.1077
+      ],
+      "Latobs": [
+        -27.2927,
+        -65.8625
+      ],
       "dias": "9",
       "ecoregiones": "Yungas",
       "especies": "307",
@@ -172,10 +180,14 @@
       "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour3.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b",
       "map": "img/map3.jpg",
       "price": 700,
-      "Lat": -24.8439,
-      "Long": -65.4783,
-      "Latobs": -25.2341,
-      "Longobs": -65.9475,
+      "Lat": [
+        -24.8439,
+        -65.4783
+      ],
+      "Latobs": [
+        -25.2341,
+        -65.9475
+      ],
       "dias": 7,
       "ecoregiones": "Prepuna y puna",
       "especies": 300,
@@ -189,10 +201,14 @@
       "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour4.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b",
       "map": "img/map4.jpg",
       "price": 1500,
-      "Lat": -50.1928,
-      "Long": -72.0752,
-      "Latobs": -49.3311,
-      "Longobs": -72.8863,
+      "Lat": [
+        -50.1928,
+        -72.0752
+      ],
+      "Latobs": [
+        -49.3311,
+        -72.8863
+      ],
       "dias": 7,
       "ecoregiones": "Patagonia",
       "especies": 300,
@@ -206,10 +222,14 @@
       "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour5.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b",
       "map": "img/map5.jpg",
       "price": 1500,
-      "Lat": -54.8394,
-      "Long": -63.3122,
-      "Latobs": -54.843,
-      "Longobs": -68.5538,
+      "Lat": [
+        -54.8394,
+        -63.3122
+      ],
+      "Latobs": [
+        -54.843,
+        -68.5538
+      ],
       "dias": 7,
       "ecoregiones": "Bosque y Mar",
       "especies": 300,
@@ -223,10 +243,14 @@
       "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour6.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b",
       "map": "img/map6.jpg",
       "price": "1506",
-      "Lat": -31.5608,
-      "Long": -68.4247,
-      "Latobs": -29.243,
-      "Longobs": -69.3536,
+      "Lat": [
+        -31.5608,
+        -68.4247
+      ],
+      "Latobs": [
+        -29.243,
+        -69.3536
+      ],
       "dias": "5",
       "ecoregiones": "Puna",
       "especies": 300,
@@ -240,10 +264,14 @@
       "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour7.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b",
       "map": "img/map7.jpg",
       "price": 1500,
-      "Lat": -32.8275,
-      "Long": -68.7983,
-      "Latobs": -32.879,
-      "Longobs": -68.913,
+      "Lat": [
+        -32.8275,
+        -68.7983
+      ],
+      "Latobs": [
+        -32.879,
+        -68.913
+      ],
       "dias": 7,
       "ecoregiones": "Altos Andes y Desierto de Monte",
       "especies": 300,
@@ -257,10 +285,14 @@
       "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour8.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b",
       "map": "img/map8.jpg",
       "price": 1500,
-      "Lat": -27.4494,
-      "Long": -58.7577,
-      "Latobs": -28.3216,
-      "Longobs": -57.3691,
+      "Lat": [
+        -27.4494,
+        -58.7577
+      ],
+      "Latobs": [
+        -28.3216,
+        -57.3691
+      ],
       "dias": 7,
       "ecoregiones": "Humedales",
       "especies": 300,
@@ -274,24 +306,33 @@
       "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour9.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b",
       "map": "img/map9.jpg",
       "price": 1500,
-      "Lat": -25.7316,
-      "Long": -54.4761,
-      "Latobs": -25.683,
-      "Longobs": -54.4544,
-      "dias": "9",
+      "Lat": [
+        -25.7316,
+        -54.4761
+      ],
+      "Latobs": [
+        -25.683,
+        -54.4544
+      ],
+      "dias": 7,
       "ecoregiones": "Selva Atlantica",
       "especies": 300,
       "destacado": false,
       "imgD": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/DT9.jpg?alt=media&token=3e5ec858-73c5-48c5-916b-aec1243cb4d9"
     },
     {
+<<<<<<< HEAD
       "title": "Selvas amazonicas2",
       "body": "nuevo tour ",
+=======
+      "title": "nuevo tour",
+      "body": "body",
+>>>>>>> 95eb3a99530ca49cfae475f18520f3c62e2827eb
       "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour1.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b",
       "imgD": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/DT1.jpg?alt=media&token=3e5ec858-73c5-48c5-916b-aec1243cb4d9",
-      "price": "10",
-      "dias": "2",
-      "ecoregiones": "yungas",
+      "price": "200",
+      "dias": "3",
+      "ecoregiones": "Yungas",
       "especies": "23",
       "destacado": false,
       "id": 10

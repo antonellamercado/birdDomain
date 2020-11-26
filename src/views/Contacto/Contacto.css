@@ -4,6 +4,8 @@
     padding: 2px;
     margin: auto;
     border:2px solid  black;
+    box-shadow: 4px 3px 3px 2px whitesmoke;
+    z-index: 3;
 }
 
 .formulario_input{
@@ -31,14 +33,26 @@
     font-size: 1em;
     font-style: normal;
     font-weight: bold;
-    color: rgb(212, 202, 202);
+    color: #f26522;
 }
 
 .formulario_boton{
    width: 50%;
    padding: 5px;
    margin-bottom: 2px;
+   background-color: #f26522;
+    color: black;
+    font-weight: bold;
 }
+
+.formulario_boton:hover{
+    width: 50%;
+    padding: 5px;
+    margin-bottom: 2px;
+    background-color: #e6875b;
+     color: black;
+     font-weight: bold;
+ }
 .formulario_titulo{
     font-size: 1.3em;
     font-style: normal;
