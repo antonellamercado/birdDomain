@@ -12,6 +12,7 @@ import axios from "axios";
 //estilos
 import "../DetalleTour/DetalleTour.css";
 import Map from '../../components/Maps/Maps';
+// import { latLng } from 'leaflet';
 
 const DetalleTour = ({match, history}) => {
     const idtour = match.params.id;
@@ -22,6 +23,7 @@ const DetalleTour = ({match, history}) => {
         const getTourByID = async id  =>{
         await clienteAxios.get(`/Tours/${id}`)
         .then(response =>{
+            console.log(response)
         setTour(response.data)
         });
         }
@@ -58,17 +60,23 @@ const DetalleTour = ({match, history}) => {
 //})
 //};
 //getComentary();
+console.log(tour)
 
     return (
         <div>                                 
             <div className='row'>
                 <Card>
-                    <CardBody>
-                        <CardTitle tag="h3" className='font-weight-bold'>{tour.title}</CardTitle>
+                    <Card.Body>
+                        <Card.Title tag="h3" className='font-weight-bold'>{tour.title} </Card.Title>
                         <div className='d-flex d-inline-block'>
-                            <CardImg className="col-6 detalle_imagen mr-2 p-0"  top width="100%" src={tour.img}  alt="img-tour"/>
+        
+                            <Card.Img className="col-6 detalle_imagen mr-2 p-0"  top width="100%" src={tour.img}  alt="img-tour"/>
                             {/* <div className="d-flex d-block col-6 detalle_imagen" > */}
-                                <Map  className='detalle_imagen'/>
+                                <Map  className='detalle_imagen'
+                                position={{lat:parseFloat(tour.Lat)
+                                    , lng:parseFloat(tour.Long)}}
+                                observation={{lat:parseFloat(tour.Lat)
+                                    , lng:parseFloat(tour.Long)}}/>
                             {/* </div> */}
                         </div>
                         <Card.Text className="col-12 my-4 text-justify  detalle_descripcion">  <FontAwesomeIcon  icon={faFeather} /> {tour.body}</Card.Text>
@@ -85,7 +93,7 @@ const DetalleTour = ({match, history}) => {
                         <Link to='/Checkout'>
                             <Button className='col-6 my-3 d-block mx-auto bg-warning'>Finalizar compras</Button>
                         </Link>
-                    </CardBody>
+                    </Card.Body>
                 </Card>
             </div> 
             <div>

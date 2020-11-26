@@ -16,7 +16,7 @@ import { Icon } from "leaflet";
 //   });
 
 
-export const Mapa = (props) => {
+export const Mapa = ({position,observation}) => {
 
   const plane = new Icon({
     iconUrl: "https://www.flaticon.com/svg/static/icons/svg/67/67076.svg",
@@ -31,8 +31,8 @@ export const Mapa = (props) => {
   });
 
 
-const position = [-24.1847222,-65.299166]
-const observation = [-23.67, -64.87]
+// const position = [-24.1847222,-65.299166]
+// const observation = [-23.67, -64.87]
     return (
         <MapContainer center={position} zoom={8}>
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
