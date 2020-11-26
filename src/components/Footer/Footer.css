@@ -80,7 +80,7 @@
     .social-media{
         padding: 10px 0 10px;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: space-around;
     }
     
     .vertical-line{

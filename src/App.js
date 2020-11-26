@@ -1,12 +1,12 @@
 import React from 'react';
 import {BrowserRouter as Router, Switch,Route} from 'react-router-dom';
-//import logo from './logo.svg';
 import './App.css';
 //components
 // import Map from './components/Maps/MapT1'
 //import Header from './components/Header/Header';
 //import Footer from './components/Footer/Footer';
 import Layout from './components/Layout/Layout';
+// import Map from './components/Maps/Maps'
 //views
 import Home from './views/Home/Home';
 import Destacado from './views/Destacado/Destacado';
@@ -16,7 +16,7 @@ import Cart from './components/Cart/Cart';
 import DetalleTour from './views/DetalleTour/DetalleTour';
 import RecoverPass from './views/RecoverPass/RecoverPass';
 import PanelAdmin from './views/PanelAdmin/PanelAdmin';
-
+import 'react-toastify/dist/ReactToastify.css';
 
 
 

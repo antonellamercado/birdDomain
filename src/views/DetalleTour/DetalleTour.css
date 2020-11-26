@@ -1,6 +1,6 @@
 .detalle_imagen{
-    border-radius: 10%;
-    box-shadow: 8px 10px 8px black;
+    border-radius: 5px;
+    box-shadow: 8px 10px 8px rgb(88, 86, 86);;
 }
 
 .detalle_descripcion{
@@ -8,4 +8,3 @@
     z-index: 5;
     font-size: 1em;
 }
-

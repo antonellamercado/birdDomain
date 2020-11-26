@@ -22,4 +22,14 @@
     padding: 5px;
     margin-bottom: 3px;
     margin-top: 3px;
+    background-color: #f26522;
+    color: black;
+    font-weight: bold;
+ }
+
+ .modal_boton:hover{
+    background-color: #e6875b;
+    color: black;
+    font-weight: bold;
+    box-shadow: black;
  }

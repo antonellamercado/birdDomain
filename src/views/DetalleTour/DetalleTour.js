@@ -3,24 +3,27 @@ import {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 //config
 import clienteAxios from '../../config/axios';
+//import coment from '../../config/coment';
 //libreria
-import {Card, CardBody, CardTitle, CardImg, CardText, Button} from 'reactstrap';
+import {Card, Button, Accordion} from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDollarSign ,  faCalendarAlt, faEye, faFeather } from '@fortawesome/free-solid-svg-icons';
 import axios from "axios";
 //estilos
 import "../DetalleTour/DetalleTour.css";
-import Map from '../../components/Maps/MapT1';
+import Map from '../../components/Maps/Maps';
+// import { latLng } from 'leaflet';
 
 const DetalleTour = ({match, history}) => {
     const idtour = match.params.id;
     const [tour, setTour] = useState({});
     const [products, setProducts] = useState([]);
-
+//
     useEffect(()=>{
         const getTourByID = async id  =>{
         await clienteAxios.get(`/Tours/${id}`)
         .then(response =>{
+            console.log(response)
         setTour(response.data)
         });
         }
@@ -33,11 +36,12 @@ const DetalleTour = ({match, history}) => {
         }
         getBuys();
         }, []);
-
+//
     const updateProduct = async (product)=> {
         await axios.patch(`http://localhost:5000/usuarios/1`, {buys:[...products, product]});
         setProducts([...products, product]);
     }
+ //   
     function checkBuy(id){
         let i=0;
         for(i=0;i<products.length;i++){
@@ -46,37 +50,69 @@ const DetalleTour = ({match, history}) => {
             }
         }
     }
+//
+
+//const getComentary = async ()=> {
+//    await coment.get('/comments?postId=3')
+//    .then(response =>{
+//    const listaComentarios= response.data;
+//    console.log(listaComentarios)
+//})
+//};
+//getComentary();
+console.log(tour)
 
     return (
         <div>                                 
             <div className='row'>
                 <Card>
-                    <CardBody>
-                        <CardTitle tag="h3" className='font-weight-bold'>{tour.title}</CardTitle>
+                    <Card.Body>
+                        <Card.Title tag="h3" className='font-weight-bold'>{tour.title} </Card.Title>
                         <div className='d-flex d-inline-block'>
-                            <CardImg className="col-6 detalle_imagen"  top width="80%" src={tour.img}  alt="img-tour"/>
-                            <div className="d-flex d-block col-6 detalle_imagen" >
-                                <Map  className='detalle_imagen'/>
-                            </div>
+        
+                            <Card.Img className="col-6 detalle_imagen mr-2 p-0"  top width="100%" src={tour.img}  alt="img-tour"/>
+                            {/* <div className="d-flex d-block col-6 detalle_imagen" > */}
+                                <Map  className='detalle_imagen'
+                                position={{lat:parseFloat(tour.Lat)
+                                    , lng:parseFloat(tour.Long)}}
+                                observation={{lat:parseFloat(tour.Lat)
+                                    , lng:parseFloat(tour.Long)}}/>
+                            {/* </div> */}
                         </div>
-                        <CardText className="col-12 my-4 text-justify  detalle_descripcion">  <FontAwesomeIcon  icon={faFeather} /> {tour.body}</CardText>
-                        <CardText className="col-4 text-muted d-inline"> <FontAwesomeIcon  icon={faDollarSign} /> {tour.price}</CardText>
-                        <CardText className="col-4 text-muted d-inline"> <FontAwesomeIcon  icon={faCalendarAlt} /> Duracion del tour: {tour.dias} dias
-                        </CardText>
-                        <CardText className="col-4 text-muted d-inline"> <FontAwesomeIcon  icon={faEye} /> Numero de especies probables en avistaje: {tour.especies} </CardText>
+                        <Card.Text className="col-12 my-4 text-justify  detalle_descripcion">  <FontAwesomeIcon  icon={faFeather} /> {tour.body}</Card.Text>
+                        <Card.Text className="col-4 text-muted d-inline"> <FontAwesomeIcon  icon={faDollarSign} /> {tour.price}</Card.Text>
+                        <Card.Text className="col-4 text-muted d-inline"> <FontAwesomeIcon  icon={faCalendarAlt} /> Duracion del tour: {tour.dias} dias
+                        </Card.Text>
+                        <Card.Text className="col-4 text-muted d-inline"> <FontAwesomeIcon  icon={faEye} /> Numero de especies probables en avistaje: {tour.especies} </Card.Text>
                         <div className="mt-3">
                             {
-                                checkBuy(tour.id)!==tour.id || checkBuy(tour.id)==null?<button id={tour.id} className="btn btn-success" onClick={ e =>{updateProduct(tour)} }>Buy Tour</button>:
-                                <button className="btn btn-success disabled">Tour en carrito</button>
+                                checkBuy(tour.id)!==tour.id || checkBuy(tour.id)==null?<button id={tour.id} className="btn bg-success col-6 my-3 d-block mx-auto " onClick={ e =>{updateProduct(tour)} }>Comprar tour</button>:
+                                <button className="d-block col-6 mx-auto btn btn-success disabled">Tour en carrito</button>
                             }
                         </div>   
                         <Link to='/Checkout'>
                             <Button className='col-6 my-3 d-block mx-auto bg-warning'>Finalizar compras</Button>
                         </Link>
-                    </CardBody>
+                    </Card.Body>
                 </Card>
-            </div>                 
+            </div> 
+            <div>
+                <Accordion>
+                    <Card>
+                        <Card.Header>
+                            <Accordion.Toggle as={Button} variant="link" eventKey="0">
+                            Comentarios
+                            </Accordion.Toggle>
+                        </Card.Header>
+                        <Accordion.Collapse eventKey="0">
+                            <Card.Body>Estos son los comentarios
+                            </Card.Body>
+                        </Accordion.Collapse>
+                    </Card>
+                </Accordion>  
+            </div>                
         </div>
+    
     );
 }
 
