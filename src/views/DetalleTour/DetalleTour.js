@@ -13,10 +13,11 @@ import { faDollarSign ,  faCalendarAlt, faEye, faFeather } from '@fortawesome/fr
 import Comentarios from '../../components/Comentarios/Comentarios';
 //estilos
 import "../DetalleTour/DetalleTour.css";
-import Map from '../../components/Maps/Maps';
+import Mapa from '../../components/Maps/Maps';
+
 // import { latLng } from 'leaflet';
 
-const DetalleTour = ({match, history}) => {
+const DetalleTour = ({match}) => {
     const idtour = match.params.id;
     const [tour, setTour] = useState({});
     const [products, setProducts] = useState([]);
@@ -25,7 +26,6 @@ const DetalleTour = ({match, history}) => {
         const getTourByID = async id  =>{
         await clienteAxios.get(`/Tours/${id}`)
         .then(response =>{
-            console.log(response)
         setTour(response.data)
         });
         }
@@ -54,23 +54,36 @@ const DetalleTour = ({match, history}) => {
     }
 //
 
+//const getComentary = async ()=> {
+//    await coment.get('/comments?postId=3')
+//    .then(response =>{
+//    const listaComentarios= response.data;
+//    console.log(listaComentarios)
+//})
+//};
+//getComentary();
+
 
     return (
         <div>                                 
             <div className='row'>
-                <Card>
-                    <Card.Body>
-                        <Card.Title tag="h3" className='font-weight-bold'>{tour.title} </Card.Title>
-                        <div className='d-flex d-inline-block'>
-        
-                            <Card.Img className="col-6 detalle_imagen mr-2 p-0"  top width="100%" src={tour.img}  alt="img-tour"/>
-                          
+                <div>
+                    <div>
+                        <div className='tour-title font-weight-bold mt-5 mb-5'> {tour.title} </div>
+                        <div className='d-flex d-inline-block container'>
+                            <img className="col-6 p-0 detalle_imagen mr-3"  width="100%" src={tour.img}  alt="img-tour"></img>
+                            <div className="d-flex d-block col-6 p-0 detalle_imagen" >
+                                  <Mapa  
+                                position={tour.Lat}
+                                observation={tour.Latobs}
+                                /> 
+                            </div> 
                         </div>
-                        <Card.Text className="col-12 my-4 text-justify  detalle_descripcion">  <FontAwesomeIcon  icon={faFeather} /> {tour.body}</Card.Text>
-                        <Card.Text className="col-4 text-muted d-inline"> <FontAwesomeIcon  icon={faDollarSign} /> {tour.price}</Card.Text>
-                        <Card.Text className="col-4 text-muted d-inline"> <FontAwesomeIcon  icon={faCalendarAlt} /> Duracion del tour: {tour.dias} dias
-                        </Card.Text>
-                        <Card.Text className="col-4 text-muted d-inline"> <FontAwesomeIcon  icon={faEye} /> Numero de especies probables en avistaje: {tour.especies} </Card.Text>
+                        <div className="col-12 my-4 text-justify  detalle_descripcion">  <FontAwesomeIcon  icon={faFeather} /> {tour.body}</div>
+                        <div className="col-4 text-muted d-inline"> <FontAwesomeIcon  icon={faDollarSign} /> {tour.price}</div>
+                        <div className="col-4 text-muted d-inline"> <FontAwesomeIcon  icon={faCalendarAlt} /> Duracion del tour: {tour.dias} dias
+                        </div>
+                        <div className="col-4 text-muted d-inline"> <FontAwesomeIcon  icon={faEye} /> Numero de especies probables en avistaje: {tour.especies} </div>
                         <div className="mt-3">
                             {
                                 checkBuy(tour.id)!==tour.id || checkBuy(tour.id)==null?<button id={tour.id} className="btn bg-success col-6 my-3 d-block mx-auto " onClick={ e =>{updateProduct(tour)} }>Comprar tour</button>:
@@ -80,8 +93,9 @@ const DetalleTour = ({match, history}) => {
                         <Link to='/Checkout'>
                             <Button className='col-6 my-3 d-block mx-auto bg-warning'>Finalizar compras</Button>
                         </Link>
-                    </Card.Body>
-                </Card>
+                    </div>
+                </div>
+
             </div> 
             <div>
                 <Accordion>

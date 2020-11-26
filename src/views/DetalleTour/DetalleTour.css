@@ -1,6 +1,10 @@
+.tour-title{
+    font-size: 30px;
+}
+
 .detalle_imagen{
     border-radius: 5px;
-    box-shadow: 8px 10px 8px rgb(88, 86, 86);;
+    box-shadow: 8px 10px 8px rgb(88, 86, 86);
 }
 
 .detalle_descripcion{
@@ -8,13 +12,4 @@
     z-index: 5;
     font-size: 1em;
 }
-
-
-/*
- {/* <div className="d-flex d-block col-6 detalle_imagen" > */
-/* <Map  className='detalle_imagen'
- position={{lat:parseFloat(tour.Lat)
-     , lng:parseFloat(tour.Long)}}
- observation={{lat:parseFloat(tour.Lat)
-     , lng:parseFloat(tour.Long)}}/>*/
 
