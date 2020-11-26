@@ -26,7 +26,7 @@ const PanelAdmin = () => {
             });
             }  
         //   
-        useEffect(() => {
+        useEffect( () => {
             getToursForList();
             }, []);
         //  agregar o editar tour              

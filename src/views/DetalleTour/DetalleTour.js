@@ -3,12 +3,14 @@ import {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 //config
 import clienteAxios from '../../config/axios';
-//import coment from '../../config/coment';
+import axios from "axios";
 //libreria
 import {Card, Button, Accordion} from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDollarSign ,  faCalendarAlt, faEye, faFeather } from '@fortawesome/free-solid-svg-icons';
-import axios from "axios";
+
+//componentes
+import Comentarios from '../../components/Comentarios/Comentarios';
 //estilos
 import "../DetalleTour/DetalleTour.css";
 import Map from '../../components/Maps/Maps';
@@ -52,15 +54,6 @@ const DetalleTour = ({match, history}) => {
     }
 //
 
-//const getComentary = async ()=> {
-//    await coment.get('/comments?postId=3')
-//    .then(response =>{
-//    const listaComentarios= response.data;
-//    console.log(listaComentarios)
-//})
-//};
-//getComentary();
-console.log(tour)
 
     return (
         <div>                                 
@@ -71,13 +64,7 @@ console.log(tour)
                         <div className='d-flex d-inline-block'>
         
                             <Card.Img className="col-6 detalle_imagen mr-2 p-0"  top width="100%" src={tour.img}  alt="img-tour"/>
-                            {/* <div className="d-flex d-block col-6 detalle_imagen" > */}
-                                <Map  className='detalle_imagen'
-                                position={{lat:parseFloat(tour.Lat)
-                                    , lng:parseFloat(tour.Long)}}
-                                observation={{lat:parseFloat(tour.Lat)
-                                    , lng:parseFloat(tour.Long)}}/>
-                            {/* </div> */}
+                          
                         </div>
                         <Card.Text className="col-12 my-4 text-justify  detalle_descripcion">  <FontAwesomeIcon  icon={faFeather} /> {tour.body}</Card.Text>
                         <Card.Text className="col-4 text-muted d-inline"> <FontAwesomeIcon  icon={faDollarSign} /> {tour.price}</Card.Text>
@@ -105,7 +92,8 @@ console.log(tour)
                             </Accordion.Toggle>
                         </Card.Header>
                         <Accordion.Collapse eventKey="0">
-                            <Card.Body>Estos son los comentarios
+                            <Card.Body>
+                                <Comentarios />
                             </Card.Body>
                         </Accordion.Collapse>
                     </Card>
