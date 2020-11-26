@@ -32,7 +32,7 @@ const CrearTour = (props) => {
     const handleOnChange = (e) => {
             const {name, value} = e.target;
             setNuevoTour({...nuevoTour, [name]:value});
-            console.log('nuevo tour', nuevoTour);
+            console.log('nuevo tour', nuevoTour);       
            // validarCampos();
         }
 //
@@ -152,7 +152,7 @@ const getTourById = async id => {
                     </Form.Group>
                     </Modal.Body>
                     <Modal.Footer>
-                    <Button type="submit">
+                    <Button type="submit" onClick={handleClose}>
                         {props.currentId==='' ? "Crear" : "Editar"}
                     </Button>
                     </Modal.Footer>

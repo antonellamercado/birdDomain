@@ -6,7 +6,7 @@ import "./Cart.css";
 const Cart = () => {
     const [products, setProducts] = useState([]);
     const [tours, setTours] = useState([]);
-    const [cartList, setCart] = useState(false)
+    const [cartList, setCart] = useState(false);
 
     useEffect(()=>{
         const getBuys = async ()=>{
@@ -83,7 +83,7 @@ const Cart = () => {
                             <p className="mt-2"><b>Total: {addTotalPrice()}U$D</b></p>
                         </div>
                         <div>             
-                            <Link to='/Checkout'>
+                            <Link to='/checkout'>
                                 <button className="btn btn-success">Finalizar Compras</button>
                             </Link>
                         </div>
