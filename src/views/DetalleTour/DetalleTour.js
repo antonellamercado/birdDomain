@@ -15,7 +15,7 @@ import Comentarios from '../../components/Comentarios/Comentarios';
 import "../DetalleTour/DetalleTour.css";
 import Mapa from '../../components/Maps/Maps';
 
-// import { latLng } from 'leaflet';
+import { latLng } from 'leaflet';
 
 const DetalleTour = ({match}) => {
     const idtour = match.params.id;
@@ -72,12 +72,13 @@ const DetalleTour = ({match}) => {
                         <div className='tour-title font-weight-bold mt-5 mb-5'> {tour.title} </div>
                         <div className='d-flex d-inline-block container'>
                             <img className="col-6 p-0 detalle_imagen mr-3"  width="100%" src={tour.img}  alt="img-tour"></img>
-                            <div className="d-flex d-block col-6 p-0 detalle_imagen" >
+                            <div className="d-flex d-block col-6 p-0 detalle_imagen" >  
                                   <Mapa  
-                                position={tour.Lat}
-                                observation={tour.Latobs}
+                                 key={tour.id} 
+                                 position={tour.Lat}
+                                 observation={tour.Latobs}
                                 /> 
-                            </div> 
+                              </div>  
                         </div>
                         <div className="col-12 my-4 text-justify  detalle_descripcion">  <FontAwesomeIcon  icon={faFeather} /> {tour.body}</div>
                         <div className="col-4 text-muted d-inline"> <FontAwesomeIcon  icon={faDollarSign} /> {tour.price}</div>
