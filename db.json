@@ -50,6 +50,7 @@
       "id": 1,
       "name": "Espertillero estriado",
       "title": "Asthenes maculicauda",
+      "info":"Especie muy rara que puede ser observada en el Tour PN Aconquija",
       "body": "Asthenes maculicauda - Sp endemica",
       "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Fig1.jpg?alt=media&token=b7a63dea-8285-4d00-b016-469d4fa47054"
     },
@@ -57,6 +58,7 @@
       "id": 2,
       "name": "Picaflor verde",
       "title": "Chlorostilbon lucidus",
+      "info":"Especie frecuente que puede ser observada en el Tour Ibera",
       "body": "Chlorostilbon lucidus - Sp no endemica",
       "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Fig2.jpg?alt=media&token=b7a63dea-8285-4d00-b016-469d4fa47054"
     },
@@ -64,6 +66,7 @@
       "id": 3,
       "name": "Chuña patas negras",
       "title": "Chunga burmeisteri",
+      "info":"Especie emblematica del Chaco Seco puede ser observada en el Tour Las Aves y el vino",
       "body": "Chunga burmeisteri - Sp no endemica",
       "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Fig3.jpg?alt=media&token=b7a63dea-8285-4d00-b016-469d4fa47054"
     },
@@ -71,6 +74,7 @@
       "id": 4,
       "name": "Kakuy",
       "title": "Nyctibius griseus",
+      "info":"Especie conocida por el folklore se la puede observar en el Tour Las aves y el vino",
       "body": "Heliomaster furcier - Sp no endemica",
       "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Fig4.jpg?alt=media&token=b7a63dea-8285-4d00-b016-469d4fa47054"
     },
@@ -78,12 +82,15 @@
       "id": 5,
       "name": "Alilicucu Yungueño",
       "title": "Megascops hoyi",
+      "info":"Especie muy rara que puede ser observada en el Tour PN Calilegua",
       "body": "Chunga burmeisteri - Sp no endemica",
       "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Fig5.jpg?alt=media&token=b7a63dea-8285-4d00-b016-469d4fa47054"
     },
     {
       "id": 6,
+      "name":"Picaflor Enano",
       "title": "Microstilbon burmeisteri",
+      "info":"Especie muy rara que puede ser observada en el Tour PN Calilegua",
       "body": "Chunga burmeisteri - Sp no endemica",
       "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Fig6.jpg?alt=media&token=b7a63dea-8285-4d00-b016-469d4fa47054"
     },
@@ -91,6 +98,7 @@
       "id": 7,
       "name": "Picaflor de barbijo",
       "title": "Heliomaster furcifer",
+      "info":"Especie frecuente que puede ser observada en el Tour a Ibera",
       "body": "Chunga burmeisteri - Sp no endemica",
       "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Fig7.jpg?alt=media&token=b7a63dea-8285-4d00-b016-469d4fa47054"
     },
@@ -98,6 +106,7 @@
       "id": 8,
       "name": "Carpintero lomo blanco",
       "title": "Campephilus leucopogon",
+      "info":"Especie frecuente que puede ser observada en el Tour PN Calilegua",
       "body": "Chunga burmeisteri - Sp no endemica",
       "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Fig8.jpg?alt=media&token=b7a63dea-8285-4d00-b016-469d4fa47054"
     },
@@ -105,6 +114,7 @@
       "id": 9,
       "name": "Cerquero amarillo",
       "title": "Atlapetes citrinellus",
+      "info":"Especie muy rara que puede ser observada en el Tour PN Aconquija",
       "body": "Chunga burmeisteri - Sp no endemica",
       "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Fig9.jpg?alt=media&token=b7a63dea-8285-4d00-b016-469d4fa47054"
     },
@@ -112,6 +122,7 @@
       "id": 10,
       "name": "Chuña patas rojas",
       "title": "Cariama cristata",
+      "info":"Especie frecuente que puede ser observada en el Tour PN Aconquija",
       "body": "Chunga burmeisteri - Sp no endemica",
       "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Fig10.jpg?alt=media&token=b7a63dea-8285-4d00-b016-469d4fa47054"
     },
@@ -119,6 +130,7 @@
       "id": 11,
       "name": "Carpinterito bataraz",
       "title": "Picumnus cirratus",
+      "info":"Especie frecuente que puede ser observada en el Tour a Ibera",
       "body": "Chunga burmeisteri - Sp no endemica",
       "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Fig11.jpg?alt=media&token=b7a63dea-8285-4d00-b016-469d4fa47054"
     },
@@ -126,6 +138,7 @@
       "id": 12,
       "name": "Pitiayumi",
       "title": "Setophaga pitiayumi",
+      "info":"Especie frecuente que puede ser observada en el Tour PN Aconquija",
       "body": "Chunga burmeisteri - Sp no endemica",
       "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Fig12.jpg?alt=media&token=b7a63dea-8285-4d00-b016-469d4fa47054"
     }
@@ -321,13 +334,8 @@
       "imgD": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/DT9.jpg?alt=media&token=3e5ec858-73c5-48c5-916b-aec1243cb4d9"
     },
     {
-<<<<<<< HEAD
       "title": "Selvas amazonicas2",
       "body": "nuevo tour ",
-=======
-      "title": "nuevo tour",
-      "body": "body",
->>>>>>> 95eb3a99530ca49cfae475f18520f3c62e2827eb
       "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour1.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b",
       "imgD": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/DT1.jpg?alt=media&token=3e5ec858-73c5-48c5-916b-aec1243cb4d9",
       "price": "200",
