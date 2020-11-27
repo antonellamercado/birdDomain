@@ -33,3 +33,7 @@
     font-weight: bold;
     box-shadow: black;
  }
+
+ .desactivado{
+     display:none;
+ }
