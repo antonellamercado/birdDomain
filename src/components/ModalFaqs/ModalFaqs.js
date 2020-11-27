@@ -19,7 +19,7 @@ export const HelpModal = (props) => {
       </Modal.Header>
       <Modal.Body className="modal-body text-dark">
         
-      <Accordion defaultActiveKey="0">
+      <Accordion>
   <Card>
     <Card.Header>
       <Accordion.Toggle as={Button} variant="link" eventKey="0">
@@ -32,7 +32,7 @@ export const HelpModal = (props) => {
   </Card>
   <Card>
     <Card.Header>
-      <Accordion.Toggle as={Button} variant="link" eventKey="1">
+      <Accordion.Toggle as={Button} variant="link" eventKey="1" >
         Que se puede esperar de los guias de birds domain?
       </Accordion.Toggle>
     </Card.Header>
@@ -42,31 +42,31 @@ export const HelpModal = (props) => {
   </Card>
   <Card>
     <Card.Header>
-      <Accordion.Toggle as={Button} variant="link" eventKey="1">
+      <Accordion.Toggle as={Button} variant="link" eventKey="2">
         Que se puede esperar de los guias de birds domain?
       </Accordion.Toggle>
     </Card.Header>
-    <Accordion.Collapse eventKey="1">
+    <Accordion.Collapse eventKey="2">
       <Card.Body>Hello! I'm another body</Card.Body>
     </Accordion.Collapse>
   </Card>
   <Card>
     <Card.Header>
-      <Accordion.Toggle as={Button} variant="link" eventKey="1">
+      <Accordion.Toggle as={Button} variant="link" eventKey="3">
         Que se puede esperar de los guias de birds domain?
       </Accordion.Toggle>
     </Card.Header>
-    <Accordion.Collapse eventKey="1">
+    <Accordion.Collapse eventKey="3">
       <Card.Body>Hello! I'm another body</Card.Body>
     </Accordion.Collapse>
   </Card>
   <Card>
     <Card.Header>
-      <Accordion.Toggle as={Button} variant="link" eventKey="1">
+      <Accordion.Toggle as={Button} variant="link" eventKey="4">
         Que se puede esperar de los guias de birds domain?
       </Accordion.Toggle>
     </Card.Header>
-    <Accordion.Collapse eventKey="1">
+    <Accordion.Collapse eventKey="4">
       <Card.Body>Hello! I'm another body</Card.Body>
     </Accordion.Collapse>
   </Card>
