@@ -13,12 +13,12 @@ export const ModalIng = (props) => {
       aria-labelledby="contained-modal-title-vcenter"
       centered
             >
-      <Modal.Header closeButton className="modal-body">
+      <Modal.Header closeButton className="modal-body text-dark">
         <Modal.Title id="contained-modal-title-vcenter">
           Ingresa
         </Modal.Title>
       </Modal.Header>
-      <Modal.Body className="modal-body">
+      <Modal.Body className="modal-body text-dark">
       <Form className="mt-2" id="form">
             <h3>Iniciar Sesión</h3>
             <div className="form-group">

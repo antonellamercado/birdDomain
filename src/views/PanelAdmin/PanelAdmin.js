@@ -32,6 +32,7 @@ const PanelAdmin = () => {
         //   
         useEffect( () => {
             getToursForList();
+            console.log("se actualiza")
             }, []);
         //  agregar o editar tour              
         const addOrEditTour = async (tourObject) => {
@@ -95,7 +96,7 @@ const PanelAdmin = () => {
                 </tr>
             </thead>
             {
-                listaTours.length === 0 ? <p>No hay tour disponible</p> :
+                listaTours.length === 0 ? null :
                 (listaTours.map((tour, index) => 
                     <tbody key={index}>
                         <tr>

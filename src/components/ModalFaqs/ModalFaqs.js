@@ -12,19 +12,19 @@ export const HelpModal = (props) => {
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
-      <Modal.Header closeButton>
+      <Modal.Header closeButton className="modal-body text-dark">
         <Modal.Title id="contained-modal-title-vcenter">
           Necesitas ayuda?
         </Modal.Title>
       </Modal.Header>
-      <Modal.Body>
+      <Modal.Body className="modal-body text-dark">
         <img className=" w-100 h-80" src={img}></img>
         <p>
           Envianos tus consultas a birdomain@gmail.com y
           te responderemos a la brevedad
         </p>
       </Modal.Body>
-      <Modal.Footer>
+      <Modal.Footer className="modal-body">
         <Button onClick={props.onHide}>Cerrar</Button>
       </Modal.Footer>
     </Modal>
