@@ -191,7 +191,7 @@
       "dias": 7,
       "ecoregiones": "Prepuna y puna",
       "especies": 300,
-      "destacado": false,
+      "destacado": true,
       "imgD": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/DT3.jpg?alt=media&token=3e5ec858-73c5-48c5-916b-aec1243cb4d9"
     },
     {
@@ -233,7 +233,7 @@
       "dias": 7,
       "ecoregiones": "Bosque y Mar",
       "especies": 300,
-      "destacado": false,
+      "destacado": true,
       "imgD": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/DT5.jpg?alt=media&token=3e5ec858-73c5-48c5-916b-aec1243cb4d9"
     },
     {
