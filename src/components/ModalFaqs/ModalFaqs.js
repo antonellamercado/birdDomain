@@ -1,5 +1,5 @@
 import React from 'react';
-import {Modal, Button} from 'react-bootstrap';
+import {Modal, Button, Accordion,Card} from 'react-bootstrap';
 import img from '../../img/Fig3.jpg'
 
 
@@ -18,11 +18,60 @@ export const HelpModal = (props) => {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body className="modal-body text-dark">
-        <img className=" w-100 h-80" src={img}></img>
-        <p>
-          Envianos tus consultas a birdomain@gmail.com y
-          te responderemos a la brevedad
-        </p>
+        
+      <Accordion defaultActiveKey="0">
+  <Card>
+    <Card.Header>
+      <Accordion.Toggle as={Button} variant="link" eventKey="0">
+        Cual es la filosofia de viaje de birds Domain? 
+      </Accordion.Toggle>
+    </Card.Header>
+    <Accordion.Collapse eventKey="0">
+      <Card.Body>Hello! I'm the body</Card.Body>
+    </Accordion.Collapse>
+  </Card>
+  <Card>
+    <Card.Header>
+      <Accordion.Toggle as={Button} variant="link" eventKey="1">
+        Que se puede esperar de los guias de birds domain?
+      </Accordion.Toggle>
+    </Card.Header>
+    <Accordion.Collapse eventKey="1">
+      <Card.Body>Hello! I'm another body</Card.Body>
+    </Accordion.Collapse>
+  </Card>
+  <Card>
+    <Card.Header>
+      <Accordion.Toggle as={Button} variant="link" eventKey="1">
+        Que se puede esperar de los guias de birds domain?
+      </Accordion.Toggle>
+    </Card.Header>
+    <Accordion.Collapse eventKey="1">
+      <Card.Body>Hello! I'm another body</Card.Body>
+    </Accordion.Collapse>
+  </Card>
+  <Card>
+    <Card.Header>
+      <Accordion.Toggle as={Button} variant="link" eventKey="1">
+        Que se puede esperar de los guias de birds domain?
+      </Accordion.Toggle>
+    </Card.Header>
+    <Accordion.Collapse eventKey="1">
+      <Card.Body>Hello! I'm another body</Card.Body>
+    </Accordion.Collapse>
+  </Card>
+  <Card>
+    <Card.Header>
+      <Accordion.Toggle as={Button} variant="link" eventKey="1">
+        Que se puede esperar de los guias de birds domain?
+      </Accordion.Toggle>
+    </Card.Header>
+    <Accordion.Collapse eventKey="1">
+      <Card.Body>Hello! I'm another body</Card.Body>
+    </Accordion.Collapse>
+  </Card>
+</Accordion>
+
       </Modal.Body>
       <Modal.Footer className="modal-body">
         <Button onClick={props.onHide}>Cerrar</Button>

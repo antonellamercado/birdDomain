@@ -7,3 +7,11 @@
     background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
     color:black;
 }
+
+
+.btn_recuperar_pass{
+        padding:5px;
+        border-radius:3px;
+        background-color:  #f26522;;
+        border:none;
+    }

@@ -2,3 +2,9 @@
     background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
     color:black;
 }
+.form_login_input{
+    width: 50%;
+}
+.form_login_label{
+    width: 50%;
+}

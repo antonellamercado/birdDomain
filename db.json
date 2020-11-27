@@ -9,7 +9,50 @@
       "img": "/img/user1.jpg",
       "admin": true,
       "favoritos": [],
-      "buys": []
+      "buys": [
+        {
+          "id": 2,
+          "title": "Yungas - Parque Nacional Aconquija",
+          "body": "El parque nacional Aconquija es un área natural protegida de Argentina creada en la provincia de Tucumán. En una misma ruta se puede recorrer diferentes estratos altitudinales percibiendo como cambia la vegetacion junto a las aves que alli habitan",
+          "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour2.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b",
+          "map": "img/map2.jpg",
+          "price": 500,
+          "Lat": [
+            -26.8358,
+            -65.1077
+          ],
+          "Latobs": [
+            -27.2927,
+            -65.8625
+          ],
+          "dias": "9",
+          "ecoregiones": "Yungas",
+          "especies": "307",
+          "destacado": false,
+          "imgD": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/DT2.jpg?alt=media&token=3e5ec858-73c5-48c5-916b-aec1243cb4d9"
+        },
+        {
+          "id": 4,
+          "title": "Patagonia - El Chalten",
+          "body": "El Chaltén es una villa del Parque Nacional Los Glaciares, en la provincia argentina de Santa Cruz. Es una vía de acceso a los senderos que rodean las cimas del cerro Torre y el Monte Fitz Roy al noroeste. Cerca de Fitz Roy hay un sendero que llega al mirador Laguna de los Tres. Aqui se pueden observar aves y un imponente paisaje Glaciar",
+          "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour4.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b",
+          "map": "img/map4.jpg",
+          "price": 1500,
+          "Lat": [
+            -50.1928,
+            -72.0752
+          ],
+          "Latobs": [
+            -49.3311,
+            -72.8863
+          ],
+          "dias": 7,
+          "ecoregiones": "Patagonia",
+          "especies": 300,
+          "destacado": false,
+          "imgD": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/DT4.jpg?alt=media&token=3e5ec858-73c5-48c5-916b-aec1243cb4d9"
+        }
+      ]
     },
     {
       "id": 2,
@@ -319,7 +362,7 @@
       "especies": 300,
       "destacado": false,
       "imgD": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/DT9.jpg?alt=media&token=3e5ec858-73c5-48c5-916b-aec1243cb4d9"
-    }    
+    }
   ],
   "Comentarios": [
     {
