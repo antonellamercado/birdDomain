@@ -53,8 +53,8 @@ const Header = () => {
                 <Link to = '/'>
                 <li className="nav-links-links">Home</li>
                 </Link>
-                <Link to = '/destacado'>
-                <li className="nav-links-links">Destacado</li>
+                <Link to = '/aves'>
+                <li className="nav-links-links">Aves</li>
                 </Link>
                 <Link to = '/contacto'>
                 <li className="nav-links-links">Contacto</li>
