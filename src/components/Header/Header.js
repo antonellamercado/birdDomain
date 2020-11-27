@@ -31,7 +31,7 @@ const Header = () => {
     <strong>Birds Domain</strong>
 
      <div className="buttons d-flex justify-content-between">
-     <button className="buttonC" onClick={() => setModalShowIng(true)}>Ingresa</button>
+     <button className="buttonC mx-1" onClick={() => setModalShowIng(true)}>Ingresa</button>
      <ModalIng
                  show={modalShowIng}
                  onHide={() => setModalShowIng(false)}
