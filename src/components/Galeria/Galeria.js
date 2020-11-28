@@ -49,15 +49,15 @@ return (
                 }
             </div>
             <Modal id="modalSuccess container-fluid"show={show} onHide={handleClose}>                                                 
-                <img id="imgZoom" className="img-fluid" src={imgSource} alt="img-aves"></img>  
+                <img className="img-fluid" src={imgSource} alt="img-aves"></img>  
             </Modal>
             <div className="d-flex row flex-wrap col-lg-4 col-md-4 mt-1">
                 {imgGaleria.map((img,index) => (
                     <Link className=" col-xs-12 col-sm-12 col-md-4 col-lg-3 m-1 p-0">
                         <Card className="p-0 m-0 card-ave">
-                            <Card.Body key={index} className="p-0 m-0 lightbox-target" >
+                            <Card.Body key={index} className="p-0 m-0">
                                 <div>
-                                    <Card.Img id="myImg" className="imagen_pequeña" src={img}  alt="img-aves" onClick = {() => setSelectedImg (img)} onDoubleClick={()=>zoom(img)}/>
+                                    <Card.Img className="imagen_pequeña" src={img}  alt="img-aves" onClick = {() => setSelectedImg (img)} onDoubleClick={()=>zoom(img)}/>
                                 </div>
                             </Card.Body>
                         </Card>

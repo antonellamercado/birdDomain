@@ -111,32 +111,33 @@ const Checkout =()=>{
                 </div>
             }
             <div className="container my-4">
-                <form id="formPayCard">              
+                <form id="formPayCard">
+                
                     <fieldset className="fieldSetBorder">
-                        <legend>Datos de la tarjeta</legend>
-                        <div className="form-group container my-4">
-                            <label>Nombre del Titular</label>
-                            <input id="cardOwner" name="cardOwner" onChange={handleOnChange} type="text" placeholder="Ej: Cosme Fulanito" className="form-control"></input>
-                            <small className="form-text text-muted">Escribir el nombre completo como aparesca en su tarjeta de credito.</small>
+                        <legend><h3>Datos de la tarjeta</h3></legend>
+                    <div className="form-group container my-4">
+                        <label>Nombre del Titular</label>
+                        <input id="cardOwner" name="cardOwner" onChange={handleOnChange} type="text" placeholder="Ej: Cosme Fulanito" className="form-control"></input>
+                        <small className="form-text text-muted">Escribir el nombre completo como aparesca en su tarjeta de credito.</small>
+                    </div>
+                    <div className="form-group container my-4">
+                        <label>Numero completo de la tarjeta de credido</label>
+                        <input id="cardNumbers" name="cardNumbers" onChange={handleOnChange} type="number" placeholder="xxxx-xxxx-xxxx" className="form-control" required minLength="16"></input>
+                    </div>
+                    <div className="form-group d-flex justify-content-around my-4">
+                        <div>
+                            <label>Fecha de vencimiento</label>
+                            <input id="expireDate" name="expireDate"onChange={handleOnChange} type="date" className="form-control"></input>
                         </div>
-                        <div className="form-group container my-4">
-                            <label>Numero completo de la tarjeta de credido</label>
-                            <input id="cardNumbers" name="cardNumbers" onChange={handleOnChange} type="number" placeholder="xxxx-xxxx-xxxx" className="form-control" required minLength="16"></input>
+                        <div>
+                            <label>Codigo de de seguridad posterior</label>
+                            <input id="cvc" name="cvc" type="number" onChange={handleOnChange} placeholder="XXX" className="form-control"></input>
+                            <small className="form-text text-muted">Codigo de tres digitos en el reverso de su tarjeta.</small>
                         </div>
-                        <div className="form-group d-flex justify-content-around my-4">
-                            <div>
-                                <label>Fecha de vencimiento</label>
-                                <input id="expireDate" name="expireDate"onChange={handleOnChange} type="date" className="form-control"></input>
-                            </div>
-                            <div>
-                                <label>Codigo de de seguridad posterior</label>
-                                <input id="cvc" name="cvc" type="number" onChange={handleOnChange} placeholder="XXX" className="form-control"></input>
-                                <small className="form-text text-muted">Codigo de tres digitos en el reverso de su tarjeta.</small>
-                            </div>
-                        </div>
-                        <div className="form-group">
-                            <button id="payBtn" type="submit" className="btn btn-success" onClick={checkPay}><strong>Pagar: {addTotalPrice()} U$D</strong></button>
-                        </div>
+                    </div>
+                    <div className="form-group">
+                        <button id="payBtn" type="submit" className="btn btn-success" onClick={checkPay}><strong>Pagar: {addTotalPrice()} U$D</strong></button>
+                    </div>
                     </fieldset>
                 </form>
             </div>
