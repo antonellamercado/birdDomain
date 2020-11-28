@@ -1,4 +1,10 @@
 .modal-body{
-    background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
-    color:black;
+    /* background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+    color:black; */
+    background-color:#c3e4f5;
+    color: black;
 }
+
+/* .modalbtn{
+    background-color: orangered;
+} */

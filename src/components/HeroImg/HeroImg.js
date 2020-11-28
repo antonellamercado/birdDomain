@@ -32,8 +32,8 @@ console.log(toursDestacados);
   
     return (
       toursDestacados.length > 0 ? 
-      <div>
-       <Carousel className="d-none d-md-block heroImgCarousel"
+      <div className="">
+       <Carousel className="d-md-block heroImgCarousel"
             showStatus={false}
             showIndicators={false}
             showThumbs={false}
@@ -44,7 +44,7 @@ console.log(toursDestacados);
           
           {toursDestacados.map((destacado,index) => (
            <Link to={`/tours/${destacado.id}`} key={index} className="container-fluid px-0 d-flex justify-content-center">
-           <div className="row mx-0">
+           <div className="row mx-0 ">
               <div className="col-12 px-0">
                   <img src={destacado.imgD} className="w-100"></img>
                 <div className="text-heroimg d-none d-sm-none d-md-none d-lg-block">

@@ -11,46 +11,25 @@
       "favoritos": [],
       "buys": [
         {
-          "id": 2,
-          "title": "Yungas - Parque Nacional Aconquija",
-          "body": "El parque nacional Aconquija es un área natural protegida de Argentina creada en la provincia de Tucumán. En una misma ruta se puede recorrer diferentes estratos altitudinales percibiendo como cambia la vegetacion junto a las aves que alli habitan",
-          "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour2.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b",
-          "map": "img/map2.jpg",
-          "price": 500,
+          "id": 1,
+          "title": "Yungas - Parque Nacional Calilegua",
+          "body": "El parque nacional Calilegua es un área natural protegida situada sobre las faldas orientales de la sierra de Calilegua, en el sudeste de la provincia de Jujuy en el noroeste de la República Argentina. Es una zona fantastica que permite visualizar un imponente y pristino paisaje",
+          "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour1.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b",
+          "map": "img/map1.jpg",
+          "price": 400,
           "Lat": [
-            -26.8358,
-            -65.1077
+            -24.1847222,
+            -65.299166
           ],
           "Latobs": [
-            -27.2927,
-            -65.8625
+            -23.67,
+            -64.87
           ],
-          "dias": "9",
+          "dias": 4,
           "ecoregiones": "Yungas",
-          "especies": "307",
-          "destacado": false,
-          "imgD": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/DT2.jpg?alt=media&token=3e5ec858-73c5-48c5-916b-aec1243cb4d9"
-        },
-        {
-          "id": 4,
-          "title": "Patagonia - El Chalten",
-          "body": "El Chaltén es una villa del Parque Nacional Los Glaciares, en la provincia argentina de Santa Cruz. Es una vía de acceso a los senderos que rodean las cimas del cerro Torre y el Monte Fitz Roy al noroeste. Cerca de Fitz Roy hay un sendero que llega al mirador Laguna de los Tres. Aqui se pueden observar aves y un imponente paisaje Glaciar",
-          "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour4.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b",
-          "map": "img/map4.jpg",
-          "price": 1500,
-          "Lat": [
-            -50.1928,
-            -72.0752
-          ],
-          "Latobs": [
-            -49.3311,
-            -72.8863
-          ],
-          "dias": 7,
-          "ecoregiones": "Patagonia",
           "especies": 300,
-          "destacado": false,
-          "imgD": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/DT4.jpg?alt=media&token=3e5ec858-73c5-48c5-916b-aec1243cb4d9"
+          "destacado": true,
+          "imgD": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/DT1.jpg?alt=media&token=3e5ec858-73c5-48c5-916b-aec1243cb4d9"
         }
       ]
     },
@@ -93,7 +72,7 @@
       "id": 1,
       "name": "Espertillero estriado",
       "title": "Asthenes maculicauda",
-      "info":"Especie muy rara que puede ser observada en el Tour PN Aconquija",
+      "info": "Especie muy rara que puede ser observada en el Tour PN Aconquija",
       "body": "Asthenes maculicauda - Sp endemica",
       "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Fig1.jpg?alt=media&token=b7a63dea-8285-4d00-b016-469d4fa47054"
     },
@@ -101,7 +80,7 @@
       "id": 2,
       "name": "Picaflor verde",
       "title": "Chlorostilbon lucidus",
-      "info":"Especie frecuente que puede ser observada en el Tour Ibera",
+      "info": "Especie frecuente que puede ser observada en el Tour Ibera",
       "body": "Chlorostilbon lucidus - Sp no endemica",
       "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Fig2.jpg?alt=media&token=b7a63dea-8285-4d00-b016-469d4fa47054"
     },
@@ -109,7 +88,7 @@
       "id": 3,
       "name": "Chuña patas negras",
       "title": "Chunga burmeisteri",
-      "info":"Especie emblematica del Chaco Seco puede ser observada en el Tour Las Aves y el vino",
+      "info": "Especie emblematica del Chaco Seco puede ser observada en el Tour Las Aves y el vino",
       "body": "Chunga burmeisteri - Sp no endemica",
       "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Fig3.jpg?alt=media&token=b7a63dea-8285-4d00-b016-469d4fa47054"
     },
@@ -117,7 +96,7 @@
       "id": 4,
       "name": "Kakuy",
       "title": "Nyctibius griseus",
-      "info":"Especie conocida por el folklore se la puede observar en el Tour Las aves y el vino",
+      "info": "Especie conocida por el folklore se la puede observar en el Tour Las aves y el vino",
       "body": "Heliomaster furcier - Sp no endemica",
       "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Fig4.jpg?alt=media&token=b7a63dea-8285-4d00-b016-469d4fa47054"
     },
@@ -125,15 +104,15 @@
       "id": 5,
       "name": "Alilicucu Yungueño",
       "title": "Megascops hoyi",
-      "info":"Especie muy rara que puede ser observada en el Tour PN Calilegua",
+      "info": "Especie muy rara que puede ser observada en el Tour PN Calilegua",
       "body": "Chunga burmeisteri - Sp no endemica",
       "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Fig5.jpg?alt=media&token=b7a63dea-8285-4d00-b016-469d4fa47054"
     },
     {
       "id": 6,
-      "name":"Picaflor Enano",
+      "name": "Picaflor Enano",
       "title": "Microstilbon burmeisteri",
-      "info":"Especie muy rara que puede ser observada en el Tour PN Calilegua",
+      "info": "Especie muy rara que puede ser observada en el Tour PN Calilegua",
       "body": "Chunga burmeisteri - Sp no endemica",
       "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Fig6.jpg?alt=media&token=b7a63dea-8285-4d00-b016-469d4fa47054"
     },
@@ -141,7 +120,7 @@
       "id": 7,
       "name": "Picaflor de barbijo",
       "title": "Heliomaster furcifer",
-      "info":"Especie frecuente que puede ser observada en el Tour a Ibera",
+      "info": "Especie frecuente que puede ser observada en el Tour a Ibera",
       "body": "Chunga burmeisteri - Sp no endemica",
       "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Fig7.jpg?alt=media&token=b7a63dea-8285-4d00-b016-469d4fa47054"
     },
@@ -149,7 +128,7 @@
       "id": 8,
       "name": "Carpintero lomo blanco",
       "title": "Campephilus leucopogon",
-      "info":"Especie frecuente que puede ser observada en el Tour PN Calilegua",
+      "info": "Especie frecuente que puede ser observada en el Tour PN Calilegua",
       "body": "Chunga burmeisteri - Sp no endemica",
       "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Fig8.jpg?alt=media&token=b7a63dea-8285-4d00-b016-469d4fa47054"
     },
@@ -157,7 +136,7 @@
       "id": 9,
       "name": "Cerquero amarillo",
       "title": "Atlapetes citrinellus",
-      "info":"Especie muy rara que puede ser observada en el Tour PN Aconquija",
+      "info": "Especie muy rara que puede ser observada en el Tour PN Aconquija",
       "body": "Chunga burmeisteri - Sp no endemica",
       "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Fig9.jpg?alt=media&token=b7a63dea-8285-4d00-b016-469d4fa47054"
     },
@@ -165,7 +144,7 @@
       "id": 10,
       "name": "Chuña patas rojas",
       "title": "Cariama cristata",
-      "info":"Especie frecuente que puede ser observada en el Tour PN Aconquija",
+      "info": "Especie frecuente que puede ser observada en el Tour PN Aconquija",
       "body": "Chunga burmeisteri - Sp no endemica",
       "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Fig10.jpg?alt=media&token=b7a63dea-8285-4d00-b016-469d4fa47054"
     },
@@ -173,7 +152,7 @@
       "id": 11,
       "name": "Carpinterito bataraz",
       "title": "Picumnus cirratus",
-      "info":"Especie frecuente que puede ser observada en el Tour a Ibera",
+      "info": "Especie frecuente que puede ser observada en el Tour a Ibera",
       "body": "Chunga burmeisteri - Sp no endemica",
       "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Fig11.jpg?alt=media&token=b7a63dea-8285-4d00-b016-469d4fa47054"
     },
@@ -181,7 +160,7 @@
       "id": 12,
       "name": "Pitiayumi",
       "title": "Setophaga pitiayumi",
-      "info":"Especie frecuente que puede ser observada en el Tour PN Aconquija",
+      "info": "Especie frecuente que puede ser observada en el Tour PN Aconquija",
       "body": "Chunga burmeisteri - Sp no endemica",
       "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Fig12.jpg?alt=media&token=b7a63dea-8285-4d00-b016-469d4fa47054"
     }
@@ -214,7 +193,7 @@
       "body": "El parque nacional Aconquija es un área natural protegida de Argentina creada en la provincia de Tucumán. En una misma ruta se puede recorrer diferentes estratos altitudinales percibiendo como cambia la vegetacion junto a las aves que alli habitan",
       "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour2.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b",
       "map": "img/map2.jpg",
-      "price": 500,
+      "price": "600",
       "Lat": [
         -26.8358,
         -65.1077

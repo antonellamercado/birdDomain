@@ -19,7 +19,7 @@ export const HelpModal = (props) => {
       </Modal.Header>
       <Modal.Body className="modal-body text-dark">
         
-      <Accordion>
+      <Accordion className="modal-body">
   <Card>
     <Card.Header>
       <Accordion.Toggle as={Button} variant="link" eventKey="0">
@@ -74,7 +74,7 @@ export const HelpModal = (props) => {
 
       </Modal.Body>
       <Modal.Footer className="modal-body">
-        <Button onClick={props.onHide}>Cerrar</Button>
+        <Button className="modalbtn" onClick={props.onHide}>Cerrar</Button>
       </Modal.Footer>
     </Modal>
       </>
