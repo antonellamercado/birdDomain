@@ -15,10 +15,10 @@ import CrearTour from '../../components/CrearTour/CrearTour';
 const PanelAdmin = () => {
 
     //estados
-    const [show, setShow] = useState(false);
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
-    const [buttonYes, setButtonYes] = useState(false);
+    //const [show, setShow] = useState(false);
+   // const handleClose = () => setShow(false);
+   // const handleShow = () => setShow(true);
+   // const [buttonYes, setButtonYes] = useState(false);
     const [listaTours, setListaTours] = useState([]);
     const [currentId, setCurrentId] = useState("");
     // funciones

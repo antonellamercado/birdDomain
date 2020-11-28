@@ -7,15 +7,14 @@ import axios from "axios";
 //libreria
 import {Card, Button, Accordion} from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDollarSign ,  faCalendarAlt, faEye, faFeather } from '@fortawesome/free-solid-svg-icons';
-
+import { faDollarSign ,  faCalendarAlt, faEye, faFeather, faPlaneDeparture} from '@fortawesome/free-solid-svg-icons';
 //componentes
 import Comentarios from '../../components/Comentarios/Comentarios';
 //estilos
 import "../DetalleTour/DetalleTour.css";
 import Mapa from '../../components/Maps/Maps';
 
-import { latLng } from 'leaflet';
+//import { latLng } from 'leaflet';
 
 const DetalleTour = ({match}) => {
     const idtour = match.params.id;
@@ -52,39 +51,29 @@ const DetalleTour = ({match}) => {
             }
         }
     }
-//
-
-//const getComentary = async ()=> {
-//    await coment.get('/comments?postId=3')
-//    .then(response =>{
-//    const listaComentarios= response.data;
-//    console.log(listaComentarios)
-//})
-//};
-//getComentary();
-
 
     return (
         <div>                                 
             <div className='row'>
                 <div>
                     <div>
-                        <div className='tour-title font-weight-bold mt-5 mb-5'> {tour.title} </div>
+                        <div className='tour-title font-weight-bold mt-5 mb-5'> <FontAwesomeIcon  icon={faPlaneDeparture} /> {tour.title} </div>
                         <div className='d-flex d-inline-block container'>
                             <img className="col-6 p-0 detalle_imagen mr-3"  width="100%" src={tour.img}  alt="img-tour"></img>
                             <div className="d-flex d-block col-6 p-0 detalle_imagen" >  
-                                  <Mapa  
-                                 key={tour.id} 
-                                 position={tour.Lat}
-                                 observation={tour.Latobs}
+                                <Mapa  
+                                key={tour.id} 
+                                position={tour.Lat}
+                                observation={tour.Latobs}
                                 /> 
-                              </div>  
+                            </div>  
                         </div>
-                        <div className="col-12 my-4 text-justify  detalle_descripcion">  <FontAwesomeIcon  icon={faFeather} /> {tour.body}</div>
-                        <div className="col-4 text-muted d-inline"> <FontAwesomeIcon  icon={faDollarSign} /> {tour.price}</div>
-                        <div className="col-4 text-muted d-inline"> <FontAwesomeIcon  icon={faCalendarAlt} /> Duracion del tour: {tour.dias} dias
+                        <div className="col-12 my-4 text-justify detalle_descripcion">  
+                        <FontAwesomeIcon  icon={faFeather} /> {tour.body}</div>
+                        <div className="col-4  d-inline"> <FontAwesomeIcon  icon={faDollarSign} /> {tour.price}</div>
+                        <div className="col-4  d-inline"> <FontAwesomeIcon  icon={faCalendarAlt} /> Duracion del tour: {tour.dias} dias
                         </div>
-                        <div className="col-4 text-muted d-inline"> <FontAwesomeIcon  icon={faEye} /> Numero de especies probables en avistaje: {tour.especies} </div>
+                        <div className="col-4 d-inline"> <FontAwesomeIcon  icon={faEye} /> Numero de especies probables en avistaje: {tour.especies} </div>
                         <div className="mt-3">
                             {
                                 checkBuy(tour.id)!==tour.id || checkBuy(tour.id)==null?<button id={tour.id} className="btn bg-success col-6 my-3 d-block mx-auto " onClick={ e =>{updateProduct(tour)} }>Comprar tour</button>:

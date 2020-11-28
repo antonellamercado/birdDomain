@@ -11,5 +11,8 @@
     font-style: italic;
     z-index: 5;
     font-size: 1em;
+    width: 80%;
+    margin: auto;
+    text-align: justify;
 }
 

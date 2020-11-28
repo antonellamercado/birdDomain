@@ -35,15 +35,16 @@ const cleanInput = () =>{
     });
 }
     return (
-    <Link to = '/contacto'>
+    <>
         <ToastContainer />
         <Form className="formulario_contacto">
-        <p className="formulario_titulo">Completa tus datos y dejanos tu comentario</p>
+        <fieldset className="fieldset-contacto">
+            <legend className="legend-contacto"><h3>Completa tus datos y dejanos tu comentario</h3></legend>
         <Form.Row>
         <Col>
         <Form.Group>
             <Form.Label className="formulario_label" for="nombre" as={Col}>Nombre</Form.Label>
-            <Form.Control className="formulario_input" 
+            <Form.Control className="formulario_input mx-1" 
             type="text" 
             name="nombre" 
             id="nombre" 
@@ -55,7 +56,7 @@ const cleanInput = () =>{
         <Col>
         <Form.Group as={Row} >
             <Form.Label className="formulario_label" for="apellido" as={Col}>Apellido</Form.Label>
-            <Form.Control className="formulario_input" 
+            <Form.Control className="formulario_input mx-1" 
             type="text" 
             name="apellido" 
             id="apellido" 
@@ -69,7 +70,7 @@ const cleanInput = () =>{
         <Col>
         <Form.Group>
             <Form.Label className="formulario_label" for="telefono" column sm="6">Telefono</Form.Label>
-            <Form.Control className="formulario_input" 
+            <Form.Control className="formulario_input mx-1" 
             type="text" 
             name="telefono" 
             id="telefono" 
@@ -81,7 +82,7 @@ const cleanInput = () =>{
         <Col>
         <Form.Group as={Row}>
             <Form.Label className="formulario_label" for="exampleEmail" column sm="6">Email</Form.Label>
-            <Form.Control className="formulario_input" 
+            <Form.Control className="formulario_input mx-1" 
             type="email" 
             name="email" 
             id="exampleEmail" 
@@ -92,8 +93,8 @@ const cleanInput = () =>{
         </Col>
         </Form.Row>
         <Form.Group>
-            <Form.Label className="formulario_label" for="asunto">Asunto</Form.Label>
-            <Form.Control className="formulario_input" as="select" name="asunto" id="asunto">
+            <Form.Label className="formulario_label mx-1" for="asunto">Asunto</Form.Label>
+            <Form.Control className="formulario_input mx-1" as="select" name="asunto" id="asunto">
                 <option className="formulario_label formulario_input">Atencion al cliente</option>
                 <option className="formulario_label formulario_input">Recursos humanos</option>
                 <option className="formulario_label formulario_input">Otras consultas</option>
@@ -104,18 +105,19 @@ const cleanInput = () =>{
         </Form.Group>
         <Form.Group>
             <Form.Label className="formulario_label" for="mensaje">Escribe tu mensaje</Form.Label>
-            <Form.Control className="formulario_input" 
+            <Form.Control className="formulario_input mx-3" 
             as="textarea"
             name="mensaje" 
             id="mensaje"
             onChange={handleOnChange}
             value={valuesInput.mensaje} />
         </Form.Group>
-        <Button className="formulario_boton" type="submit" onClick={cleanInput} >Enviar</Button>
+        <button className="formulario_boton btn" type="submit" onClick={cleanInput} >Enviar</button>
+        </fieldset>
         </Form>
         <div className="home_separador"></div>
-        
-    </Link>
+       </> 
+   
     );
 }
 
