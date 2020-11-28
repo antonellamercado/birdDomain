@@ -111,8 +111,10 @@ const Checkout =()=>{
                 </div>
             }
             <div className="container my-4">
-                <h3>Datos de la tarjeta</h3>
+                
                 <form id="formPayCard">
+                <fieldset>
+                    <legend>Datos de la tarjeta</legend>
                     <div className="form-group container my-4">
                         <label>Nombre del Titular</label>
                         <input id="cardOwner" name="cardOwner" onChange={handleOnChange} type="text" placeholder="Ej: Cosme Fulanito" className="form-control"></input>
@@ -136,6 +138,7 @@ const Checkout =()=>{
                     <div className="form-group">
                         <button id="payBtn" type="submit" className="btn btn-success" onClick={checkPay}><strong>Pagar: {addTotalPrice()} U$D</strong></button>
                     </div>
+                    </fieldset>
                 </form>
             </div>
         </>
