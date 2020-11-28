@@ -13,23 +13,22 @@ export const ModalIng = (props) => {
       aria-labelledby="contained-modal-title-vcenter"
       centered
             >
-      <Modal.Header closeButton className="modal-body">
+      <Modal.Header closeButton className="modal-body text-dark">
         <Modal.Title id="contained-modal-title-vcenter">
-          Ingresa
+          Iniciar sesion
         </Modal.Title>
       </Modal.Header>
-      <Modal.Body className="modal-body">
+      <Modal.Body className="modal-body text-dark">
       <Form className="mt-2" id="form">
-            <h3>Iniciar Sesión</h3>
             <div className="form-group">
-                <label for="username" className="mt-4 mr-sm-2">Nombre de Usuario o email</label>
-                <input type="text" id="userName" placeholder="username" className="border p-1 rounded" required/>
+                <label for="username" className="mt-4 mr-sm-2 form_login_label">Email</label>
+                <input type="text" id="userName" placeholder="username" className="border p-1 rounded form_login_input" required/>
                 <br></br>
-                <label for="userpassword" className="mt-4 mr-sm-2">Contraseña</label>
-                <input type="password" id="userPass" placeholder="password" className="border p-1 rounded" required/>
+                <label for="userpassword" className="mt-4 mr-sm-2 form_login_label">Contraseña</label>
+                <input type="password" id="userPass" placeholder="password" className="border p-1 rounded form_login_input" required/>
                 <br></br>
                 <input type="checkbox" name="checkbox" id="checkbox" className="mt-4"/>
-                <label for="checkbox" className="mr-sm-2"> Mantenerme Logueado</label>
+                <label for="checkbox" className="mr-sm-2 mx-1"> Mantenerme Logueado</label>
                 
                 <div id="error"></div>
                 <Button type="submit" id="submit" className="mt-4 btn text-white">Login</Button>

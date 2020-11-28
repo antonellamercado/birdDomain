@@ -13,16 +13,16 @@ export const ModalReg = (props) => {
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
-      <Modal.Header closeButton className="modal-body">
+      <Modal.Header closeButton className="modal-body text-dark">
         <Modal.Title id="contained-modal-title-vcenter">
           Registrate  
         </Modal.Title>
       </Modal.Header>
-      <Modal.Body className="modal-body">
+      <Modal.Body className="modal-body text-dark">
       <Form className="mt-2" id="form">
       <div className="form-group mt-5">
                     <div className="mt-3">
-                        <label for="user">Nombre de Usuario</label>
+                        <label for="user" className="text-dark">Nombre de Usuario</label>
                         <input type="text" name="user" className="form-control" id="newUser" placeholder="Nombre de usuario" required minlength="4" maxlength="8"/>
                         <small className="form-text text-muted">Debe tener entre 8 y 30 caractares. No puedes utilizar caracteres especiales.</small>
                     </div>

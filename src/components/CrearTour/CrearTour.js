@@ -14,16 +14,17 @@ const CrearTour = (props) => {
         body:'',
         img: '',
         imgD:'',
-        price:0,
-        dias:0,
+        price:null,
+        dias:null,
         ecoregiones:'',
-        especies:0,
+        especies:null,
         destacado:false,
     };
     
     //const [dataValide, setDataValide] = useState(false);
     const [nuevoTour, setNuevoTour] = useState(initialValues);
     const [show, setShow] = useState(false);
+    const [error, setError] = useState(false);    
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     
@@ -32,15 +33,26 @@ const CrearTour = (props) => {
     const handleOnChange = (e) => {
             const {name, value} = e.target;
             setNuevoTour({...nuevoTour, [name]:value});
-            console.log('nuevo tour', nuevoTour);       
+            console.log('nuevo tour', nuevoTour);
+            
            // validarCampos();
         }
 //
     const handleOnSubmit = (e) => {
         e.preventDefault();
+
+        if(nuevoTour.title.trim() === '' || nuevoTour.body.trim() === '' || nuevoTour.img.trim() === '' || nuevoTour.imgD.trim() === '' 
+        || nuevoTour.price.trim() === '' || nuevoTour.dias.trim() === ''|| nuevoTour.ecoregiones.trim() === '' ||
+        nuevoTour.especies.trim() === '') {
+            setError(true);
+            return
+        }
+        else {
+        setError(false);
         props.addOrEditTour(nuevoTour);
         //limpia campos
         setNuevoTour({...initialValues});
+        }
         }
 //
 
@@ -68,16 +80,22 @@ const getTourById = async id => {
         
     return (
     <div>
-    <Button className="modal_boton" onClick={handleShow}>
+    <button className="btn modal_boton" onClick={handleShow}>
         Crear nuevo tour
-    </Button>
+    </button>
 
     <Modal show={show} onHide={handleClose}>
 
     <Form className="formulario_modal  m-1 p-2" onSubmit={handleOnSubmit}>
     <Modal.Header closeButton>
-        Complete los campos para crear un nuevo tour
+    <p className='d-block'>Complete los campos para crear un nuevo tour</p> 
     </Modal.Header>
+    {
+        error ?
+        <p className="alert bg-danger text-black d-block">Todos los campos son obligatorios</p>
+        : 
+        <p className="alert alert-danger desactivado">Todos los campos son obligatorios</p>
+      }
     <Modal.Body>
         <Form.Group controlId="title">
             <Form.Label>Titulo</Form.Label>
@@ -152,12 +170,11 @@ const getTourById = async id => {
                     </Form.Group>
                     </Modal.Body>
                     <Modal.Footer>
-                    <Button type="submit" onClick={handleClose}>
+                    <button type="submit" className="btn modal_boton">
                         {props.currentId==='' ? "Crear" : "Editar"}
-                    </Button>
+                    </button>
                     </Modal.Footer>
                 </Form>
-
     </Modal>
                 
     </div>

@@ -22,7 +22,7 @@ const Header = () => {
 
     return (
     <>
-    <div className="sticky-top">
+    <div className="myNav sticky-top">
     <div className= "myNav firstrow navbar navbar-expand-lg sticky-top">
     
     <Link to = '/' className="logo-wrapper" >
@@ -31,7 +31,7 @@ const Header = () => {
     <strong>Birds Domain</strong>
 
      <div className="buttons d-flex justify-content-between">
-     <button className="buttonC" onClick={() => setModalShowIng(true)}>Ingresa</button>
+     <button className="buttonC mx-1" onClick={() => setModalShowIng(true)}>Ingresa</button>
      <ModalIng
                  show={modalShowIng}
                  onHide={() => setModalShowIng(false)}
@@ -44,7 +44,7 @@ const Header = () => {
      </div>
     </div>
     
-        <Navbar className="myNav" expand="lg">
+        <Navbar className="" expand="lg">
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ml-auto d-flex justify-content-around">
@@ -53,8 +53,8 @@ const Header = () => {
                 <Link to = '/'>
                 <li className="nav-links-links">Home</li>
                 </Link>
-                <Link to = '/destacado'>
-                <li className="nav-links-links">Destacado</li>
+                <Link to = '/aves'>
+                <li className="nav-links-links">Aves</li>
                 </Link>
                 <Link to = '/contacto'>
                 <li className="nav-links-links">Contacto</li>

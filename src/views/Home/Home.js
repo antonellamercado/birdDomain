@@ -11,7 +11,7 @@ const Home = () => (
     
     <Link to = '/'>
         <HeroImg/>
-        <div className="home_separador"></div>
+        <div className="home_separador"><h1>Tours</h1></div>
         <Carrousel/>
         <div className="home_separador"></div>
         <Galeria/>

@@ -9,7 +9,7 @@ import Layout from './components/Layout/Layout';
 import Mapa from './components/Maps/Maps'
 //views
 import Home from './views/Home/Home';
-import Destacado from './views/Destacado/Destacado';
+import Aves from './views/Aves/Aves';
 import Contacto from './views/Contacto/Contacto';
 import Favoritos from './views/Favoritos/Favoritos';
 import Cart from './components/Cart/Cart';
@@ -26,11 +26,11 @@ function App() {
     <div className="App">
     <Router>    
       <Layout>
-      <div className="app">
+      <div className="">
         <Switch>
           <Route path="/" exact component={Home}></Route>
           <Route path="/tours/:id" exact component={DetalleTour}></Route>
-          <Route path="/destacado" exact component={Destacado}></Route>
+          <Route path="/aves" exact component={Aves}></Route>
           <Route path="/contacto" exact component={Contacto}></Route>
           <Route path="/favorito" exact component={Favoritos}></Route>
           <Route path="/cart" exact component={Cart}></Route>

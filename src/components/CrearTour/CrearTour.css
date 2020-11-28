@@ -18,13 +18,15 @@
 
 
 .modal_boton{
-    width: 50%;
+    width: 30%;
     padding: 5px;
     margin-bottom: 3px;
     margin-top: 3px;
-    background-color: #f26522;
+    background-color: #e6875b;
     color: black;
     font-weight: bold;
+    border-color: none;
+    border-radius:5px;
  }
 
  .modal_boton:hover{
@@ -32,4 +34,8 @@
     color: black;
     font-weight: bold;
     box-shadow: black;
+ } 
+
+ .desactivado{
+     display:none;
  }

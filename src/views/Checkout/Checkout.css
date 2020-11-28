@@ -2,6 +2,15 @@
     background-color: #8fd3f4;
     color: black;
 }
+
+/* .fieldSetBorder {
+border:1px solid black;
+border-radius: 3px;
+z-index: 5;
+/* background-color:#eeeeee; */
+/* background-color: #c3e4f5; */
+/* } */ 
+
 legend {
     padding: 5px 10px;
     background:#c3e4f5;

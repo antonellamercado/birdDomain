@@ -9,7 +9,7 @@ import advertising4 from './img/advertising4.png'
 
 function Banner (){
     return (
-        <Carousel className="d-none d-md-block"
+        <Carousel className="d-none d-md-block mb-0"
             showStatus={false}
             showIndicators={false}
             showThumbs={false}
@@ -19,28 +19,28 @@ function Banner (){
         >
             <div>
                 <a href="https://rollingcodeschool.com/">
-                    <div> {/* only works to 'extend' the link haha */} 
+                    <div> 
                         <img src={advertising1}/>
                     </div>
                 </a>
             </div>
             <div>
                 <a href="https://rollingcodeschool.com/">
-                <div> {/* only works to 'extend' the link haha */} 
+                <div> 
                         <img src={advertising2}/>
                     </div>
                 </a>
             </div>
             <div>
                 <a href="https://rollingcodeschool.com/">
-                <div> {/* only works to 'extend' the link haha */} 
+                <div> 
                         <img src={advertising3}/>
                     </div>
                 </a>
             </div>
             <div>
                 <a href="https://rollingcodeschool.com/">
-                <div> {/* only works to 'extend' the link haha */} 
+                <div>  
                         <img src={advertising4}/>
                     </div>
                 </a>

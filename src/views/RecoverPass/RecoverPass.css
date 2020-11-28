@@ -2,3 +2,16 @@
     background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
     border-top: 1px solid rgb(12, 214, 113);
 }
+
+.modal-body{
+    background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+    color:black;
+}
+
+
+.btn_recuperar_pass{
+        padding:5px;
+        border-radius:3px;
+        background-color:  #f26522;;
+        border:none;
+    }
