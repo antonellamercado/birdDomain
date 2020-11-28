@@ -26,7 +26,7 @@ function App() {
     <div className="App">
     <Router>    
       <Layout>
-      <div className="app">
+      <div className="">
         <Switch>
           <Route path="/" exact component={Home}></Route>
           <Route path="/tours/:id" exact component={DetalleTour}></Route>

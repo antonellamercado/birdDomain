@@ -22,7 +22,7 @@ const Header = () => {
 
     return (
     <>
-    <div className="sticky-top">
+    <div className="myNav sticky-top">
     <div className= "myNav firstrow navbar navbar-expand-lg sticky-top">
     
     <Link to = '/' className="logo-wrapper" >
@@ -44,7 +44,7 @@ const Header = () => {
      </div>
     </div>
     
-        <Navbar className="myNav" expand="lg">
+        <Navbar className="" expand="lg">
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ml-auto d-flex justify-content-around">
