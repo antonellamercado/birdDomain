@@ -5,12 +5,13 @@ import img from '../../img/Fig3.jpg'
 
 export const HelpModal = (props) => {
     return (
-        <div>
-            <>
-            <Modal {...props}
+        <div className="modal_faqs">
+        <>
+      <Modal {...props}
       size="sm"
       aria-labelledby="contained-modal-title-vcenter"
       centered
+      
     >
       <Modal.Header closeButton className="modal-body text-dark">
         <Modal.Title id="contained-modal-title-vcenter">
@@ -27,7 +28,7 @@ export const HelpModal = (props) => {
       </Accordion.Toggle>
     </Card.Header>
     <Accordion.Collapse eventKey="0">
-      <Card.Body>Hello! I'm the body</Card.Body>
+      <Card.Body>"Poder admirar nuestras especies favoritas de aves autoctonas ademas del cuidado de la naturaleza"</Card.Body>
     </Accordion.Collapse>
   </Card>
   <Card>
@@ -37,39 +38,30 @@ export const HelpModal = (props) => {
       </Accordion.Toggle>
     </Card.Header>
     <Accordion.Collapse eventKey="1">
-      <Card.Body>Hello! I'm another body</Card.Body>
+      <Card.Body>"Una persona que ademas de brindarte todo su conocimientos en las especies a visitar, es amigable, respetuoso y solidario"</Card.Body>
     </Accordion.Collapse>
   </Card>
   <Card>
     <Card.Header>
       <Accordion.Toggle as={Button} variant="link" eventKey="2">
-        Que se puede esperar de los guias de birds domain?
+        Porque los precios de los tours varian tanto?
       </Accordion.Toggle>
     </Card.Header>
     <Accordion.Collapse eventKey="2">
-      <Card.Body>Hello! I'm another body</Card.Body>
+      <Card.Body>Depende de las ofertas de hospedaje y alimento que haya disponibles en la zona</Card.Body>
     </Accordion.Collapse>
   </Card>
   <Card>
     <Card.Header>
       <Accordion.Toggle as={Button} variant="link" eventKey="3">
-        Que se puede esperar de los guias de birds domain?
+      Cual es el potencial fotografico de los tours?
       </Accordion.Toggle>
     </Card.Header>
     <Accordion.Collapse eventKey="3">
-      <Card.Body>Hello! I'm another body</Card.Body>
+      <Card.Body>"Los guias son expertos conocen muy bien el terreno y los territorios, es solo cuestion de informar al guia el objetivo fotografico de tu viaje para mejorar tu experiencia fotografiando, y no solo aves, sino todo lo que quieras"</Card.Body>
     </Accordion.Collapse>
   </Card>
-  <Card>
-    <Card.Header>
-      <Accordion.Toggle as={Button} variant="link" eventKey="4">
-        Que se puede esperar de los guias de birds domain?
-      </Accordion.Toggle>
-    </Card.Header>
-    <Accordion.Collapse eventKey="4">
-      <Card.Body>Hello! I'm another body</Card.Body>
-    </Accordion.Collapse>
-  </Card>
+  
 </Accordion>
 
       </Modal.Body>

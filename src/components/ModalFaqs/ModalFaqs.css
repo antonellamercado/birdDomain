@@ -4,7 +4,9 @@
     background-color:#c3e4f5;
     color: black;
 }
-
+.modal_faqs{
+    width: 100%;
+}
 /* .modalbtn{
     background-color: orangered;
 } */
