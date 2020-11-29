@@ -69,7 +69,14 @@ const DetalleTour = ({match}) => {
                             </div>  
                         </div>
                         <div className="col-12 my-4 text-justify detalle_descripcion">  
-                        <FontAwesomeIcon  icon={faFeather} /> {tour.body}</div>
+                        <FontAwesomeIcon  icon={faFeather} /> {tour.body}
+                        </div>
+                        <div className="col-12 my-4 text-justify detalle_descripcion">  
+                        <FontAwesomeIcon  icon={faFeather} /> {tour.body2}
+                        </div>
+                        <div className="col-12 my-4 text-justify detalle_descripcion">  
+                        <FontAwesomeIcon  icon={faFeather} /> {tour.info}
+                        </div>
                         <div className="col-4  d-inline"> <FontAwesomeIcon  icon={faDollarSign} /> {tour.price}</div>
                         <div className="col-4  d-inline"> <FontAwesomeIcon  icon={faCalendarAlt} /> Duracion del tour: {tour.dias} dias
                         </div>

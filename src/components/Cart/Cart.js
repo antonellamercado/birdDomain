@@ -107,7 +107,7 @@ const Cart = () => {
                                                 <p className="card-text">Duracion del Tour: {tour.dias}</p>                                  
                                                 <div className="btnBuyTour">
                                                     {
-                                                        checkBuy(tour.id)!==tour.id || checkBuy(tour.id)==null?<button id={tour.id} className="btn btn-success" onClick={ e =>{updateProduct(tour)} }>Buy Tour</button>:
+                                                        checkBuy(tour.id)!==tour.id || checkBuy(tour.id)==null?<button id={tour.id} className="btn btn-success" onClick={ e =>{updateProduct(tour)} }>Comprar Tour</button>:
                                                         <button className="btn btn-success disabled">Comprado</button>
                                                     }                                             
                                                 </div>                                    

@@ -59,7 +59,7 @@ const SearchBar = () => {
                 }
             }>
             </input> 
-            <Button  variant="outline-success"><FontAwesomeIcon  icon={faSearch} /></Button>
+            <Button  variant="success"><FontAwesomeIcon  icon={faSearch} /></Button>
       </Form>
     </div>
 
