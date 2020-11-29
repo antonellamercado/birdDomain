@@ -93,7 +93,7 @@ const cleanInput = () =>{
         </Col>
         </Form.Row>
         <Form.Group>
-            <Form.Label className="formulario_label mx-1" for="asunto">Asunto</Form.Label>
+            <Form.Label className="formulario_label mx-2" for="asunto">Asunto</Form.Label>
             <Form.Control className="formulario_input mx-1" as="select" name="asunto" id="asunto">
                 <option className="formulario_label formulario_input">Atencion al cliente</option>
                 <option className="formulario_label formulario_input">Recursos humanos</option>
@@ -105,7 +105,7 @@ const cleanInput = () =>{
         </Form.Group>
         <Form.Group>
             <Form.Label className="formulario_label" for="mensaje">Escribe tu mensaje</Form.Label>
-            <Form.Control className="formulario_input mx-3" 
+            <Form.Control className="formulario_input mx-1" 
             as="textarea"
             name="mensaje" 
             id="mensaje"

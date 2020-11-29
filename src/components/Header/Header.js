@@ -23,20 +23,20 @@ const Header = () => {
     return (
     <>
     <div className="myNav sticky-top">
-    <div className= "myNav firstrow navbar navbar-expand-lg sticky-top">
+    <div className= "firstrow mr-3 p-0 navbar navbar-expand-lg sticky-top">
     
-    <Link to = '/' className="logo-wrapper" >
+    <Link style={{ textDecoration: 'none' }} to = '/' className="logo-wrapper" >
     <img className="logo" src = {logo} alt = "..."></img> 
     </Link>
     <strong>Birds Domain</strong>
 
      <div className="buttons d-flex justify-content-between">
-     <button className="buttonC mx-1" onClick={() => setModalShowIng(true)}>Ingresa</button>
+     <button className="buttonHeader mx-1" onClick={() => setModalShowIng(true)}>Ingresa</button>
      <ModalIng
                  show={modalShowIng}
                  onHide={() => setModalShowIng(false)}
                 />
-     <button className="buttonC" onClick={() => setModalShowReg(true)}>Registrate</button>
+     <button className="buttonHeader" onClick={() => setModalShowReg(true)}>Registrate</button>
      <ModalReg
             show={modalShowReg}
             onHide={() => setModalShowReg(false)}
@@ -50,19 +50,19 @@ const Header = () => {
             <Nav className="ml-auto d-flex justify-content-around">
             
             <SearchBar/>
-                <Link to = '/'>
+                <Link style={{ textDecoration: 'none' }} to = '/'>
                 <li className="nav-links-links">Home</li>
                 </Link>
-                <Link to = '/aves'>
+                <Link style={{ textDecoration: 'none' }} to = '/aves'>
                 <li className="nav-links-links">Aves</li>
                 </Link>
-                <Link to = '/contacto'>
+                <Link style={{ textDecoration: 'none' }} to = '/contacto'>
                 <li className="nav-links-links">Contacto</li>
                 </Link>
-                <Link to = '/favoritos'>
+                <Link style={{ textDecoration: 'none' }} to = '/favoritos'>
                 <li className="nav-links-links"><FontAwesomeIcon  icon={faStar} /></li>
                 </Link>
-                <Link to = '/cart'>
+                <Link style={{ textDecoration: 'none' }} to = '/cart'>
                 <li className="nav-links-links"><FontAwesomeIcon  icon={faShoppingCart} /></li>
                 </Link>
                 <div className="nav-links-links" onClick={() => setModalShow(true)}><FontAwesomeIcon  icon={faQuestionCircle} /></div>           
