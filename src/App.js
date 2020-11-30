@@ -18,6 +18,8 @@ import RecoverPass from './views/RecoverPass/RecoverPass';
 import PanelAdmin from './views/PanelAdmin/PanelAdmin';
 import Checkout from './views/Checkout/Checkout'
 import 'react-toastify/dist/ReactToastify.css';
+import './index.css';
+
 
 
 

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Texturina:wght@200&family=Ubuntu:wght@400;700&display=swap');
 .App {
   text-align: center;
   /* background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%); 
@@ -15,7 +16,9 @@ text-decoration: none;
 }
 
 
-
+body {
+font-family: 'Texturina', serif;
+}
 
 .leaflet-container{
   border-radius: 5px;
