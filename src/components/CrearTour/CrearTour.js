@@ -14,10 +14,10 @@ const CrearTour = (props) => {
         body:'',
         img: '',
         imgD:'',
-        price:null,
-        dias:null,
+        price:'',
+        dias:'',
         ecoregiones:'',
-        especies:null,
+        especies:'',
         destacado:false,
     };
     
@@ -84,7 +84,7 @@ const getTourById = async id => {
         Crear nuevo tour
     </button>
 
-    <Modal show={show} onHide={handleClose}>
+    <Modal show={show} onHide={handleClose} className="modal-crear-tour">
 
     <Form className="formulario_modal  m-1 p-2" onSubmit={handleOnSubmit}>
     <Modal.Header closeButton>
@@ -165,8 +165,12 @@ const getTourById = async id => {
                         />
                     </Form.Group>
                     </Form.Row>
-                    <Form.Group controlId="formBasicCheckbox" controlId="destacada">
-                        <Form.Check type="checkbox" label="Destacada" />
+                    <Form.Group controlId="destacada">
+                    <Form.Check 
+                        type="switch"
+                        id="detacada-switch"
+                        label="Destacada"
+                    />
                     </Form.Group>
                     </Modal.Body>
                     <Modal.Footer>

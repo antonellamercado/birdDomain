@@ -11,7 +11,7 @@ export const HelpModal = (props) => {
       size="sm"
       aria-labelledby="contained-modal-title-vcenter"
       centered
-      
+      className="modal_faqs"
     >
       <Modal.Header closeButton className="modal-body text-dark">
         <Modal.Title id="contained-modal-title-vcenter">
@@ -65,9 +65,6 @@ export const HelpModal = (props) => {
 </Accordion>
 
       </Modal.Body>
-      <Modal.Footer className="modal-body">
-        <Button className="modalbtn" onClick={props.onHide}>Cerrar</Button>
-      </Modal.Footer>
     </Modal>
       </>
         </div>

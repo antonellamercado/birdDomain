@@ -34,6 +34,7 @@ const PanelAdmin = () => {
             getToursForList();
             console.log("se actualiza")
             }, []);
+            
         //  agregar o editar tour              
         const addOrEditTour = async (tourObject) => {
         if (currentId === '')
@@ -121,7 +122,6 @@ const PanelAdmin = () => {
             ))
             }
         </Table> 
-       
     </>
     );
 }

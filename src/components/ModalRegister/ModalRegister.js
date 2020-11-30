@@ -19,7 +19,7 @@ export const ModalReg = (props) => {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body className="modal-body text-dark">
-      <Form className="mt-2" id="form">
+      <Form className="mt-1" id="form">
       <div className="form-group mt-5">
                     <div className="mt-3">
                         <label for="user" className="text-dark">Nombre de Usuario</label>
@@ -62,14 +62,14 @@ export const ModalReg = (props) => {
                         <option value="IN">India</option>
                     </select>
                     <div id="modalError" className="pt-2"></div>
-                    <div className="d-flex justify-content-center">
-                        <Button type="submit" className="btn mt-4 text-white" id="submit">Finalizar registro</Button>
-                    </div>
+                   
                 </div>
         </Form> 
         </Modal.Body>
       <Modal.Footer className="modal-body">
-        <Button onClick={props.onHide}>Cerrar</Button>
+      <div className="d-flex justify-content-center">
+                        <button type="submit" className="btn btn-registrar mt-4 text-white" id="submit">Finalizar registro</button>
+                    </div>
       </Modal.Footer>
     </Modal>
       </>

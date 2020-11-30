@@ -4,7 +4,7 @@
 
 .detalle_imagen{
     border-radius: 5px;
-    box-shadow: 8px 10px 8px rgb(88, 86, 86);
+    box-shadow: 8px 10px 8px rgb(17, 17, 17);
 }
 
 .detalle_descripcion{
@@ -16,3 +16,20 @@
     text-align: justify;
 }
 
+.carousel .slide .legend  {
+    border-radius: 5px;
+    box-shadow: 8px 10px 8px rgb(17, 17, 17);
+    transition: none;
+    opacity: 1;
+}
+
+.btnFinalizarCompra {
+    background-color: #f26522;
+    color: black;
+}
+
+.favorito i{
+    width: 50%;
+    size: 50%;
+   /* border: 1px solid black;*/
+}

@@ -113,8 +113,8 @@ const Checkout =()=>{
             <div className="container my-4">
                 <form id="formPayCard">
                 
-                    <fieldset className="fieldSetBorder">
-                        <legend><h3>Datos de la tarjeta</h3></legend>
+                    <fieldset className="fieldset-checkout">
+                        <legend className="legend-checkout"><h3>Datos de la tarjeta</h3></legend>
                     <div className="form-group container my-4">
                         <label>Nombre del Titular</label>
                         <input id="cardOwner" name="cardOwner" onChange={handleOnChange} type="text" placeholder="Ej: Cosme Fulanito" className="form-control"></input>

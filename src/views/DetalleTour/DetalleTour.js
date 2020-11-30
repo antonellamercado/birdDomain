@@ -5,9 +5,10 @@ import {Link} from 'react-router-dom';
 import clienteAxios from '../../config/axios';
 import axios from "axios";
 //libreria
-import {Card, Button, Accordion} from 'react-bootstrap';
+import {Card, Accordion, Tooltip} from 'react-bootstrap';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDollarSign ,  faCalendarAlt, faEye, faFeather, faPlaneDeparture} from '@fortawesome/free-solid-svg-icons';
+import { faDollarSign ,  faCalendarAlt, faEye, faFeather, faPlaneDeparture, faStar} from '@fortawesome/free-solid-svg-icons';
 //componentes
 import Comentarios from '../../components/Comentarios/Comentarios';
 //estilos
@@ -20,6 +21,7 @@ const DetalleTour = ({match}) => {
     const idtour = match.params.id;
     const [tour, setTour] = useState({});
     const [products, setProducts] = useState([]);
+    const [colorfav, setColorfav] = useState('black');
 //
     useEffect(()=>{
         const getTourByID = async id  =>{
@@ -51,6 +53,10 @@ const DetalleTour = ({match}) => {
             }
         }
     }
+    const addFavorite = () => {
+        setColorfav('#FFD700');
+        console.log('id para fav', match.params.id );
+    }
 
     return (
         <div>                                 
@@ -77,10 +83,14 @@ const DetalleTour = ({match}) => {
                         <div className="col-12 my-4 text-justify detalle_descripcion">  
                         <FontAwesomeIcon  icon={faFeather} /> {tour.info}
                         </div>
-                        <div className="col-4  d-inline"> <FontAwesomeIcon  icon={faDollarSign} /> {tour.price}</div>
-                        <div className="col-4  d-inline"> <FontAwesomeIcon  icon={faCalendarAlt} /> Duracion del tour: {tour.dias} dias
+                        <div className="col-3  d-inline"> <FontAwesomeIcon  icon={faDollarSign} /> {tour.price}</div>
+                        <div className="col-3  d-inline"> <FontAwesomeIcon  icon={faCalendarAlt} /> Duracion del tour: {tour.dias} dias
                         </div>
-                        <div className="col-4 d-inline"> <FontAwesomeIcon  icon={faEye} /> Numero de especies probables en avistaje: {tour.especies} </div>
+                        <div className="col-3 d-inline"> <FontAwesomeIcon  icon={faEye} /> Numero de especies probables en avistaje: {tour.especies} </div>
+                        <OverlayTrigger overlay={<Tooltip id="tooltip-disabled">Agregar a favoritos!</Tooltip>}>
+                        <div className="col-3 d-inline" onClick={addFavorite}>
+                        <FontAwesomeIcon style={{color: colorfav}} className='favorito' icon={faStar} /></div>
+                        </OverlayTrigger>
                         <div className="mt-3">
                             {
                                 checkBuy(tour.id)!==tour.id || checkBuy(tour.id)==null?<button id={tour.id} className="btn bg-success col-6 my-3 d-block mx-auto " onClick={ e =>{updateProduct(tour)} }>Comprar tour</button>:
@@ -88,7 +98,7 @@ const DetalleTour = ({match}) => {
                             }
                         </div>   
                         <Link to='/Checkout'>
-                            <Button className='col-6 my-3 d-block mx-auto bg-warning'>Finalizar compras</Button>
+                            <button className='col-6 my-3 d-block mx-auto btn btnFinalizarCompra'>Finalizar compras</button>
                         </Link>
                     </div>
                 </div>

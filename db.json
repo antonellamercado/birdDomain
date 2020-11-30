@@ -9,7 +9,31 @@
       "img": "/img/user1.jpg",
       "admin": true,
       "favoritos": [],
-      "buys": []
+      "buys": [
+        {
+          "id": 9,
+          "title": "Selva Atlantica - Parque Nacional Iguazu",
+          "body": "El Parque Nacional Iguazú abarca un área de bosque subtropical en la provincia de Misiones de Argentina, en la frontera con Brasil. Dentro del parque, en el río Iguazú, las famosas Cataratas del Iguazú poseen varias cascadas separadas, incluida la icónica Garganta del Diablo. Este nucleo de conservación es uno de los ultimos remanentes de la Mata Atlantica que permite visualizar su exquisita avifauna",
+          "body2": "Los guias estarán disponibles si quieres quedarte unos dias extras después de la expedición para buscar otras especies de aves. Sólo háganos saber qué es lo que más le interesa ver.",
+          "info": "El cliente llega al aeropuerto de Iguazu donde lo estaremos esperando con el vehiculo 4x4 para comenzar el viaje. Al finalizar el viaje el cliente vuelve al aeropuerto para emprender el regreso a casa",
+          "img": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour9.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b",
+          "map": "img/map9.jpg",
+          "price": 1500,
+          "Lat": [
+            -25.7316,
+            -54.4761
+          ],
+          "Latobs": [
+            -25.683,
+            -54.4544
+          ],
+          "dias": 7,
+          "ecoregiones": "Selva Atlantica",
+          "especies": 300,
+          "destacado": false,
+          "imgD": "https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/DT9.jpg?alt=media&token=3e5ec858-73c5-48c5-916b-aec1243cb4d9"
+        }
+      ]
     },
     {
       "id": 2,

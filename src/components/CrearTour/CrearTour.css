@@ -1,4 +1,4 @@
-.formulario_modal{
+/*.formulario_modal{
     background-color: #343a40;
     color: rgb(212, 202, 202);
 }
@@ -14,15 +14,18 @@
 .modal-body{
     background-color: #343a40;
     color: rgb(212, 202, 202);
-}
+}*/
 
+.modal-crear-tour{
+width: 70%;
+}
 
 .modal_boton{
     width: 30%;
     padding: 5px;
     margin-bottom: 3px;
     margin-top: 3px;
-    background-color: #e6875b;
+    background-color: #f26522;
     color: black;
     font-weight: bold;
     border-color: none;
@@ -30,7 +33,7 @@
  }
 
  .modal_boton:hover{
-    background-color: #e6875b;
+    background-color: #f26522;
     color: black;
     font-weight: bold;
     box-shadow: black;
