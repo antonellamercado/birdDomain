@@ -1,11 +1,38 @@
-.comentarios_caja{
-    border: 1px solid black;
-    box-shadow: 3px 3px 3px 3px black;
-    z-index: 2;
-    margin:auto;
+.comentario{
+    margin: auto;
+    margin-bottom: 2px;
 }
 .comentarios_img{
-    width: 90%;
+    width: 60%;
     text-align: center;
     border-radius: 50%;
+}
+
+.comentarios_caja{
+    height: 100px;
+    width: 200px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+    border: 3px solid black;
+    border-radius: 10px;
+  }
+  .comentarios_caja:before{
+    content: "";
+    position: absolute;
+    top: 15%;
+    left: 100%;
+    height: 20px;
+    width: 20px;
+    background: white;
+    box-sizing:border-box;
+    transform: rotate(45deg) translate(-50%);
+    border-top: inherit;
+    border-right: inherit;
+    box-shadow: inherit;
+    transition:all 0.8s;
+  }
+.comentarios_texto{
+    font-size: 15px;
+    text-justify: auto;
 }

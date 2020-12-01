@@ -80,7 +80,7 @@ const getTourById = async id => {
         
     return (
     <div>
-    <button className="btn modal_boton" onClick={handleShow}>
+    <button className="btn modal_boton mt-2" onClick={handleShow}>
         Crear nuevo tour
     </button>
 

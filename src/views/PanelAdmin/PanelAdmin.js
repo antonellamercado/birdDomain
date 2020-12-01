@@ -84,7 +84,7 @@ const PanelAdmin = () => {
         </p>
         <div></div>
         <CrearTour {...{addOrEditTour, currentId,listaTours }}/>
-        <Table variant="dark" bordered hover responsive>
+        <Table variant="dark" bordered hover responsive className="my-2">
             <thead className="h2 initialism">
                 <tr>
                 <th>Nombre</th>
