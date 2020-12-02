@@ -20,19 +20,18 @@ useEffect(()=>{
 getTours();
 },[]);
 
-console.log(tours)
+
 
 let toursDestacados = tours.filter(function (tour) {
   return tour.destacado;
 });
 
 // const toursDestacados = tours.filter(tour => tours.destacado);
-console.log(toursDestacados);
 
   
     return (
       toursDestacados.length > 0 ? 
-      <div className="h-50 d-inline-block">
+      <div className="h-25 d-inline-block">
        <Carousel className="d-md-block heroImgCarousel"
             showStatus={false}
             showIndicators={false}
@@ -43,10 +42,10 @@ console.log(toursDestacados);
         >
           
           {toursDestacados.map((destacado,index) => (
-           <Link to={`/tours/${destacado.id}`} key={index} className="container-fluid  px-0 d-flex justify-content-center">
-           <div className="row mx-0 ">
+           <Link to={`/tours/${destacado.id}`} key={index} className="container-fluid px-0 d-flex justify-content-center">
+           <div className="row mx-0 h-25 ">
               <div className="col-12 px-0">
-                  <img src={destacado.imgD} className="w-100"></img>
+                  <img src={destacado.imgD} className="w-100" alt="..."></img>
                 <div className="text-heroimg d-none d-sm-none d-md-none d-lg-block">
                   <h2>{destacado.title}</h2>
                 </div>
@@ -65,7 +64,7 @@ console.log(toursDestacados);
             <div className="container-fluid px-0 d-flex justify-content-center">
               <div className="row mx-0">
                 <div className="col-12 px-0">
-              <img className="w-100" src={Harpia3} ></img>
+              <img className="w-100" src={Harpia3} alt="..."></img>
               <div className="text-heroimg d-none d-sm-none d-md-none d-lg-block">
                 <h2>Calilegua</h2>
                 <h5>Con mas de 400 especies de Aves, en calilegua se encuentra la imponente Aguila Harpia. Su gran tamaño le permite capturar mamiferos tan grandes como monos!</h5>
