@@ -2,7 +2,7 @@ import {useState, useEffect} from 'react';
 //estilo
 import '../CrearTour/CrearTour.css';
 //libreria
-import {Button, Modal,  Form, Row, Col} from 'react-bootstrap';
+import {Modal,  Form, Col} from 'react-bootstrap';
 //config
 import clienteAxios from '../../config/axios';
 
@@ -27,24 +27,24 @@ const CrearTour = (props) => {
     const [error, setError] = useState(false);    
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    const [formChecked, setFormChecked] = useState(false);
     
 
     // funciones
     const handleOnChange = (e) => {
             const {name, value} = e.target;
-            setNuevoTour({...nuevoTour, [name]:value});
-            console.log('nuevo tour', nuevoTour);
-            
-           // validarCampos();
+            setNuevoTour({...nuevoTour, [name]: value});
         }
-//
+    //
+    const updateCheckbox = (e) => setFormChecked(e.target.checked)
+    
     const handleOnSubmit = (e) => {
+        setNuevoTour({...nuevoTour, destacado: formChecked});
         e.preventDefault();
-
         if(nuevoTour.title.trim() === '' || nuevoTour.body.trim() === '' || nuevoTour.img.trim() === '' || nuevoTour.imgD.trim() === '' 
-        || nuevoTour.price.trim() === '' || nuevoTour.dias.trim() === ''|| nuevoTour.ecoregiones.trim() === '' ||
-        nuevoTour.especies.trim() === '') {
-            setError(true);
+        || nuevoTour.price === '' || nuevoTour.dias === ''|| nuevoTour.ecoregiones === '' ||
+        nuevoTour.especies === '') {
+        setError(true);
             return
         }
         else {
@@ -74,7 +74,6 @@ const getTourById = async id => {
             else
             {
                 getTourById(props.currentId);    
-                console.log('editing')
             }
         }, [props.currentId]);
         
@@ -167,14 +166,14 @@ const getTourById = async id => {
                     </Form.Row>
                     <Form.Group controlId="destacada">
                     <Form.Check 
-                        type="switch"
-                        id="detacada-switch"
+                        type="checkbox"
                         label="Destacada"
+                        onChange={updateCheckbox}
                     />
                     </Form.Group>
                     </Modal.Body>
                     <Modal.Footer>
-                    <button type="submit" className="btn modal_boton">
+                    <button type="submit" className="btn text-dark modal_boton">
                         {props.currentId==='' ? "Crear" : "Editar"}
                     </button>
                     </Modal.Footer>

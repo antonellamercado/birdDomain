@@ -1,23 +1,10 @@
-/*.formulario_modal{
-    background-color: #343a40;
-    color: rgb(212, 202, 202);
-}
-.modal-content{
-    background-color: #343a40;
-    color: rgb(212, 202, 202);
-}
-.formulario_modal modal-body{
-    background-color: #343a40;
-    color: rgb(212, 202, 202);
-}
 
-.modal-body{
-    background-color: #343a40;
-    color: rgb(212, 202, 202);
-}*/
 
 .modal-crear-tour{
 width: 70%;
+}
+.modal-open .modal{
+    width: 70%;
 }
 
 .modal_boton{
@@ -30,15 +17,15 @@ width: 70%;
     font-weight: bold;
     border-color: none;
     border-radius:5px;
- }
+}
 
- .modal_boton:hover{
+.modal_boton:hover{
     background-color: #f26522;
     color: black;
     font-weight: bold;
     box-shadow: black;
- } 
+} 
 
- .desactivado{
-     display:none;
- }
+.desactivado{
+    display:none;
+}

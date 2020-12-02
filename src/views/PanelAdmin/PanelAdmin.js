@@ -32,7 +32,6 @@ const PanelAdmin = () => {
         //   
         useEffect( () => {
             getToursForList();
-            console.log("se actualiza")
             }, []);
             
         //  agregar o editar tour              
@@ -40,8 +39,8 @@ const PanelAdmin = () => {
         if (currentId === '')
             {
             const result = await clienteAxios.post('/Tours', tourObject);
+            console.log('nuevo tour',result);
             getToursForList();
-            console.log('nuevo tour grabado', result);
             toast("Tour creado correctamente", {
                 type: "success",
                 position: "top-center",
@@ -79,7 +78,7 @@ const PanelAdmin = () => {
     return(
         <>
       <ToastContainer />
-        <p className="text-dark font-weight-bold t-2 title-panelAdmin">Bienvenido al panel de administracion.
+        <p className="font-weight-bold t-2 title-panelAdmin">Bienvenido al panel de administracion.
             Aqui podra <em className="initialism">Crear</em> nuevos tours, <em className="initialism">Editar</em> los mismos y cambiar la imagen destacada de la pagina principal, ademas de <em className="initialism">Eliminar</em> tours obsoletos.
         </p>
         <div></div>
