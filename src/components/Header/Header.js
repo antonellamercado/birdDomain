@@ -3,14 +3,14 @@ import {Modal,Nav,Navbar,NavDropdown,Form,FormControl,Button} from 'react-bootst
 import './Header.css'
 import logo from '../Header/logo.png';
 import {Link} from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faStar } from '@fortawesome/free-solid-svg-icons'
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
-import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import SearchBar from '../SearchBar/SearchBar';
-import HelpModal from '../ModalFaqs/ModalFaqs.js'
-import ModalIng from '../ModalLogin/ModalLogin'
+import HelpModal from '../ModalFaqs/ModalFaqs.js';
+import ModalIng from '../ModalLogin/ModalLogin';
 import ModalReg from '../ModalRegister/ModalRegister';
 
 
@@ -50,6 +50,7 @@ const Header = () => {
             <Nav className="ml-auto d-flex justify-content-around">
             
             <SearchBar/>
+            
                 <Link style={{ textDecoration: 'none' }} to = '/'>
                 <li className="nav-links-links">Home</li>
                 </Link>
