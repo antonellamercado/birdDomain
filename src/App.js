@@ -71,7 +71,7 @@ function App() {
           <Route path="/tours/:id" exact component={DetalleTour}></Route>
           <Route path="/aves" exact component={Aves}></Route>
           <Route path="/contacto" exact component={Contacto}></Route>
-          <Route path="/favorito" exact component={Favoritos}></Route>
+          <Route path="/favoritos" exact component={Favoritos}></Route>
           <Route path="/cart" exact component={Cart}></Route>
           <Route path="/checkout" exact component={Checkout}></Route>
           <Route path="/recover" exact component={RecoverPass}></Route>
