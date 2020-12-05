@@ -10,15 +10,16 @@ import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import SearchBar from '../SearchBar/SearchBar';
 import HelpModal from '../ModalFaqs/ModalFaqs.js';
-import ModalIng from '../ModalLogin/ModalLogin';
-import ModalReg from '../ModalRegister/ModalRegister';
+// import ModalIng from '../ModalLogin/ModalLogin';
+// import ModalReg from '../ModalRegister/ModalRegister';
+import AuthOptions from './AuthOptions';
 
 
 
 const Header = () => {
     const [modalShow, setModalShow] = useState(false);
-    const [modalShowIng, setModalShowIng] = useState(false);
-    const [modalShowReg, setModalShowReg] = useState(false);
+    // const [modalShowIng, setModalShowIng] = useState(false);
+    // const [modalShowReg, setModalShowReg] = useState(false);
 
     return (
     <>
@@ -29,21 +30,13 @@ const Header = () => {
     <img className="logo" src = {logo} alt = "..."></img> 
     </Link>
     <strong>Birds Domain</strong>
-
-     <div className="buttons d-flex justify-content-between">
-     <button className="buttonHeader mx-1" onClick={() => setModalShowIng(true)}>Ingresa</button>
-     <ModalIng
-                 show={modalShowIng}
-                 onHide={() => setModalShowIng(false)}
-                />
-     <button className="buttonHeader" onClick={() => setModalShowReg(true)}>Registrate</button>
-     <ModalReg
-            show={modalShowReg}
-            onHide={() => setModalShowReg(false)}
-           />
-     </div>
-    </div>
     
+    <AuthOptions />
+
+    </div> 
+    
+    
+
         <Navbar className="" expand="lg">
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
