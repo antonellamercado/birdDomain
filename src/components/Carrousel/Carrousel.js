@@ -8,11 +8,21 @@ import clienteAxios from '../../config/axios';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import '../Carrousel/Carrousel.css'
 
-const Carrousel = ({history, location, match}) => {
+const Carrousel = () => {
 
 const [tours, setTours] = useState([]);
 
+//probando traer desde bd
 useEffect(()=>{
+    const getTours = async ()=>{
+    await clienteAxios.get("api/tours")
+    .then(response => {
+        setTours(response.data)
+        });
+        }
+        getTours();
+        },[]);
+/*useEffect(()=>{
     const getTour = async ()=>{
     await clienteAxios.get("/Tours")
     .then(response =>{
@@ -21,14 +31,14 @@ useEffect(()=>{
     }
     getTour();
     },[]);
- 
+ */
 
 
     return (
         <div className="carousel-wrapper">
             <Carousel showStatus={true} showThumbs={false}
-             centerMode={true} infiniteLoop={true} 
-             centerSlidePercentage={35} autoPlay={true} onClickItem>
+            centerMode={true} infiniteLoop={true} 
+            centerSlidePercentage={35} autoPlay={true} onClickItem>
                 {                                
                     tours.length === 0 ? <p>'No hay Tours disponible' </p>: 
                     (tours.map((tour, index) => 

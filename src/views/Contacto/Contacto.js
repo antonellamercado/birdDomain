@@ -1,8 +1,8 @@
 import React from 'react';
 import {useState} from 'react';
-import {Link} from 'react-router-dom';
+//import {Link} from 'react-router-dom';
 //libreria
-import { Row, Col, Button, Form,  } from 'react-bootstrap';
+import { Row, Col, Form } from 'react-bootstrap';
 import { ToastContainer, toast } from 'react-toastify';
  import 'react-toastify/dist/ReactToastify.css';
 //estilos

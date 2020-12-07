@@ -16,7 +16,7 @@ const Galeria = () => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     
-useEffect(()=>{
+/*useEffect(()=>{
     const getGaleria = async ()=>{
     await clienteAxios.get("/Aves")
     .then(response =>{
@@ -24,7 +24,19 @@ useEffect(()=>{
 });
 }
 getGaleria();
-},[]);
+},[]); */
+
+// probando traer desde bd
+
+useEffect(()=>{
+    const getAves = async ()=>{
+    await clienteAxios.get("api/aves")
+    .then(response => {
+        setGaleria(response.data)
+        });
+        }
+        getAves();
+        },[]);
 
 const imgGaleria = galeria.map(({ img }) => [img]);
 const [selectedImg, setSelectedImg] = useState (imgGaleria[0]);
@@ -38,7 +50,7 @@ return (
     <>
         <div id="myModal" className="modal">
             <span id="close">&times;</span>
-            <img className="modal-content" id="img01"/>
+            <img className="modal-content" id="img01" alt="img-seleccionada"/>
             <div id="caption"></div>
         </div>
         <div className="d-flex justify-content-around row mb-2">

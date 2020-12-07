@@ -19,18 +19,20 @@ import Mapa from '../../components/Maps/Maps';
 
 const DetalleTour = ({match}) => {
     const idtour = match.params.id;
+    console.log('match', match);
+    console.log('id tour', idtour);
     const [tour, setTour] = useState({});
     const [products, setProducts] = useState([]);
     const [colorfav, setColorfav] = useState('black');
 //
-    useEffect(()=>{
-        const getTourByID = async id  =>{
-        await clienteAxios.get(`/Tours/${id}`)
+  useEffect(()=>{
+        const findById = async _id  =>{
+        await clienteAxios.get(`api/tours/${_id}`)
         .then(response =>{
         setTour(response.data)
         });
         }
-        getTourByID(idtour);
+        findById(idtour);
         const getBuys = async ()=>{
             await axios.get(`http://localhost:5000/usuarios/1`)
             .then(response =>{
