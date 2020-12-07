@@ -27,7 +27,7 @@ const CrearTour = (props) => {
     const [error, setError] = useState(false);    
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    const [formChecked, setFormChecked] = useState(false);
+    //const [formChecked, setFormChecked] = useState(false);
     
 
     // funciones
@@ -36,10 +36,10 @@ const CrearTour = (props) => {
             setNuevoTour({...nuevoTour, [name]: value});
         }
     //
-    const updateCheckbox = (e) => setFormChecked(e.target.checked)
+    //const updateCheckbox = (e) => setFormChecked(e.target.checked)
     
     const handleOnSubmit = (e) => {
-        setNuevoTour({...nuevoTour, destacado: formChecked});
+        setNuevoTour({...nuevoTour});
         e.preventDefault();
         if(nuevoTour.title.trim() === '' || nuevoTour.body.trim() === '' || nuevoTour.img.trim() === '' || nuevoTour.imgD.trim() === '' 
         || nuevoTour.price === '' || nuevoTour.dias === ''|| nuevoTour.ecoregiones === '' ||
@@ -167,8 +167,14 @@ const getTourById = async id => {
                     <Form.Group controlId="destacada">
                     <Form.Check 
                         type="checkbox"
+                        name="destacado"
                         label="Destacada"
-                        onChange={updateCheckbox}
+                        value={nuevoTour.destacado}
+                        onChange= {() => {
+                        setNuevoTour({
+                            ...nuevoTour,
+                            destacado: !destacado
+                        })}}
                     />
                     </Form.Group>
                     </Modal.Body>
