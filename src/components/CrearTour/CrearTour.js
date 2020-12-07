@@ -27,7 +27,7 @@ const CrearTour = (props) => {
     const [error, setError] = useState(false);    
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    //const [formChecked, setFormChecked] = useState(false);
+    const [formChecked, setFormChecked] = useState(false);
     
 
     // funciones
@@ -36,7 +36,7 @@ const CrearTour = (props) => {
             setNuevoTour({...nuevoTour, [name]: value});
         }
     //
-    //const updateCheckbox = (e) => setFormChecked(e.target.checked)
+    const updateCheckbox = (e) => setFormChecked(e.target.checked)
     
     const handleOnSubmit = (e) => {
         setNuevoTour({...nuevoTour});
@@ -170,11 +170,7 @@ const getTourById = async id => {
                         name="destacado"
                         label="Destacada"
                         value={nuevoTour.destacado}
-                        onChange= {() => {
-                        setNuevoTour({
-                            ...nuevoTour,
-                            destacado: !destacado
-                        })}}
+                        onChange = {updateCheckbox}
                     />
                     </Form.Group>
                     </Modal.Body>
