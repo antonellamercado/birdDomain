@@ -30,6 +30,9 @@
     left: 0;
     top: 0;
 }
+.modal-open .modal {
+    width: 100%;
+}
 .detalle_ave{
 background: rgba(12, 11, 11, 0.4); 
 /* background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
