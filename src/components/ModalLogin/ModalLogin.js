@@ -1,12 +1,42 @@
-import React from 'react';
+import React, {useState, useContext} from 'react';
 import {Modal, Button, Form} from 'react-bootstrap';
 import {Link, useHistory} from 'react-router-dom';
 import img from '../../img/Fig3.jpg';
 import './ModalCuenta.css';
-
+import UserContext from "../../context/UserContext";
+import Axios from "axios";
+import ErrorNotice from "../misc/ErrorNotice";
 
 export const ModalIng = (props) => {
+
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+  const [error, setError] = useState();
+
+  const { setUserData } = useContext(UserContext);
+  const history = useHistory();
+
+  const submit = async (e) => {
+    e.preventDefault();
+    try {
+      const loginUser = { email, password };
+      const loginRes = await Axios.post(
+        "http://localhost:5000/api/users/login",
+        loginUser
+      );
+      setUserData({
+        token: loginRes.data.token,
+        user: loginRes.data.user,
+      });
+      localStorage.setItem("auth-token", loginRes.data.token);
+      history.push("/");
+    } catch (err) {
+      err.response.data.msg && setError(err.response.data.msg);
+    }
+  };
+
     return (
+      <div>
         <div>
             <Modal {...props}
       size="md"
@@ -19,30 +49,35 @@ export const ModalIng = (props) => {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body className="modal-body text-dark">
-      <Form className="mt-2" id="form">
+      <form className="mt-2" id="form" onSubmit={submit}>
             <div className="form-group">
                 <label for="username" className="mt-4 mr-sm-2 form_login_label">Email</label>
-                <input type="text" id="userName" placeholder="username" className="border p-1 rounded form_login_input" required/>
+                <input type="text" id="userName" placeholder="Ingresa tu email" className="border p-1 rounded form_login_input" required  onChange={(e) => setEmail(e.target.value)}/>
                 <br></br>
                 <label for="userpassword" className="mt-4 mr-sm-2 form_login_label">Contraseña</label>
-                <input type="password" id="userPass" placeholder="password" className="border p-1 rounded form_login_input" required/>
+                <input type="password" id="userPass" placeholder="Ingresa tu contraseña" className="border p-1 rounded form_login_input" required onChange={(e) => setPassword(e.target.value)}/>
                 <br></br>
-                <input type="checkbox" name="checkbox" id="checkbox" className="mt-4"/>
-                <label for="checkbox" className="mr-sm-2 mx-1"> Mantenerme Logueado</label>
-                
-                <div id="error"></div>
-                <Button type="submit" id="submit" className="mt-4 btn text-white">Login</Button>
+                               
+                {/* <Button type="submit" id="submit" className="mt-4 btn text-white">Login</Button>
                 <p className="mt-4">¿Has olvidado tu Contraseña? </p>
-                <br></br>
+                <br></br> */}
                 <Link to ='/Recover'>
-                <Button onClick={props.onHide}>Recuperar contraseña</Button>
+                <button className="btn btn-registrar mt-4 text-white" onClick={props.onHide}>Recuperar contraseña</button>
                 </Link>
             </div>
-</Form> 
+            <input className="btn btn-registrar mt-4 text-white" type="submit" value="Login" />
+</form> 
       </Modal.Body>
      
     </Modal>
         </div>
+    {error && (
+      <>
+      <ErrorNotice message={error} clearError={() => setError(undefined)} />
+      </>
+      )}
+    </div>
+
     )
 }
 
