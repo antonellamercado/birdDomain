@@ -8,7 +8,6 @@ import Axios from "axios";
 //import Footer from './components/Footer/Footer';
 import Layout from './components/Layout/Layout';
 //views
-import Home from './views/Home/Home';
 import Aves from './views/Aves/Aves';
 import Contacto from './views/Contacto/Contacto';
 import Favoritos from './views/Favoritos/Favoritos';
@@ -20,6 +19,7 @@ import Checkout from './views/Checkout/Checkout'
 import 'react-toastify/dist/ReactToastify.css';
 import './index.css';
 import UserContext from "./context/UserContext"
+import Home from './views/Home/Home';
 
 
 
