@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
-//config
-import clienteAxios from '../../config/axios';
+// //config
+// import clienteAxios from '../../config/axios';
+import Axios from 'axios';
 //libreria
 import {Card} from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -13,16 +14,38 @@ const Aves = () => {
 
  const [aves, setAves] = useState([]);
         
+    // useEffect(()=>{
+    //     const getAves = async ()=>{
+    //     await clienteAxios.get("/Aves")
+    //     .then(response =>{
+    //     setAves(response.data)
+    // });
+    // }
+    // getAves();
+    // },[]);
+
     useEffect(()=>{
         const getAves = async ()=>{
-        await clienteAxios.get("/Aves")
-        .then(response =>{
-        setAves(response.data)
-    });
-    }
-    getAves();
-    },[]);
+        await Axios.get("http://localhost:5000/api/aves")
+        .then(response => {
+            setAves(response.data)
+             });
+             }
+             getAves();
+             },[]);
 
+    //         if (response.ok) {
+    //             console.log(response.data)
+    //             return response.data.json()
+                
+    //         }
+    //     }).then (responseJson => setAves (responseJson.aves));
+
+    // }
+    // getAves();
+    // },[]);
+
+ 
     
     return (
         <>
