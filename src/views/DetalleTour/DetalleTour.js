@@ -2,7 +2,7 @@ import React from 'react';
 import {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 //config
-import clienteAxios from '../../config/axios';
+//import clienteAxios from '../../config/axios';
 import axios from "axios";
 //libreria
 import {Card, Accordion, Tooltip} from 'react-bootstrap';
@@ -18,16 +18,16 @@ import Mapa from '../../components/Maps/Maps';
 //import { latLng } from 'leaflet';
 
 const DetalleTour = ({match}) => {
-    const idtour = match.params.id;
-    console.log('match', match);
+const idtour = match.params.id;
+   console.log('match', match);
     console.log('id tour', idtour);
     const [tour, setTour] = useState({});
     const [products, setProducts] = useState([]);
     const [colorfav, setColorfav] = useState('black');
 //
   useEffect(()=>{
-        const findById = async _id  =>{
-        await clienteAxios.get(`api/tours/${_id}`)
+        const findById = async id  =>{
+        await axios.get(`http://localhost:5000/api/tours/${id}`)
         .then(response =>{
         setTour(response.data)
         });
