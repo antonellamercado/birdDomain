@@ -1,5 +1,3 @@
-
-
 .legend-contacto {
     padding: 5px 10px;
     background:#c3e4f5;
@@ -21,19 +19,19 @@
 
 
 .formulario_boton{
-   width: 30%;
-   padding: 5px;
-   margin-bottom: 2px;
-   background-color: #f26522;
-    color: black;
-    font-weight: bold;
+  width: 30%;
+  padding: 5px;
+  margin-bottom: 2px;
+  background-color: #f26522;
+  color: black;
+  font-weight: bold;
 }
 
 .formulario_boton:hover{
-    width: 30%;
-    padding: 5px;
-    margin-bottom: 2px;
-    background-color: #e6875b;
-     color: black;
-     font-weight: bold;
- }
+  width: 30%;
+  padding: 5px;
+  margin-bottom: 2px;
+  background-color: #e6875b;
+  color: black;
+  font-weight: bold;
+}
