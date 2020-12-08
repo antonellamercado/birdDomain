@@ -1,10 +1,10 @@
 import React, {useState, useContext} from 'react';
-import {Modal, Button, Form} from 'react-bootstrap';
-import img from '../../img/Fig3.jpg'
+import {Modal} from 'react-bootstrap';
 import {useHistory} from "react-router-dom";
 import './ModalCuenta.css'
 import Axios from "axios";
-import UserContext from "../../context/UserContext"
+import UserContext from "../../context/UserContext";
+import ErrorNotice from "../misc/ErrorNotice";
 
 export const ModalReg = (props) => {
 
@@ -44,6 +44,12 @@ export const ModalReg = (props) => {
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
+      
+    {error && (
+      <>
+      <ErrorNotice message={error} clearError={() => setError(undefined)} />
+      </>
+      )}
       <Modal.Header closeButton className="modal-body text-dark">
         <Modal.Title id="contained-modal-title-vcenter">
           Registrate  

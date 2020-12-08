@@ -43,6 +43,11 @@ export const ModalIng = (props) => {
       aria-labelledby="contained-modal-title-vcenter"
       centered
             >
+              {error && (
+      <>
+      <ErrorNotice message={error} clearError={() => setError(undefined)} />
+      </>
+      )}
       <Modal.Header closeButton className="modal-body text-dark">
         <Modal.Title id="contained-modal-title-vcenter">
           Iniciar sesion
@@ -71,11 +76,7 @@ export const ModalIng = (props) => {
      
     </Modal>
         </div>
-    {error && (
-      <>
-      <ErrorNotice message={error} clearError={() => setError(undefined)} />
-      </>
-      )}
+    
     </div>
 
     )

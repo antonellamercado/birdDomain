@@ -42,7 +42,7 @@ useEffect(()=>{
                 {                                
                     tours.length === 0 ? <p>'No hay Tours disponible' </p>: 
                     (tours.map((tour, index) => 
-                        <Link to={`/tours/${tour.id}`}>
+                        <Link to={`/tours/${tour._id}`}>
                         <div key={index} className="carrousel_cont">
                             <img src={tour.img}  alt="img-tour"/>
                             <p className="legend carrousel_legend">{tour.title}</p>
