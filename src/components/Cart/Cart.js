@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from "axios";
 import {Link} from 'react-router-dom';
 import "./Cart.css";
+import clienteAxios from '../../config/axios';
 
 const Cart = () => {
     const [products, setProducts] = useState([]);
@@ -10,15 +11,16 @@ const Cart = () => {
 
     useEffect(()=>{
         const getBuys = async ()=>{
-            await axios.get(`http://localhost:5000/usuarios/1`)
+            await clienteAxios.get("api/usuarios/1")
+            console.log("hoal")
             .then(response =>{
                 setProducts(response.data.buys)                            
             });
         }
         getBuys();
         const getTours = async ()=>{
-            await axios.get("http://localhost:5000/Tours")
-            .then(response =>{
+            await clienteAxios.get("api/tours")
+            .then(response => {
                 setTours(response.data)
             });
         }
