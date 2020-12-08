@@ -11,6 +11,7 @@
   }
   .error-notice button {
     padding:5px;
+    border: 1px solid #6936f5;
     border-radius: 3px;
     background-color: #663ef8;
     color: #ffffff;

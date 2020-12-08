@@ -26,13 +26,14 @@ const idtour = match.params.id;
     const [colorfav, setColorfav] = useState('black');
 //
   useEffect(()=>{
-        const findById = async id  =>{
+        const getTourByID = async id  =>{
         await axios.get(`http://localhost:5000/api/tours/${id}`)
         .then(response =>{
         setTour(response.data)
+        console.log(response.data)
         });
         }
-        findById(idtour);
+        getTourByID(idtour);
         const getBuys = async ()=>{
             await axios.get(`http://localhost:5000/usuarios/1`)
             .then(response =>{
@@ -70,9 +71,9 @@ const idtour = match.params.id;
                             <img className="col-6 p-0 detalle_imagen mr-3"  width="100%" src={tour.img}  alt="img-tour"></img>
                             <div className="d-flex d-block col-6 p-0 detalle_imagen" >  
                                 <Mapa  
-                                key={tour.id} 
-                                position={tour.Lat}
-                                observation={tour.Latobs}
+                                key={tour._id} 
+                                position={tour.lat}
+                                observation={tour.latObs}
                                 /> 
                             </div>  
                         </div>
@@ -80,7 +81,7 @@ const idtour = match.params.id;
                         <FontAwesomeIcon  icon={faFeather} /> {tour.body}
                         </div>
                         <div className="col-12 my-4 text-justify detalle_descripcion">  
-                        <FontAwesomeIcon  icon={faFeather} /> {tour.body2}
+                        <FontAwesomeIcon  icon={faFeather} /> {tour.description}
                         </div>
                         <div className="col-12 my-4 text-justify detalle_descripcion">  
                         <FontAwesomeIcon  icon={faFeather} /> {tour.info}
