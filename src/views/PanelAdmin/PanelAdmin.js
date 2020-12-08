@@ -24,7 +24,7 @@ const PanelAdmin = () => {
     // funciones
     
         const getToursForList = async()  =>{
-            await clienteAxios.get("/Tours")
+            await clienteAxios.get("/api/tours")
             .then(response =>{
             setListaTours(response.data)
             });
@@ -38,7 +38,7 @@ const PanelAdmin = () => {
         const addOrEditTour = async (tourObject) => {
         if (currentId === '')
             {
-            const result = await clienteAxios.post('/Tours', tourObject);
+            const result = await clienteAxios.post('api/tours', tourObject);
             console.log('nuevo tour',result);
             getToursForList();
             toast("Tour creado correctamente", {
@@ -64,7 +64,7 @@ const PanelAdmin = () => {
            // if (buttonYes)
             if(window.confirm("seguro que quieres eliminar?"))
             {console.log('id para eliminar', id);
-            const tourEliminado = await clienteAxios.delete(`/Tours/${id}`);
+            const tourEliminado = await clienteAxios.delete(`api/tours/${id}`);
             console.log('tour eliminado', tourEliminado);
             toast("Tour eliminado correctamente", {
                 type: "error",
