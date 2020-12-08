@@ -40,7 +40,10 @@ const Favoritos = () => {
         Aun no tienes favoritos, explora nuestros tours y eligelos!
         </div>
         <div className = "container mb-5 imgFavoritosDeslog">
-        <img className = "container imgFavoritosDeslog" src="https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour6.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b"></img>
+        <img className = "container imgFavoritosDeslog" 
+        src="https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour6.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b"
+        alt="img-favoritos"
+        ></img>
         </div>
         </>
         )}
@@ -58,7 +61,10 @@ const Favoritos = () => {
           <div className="mt-3 mb-5 links-links"><h2>Logueate y escoge tus Favoritos</h2></div>
           </div>
           <div className = "container mb-5 imgFavoritosDeslog">
-          <img className = "container imgFavoritosDeslog" src="https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour6.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b"></img>
+          <img className = "container imgFavoritosDeslog" 
+          src="https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour6.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b"
+          alt ="img-fav-desl"
+          ></img>
           </div>
           
           </>

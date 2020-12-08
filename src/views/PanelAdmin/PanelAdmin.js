@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react'
 //libreria
-import { Table, Modal,Button } from 'react-bootstrap';
+import { Table, Modal} from 'react-bootstrap';
 import { ToastContainer, toast } from 'react-toastify';
  import 'react-toastify/dist/ReactToastify.css';
 //config
@@ -22,8 +22,7 @@ const PanelAdmin = () => {
     const [listaTours, setListaTours] = useState([]);
     const [currentId, setCurrentId] = useState("");
     // funciones
-    
-        const getToursForList = async()  =>{
+            const getToursForList = async()  =>{
             await clienteAxios.get("/api/tours")
             .then(response =>{
             setListaTours(response.data)
@@ -34,22 +33,11 @@ const PanelAdmin = () => {
             getToursForList();
             }, []);
             
-        //  agregar o editar tour              
-        const addOrEditTour = async (tourObject) => {
-        if (currentId === '')
-            {
-            const result = await clienteAxios.post('api/tours', tourObject);
-            console.log('nuevo tour',result);
-            getToursForList();
-            toast("Tour creado correctamente", {
-                type: "success",
-                position: "top-center",
-                autoClose: 2000
-            });
-            }
-        else
-            {
-            await clienteAxios.put(`/Tours/${currentId}`, tourObject);
+        //  agregar o editar tour     
+        
+        const editarTour = async (tour)=> {
+
+            await clienteAxios.put(`api/tours/${currentId}`, tour);
             getToursForList();
             toast("Tour editado correctamente", {
                 type: "info",
@@ -58,7 +46,29 @@ const PanelAdmin = () => {
             });
             setCurrentId('');
         }
-        }     
+        
+
+        const crearTour = async (tour)=> {
+            const result = await clienteAxios.post('api/tours', tour);
+            console.log('nuevo tour',result);
+            getToursForList();
+            toast("Tour creado correctamente", {
+                type: "success",
+                position: "top-center",
+                autoClose: 2000
+            });
+        }
+
+        const addOrEditTour = (tour) => {
+        if (currentId === '')
+            {
+                crearTour(tour);
+            }
+        else
+            {
+                editarTour(tour);
+            }     
+        }
         //eliminar tour
         const onDeleteTour = async (id) => {
            // if (buttonYes)
@@ -109,11 +119,11 @@ const PanelAdmin = () => {
                         <td>
                             <div 
                             className="btn btn-danger mr-2"
-                            onClick={()=> onDeleteTour(tour.id) }
+                            onClick={()=> onDeleteTour(tour._id) }
                             ><FontAwesomeIcon  icon={faTimes}  /> </div>
                             <div  
                             className="btn btn-light"
-                            onClick={()=>setCurrentId(tour.id)}
+                            onClick={()=>setCurrentId(tour._id)}
                             ><FontAwesomeIcon  icon={faEdit} /></div>
                         </td>
                         </tr>

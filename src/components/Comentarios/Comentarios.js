@@ -9,7 +9,7 @@ const [listaComentarios, setListaComentarios]=useState([]);
 useEffect(()=>{
     
     const getComents = async ()=>{
-        await clienteAxios.get('/Comentarios')
+        await clienteAxios.get('api/comentarios')
         .then(response =>{
             setListaComentarios(response.data)                            
         });
@@ -23,7 +23,7 @@ useEffect(()=>{
         {
             listaComentarios.length === 0 ? <p>No hay tour disponible</p> :
             (listaComentarios.map((comentario, index) => 
-            <div key = {comentario.id} className="comentario d-flex row justify-content-center col-9 my-3">                    
+            <div key = {comentario._id} className="comentario d-flex row justify-content-center col-9 my-3">                    
                 <div className='col-7 comentarios_caja'>
                 <p className="comentarios_texto"><strong>{comentario.email} </strong>says: </p>
                     <p className="comentarios_texto">"{comentario.body}"</p>   

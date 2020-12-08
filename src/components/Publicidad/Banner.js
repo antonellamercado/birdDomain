@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+// import React, { Component } from 'react';
 import {a} from 'react-router-dom';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
@@ -20,28 +20,28 @@ function Banner (){
             <div>
                 <a href="https://rollingcodeschool.com/">
                     <div> 
-                        <img src={advertising1}/>
+                        <img src={advertising1} alt="anuncio1"/>
                     </div>
                 </a>
             </div>
             <div>
                 <a href="https://rollingcodeschool.com/">
                 <div> 
-                        <img src={advertising2}/>
+                        <img src={advertising2} alt="anuncio2"/>
                     </div>
                 </a>
             </div>
             <div>
                 <a href="https://rollingcodeschool.com/">
                 <div> 
-                        <img src={advertising3}/>
+                        <img src={advertising3} alt="anuncio3"/>
                     </div>
                 </a>
             </div>
             <div>
                 <a href="https://rollingcodeschool.com/">
                 <div>  
-                        <img src={advertising4}/>
+                        <img src={advertising4} alt="anuncio4"/>
                     </div>
                 </a>
             </div>

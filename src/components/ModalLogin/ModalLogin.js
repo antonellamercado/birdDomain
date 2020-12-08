@@ -1,5 +1,5 @@
 import React, {useState, useContext} from 'react';
-import {Modal, Button, Form} from 'react-bootstrap';
+import {Modal} from 'react-bootstrap';
 import {Link, useHistory} from 'react-router-dom';
 import img from '../../img/Fig3.jpg';
 import './ModalCuenta.css';

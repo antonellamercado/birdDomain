@@ -1,7 +1,7 @@
 
-import React, { useState } from 'react';
+//import React, { useState } from 'react';
 import './RecoverPass.css'
-import {Form, Button} from 'react-bootstrap';
+//import {Form, Button} from 'react-bootstrap';
 import img from '../../img/DT9.jpg'
 import { ToastContainer, toast } from 'react-toastify';
  import 'react-toastify/dist/ReactToastify.css';
@@ -43,7 +43,7 @@ import { ToastContainer, toast } from 'react-toastify';
         </fieldset>
         </form> 
         <div>
-        <img className="container img-recover" src={img}></img>
+        <img className="container img-recover" src={img} alt="img-recuperarPass"></img>
         </div>
         </div>
     )

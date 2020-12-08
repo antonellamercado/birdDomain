@@ -2,12 +2,12 @@ import {useEffect, useState} from 'react';
 import {Link} from 'react-router-dom';
 //config
 import clienteAxios from '../../config/axios';
-import { Modal } from 'react-bootstrap';
-//config
+//libreria
+import { Modal, Card } from 'react-bootstrap';
 //style
 import '../Galeria/Galeria.css';
-//libreria
-import {Card} from 'react-bootstrap';
+
+
 
 const Galeria = () => {
 
