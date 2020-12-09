@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import {Form, Button} from 'react-bootstrap';
 //config
-import clienteAxios from '../../config/axios';
+import Axios from '../../config/axios';
 
 
 
@@ -17,7 +17,7 @@ const SearchBar = () => {
 
   useEffect(()=>{
     const getTours = async ()=>{
-    await clienteAxios.get("/Tours")
+    await Axios.get("http://localhost:5000/api/tours")
     .then(response =>{
     setTours(response.data)
 });
@@ -48,8 +48,8 @@ getTours();
             }
         }).map((val,key)=>{
             return (
-                <Link to={`/tours/${val.id}`} onClick = {() => setSearchText ("")}>
-                <div key={key} className="searchResult row mt-3">
+                <Link to={`/tours/${val._id}`} onClick = {() => setSearchText ("")}>
+                <div key={val._id} className="searchResult row mt-3">
                     <div clasName="mr-5">
                     <p className="nav-links-links tourContainer">{val.title}</p>
                     </div>
