@@ -1,6 +1,6 @@
 import React from 'react';
 import {Modal, Button, Accordion,Card} from 'react-bootstrap';
-import img from '../../img/Fig3.jpg'
+//import img from '../../img/Fig3.jpg'
 
 
 export const HelpModal = (props) => {

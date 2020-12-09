@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Modal,Nav,Navbar} from 'react-bootstrap';
+import {Nav,Navbar} from 'react-bootstrap';
 import './Header.css'
 import logo from '../Header/logo.png';
 import {Link} from 'react-router-dom';
@@ -27,7 +27,7 @@ const Header = () => {
     <div className= "firstrow mr-3 p-0 navbar navbar-expand-lg sticky-top">
     
     <Link style={{ textDecoration: 'none' }} to = '/' className="logo-wrapper" >
-    <img className="logo" src = {logo} alt = "..."></img> 
+    <img className="logo" src = {logo} alt = "img-logo"></img> 
     </Link>
     <strong>Birds Domain</strong>
     
@@ -68,9 +68,6 @@ const Header = () => {
           </Navbar.Collapse>
         </Navbar>
         </div>
-
-        
-
         </>
             );
 }

@@ -29,7 +29,7 @@ useEffect(()=>{
                     <p className="comentarios_texto">"{comentario.body}"</p>   
                 </div>
                 <div className='d-flex col-2 align-content-center'>
-                <img className = 'comentarios_img img-fluid' src={comentario.img}></img>
+                <img className = 'comentarios_img img-fluid' src={comentario.img} alt="img-comentarios"></img>
                 </div> 
             </div>    
         ))

@@ -31,10 +31,8 @@ const Favoritos = () => {
                 </div>
             </Link>
         ))}
- 
         </>
         ):(
-
         <> 
         <div className = "container favNotLogged mt-3 mb-5">
         Aun no tienes favoritos, explora nuestros tours y eligelos!
@@ -49,26 +47,25 @@ const Favoritos = () => {
         )}
 
         </>
-      ) : (
+    ) : (
         <>
         <div className = "container favNotLogged mt-3 mb-5">
-          <h2 className="mt-5 links-links">No estas logueado</h2>
-          <button className="buttonHeader mx-1" onClick={() => setModalShowIng(true)}>Ingresa</button>
+            <h2 className="mt-5 links-links">No estas logueado</h2>
+            <button className="buttonHeader mx-1" onClick={() => setModalShowIng(true)}>Ingresa</button>
             <ModalIng
                         show={modalShowIng}
                         onHide={() => setModalShowIng(false)}
-                       />
-          <div className="mt-3 mb-5 links-links"><h2>Logueate y escoge tus Favoritos</h2></div>
-          </div>
-          <div className = "container mb-5 imgFavoritosDeslog">
-          <img className = "container imgFavoritosDeslog" 
-          src="https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour6.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b"
-          alt ="img-fav-desl"
-          ></img>
-          </div>
-          
-          </>
-      )}
+            />
+            <div className="mt-3 mb-5 links-links"><h2>Logueate y escoge tus Favoritos</h2></div>
+            </div>
+            <div className = "container mb-5 imgFavoritosDeslog">
+            <img className = "container imgFavoritosDeslog" 
+            src="https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Tour6.jpg?alt=media&token=deb4aa4c-ad19-4a05-895f-a54b0a94cc3b"
+            alt ="img-fav-desl"
+            ></img>
+        </div>
+        </>
+    )}
         </Link>
     );
 }
