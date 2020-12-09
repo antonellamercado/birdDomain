@@ -10,14 +10,12 @@ const Favoritos = () => {
 
     const { userData } = useContext(UserContext);
     const [modalShowIng, setModalShowIng] = useState(false);
-
     return (
         <Link className="links-links" to = '/favoritos'>
     {userData.user ? (
         <>
         <h1 className="links-links">Favoritos de {userData.user.displayName}</h1>
         {/* {userData.user.favs.length > 0 ? (<> mapealo </>) : (<> Aun no tienes favoritos </>)  } */}
-
         {userData.user.favs.length > 0 ? (<>
 
         {userData.user.favs.map((img,index) => (
