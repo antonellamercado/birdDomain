@@ -22,37 +22,39 @@ const logout = () => {
 };
 
     return (
-       
     <div className="buttons d-flex justify-content-between">
         {
-           userData.user ? ( 
+        userData.user ? ( 
             <>
             <div className="d-flex justify-content-between">
             <div className = "imgUserContainer">
-                <img className = "imgUser" src="https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Fig11.jpg?alt=media&token=b7a63dea-8285-4d00-b016-469d4fa47054"></img>
+                <img className = "imgUser" 
+                src="https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Fig11.jpg?alt=media&token=b7a63dea-8285-4d00-b016-469d4fa47054"
+                alt="img-usuario"
+                ></img>
+            </div>
+            <div>
+            <p className="d-block">{userData.user.displayName}</p>
             </div>
             <button className="buttonHeaderSalir mt-3 ml-3" onClick={logout}>Salir</button>
             </div>
             </>
-           ) : (
+        ) : (
             <>
             <button className="buttonHeader mx-1" onClick={() => setModalShowIng(true)}>Ingresa</button>
             <ModalIng
                         show={modalShowIng}
                         onHide={() => setModalShowIng(false)}
-                       />
+            />
             <button className="buttonHeader" onClick={() => setModalShowReg(true)}>Registrate</button>
             <ModalReg
-                   show={modalShowReg}
-                   onHide={() => setModalShowReg(false)}
-                  />
+                show={modalShowReg}
+                onHide={() => setModalShowReg(false)}
+                />
             </>
-           )
-           
-       }
-
-    
-     </div>
+        )   
+        }
+    </div>
         
     );
 }

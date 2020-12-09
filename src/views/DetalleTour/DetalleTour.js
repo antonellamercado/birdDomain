@@ -1,7 +1,8 @@
 import React from 'react';
-import {useState, useEffect} from 'react';
+import {useState, useEffect, useContext} from 'react';
 import {Link} from 'react-router-dom';
 //config
+import UserContext from "../../context/UserContext";
 //import clienteAxios from '../../config/axios';
 import axios from "axios";
 //libreria
@@ -11,6 +12,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDollarSign ,  faCalendarAlt, faEye, faFeather, faPlaneDeparture, faStar} from '@fortawesome/free-solid-svg-icons';
 //componentes
 import Comentarios from '../../components/Comentarios/Comentarios';
+import ModalIng from '../../components/ModalLogin/ModalLogin';
 //estilos
 import "../DetalleTour/DetalleTour.css";
 import Mapa from '../../components/Maps/Maps';
@@ -18,12 +20,12 @@ import Mapa from '../../components/Maps/Maps';
 //import { latLng } from 'leaflet';
 
 const DetalleTour = ({match}) => {
-const idtour = match.params.id;
-   console.log('match', match);
-    console.log('id tour', idtour);
+    const idtour = match.params.id;
+    const { userData } = useContext(UserContext);
     const [tour, setTour] = useState({});
     const [products, setProducts] = useState([]);
     const [colorfav, setColorfav] = useState('black');
+    const [modalShowIng, setModalShowIng] = useState(false);
 //
   useEffect(()=>{
         const getTourByID = async id  =>{
@@ -90,19 +92,36 @@ const idtour = match.params.id;
                         <div className="col-3  d-inline"> <FontAwesomeIcon  icon={faCalendarAlt} /> Duracion del tour: {tour.dias} dias
                         </div>
                         <div className="col-3 d-inline"> <FontAwesomeIcon  icon={faEye} /> Numero de especies probables en avistaje: {tour.especies} </div>
-                        <OverlayTrigger overlay={<Tooltip id="tooltip-disabled">Agregar a favoritos!</Tooltip>}>
-                        <div className="col-3 d-inline" onClick={addFavorite}>
-                        <FontAwesomeIcon style={{color: colorfav}} className='favorito' icon={faStar} /></div>
-                        </OverlayTrigger>
-                        <div className="mt-3">
+                        {userData.user ? (
+                            <>
+                            <OverlayTrigger overlay={<Tooltip id="tooltip-disabled">Agregar a favoritos!</Tooltip>}>
+                                <div className="col-3 d-inline" onClick={addFavorite}>
+                                <FontAwesomeIcon style={{color: colorfav}} className='favorito' icon={faStar} /></div>
+                            </OverlayTrigger>
+                            <div className="mt-3">
                             {
                                 checkBuy(tour.id)!==tour.id || checkBuy(tour.id)==null?<button id={tour.id} className="btn bg-success col-6 my-3 d-block mx-auto " onClick={ e =>{updateProduct(tour)} }>Comprar tour</button>:
                                 <button className="d-block col-6 mx-auto btn btn-success disabled">Tour en carrito</button>
                             }
-                        </div>   
-                        <Link to='/Checkout'>
-                            <button className='col-6 my-3 d-block mx-auto btn btnFinalizarCompra'>Finalizar compras</button>
-                        </Link>
+                            </div>   
+                            <Link to='/Checkout'>
+                                <button className='col-6 my-3 d-block mx-auto btn btnFinalizarCompra'>Finalizar compras</button>
+                            </Link>
+                        </>)
+                        :
+                        (
+                            <>
+                            <div>
+                            <h3 className="mt-5">Para comprar debes registrarte e iniciar sesion</h3>
+                            <button className="d-block col-6 mx-auto btn btnFinalizarCompra my-2" onClick={() => setModalShowIng(true)}>Comprar</button>
+                            <ModalIng
+                                    show={modalShowIng}
+                                    onHide={() => setModalShowIng(false)}
+                            />
+                            </div>
+                            </>
+                        )
+                        }
                     </div>
                 </div>
 
