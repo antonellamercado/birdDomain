@@ -10,8 +10,9 @@
 }
 
 .searchResult{
-    border: 1px solid black;
+    border: 1px solid rgb(130, 8, 146);
     border-radius:5px;
+    background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
 }
 
 .tourContainer{
@@ -27,6 +28,7 @@
 .searchImg{
     height: 100%;
     width:100%;  
+    box-shadow: 2px 2px 2px 2px rgb(34, 34, 34);
 }
 
 .nav-links-links{
