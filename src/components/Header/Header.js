@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import {Nav,Navbar} from 'react-bootstrap';
 import './Header.css'
 import logo from '../Header/logo.png';
@@ -13,11 +13,13 @@ import HelpModal from '../ModalFaqs/ModalFaqs.js';
 // import ModalIng from '../ModalLogin/ModalLogin';
 // import ModalReg from '../ModalRegister/ModalRegister';
 import AuthOptions from './AuthOptions';
+import UserContext from "../../context/UserContext";
 
 
 
 const Header = () => {
     const [modalShow, setModalShow] = useState(false);
+    const { userData } = useContext(UserContext);
     // const [modalShowIng, setModalShowIng] = useState(false);
     // const [modalShowReg, setModalShowReg] = useState(false);
 
@@ -56,9 +58,12 @@ const Header = () => {
                 <Link style={{ textDecoration: 'none' }} to = '/favoritos'>
                 <li className="nav-links-links"><FontAwesomeIcon  icon={faStar} /></li>
                 </Link>
+                {userData.user ? (<>
                 <Link style={{ textDecoration: 'none' }} to = '/cart'>
                 <li className="nav-links-links"><FontAwesomeIcon  icon={faShoppingCart} /></li>
                 </Link>
+                </>) :
+                <></>}
                 <div className="nav-links-links" onClick={() => setModalShow(true)}><FontAwesomeIcon  icon={faQuestionCircle} /></div>           
                 <HelpModal
                   show={modalShow}
