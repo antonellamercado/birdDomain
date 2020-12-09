@@ -1,37 +1,40 @@
-import { useState, useEffect } from 'react';
-import axios from "axios";
+import React, { useState, useEffect, useContext } from 'react';
+import UserContext from "../../context/UserContext";
 import {Link} from 'react-router-dom';
 import "./Cart.css";
+import clienteAxios from '../../config/axios';
 
 const Cart = () => {
     const [products, setProducts] = useState([]);
     const [tours, setTours] = useState([]);
     const [cartList, setCart] = useState(false);
+    const { userData } = useContext(UserContext);
+    const AuthStr = userData.token
 
     useEffect(()=>{
-        const getBuys = async ()=>{
-            await axios.get(`http://localhost:5000/usuarios/1`)
+        const getBuys = async ()=>{          
+            await clienteAxios.get(`api/users/`, { headers: { "x-auth-token": AuthStr } })
             .then(response =>{
                 setProducts(response.data.buys)                            
             });
         }
         getBuys();
         const getTours = async ()=>{
-            await axios.get("http://localhost:5000/Tours")
-            .then(response =>{
+            await clienteAxios.get("api/tours")
+            .then(response => {
                 setTours(response.data)
             });
         }
         getTours();
     },[])
     const updateProduct = async (product)=> {
-        await axios.patch(`http://localhost:5000/usuarios/1`, {buys:[...products, product]});
-        setProducts([...products, product]);
+        await clienteAxios.put(`api/users/${userData.user.id}`, {buys:[...products, product]});
+        setProducts([...products, product]);    
     }
     const deleteProduct = async (e)=>{
-        const newProducts = products.filter(product => product.id !== Number(e.target.id));
+        const newProducts = products.filter(product => product._id !== e.target.id);
         setProducts(newProducts);
-        await axios.patch(`http://localhost:5000/usuarios/1`, {buys:newProducts});
+        await clienteAxios.put(`api/users/${userData.user.id}`, {buys:newProducts});
     };
     function buyListOnOff(){
         setCart(!cartList)
@@ -44,11 +47,11 @@ const Cart = () => {
         }
         return(total)
     }
-    function checkBuy(id){
+    function checkBuy(_id){
         let i=0;
         for(i=0;i<products.length;i++){
-            if(id===products[i].id){
-                return (products[i].id)       
+            if(_id===products[i]._id){
+                return (products[i]._id)       
             }
         }
     }
@@ -72,7 +75,7 @@ const Cart = () => {
                                         <p className="priceProduct" value={product.price}>{product.title} - {product.price}U$D</p>
                                     </div>
                                     <div>
-                                        <i id={product.id} className="fas fa-trash ml-4" onClick={deleteProduct}></i>                                           
+                                        <i id={product._id} className="fas fa-trash ml-4" onClick={deleteProduct}></i>                                           
                                     </div>                                                                 
                                 </div>
                             )                             
@@ -100,14 +103,14 @@ const Cart = () => {
                                         <div className="card bg-dark text-white my-4 cardsTour">
                                             <img src={tour.img} className="card-img" alt="..."/>
                                             <div className="card-img-overlay d-flex flex-column-reverse text-left">
-                                                <Link to={`/tours/${tour.id}`} className="text-warning">                             
+                                                <Link to={`/tours/${tour._id}`} className="text-warning">                             
                                                     <h5 className="card-title">{tour.title}</h5>
                                                 </Link>
                                                 <p className="card-text">Precio por persona: {tour.price}U$D</p>
                                                 <p className="card-text">Duracion del Tour: {tour.dias}</p>                                  
                                                 <div className="btnBuyTour">
                                                     {
-                                                        checkBuy(tour.id)!==tour.id || checkBuy(tour.id)==null?<button id={tour.id} className="btn btn-success" onClick={ e =>{updateProduct(tour)} }>Comprar Tour</button>:
+                                                        checkBuy(tour._id)!==tour._id || checkBuy(tour._id)==null?<button id={tour._id} className="btn btn-success" onClick={ e =>{updateProduct(tour)} }>Comprar Tour</button>:
                                                         <button className="btn btn-success disabled">Comprado</button>
                                                     }                                             
                                                 </div>                                    
