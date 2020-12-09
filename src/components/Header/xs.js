@@ -28,11 +28,10 @@ const logout = () => {
 
     return (
     <div className="buttons d-flex justify-content-between">
-        
-        {userData.user ? ( 
-
+        {
+        userData.user ? ( 
             <>
-               { userData.user.email == "birdmaster@gmail.com" ? 
+               { userData.user.email = "birdmaster@gmail.com" ? 
 
                (
                             
@@ -59,15 +58,12 @@ const logout = () => {
             </div>
             <button className="buttonHeaderSalir mt-3 ml-3" onClick={logout}>Salir</button>
             </div> 
-            
             </>  
-         
+        
             )}
                
-               </>
-
+            </>
         ) : (
-
             <>
             <button className="buttonHeader mx-1" onClick={() => setModalShowIng(true)}>Ingresa</button>
             <ModalIng
@@ -80,9 +76,8 @@ const logout = () => {
                 onHide={() => setModalShowReg(false)}
                 />
             </>
-        
-        )}
-        
+        )   
+        }
     </div>
         
     );

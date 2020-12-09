@@ -24,7 +24,7 @@ import { ToastContainer, toast } from 'react-toastify';
 
     return (
     
-        <div className="recoverBg">
+        <div className="recoverBg mt-5">
             
             <form  className="mt-0 mb-2" id="form"  onSubmit={showToast}>
             <ToastContainer />

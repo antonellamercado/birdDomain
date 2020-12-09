@@ -75,7 +75,7 @@ function App() {
           <Route path="/cart" exact component={Cart}></Route>
           <Route path="/checkout" exact component={Checkout}></Route>
           <Route path="/recover" exact component={RecoverPass}></Route>
-          <Route path="/panelAdmin" exact component={PanelAdmin}></Route>
+          <Route path="/paneladmin" exact component={PanelAdmin}></Route>
         </Switch>
       </div>
       </Layout>

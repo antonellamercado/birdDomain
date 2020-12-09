@@ -164,6 +164,30 @@ const getTourById = async id => {
                         />
                     </Form.Group>
                     </Form.Row>
+
+
+
+                    {/* <Form.Row>
+                    <Form.Group as={Col} controlId="latitudretiro">
+                        <Form.Label>Punto de retiro</Form.Label>
+                        <Form.Control type="text" 
+                        name="lat" 
+                        onChange={handleOnChange}
+                        value={nuevoTour.lat}
+                        />
+                    </Form.Group>
+                    <Form.Group as={Col} controlId="latitudobservacion">
+                        <Form.Label>Punto de observacion</Form.Label>
+                        <Form.Control type="text" 
+                        name="latObs"  
+                        onChange={handleOnChange}
+                        value={nuevoTour.latObs}
+                        />
+                    </Form.Group>
+                    </Form.Row> */}
+
+
+
                     <Form.Group controlId="destacada">
                     <Form.Check 
                         type="checkbox"
