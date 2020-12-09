@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react';
-import axios from "axios";
+import React, { useState, useEffect, useContext } from 'react';
+import UserContext from "../../context/UserContext";
+import clienteAxios from '../../config/axios';
 import {Button, Modal} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import "./Checkout.css";
@@ -9,6 +10,8 @@ const Checkout =()=>{
     const [products, setProducts] = useState([]);
     const [cartList, setCart] = useState(false);
     const [show, setShow] = useState(false);
+    const { userData } = useContext(UserContext);
+    const AuthStr = userData.token
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -16,8 +19,8 @@ const Checkout =()=>{
         const {name, value} = e.target;
     }
     useEffect(()=>{
-        const getBuys = async ()=>{
-            await axios.get(`http://localhost:5000/usuarios/1`)
+        const getBuys = async ()=>{          
+            await clienteAxios.get(`api/users/`, { headers: { "x-auth-token": AuthStr } })
             .then(response =>{
                 setProducts(response.data.buys)                            
             });
@@ -26,9 +29,9 @@ const Checkout =()=>{
     },[])
 
     const deleteProduct = async (e)=>{
-        const newProducts = products.filter(product => product.id !== Number(e.target.id));
+        const newProducts = products.filter(product => product._id !== e.target.id);
         setProducts(newProducts);
-        await axios.patch(`http://localhost:5000/usuarios/1`, {buys:newProducts});
+        await clienteAxios.put(`api/users/${userData.user.id}`, {buys:newProducts});
     };
     function buyListOnOff(){
         setCart(!cartList);
@@ -63,7 +66,7 @@ const Checkout =()=>{
         }
     }
     async function deleteBuys(){
-        await axios.patch(`http://localhost:5000/usuarios/1`, {buys:[]});
+        await clienteAxios.put(`api/users/${userData.user.id}`, {buys:[]});
     }
     return (
         <>
@@ -97,7 +100,7 @@ const Checkout =()=>{
                                         <p className="priceProduct" value={product.price}>{product.title} - {product.price}U$D</p>
                                     </div>
                                     <div>
-                                        <i id={product.id} className="fas fa-trash ml-4" onClick={deleteProduct}></i>                                           
+                                        <i id={product._id} className="fas fa-trash ml-4" onClick={deleteProduct}></i>                                           
                                     </div>                                                                 
                                 </div>
                             )                             
