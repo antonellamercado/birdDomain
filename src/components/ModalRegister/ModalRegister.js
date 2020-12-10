@@ -3,7 +3,7 @@ import {Modal} from 'react-bootstrap';
 import {useHistory} from "react-router-dom";
 import './ModalCuenta.css'
 import Axios from "axios";
-import UserContext from "../../context/UserContext";
+import {UserContext} from "../../context/UserContext";
 import ErrorNotice from "../misc/ErrorNotice";
 
 export const ModalReg = (props) => {

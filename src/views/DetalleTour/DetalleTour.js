@@ -2,7 +2,7 @@ import React from 'react';
 import {useState, useEffect, useContext} from 'react';
 import {Link} from 'react-router-dom';
 //config
-import UserContext from "../../context/UserContext";
+import {UserContext} from "../../context/UserContext";
 //import clienteAxios from '../../config/axios';
 import axios from "axios";
 //libreria

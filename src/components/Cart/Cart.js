@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import UserContext from "../../context/UserContext";
+import {UserContext} from "../../context/UserContext";
 import {Link} from 'react-router-dom';
 import "./Cart.css";
 import clienteAxios from '../../config/axios';
