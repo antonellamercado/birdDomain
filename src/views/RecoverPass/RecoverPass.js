@@ -6,27 +6,21 @@ import clienteAxios from '../../config/axios';
 
  const RecoverPass = () => {
     
-
-
-   const showToast = (e) => {
-    e.preventDefault();
-    
     async function sendEmail(){
-       let userEmail = document.getElementById('userEmail').value
-       await clienteAxios.post('/send-email', {message:'Hola, al parecer has olvido tu password, sigue el siguiente enlace para poder cambiarla', userEmail});
-       toast("Se ha enviado una notificacion al email provisto", 
-        {
+        let userEmail = document.getElementById('userEmail').value
+        await clienteAxios.post('/send-email', {message:'Hola, al parecer has olvido tu password, sigue el siguiente enlace para poder cambiarla', userEmail});
+        toast("Se ha enviado una notificacion al email provisto", {
             type: "success",
             position: "top-center",
-            autoClose: 5000 })
-        }
+            autoClose: 3000 
+        })
     }
-    return (   
-        <div className="recoverBg">           
+    return (
+        <div className="recoverBg">  
             <form className="mt-0 my-2" id="form" >
                 <ToastContainer />
                 <fieldset className="fieldset-recover">
-                    <legend className="legend-recover"> <h3>Recupera tu contraseña</h3></legend>
+                    <legend className="legend-recover"><h3>Recupera tu contraseña</h3></legend>
                     <div className="form-group">
                         <label for="username" className="mt-1 mr-sm-2">Coloca tu email y te enviaremos los pasos a seguir</label>
                         <input type="text" id="userEmail" name="email" placeholder="ejemplo@email.com" className="border p-1 rounded input-recover" required/>
@@ -42,6 +36,5 @@ import clienteAxios from '../../config/axios';
             </div>
         </div>
     )
-}
-
+};
 export default RecoverPass;
