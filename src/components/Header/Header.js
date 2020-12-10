@@ -13,7 +13,7 @@ import HelpModal from '../ModalFaqs/ModalFaqs.js';
 // import ModalIng from '../ModalLogin/ModalLogin';
 // import ModalReg from '../ModalRegister/ModalRegister';
 import AuthOptions from './AuthOptions';
-import UserContext from "../../context/UserContext";
+import {UserContext} from "../../context/UserContext";
 
 
 

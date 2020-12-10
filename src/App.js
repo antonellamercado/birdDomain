@@ -18,7 +18,7 @@ import PanelAdmin from './views/PanelAdmin/PanelAdmin';
 import Checkout from './views/Checkout/Checkout'
 import 'react-toastify/dist/ReactToastify.css';
 import './index.css';
-import UserContext from "./context/UserContext"
+import {UserContextProvider} from "./context/UserContext"
 import Home from './views/Home/Home';
 
 
@@ -26,44 +26,12 @@ import Home from './views/Home/Home';
 
 function App() {
 
-  const [userData, setUserData]=useState({
-    token:undefined,
-    user: undefined
-  });
-
-  useEffect(() => {
-    const checkLoggedIn = async () => {
-      let token = localStorage.getItem("auth-token");
-      if (token === null) {
-        localStorage.setItem("auth-token", "");
-        token = ""; //si no hay token es empty string
-      }
-      //enviamos al backend 
-      const tokenRes = await Axios.post(
-        "http://localhost:5000/api/users/tokenisvalid",
-        null,
-        { headers: { "x-auth-token": token } }
-      );
-      //tokenRes verificacion si existe un token
-      if (tokenRes.data) {
-        const userRes = await Axios.get("http://localhost:5000/api/users/", {
-          headers: { "x-auth-token": token },
-        });
-        //ponemos la info del usuario en el set
-        setUserData({
-          token,
-          user: userRes.data,
-        });
-      }
-    };
-
-    checkLoggedIn();
-  }, []);
+ 
 
   return (
     <div className="App">
     <Router>    
-      <UserContext.Provider value={{userData, setUserData}}>
+      <UserContextProvider>
       <Layout>
       <div className="">
         <Switch>
@@ -79,7 +47,7 @@ function App() {
         </Switch>
       </div>
       </Layout>
-      </UserContext.Provider>
+      </UserContextProvider>
     </Router>
     
     </div>

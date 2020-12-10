@@ -3,7 +3,7 @@ import {Modal} from 'react-bootstrap';
 import {Link, useHistory} from 'react-router-dom';
 import img from '../../img/Fig3.jpg';
 import './ModalCuenta.css';
-import UserContext from "../../context/UserContext";
+import {UserContext} from "../../context/UserContext";
 import Axios from "axios";
 import ErrorNotice from "../misc/ErrorNotice";
 
@@ -66,11 +66,12 @@ export const ModalIng = (props) => {
                 {/* <Button type="submit" id="submit" className="mt-4 btn text-white">Login</Button>
                 <p className="mt-4">¿Has olvidado tu Contraseña? </p>
                 <br></br> */}
+                <input className="btn btn-registrar mt-4 text-white mr-3" type="submit" value="Login" />
                 <Link to ='/Recover'>
                 <button className="btn btn-registrar mt-4 text-white" onClick={props.onHide}>Recuperar contraseña</button>
                 </Link>
             </div>
-            <input className="btn btn-registrar mt-4 text-white" type="submit" value="Login" />
+            
 </form> 
       </Modal.Body>
      

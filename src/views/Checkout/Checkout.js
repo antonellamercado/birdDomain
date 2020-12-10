@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import UserContext from "../../context/UserContext";
+import {UserContext} from "../../context/UserContext";
 import clienteAxios from '../../config/axios';
 import {Button, Modal} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
