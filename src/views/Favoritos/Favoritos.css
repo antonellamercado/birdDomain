@@ -1,5 +1,5 @@
 .imgFavoritosDeslog{
-    border-radius:7px;
+    border-radius:5px;
 }
 
 .links-links{
@@ -16,8 +16,35 @@
  }
 
  .favNotLogged {
-    background-image: linear-gradient(to top, #fcc5e4 0%, #fda34b 15%, #ff7882 35%, #c8699e 52%);
-    padding:30px;
-    border:2px solid rgb(37, 37, 37);
+    width:60%;
+    height:40%;
+     background-color:#7bc9f0; 
+    /* background-color:#f5b678 ; */
+    /* background-image: linear-gradient(to top, #fcc5e4 0%, #fda34b 15%, #ff7882 35%, #c8699e 52%); */
+    padding:2px;
+    border:1px solid rgb(37, 37, 37);
     border-radius:5px;
+ }
+
+ .imgContainer{
+    width:60%;
+    height:40%;
+    border-radius:5px;
+ }
+
+ .imgTour{
+     width:100%;
+     height:100%;
+     border-radius:5px;
+ }
+
+ .btnFavorito{
+    padding:5px;
+    border-radius:3px;
+    background-color:  #f26522;
+    border:none;
+ }
+
+ .titleFavoritos{
+     color:black;
  }
