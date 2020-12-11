@@ -36,7 +36,7 @@ const PanelAdmin = () => {
         //  agregar o editar tour     
         
         const editarTour = async (tour)=> {
-
+            console.log("editando");
             await clienteAxios.put(`api/tours/${currentId}`, tour);
             getToursForList();
             toast("Tour editado correctamente", {
