@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext } from 'react';
 import {Link} from 'react-router-dom';
 import {UserContext} from "../../context/UserContext";
 import ModalIng from '../../components/ModalLogin/ModalLogin';
@@ -9,39 +9,26 @@ import { faBinoculars } from '@fortawesome/free-solid-svg-icons';
 import clienteAxios from '../../config/axios';
 
 const Favoritos = () => {
-
+    
     const { userData } = useContext(UserContext);
     const [modalShowIng, setModalShowIng] = useState(false);
-    // const [favs, setFavs] = useState([]);
-    // const AuthStr = userData.token
-    
-    // useEffect(()=>{
-    //     const getFavs = async ()=>{          
-    //         await clienteAxios.get(`api/users/`, { headers: { "x-auth-token": AuthStr } })
-    //         .then(response =>{
-    //             setFavs(response.data.favs)                            
-    //         });
-    //     }
-    //     getFavs();
-    // },[])
+    const [favs, setFavs] = useState([userData?.user?.favs]);
 
-    // // const updateFavs = async (fav)=> {
-    // //     await clienteAxios.put(`api/users/${userData.user.id}`, {favs:[...favs, fav]});
-    // //     setFavs([...favs, fav]);    
-    // // }
 
-    // const deleteFavs = async (e)=>{
-    //     const newFavs = favs.filter(fav => favs._id !== e.target.id);
-    //     setFavs(newFavs);
-    //     await clienteAxios.put(`api/users/${userData.user.id}`, {favs:newFavs});
-    //     // updateFavs();
-    // };
+     const deleteFavs = async (e)=>{
+         let favs = userData.user.favs;
+         console.log(e.target)
+         const newFavs = favs.filter(fav => fav._id !== e.target.id);
+         setFavs(newFavs);
+         await clienteAxios.put(`api/users/${userData.user.id}`, {favs:newFavs});
+        window.location.reload(true);
+     };
 
     return (
         <Link className="links-links" to = '/favoritos'>
     {userData.user ? (
         <>
-        <h1 className="links-links">Favoritos de {userData.user.displayName}</h1>
+        <h1 className="">Favoritos de {userData.user.displayName}</h1>
         {/* {userData.user.favs.length > 0 ? (<> mapealo </>) : (<> Aun no tienes favoritos </>)  } */}
 
         {userData.user.favs.length > 0 ? 
@@ -50,13 +37,15 @@ const Favoritos = () => {
         <>
 
         {userData.user.favs.map((tour,index) => (
+            <div>
+            <button id={tour._id} className="btnFavorito" onClick={deleteFavs} >Borrar de favoritos</button>
             <Link to={`/tours/${tour._id}`} style={{ textDecoration: 'none' }} className=" col-xs-12 col-sm-12 col-md-4 col-lg-3 m-1 p-0">
                 <div className="p-0 m-0 ">
                 <div key={index} className="p-0 m-0">
                     <div className="d-flex justify-content-center mb-3">
                         <Card.Title className="titleFavoritos p-2 mr-3 "><FontAwesomeIcon  icon={faBinoculars } /> {tour.title}</Card.Title>
                     
-                        {/* <button id={tour._id} className="btnFavorito" onClick={deleteFavs} >Borrar de favoritos</button>*/}
+                         
                     </div>        
                             <div className=" d-flex justify-content-center">
                            <div className="imgContainer">
@@ -66,6 +55,7 @@ const Favoritos = () => {
                     </div>
                 </div>
                 </Link>
+                </div>
         ))}
         </>
         ):(
