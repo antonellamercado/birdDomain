@@ -12,13 +12,20 @@ const CrearTour = (props) => {
     {
         title:'',
         body:'',
+        description:'',
+        info:'',
         img: '',
         imgD:'',
-        price:'',
-        dias:'',
+        price:null,
+        dias:null,
         ecoregiones:'',
         especies:'',
-        destacado:false,
+        isDestacado:false,
+         latRetiro:'',
+         longRetiro:'',
+         latObs:'',
+         longObs:'',
+
     };
     
     //const [dataValide, setDataValide] = useState(false);
@@ -27,16 +34,16 @@ const CrearTour = (props) => {
     const [error, setError] = useState(false);    
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    const [formChecked, setFormChecked] = useState(false);
-    
+     
 
     // funciones
     const handleOnChange = (e) => {
             const {name, value} = e.target;
             setNuevoTour({...nuevoTour, [name]: value});
         }
+
     //
-    const updateCheckbox = (e) => setFormChecked(e.target.checked)
+
     
     const handleOnSubmit = (e) => {
         setNuevoTour({...nuevoTour});
@@ -49,7 +56,16 @@ const CrearTour = (props) => {
         }
         else {
         setError(false);
-        props.addOrEditTour(nuevoTour);
+
+        const newnuevoTour = {
+        
+        ...nuevoTour,
+        lat: [parseInt(nuevoTour.latRetiro), parseInt(nuevoTour.longRetiro)],
+        latObs: [parseInt(nuevoTour.latObs), parseInt(nuevoTour.longObs)]
+        }
+        
+        props.addOrEditTour(newnuevoTour);
+
         //limpia campos
         setNuevoTour({...initialValues});
         }
@@ -58,7 +74,7 @@ const CrearTour = (props) => {
 
 const getTourById = async id => {
     try {
-        const response = await clienteAxios.get(`/Tours/${id}`);
+        const response = await clienteAxios.get(`api/tours/${id}`);
         setNuevoTour(response.data);
         setShow(true);
     } catch (error) {
@@ -165,26 +181,63 @@ const getTourById = async id => {
                     </Form.Group>
                     </Form.Row>
 
-
-
-                    {/* <Form.Row>
                     <Form.Group as={Col} controlId="latitudretiro">
-                        <Form.Label>Punto de retiro</Form.Label>
+                        <Form.Label>Informacion</Form.Label>
                         <Form.Control type="text" 
-                        name="lat" 
+                        name="info" 
                         onChange={handleOnChange}
-                        value={nuevoTour.lat}
+                        value={nuevoTour.info}
                         />
                     </Form.Group>
-                    <Form.Group as={Col} controlId="latitudobservacion">
-                        <Form.Label>Punto de observacion</Form.Label>
+
+                    <Form.Group as={Col} controlId="latitudretiro">
+                        <Form.Label>Descripcion</Form.Label>
                         <Form.Control type="text" 
+                        name="description" 
+                        onChange={handleOnChange}
+                        value={nuevoTour.description}
+                        />
+                    </Form.Group>
+
+                                   {/* /PUNTOS/ */}
+                    <Form.Row>
+                    <Form.Group as={Col} controlId="latitudretiro">
+                        <Form.Label>Punto de retiro Lat</Form.Label>
+                        <Form.Control type="number" 
+                        name="latRetiro" 
+                        onChange={handleOnChange}
+                        value={nuevoTour.latRetiro}
+                        />
+                    </Form.Group>
+
+                    <Form.Group as={Col} controlId="latitudretiro">
+                        <Form.Label>Punto de retiro Long</Form.Label>
+                        <Form.Control type="number" 
+                        name="longRetiro" 
+                        onChange={handleOnChange}
+                        value={nuevoTour.longRetiro}
+                        />
+                    </Form.Group>
+
+                    <Form.Group as={Col} controlId="latitudobservacion">
+                        <Form.Label>Punto de observacion Lat </Form.Label>
+                        <Form.Control type="number" 
                         name="latObs"  
                         onChange={handleOnChange}
                         value={nuevoTour.latObs}
                         />
                     </Form.Group>
-                    </Form.Row> */}
+
+                    <Form.Group as={Col} controlId="latitudobservacion">
+                        <Form.Label>Punto de observacion Long</Form.Label>
+                        <Form.Control type="number" 
+                        name="longObs"  
+                        onChange={handleOnChange}
+                        value={nuevoTour.longObs}
+                        />
+                    </Form.Group>
+
+                    </Form.Row> 
 
 
 
@@ -193,8 +246,10 @@ const getTourById = async id => {
                         type="checkbox"
                         name="destacado"
                         label="Destacada"
-                        value={nuevoTour.destacado}
-                        onChange = {updateCheckbox}
+                        checked={nuevoTour.isDestacado}
+                        onChange = { (e) => 
+                            setNuevoTour({...nuevoTour, isDestacado: e.target.checked})
+                        }
                     />
                     </Form.Group>
                     </Modal.Body>

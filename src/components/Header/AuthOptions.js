@@ -32,7 +32,7 @@ console.log(userData)
         {userData.user ? ( 
 
             <>
-               { userData.user.displayName == "BMaster" ? 
+               { userData.user.admin ?
 
                (
                             
