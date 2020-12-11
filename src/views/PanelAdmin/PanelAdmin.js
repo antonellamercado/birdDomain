@@ -115,7 +115,7 @@ const PanelAdmin = () => {
                         <td>{tour.price}</td>
                         <td>{tour.dias}</td>
                         <td>{tour.especies}</td>
-                        <td>{tour.destacado === true ? 'Si': 'No'}</td>
+                        <td>{tour.isDestacado === true ? 'Si': 'No'}</td>
                         <td>
                             <div 
                             className="btn btn-danger mr-2"

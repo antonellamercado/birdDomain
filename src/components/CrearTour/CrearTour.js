@@ -270,7 +270,7 @@ const getTourById = async id => {
                     <Form.Group controlId="destacada">
                     <Form.Check 
                         type="checkbox"
-                        name="destacado"
+                        name="isDestacado"
                         label="Destacada"
                         checked={nuevoTour.isDestacado}
                         onChange = { (e) => 
