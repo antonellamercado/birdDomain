@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import {Link} from 'react-router-dom';
-import UserContext from "../../context/UserContext";
+import {UserContext} from "../../context/UserContext";
 import ModalIng from '../../components/ModalLogin/ModalLogin';
 import './Favoritos.css';
 import {Card} from 'react-bootstrap';
@@ -18,7 +18,10 @@ const Favoritos = () => {
         <h1 className="links-links">Favoritos de {userData.user.displayName}</h1>
         {/* {userData.user.favs.length > 0 ? (<> mapealo </>) : (<> Aun no tienes favoritos </>)  } */}
 
-        {userData.user.favs.length > 0 ? (<>
+        {userData.user.favs.length > 0 ? 
+        
+        (
+        <>
 
         {userData.user.favs.map((img,index) => (
             <Link  className=" col-xs-12 col-sm-12 col-md-4 col-lg-3 m-1 p-0">

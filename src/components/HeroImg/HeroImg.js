@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import Harpia3 from '../../img/DT1.jpg';
 import './HeroImg.css'
-import clienteAxios from '../../config/axios';
+import Axios from '../../config/axios';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import {Link} from 'react-router-dom';
@@ -12,7 +12,7 @@ const [tours, setTours] = useState([]);
     
 useEffect(()=>{
     const getTours = async ()=>{
-    await clienteAxios.get("/Tours")
+    await Axios.get("http://localhost:5000/api/tours")
     .then(response =>{
     setTours(response.data)
 });
@@ -23,7 +23,7 @@ getTours();
 
 
 let toursDestacados = tours.filter(function (tour) {
-  return tour.destacado;
+  return tour.isDestacado;
 });
 
 // const toursDestacados = tours.filter(tour => tours.destacado);
@@ -42,7 +42,7 @@ let toursDestacados = tours.filter(function (tour) {
         >
           
           {toursDestacados.map((destacado,index) => (
-           <Link to={`/tours/${destacado.id}`} key={index} className="container-fluid px-0 d-flex justify-content-center">
+           <Link to={`/tours/${destacado._id}`} key={index} className="container-fluid px-0 d-flex justify-content-center">
            <div className="row mx-0 h-25 ">
               <div className="col-12 px-0">
                   <img src={destacado.imgD} className="w-100" alt="..."></img>

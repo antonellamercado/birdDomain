@@ -2,7 +2,7 @@ import React, {useState, useContext} from 'react'
 import ModalIng from '../ModalLogin/ModalLogin';
 import ModalReg from '../ModalRegister/ModalRegister';
 import './Header.css';
-import {UserContext} from '../../context/UserContext';
+import UserContext from '../../context/UserContext';
 import {Link} from 'react-router-dom';
 
 
@@ -11,25 +11,27 @@ const AuthOptions = () => {
     const [modalShowIng, setModalShowIng] = useState(false);
     const [modalShowReg, setModalShowReg] = useState(false);
 
-    const {userData, setUserData} = useContext(UserContext);
+const {userData, setUserData} = useContext(UserContext);
 
-    const logout = () => {
-        setUserData({
-            token:undefined,
-            user:undefined
-        });
+const logout = () => {
+    setUserData({
+        token:undefined,
+        user:undefined
+    });
 
-        localStorage.setItem("auth-token","");
-        setModalShowReg(false);
-        setModalShowIng(false)
-    };
+    localStorage.setItem("auth-token","");
+    setModalShowReg(false);
+    setModalShowIng(false)
+};
+
+
+
     return (
     <div className="buttons d-flex justify-content-between">
-        
-        {userData.user ? ( 
-
+        {
+        userData.user ? ( 
             <>
-               { userData.user.displayName == "BMaster" ? 
+               { userData.user.email = "birdmaster@gmail.com" ? 
 
                (
                             
@@ -56,15 +58,12 @@ const AuthOptions = () => {
             </div>
             <button className="buttonHeaderSalir mt-3 ml-3" onClick={logout}>Salir</button>
             </div> 
-            
             </>  
-         
+        
             )}
                
-               </>
-
+            </>
         ) : (
-
             <>
             <button className="buttonHeader mx-1" onClick={() => setModalShowIng(true)}>Ingresa</button>
             <ModalIng
@@ -77,9 +76,8 @@ const AuthOptions = () => {
                 onHide={() => setModalShowReg(false)}
                 />
             </>
-        
-        )}
-        
+        )   
+        }
     </div>
         
     );

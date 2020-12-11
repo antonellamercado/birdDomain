@@ -2,9 +2,8 @@ import React from 'react';
 import {useState, useEffect, useContext} from 'react';
 import {Link} from 'react-router-dom';
 //config
-import UserContext from "../../context/UserContext";
-//import clienteAxios from '../../config/axios';
-import axios from "axios";
+import {UserContext} from "../../context/UserContext";
+import clienteAxios from '../../config/axios';
 //libreria
 import {Card, Accordion, Tooltip} from 'react-bootstrap';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
@@ -26,18 +25,19 @@ const DetalleTour = ({match}) => {
     const [products, setProducts] = useState([]);
     const [colorfav, setColorfav] = useState('black');
     const [modalShowIng, setModalShowIng] = useState(false);
+    const AuthStr = userData.token
 //
   useEffect(()=>{
         const getTourByID = async id  =>{
-        await axios.get(`http://localhost:5000/api/tours/${id}`)
+        await clienteAxios.get(`api/tours/${id}`)
         .then(response =>{
         setTour(response.data)
         console.log(response.data)
         });
         }
         getTourByID(idtour);
-        const getBuys = async ()=>{
-            await axios.get(`http://localhost:5000/usuarios/1`)
+        const getBuys = async ()=>{          
+            await clienteAxios.get(`api/users/`, { headers: { "x-auth-token": AuthStr } })
             .then(response =>{
                 setProducts(response.data.buys)                            
             });
@@ -45,10 +45,10 @@ const DetalleTour = ({match}) => {
         getBuys();
         }, []);
 //
-    const updateProduct = async (product)=> {
-        await axios.patch(`http://localhost:5000/usuarios/1`, {buys:[...products, product]});
-        setProducts([...products, product]);
-    }
+        const updateProduct = async (product)=> {
+            await clienteAxios.put(`api/users/${userData.user.id}`, {buys:[...products, product]});
+            setProducts([...products, product]);    
+        }
  //   
     function checkBuy(id){
         let i=0;
