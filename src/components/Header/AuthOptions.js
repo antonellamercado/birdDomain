@@ -2,7 +2,7 @@ import React, {useState, useContext} from 'react'
 import ModalIng from '../ModalLogin/ModalLogin';
 import ModalReg from '../ModalRegister/ModalRegister';
 import './Header.css';
-import UserContext from '../../context/UserContext';
+import {UserContext} from '../../context/UserContext';
 import {Link} from 'react-router-dom';
 
 
@@ -24,7 +24,7 @@ const logout = () => {
     setModalShowIng(false)
 };
 
-
+console.log(userData)
 
     return (
     <div className="buttons d-flex justify-content-between">
@@ -32,7 +32,7 @@ const logout = () => {
         {userData.user ? ( 
 
             <>
-               { userData.user.email == "birdmaster@gmail.com" ? 
+               { userData.user.admin ?
 
                (
                             

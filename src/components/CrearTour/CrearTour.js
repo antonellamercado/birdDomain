@@ -21,10 +21,11 @@ const CrearTour = (props) => {
         ecoregiones:'',
         especies:'',
         isDestacado:false,
-        lat0: '',
-        lat1: '',
-        latObs0: '',
-        latObs1: ''
+        latRetiro:'',
+        longRetiro:'',
+        latObs:'',
+        longObs:'',
+
     };
     
     //const [dataValide, setDataValide] = useState(false);
@@ -41,6 +42,7 @@ const CrearTour = (props) => {
             const {name, value} = e.target;
             setNuevoTour({...nuevoTour, [name]: value});
         }
+
     //
 
     //const handleOnChangeLat = (e) => {
@@ -64,7 +66,16 @@ const CrearTour = (props) => {
         }
         else {
         setError(false);
-        props.addOrEditTour(nuevoTour);
+
+        const newnuevoTour = {
+        
+        ...nuevoTour,
+        lat: [parseInt(nuevoTour.latRetiro), parseInt(nuevoTour.longRetiro)],
+        latObs: [parseInt(nuevoTour.latObs), parseInt(nuevoTour.longObs)]
+        }
+        
+        props.addOrEditTour(newnuevoTour);
+
         //limpia campos
         setNuevoTour({...initialValues});
         }
@@ -193,39 +204,71 @@ const getTourById = async id => {
                         onChange={handleOnChange}
                         value={nuevoTour.especies}
                         />
-            </Form.Group>
-            </Form.Row>
-            <Form.Row>
-            <Form.Group as={Col} controlId="latitudretiro">
-            <Form.Label>Punto de retiro</Form.Label><small>(Ingresar coordenadas)</small>
-            <Form.Control type="text" 
-                        name="lat0" 
-                        onChange={handleOnChange}
-                        value={nuevoTour.lat0}
-                        />
+                    </Form.Group>
+                    </Form.Row>
 
-            <Form.Control type="text" 
-                        name="lat1" 
+                    <Form.Group as={Col} controlId="latitudretiro">
+                        <Form.Label>Informacion</Form.Label>
+                        <Form.Control type="text" 
+                        name="info" 
+                        onChange={handleOnChange}
+                        value={nuevoTour.info}
+                        />
+                    </Form.Group>
+
+                    <Form.Group as={Col} controlId="latitudretiro">
+                        <Form.Label>Descripcion</Form.Label>
+                        <Form.Control type="text" 
+                        name="description" 
+                        onChange={handleOnChange}
+                        value={nuevoTour.description}
+                        />
+                    </Form.Group>
+
+                                   {/* /PUNTOS/ */}
+                    <Form.Row>
+                    <Form.Group as={Col} controlId="latitudretiro">
+                        <Form.Label>Punto de retiro Lat</Form.Label>
+                        <Form.Control type="number" 
+                        name="latRetiro" 
+                        onChange={handleOnChange}
+                        value={nuevoTour.latRetiro}
+                        />
+                    </Form.Group>
+
+                    <Form.Group as={Col} controlId="latitudretiro">
+                        <Form.Label>Punto de retiro Long</Form.Label>
+                        <Form.Control type="number" 
+                        name="longRetiro" 
+                        onChange={handleOnChange}
+                        value={nuevoTour.longRetiro}
+                        />
+                    </Form.Group>
+
+                    <Form.Group as={Col} controlId="latitudobservacion">
+                        <Form.Label>Punto de observacion Lat </Form.Label>
+                        <Form.Control type="number" 
+                        name="latObs"  
                         onChange={handleOnChange}
                         value={nuevoTour.lat1}
                         />
-            </Form.Group>
-            <Form.Group as={Col} controlId="latitudobservacion">
-            <Form.Label>Punto de observacion</Form.Label> <small>(Ingresar coordenadas)</small>
-            <Form.Control type="text" 
-                        name="latObs0"  
+                    </Form.Group>
+
+                    <Form.Group as={Col} controlId="latitudobservacion">
+                        <Form.Label>Punto de observacion Long</Form.Label>
+                        <Form.Control type="number" 
+                        name="longObs"  
                         onChange={handleOnChange}
-                        value={nuevoTour.latObs0}
-            />
-            <Form.Control type="text" 
-                        name="latObs1"  
-                        onChange={handleOnChange}
-                        value={nuevoTour.latObs1}
-            />
-            </Form.Group>
-            </Form.Row> 
-            <Form.Group controlId="destacada">
-            <Form.Check 
+                        value={nuevoTour.longObs}
+                        />
+                    </Form.Group>
+
+                    </Form.Row> 
+
+
+
+                    <Form.Group controlId="destacada">
+                    <Form.Check 
                         type="checkbox"
                         name="destacado"
                         label="Destacada"

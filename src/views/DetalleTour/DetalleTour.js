@@ -2,7 +2,7 @@ import React from 'react';
 import {useState, useEffect, useContext} from 'react';
 import {Link} from 'react-router-dom';
 //config
-import UserContext from "../../context/UserContext";
+import {UserContext} from "../../context/UserContext";
 //import clienteAxios from '../../config/axios';
 import axios from "axios";
 //libreria
@@ -26,6 +26,8 @@ const DetalleTour = ({match}) => {
     const [products, setProducts] = useState([]);
     const [colorfav, setColorfav] = useState('black');
     const [modalShowIng, setModalShowIng] = useState(false);
+    const [favs, setFavs] = useState([]);
+    const AuthStr = userData.token
 //
   useEffect(()=>{
         const getTourByID = async id  =>{
@@ -36,6 +38,7 @@ const DetalleTour = ({match}) => {
         });
         }
         getTourByID(idtour);
+
         const getBuys = async ()=>{
             await axios.get(`http://localhost:5000/usuarios/1`)
             .then(response =>{
@@ -43,6 +46,15 @@ const DetalleTour = ({match}) => {
             });
         }
         getBuys();
+
+        const getFavs = async ()=>{          
+            await axios.get(`http://localhost:5000/api/users/`, { headers: { "x-auth-token": AuthStr } })
+            .then(response =>{
+                setFavs(response.data.favs)                            
+            });
+        }
+        getFavs();
+
         }, []);
 //
     const updateProduct = async (product)=> {
@@ -58,9 +70,15 @@ const DetalleTour = ({match}) => {
             }
         }
     }
-    const addFavorite = () => {
+    // const addFavorite = () => {
+    //     setColorfav('#FFD700');
+    //     console.log('id para fav', match.params.id );
+    // }
+
+    const addFavorite = async (fav)=> {
         setColorfav('#FFD700');
-        console.log('id para fav', match.params.id );
+        await axios.put(`http://localhost:5000/api/users/${userData.user.id}`, {favs:[...favs, fav]});
+        setFavs([...favs, fav]);    
     }
 
     return (
@@ -95,7 +113,7 @@ const DetalleTour = ({match}) => {
                         {userData.user ? (
                             <>
                             <OverlayTrigger overlay={<Tooltip id="tooltip-disabled">Agregar a favoritos!</Tooltip>}>
-                                <div className="col-3 d-inline" onClick={addFavorite}>
+                                <div id={tour._id} className="col-3 d-inline" onClick={ e =>{addFavorite(tour)}}>
                                 <FontAwesomeIcon style={{color: colorfav}} className='favorito' icon={faStar} /></div>
                             </OverlayTrigger>
                             <div className="mt-3">

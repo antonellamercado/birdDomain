@@ -3,7 +3,7 @@ import {Modal} from 'react-bootstrap';
 import {Link, useHistory} from 'react-router-dom';
 //import img from '../../img/Fig3.jpg';
 import './ModalCuenta.css';
-import UserContext from "../../context/UserContext";
+import {UserContext} from "../../context/UserContext";
 import Axios from "axios";
 import ErrorNotice from "../misc/ErrorNotice";
 

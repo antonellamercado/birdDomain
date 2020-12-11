@@ -27,6 +27,7 @@ const Cart = () => {
         }
         getTours();
     },[])
+    
     const updateProduct = async (product)=> {
         await clienteAxios.put(`api/users/${userData.user.id}`, {buys:[...products, product]});
         setProducts([...products, product]);    
