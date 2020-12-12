@@ -38,7 +38,7 @@ const Favoritos = () => {
 
         {userData.user.favs.map((tour,index) => (
             <div>
-            <button id={tour._id} className="btnFavorito" onClick={deleteFavs} >Borrar de favoritos</button>
+            <button id={tour._id} className="btnFavorito mt-3" onClick={deleteFavs} >Borrar de favoritos</button>
             <Link to={`/tours/${tour._id}`} style={{ textDecoration: 'none' }} className=" col-xs-12 col-sm-12 col-md-4 col-lg-3 m-1 p-0">
                 <div className="p-0 m-0 ">
                 <div key={index} className="p-0 m-0">

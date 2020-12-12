@@ -43,7 +43,7 @@ console.log(userData)
             <img className = "imgUser" src="https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/DT1.jpg?alt=media&token=3e5ec858-73c5-48c5-916b-aec1243cb4d9"></img>
             </div>
             <Link style={{ textDecoration: 'none' }} to = '/paneladmin'>
-            <button className="buttonHeaderSalir mt-3 ml-3">Panel Admin</button>
+            <button className="buttonHeaderSalir mt-3 ml-3">Admin</button>
             </Link>
             <button className="buttonHeaderSalir mt-3 ml-3" onClick={logout}>Salir</button>
            </div>
