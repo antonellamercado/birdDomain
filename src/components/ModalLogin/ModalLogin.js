@@ -65,11 +65,12 @@ export const ModalIng = (props) => {
                 {/* <Button type="submit" id="submit" className="mt-4 btn text-white">Login</Button>
                 <p className="mt-4">¿Has olvidado tu Contraseña? </p>
                 <br></br> */}
-                
+                <div className="">
                 <input className="btn btn-registrar mt-4 mx-2 text-white" type="submit" value="Login" />
                 <Link to ='/Recover'>
                 <button className="btn btn-registrar mt-4 text-white" onClick={props.onHide}>Recuperar contraseña</button>
                 </Link>
+                </div>
             </div>
             
 </form> 

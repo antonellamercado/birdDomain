@@ -117,7 +117,7 @@ const Checkout =()=>{
                 <form id="formPayCard">
                 
                     <fieldset className="fieldset-checkout">
-                        <legend className="legend-checkout"><h3>Datos de la tarjeta</h3></legend>
+                        <legend className="legend-checkout"><h3 className="texto_legend_check">Datos de la tarjeta</h3></legend>
                     <div className="form-group container my-4">
                         <label>Nombre del Titular</label>
                         <input id="cardOwner" name="cardOwner" onChange={handleOnChange} type="text" placeholder="Ej: Cosme Fulanito" className="form-control"></input>
@@ -128,15 +128,15 @@ const Checkout =()=>{
                         <input id="cardNumbers" name="cardNumbers" onChange={handleOnChange} type="number" placeholder="xxxx-xxxx-xxxx-xxxx" className="form-control" required minLength="16"></input>
                         <small className="form-text text-muted">Ingresa los 16 números de tu tarjeta de credito</small>
                     </div>
-                    <div className="form-group d-flex justify-content-around my-4">
-                        <div>
+                    <div className="form-group d-flex justify-content-around my-4 checkout_grupo">
+                        <div className="checkout_vencimiento">
                             <label>Fecha de vencimiento</label>
                             <input id="expireDate" name="expireDate"onChange={handleOnChange} type="date" className="form-control"></input>
                         </div>
-                        <div>
-                            <label>Codigo de de seguridad posterior</label>
+                        <div className="checkout_codigo">
+                            <label className="checkout_codigo_text">Codigo de de seguridad posterior</label>
                             <input id="cvc" name="cvc" type="number" onChange={handleOnChange} placeholder="XXX" className="form-control"></input>
-                            <small className="form-text text-muted">Codigo de tres digitos en el reverso de su tarjeta.</small>
+                            <small className="form-text text-muted checkout_codigo_text">Codigo de tres digitos en el reverso de su tarjeta.</small>
                         </div>
                     </div>
                     <div className="form-group">

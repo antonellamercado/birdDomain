@@ -29,7 +29,7 @@ const DetalleTour = ({match}) => {
     const [favs, setFavs] = useState([]);
     const AuthStr = userData.token
 //
-  useEffect(()=>{
+    useEffect(()=>{
         const getTourByID = async id  =>{
         await axios.get(`http://localhost:5000/api/tours/${id}`)
         .then(response =>{
@@ -102,20 +102,22 @@ const DetalleTour = ({match}) => {
                         <div className="col-12 my-4 text-justify detalle_descripcion">  
                         <FontAwesomeIcon  icon={faFeather} /> {tour.body}
                         </div>
-                        <div className="col-12 my-4 text-justify detalle_descripcion">  
+                        <div className="col-12 my-4 text-justify detalle_descripcion detalle_description">  
                         <FontAwesomeIcon  icon={faFeather} /> {tour.description}
                         </div>
-                        <div className="col-12 my-4 text-justify detalle_descripcion">  
+                        <div className="col-12 my-4 text-justify detalle_descripcion detalle_info">  
                         <FontAwesomeIcon  icon={faFeather} /> {tour.info}
                         </div>
-                        <div className="col-3  d-inline"> <FontAwesomeIcon  icon={faDollarSign} /> {tour.price}</div>
-                        <div className="col-3  d-inline"> <FontAwesomeIcon  icon={faCalendarAlt} /> Duracion del tour: {tour.dias} dias
+                        <div className="col-3 d-inline"> <FontAwesomeIcon  icon={faDollarSign} /> {tour.price}</div>
+                        <div className="col-3 d-inline"> <FontAwesomeIcon  icon={faCalendarAlt} /> Duracion del tour: {tour.dias} dias
                         </div>
+                        <div className="detalle_especies">
                         <div className="col-3 d-inline"> <FontAwesomeIcon  icon={faEye} /> Numero de especies probables en avistaje: {tour.especies} </div>
+                        </div>
                         {userData.user ? (
                             <>
                             <OverlayTrigger overlay={<Tooltip id="tooltip-disabled">Agregar a favoritos!</Tooltip>}>
-                                <div id={tour._id} className="col-3 d-inline" onClick={ e =>{addFavorite(tour)}}>
+                                <div id={tour._id} className="col-3 d-inline col-xs-6" onClick={ e =>{addFavorite(tour)}}>
                                 <FontAwesomeIcon style={{color: colorfav}} className='favorito' icon={faStar} /></div>
                             </OverlayTrigger>
                             <div className="mt-3">

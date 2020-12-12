@@ -118,11 +118,11 @@ const PanelAdmin = () => {
                         <td>{tour.isDestacado === true ? 'Si': 'No'}</td>
                         <td>
                             <div 
-                            className="btn btn-danger mr-2"
+                            className="btn btn-danger mr-2 admin_delete"
                             onClick={()=> onDeleteTour(tour._id) }
                             ><FontAwesomeIcon  icon={faTimes}  /> </div>
                             <div  
-                            className="btn btn-light"
+                            className="btn btn-light admin_edit"
                             onClick={()=>setCurrentId(tour._id)}
                             ><FontAwesomeIcon  icon={faEdit} /></div>
                         </td>

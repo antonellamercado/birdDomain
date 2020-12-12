@@ -29,3 +29,16 @@ width: 70%;
 .desactivado{
     display:none;
 }
+
+@media screen and (max-width: 400px){
+    .modal_boton{
+        display: block;
+        font-size: 12px;
+        margin: auto;
+    }
+    .formulario.modal, .modal-content, .modal-dialog{
+        width: 100px;
+    }
+    
+
+}

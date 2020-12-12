@@ -46,3 +46,17 @@ height:60%;
   width:100%;
   height:100%;
 }
+
+@media screen and (max-width: 400px){
+    .imgUser{
+      display: none;
+    }
+    .comentarios_texto{
+      font-size: 12px;
+      text-justify: auto;
+  }
+  .comentario{
+    width: 70%;
+    height: 70%;
+  }
+  }

@@ -35,3 +35,12 @@
   color: black;
   font-weight: bold;
 }
+
+@media screen and (max-width: 400px){
+  .legend-contacto{
+    font-size: 10px;
+  }
+  .texto-legend{
+    font-size: 13px;
+  }
+}

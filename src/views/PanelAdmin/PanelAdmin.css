@@ -6,3 +6,14 @@
 .title-panelAdmin p {
     font-size: 30px;
 }
+
+
+@media screen and (max-width: 400px){
+    .title-panelAdmin{
+        font-size: 12px;
+    }
+    .admin_delete, .admin_edite{
+        width: 30%;
+    }
+
+}
