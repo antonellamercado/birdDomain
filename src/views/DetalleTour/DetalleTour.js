@@ -87,10 +87,12 @@ const DetalleTour = ({match}) => {
                 <div>
                     <div>
                         <div className='tour-title font-weight-bold mt-5 mb-5'> <FontAwesomeIcon  icon={faPlaneDeparture} /> {tour.title} </div>
-                        <div className='d-flex d-inline-block container'>
-                            <img className="col-6 p-0 detalle_imagen mr-3"  width="100%" src={tour.img}  alt="img-tour"></img>
-                            <div className="d-flex d-block col-6 p-0 detalle_imagen" >  
-                                <Mapa  
+                        <div className='container d-flex row  col-lg-12 col-md-12 mt-1 mx-1 justify-content-center'>
+                            <div className="  col-xs-12 col-sm-12 col-md-4 col-lg-4 p-0 mr-3 detalle_imagen ">
+                            <img className=" imgTour mr-3"  src={tour.img}  alt="img-tour"></img>
+                            </div>
+                            <div className=" col-xs-12 col-sm-12 col-md-4 col-lg-4 p-0 detalle_imagen" >  
+                                <Mapa  className="imgMapa"
                                 key={tour._id} 
                                 position={tour.lat}
                                 observation={tour.latObs}
@@ -154,7 +156,7 @@ const DetalleTour = ({match}) => {
                         </Card.Header>
                         <Accordion.Collapse eventKey="0">
                             <Card.Body>
-                                <Comentarios />
+                                <Comentarios className= "col-xs-12 col-sm-12 col-md-6 col-lg-6"/>
                             </Card.Body>
                         </Accordion.Collapse>
                     </Card>

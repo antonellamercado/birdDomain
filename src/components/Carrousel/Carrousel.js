@@ -38,7 +38,7 @@ useEffect(()=>{
         <div className="carousel-wrapper">
             <Carousel showStatus={true} showThumbs={false}
             centerMode={true} infiniteLoop={true} 
-            centerSlidePercentage={35} autoPlay={true} onClickItem>
+            centerSlidePercentage={50} autoPlay={true} onClickItem>
                 {                                
                     tours.length === 0 ? <p>'No hay Tours disponible' </p>: 
                     (tours.map((tour, index) => 

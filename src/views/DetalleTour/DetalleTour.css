@@ -5,6 +5,8 @@
 .detalle_imagen{
     border-radius: 5px;
     box-shadow: 8px 10px 8px rgb(17, 17, 17);
+    /* width: 100%;
+    height:100%; */
 }
 
 .detalle_descripcion{
@@ -32,4 +34,14 @@
     width: 50%;
     size: 50%;
    /* border: 1px solid black;*/
+}
+
+.imgTour{
+    width:100%;
+    height:100%;
+}
+
+.imgMapa{
+    width:100%;
+    height:100%;
 }
