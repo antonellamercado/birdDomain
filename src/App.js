@@ -1,9 +1,8 @@
 import React from 'react';
 import {BrowserRouter as Router, Switch,Route} from 'react-router-dom';
 import './App.css';
-//components
+//components y views
 import Layout from './components/Layout/Layout';
-//views
 import Aves from './views/Aves/Aves';
 import Contacto from './views/Contacto/Contacto';
 import Favoritos from './views/Favoritos/Favoritos';
@@ -21,9 +20,6 @@ import Home from './views/Home/Home';
 
 
 function App() {
-
- 
-
   return (
     <div className="App">
     <Router>    

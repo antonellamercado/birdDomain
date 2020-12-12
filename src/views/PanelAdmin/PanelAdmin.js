@@ -4,7 +4,7 @@ import { Table, Modal} from 'react-bootstrap';
 import { ToastContainer, toast } from 'react-toastify';
  import 'react-toastify/dist/ReactToastify.css';
 //config
-import clienteAxios from '../../config/axios';
+import clienteHeroku from '../../config/prod';
 //estilo
 import '../PanelAdmin/PanelAdmin.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -22,22 +22,24 @@ const PanelAdmin = () => {
     const [listaTours, setListaTours] = useState([]);
     const [currentId, setCurrentId] = useState("");
     // funciones
+    /////////////////////////////////////////////
+    //1- Obtiene todos los tour para listar
             const getToursForList = async()  =>{
-            await clienteAxios.get("/api/tours")
+            await clienteHeroku.get("/tours")
             .then(response =>{
             setListaTours(response.data)
             });
             }  
-        //   
+    ///////////////////////////7/////////////  
         useEffect( () => {
             getToursForList();
             }, []);
-            
-        //  agregar o editar tour     
+    ////////////////////////////////////////////        
+    //  Edita tour    
         
         const editarTour = async (tour)=> {
             console.log("editando");
-            await clienteAxios.put(`api/tours/${currentId}`, tour);
+            await clienteHeroku.put(`/tours/${currentId}`, tour);
             getToursForList();
             toast("Tour editado correctamente", {
                 type: "info",
@@ -47,9 +49,10 @@ const PanelAdmin = () => {
             setCurrentId('');
         }
         
-
+    ////////////////////////////////////////////
+    // Crea tour
         const crearTour = async (tour)=> {
-            const result = await clienteAxios.post('api/tours', tour);
+            const result = await clienteHeroku.post('/tours', tour);
             console.log('nuevo tour',result);
             getToursForList();
             toast("Tour creado correctamente", {
@@ -58,7 +61,9 @@ const PanelAdmin = () => {
                 autoClose: 2000
             });
         }
-
+    /////////////////////////////////////////////
+    //  si el id actual es vacio -> crea tour
+    // sino -> edita tour
         const addOrEditTour = (tour) => {
         if (currentId === '')
             {
@@ -69,12 +74,13 @@ const PanelAdmin = () => {
                 editarTour(tour);
             }     
         }
-        //eliminar tour
-        const onDeleteTour = async (id) => {
+    ///////////////////////////////////////////    
+    //Eliminar tour
+        const deleteTour = async (id) => {
            // if (buttonYes)
             if(window.confirm("seguro que quieres eliminar?"))
             {console.log('id para eliminar', id);
-            const tourEliminado = await clienteAxios.delete(`api/tours/${id}`);
+            const tourEliminado = await clienteHeroku.delete(`/tours/${id}`);
             console.log('tour eliminado', tourEliminado);
             toast("Tour eliminado correctamente", {
                 type: "error",
@@ -84,10 +90,10 @@ const PanelAdmin = () => {
             }
             getToursForList();
         }
-
+    //////////////////////////////////////////
     return(
         <>
-      <ToastContainer />
+        <ToastContainer />
         <p className="font-weight-bold t-2 title-panelAdmin">Bienvenido al panel de administracion.
             Aqui podra <em className="initialism">Crear</em> nuevos tours, <em className="initialism">Editar</em> los mismos y cambiar la imagen destacada de la pagina principal, ademas de <em className="initialism">Eliminar</em> tours obsoletos.
         </p>
@@ -119,7 +125,7 @@ const PanelAdmin = () => {
                         <td>
                             <div 
                             className="btn btn-danger mr-2 admin_delete"
-                            onClick={()=> onDeleteTour(tour._id) }
+                            onClick={()=> deleteTour(tour._id) }
                             ><FontAwesomeIcon  icon={faTimes}  /> </div>
                             <div  
                             className="btn btn-light admin_edit"

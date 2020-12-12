@@ -6,13 +6,14 @@ import './Favoritos.css';
 import {Card} from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBinoculars } from '@fortawesome/free-solid-svg-icons';
-import clienteAxios from '../../config/axios';
+import clienteHeroku from '../../config/prod';
 
 const Favoritos = () => {
     
     const { userData } = useContext(UserContext);
     const [modalShowIng, setModalShowIng] = useState(false);
     const [favs, setFavs] = useState([userData?.user?.favs]);
+    console.log(favs);
 
 
     const deleteFavs = async (e)=>{
@@ -20,7 +21,7 @@ const Favoritos = () => {
         console.log(e.target)
         const newFavs = favs.filter(fav => fav._id !== e.target.id);
         setFavs(newFavs);
-        await clienteAxios.put(`api/users/${userData.user.id}`, {favs:newFavs});
+        await clienteHeroku.put(`/users/${userData.user.id}`, {favs:newFavs});
         window.location.reload(true);
     };
 
@@ -44,8 +45,6 @@ const Favoritos = () => {
                 <div key={index} className="p-0 m-0">
                     <div className="d-flex justify-content-center mb-3">
                         <Card.Title className="titleFavoritos p-2 mr-3 "><FontAwesomeIcon  icon={faBinoculars } /> {tour.title}</Card.Title>
-                    
-                         
                     </div>        
                             <div className=" d-flex justify-content-center">
                             <div className="imgContainer">

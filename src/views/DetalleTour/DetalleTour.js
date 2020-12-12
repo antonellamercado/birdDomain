@@ -4,7 +4,8 @@ import {Link} from 'react-router-dom';
 //config
 import {UserContext} from "../../context/UserContext";
 //import clienteAxios from '../../config/axios';
-import axios from "axios";
+//import axios from "axios";
+import clienteHeroku from '../../config/prod';
 //libreria
 import {Card, Accordion, Tooltip} from 'react-bootstrap';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
@@ -31,7 +32,7 @@ const DetalleTour = ({match}) => {
 //
     useEffect(()=>{
         const getTourByID = async id  =>{
-        await axios.get(`http://localhost:5000/api/tours/${id}`)
+        await clienteHeroku.get(`/tours/${id}`)
         .then(response =>{
         setTour(response.data)
         console.log(response.data)
@@ -40,7 +41,7 @@ const DetalleTour = ({match}) => {
         getTourByID(idtour);
 
         const getBuys = async ()=>{
-            await axios.get(`http://localhost:5000/usuarios/1`)
+            await clienteHeroku.get(`/usuarios/1`)
             .then(response =>{
                 setProducts(response.data.buys)                            
             });
@@ -48,7 +49,7 @@ const DetalleTour = ({match}) => {
         getBuys();
 
         const getFavs = async ()=>{          
-            await axios.get(`http://localhost:5000/api/users/`, { headers: { "x-auth-token": AuthStr } })
+            await clienteHeroku.get(`/users/`, { headers: { "x-auth-token": AuthStr } })
             .then(response =>{
                 setFavs(response.data.favs)                            
             });
@@ -58,7 +59,7 @@ const DetalleTour = ({match}) => {
         }, []);
 //
     const updateProduct = async (product)=> {
-        await axios.patch(`http://localhost:5000/usuarios/1`, {buys:[...products, product]});
+        await clienteHeroku.patch(`/usuarios/1`, {buys:[...products, product]});
         setProducts([...products, product]);
     }
  //   
@@ -77,7 +78,7 @@ const DetalleTour = ({match}) => {
 
     const addFavorite = async (fav)=> {
         setColorfav('#FFD700');
-        await axios.put(`http://localhost:5000/api/users/${userData.user.id}`, {favs:[...favs, fav]});
+        await clienteHeroku.put(`/users/${userData.user.id}`, {favs:[...favs, fav]});
         setFavs([...favs, fav]);    
     }
 

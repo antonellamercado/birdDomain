@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react';
-import clienteAxios from '../../config/axios';
+//import clienteAxios from '../../config/axios';
+import clienteHeroku from '../../config/prod';
 import '../Comentarios/Comentarios.css'
 
 const Comentarios = () => {
@@ -9,7 +10,7 @@ const [listaComentarios, setListaComentarios]=useState([]);
 useEffect(()=>{
     
     const getComents = async ()=>{
-        await clienteAxios.get('api/comentarios')
+        await clienteHeroku.get('/comentarios')
         .then(response =>{
             setListaComentarios(response.data)                            
         });

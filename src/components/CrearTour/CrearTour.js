@@ -4,7 +4,7 @@ import '../CrearTour/CrearTour.css';
 //libreria
 import {Modal,  Form, Col} from 'react-bootstrap';
 //config
-import clienteAxios from '../../config/axios';
+import clienteHeroku from '../../config/prod';
 
 const CrearTour = (props) => {
 // Estados
@@ -27,37 +27,26 @@ const CrearTour = (props) => {
         longObs:'',
 
     };
-    
-    //const [dataValide, setDataValide] = useState(false);
+    /////////////////////////////////////////////////////////
+    //states
     const [nuevoTour, setNuevoTour] = useState(initialValues);
     const [show, setShow] = useState(false);
     const [error, setError] = useState(false);    
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-   // const [formChecked, setFormChecked] = useState(false);
-    
-
-    // funciones
+    ///////////////////////////////////////////////////
+    //1 - Obtiene valores del input y setea en state nuevoTour
     const handleOnChange = (e) => {
             const {name, value} = e.target;
             setNuevoTour({...nuevoTour, [name]: value});
         }
-
-    //
-
-    //const handleOnChangeLat = (e) => {
-        //const {name, value} = e.target;
-        //name==='lat1'? 
-         //   setNuevoTour({...nuevoTour, lat: value}) 
-        //:
-          //  setNuevoTour({...nuevoTour, lat: value})   
-    //}
-    //const updateCheckbox = (e) => setFormChecked(e.target.checked)
-    
+    ///////////////////////////////////////////////////7    
+    // Envia objeto para editar o crear
     const handleOnSubmit = (e) => {
         console.log('nuevo tour', nuevoTour);
         setNuevoTour({...nuevoTour});
         e.preventDefault();
+        // si algun campo esta vacio setea el state error
         if(nuevoTour.title.trim() === '' || nuevoTour.body.trim() === '' || nuevoTour.img.trim() === '' || nuevoTour.imgD.trim() === '' 
         || nuevoTour.price === '' || nuevoTour.dias === ''|| nuevoTour.ecoregiones === '' ||
         nuevoTour.especies === '' || nuevoTour.lat === '' || nuevoTour.latObs === '') {
@@ -66,32 +55,31 @@ const CrearTour = (props) => {
         }
         else {
         setError(false);
-
+        // arma el objeto Tour a enviar
         const newnuevoTour = {
-        
         ...nuevoTour,
         lat: [parseInt(nuevoTour.latRetiro), parseInt(nuevoTour.longRetiro)],
         latObs: [parseInt(nuevoTour.latObs), parseInt(nuevoTour.longObs)]
         }
-        
+        // enviar a la funcion para crear o editar
         props.addOrEditTour(newnuevoTour);
-
         //limpia campos
         setNuevoTour({...initialValues});
         }
         }
-//
+/////////////////////////////////////////////////
+// obtiene tour por id 
 
 const getTourById = async id => {
     try {
-        const response = await clienteAxios.get(`api/tours/${id}`);
+        const response = await clienteHeroku.get(`/tours/${id}`);
         setNuevoTour(response.data);
         setShow(true);
     } catch (error) {
         console.log(error.response)
     }
 }
-//
+////////////////////////////////////////////7///////////7s
         useEffect(() => {
             if (props.currentId === '')
             {
@@ -102,7 +90,7 @@ const getTourById = async id => {
                 getTourById(props.currentId);    
             }
         }, [props.currentId]);
-        
+////////////////////////////////////////////////////        
     return (
     <div>
     <button className="btn modal_boton mt-2" onClick={handleShow}>
@@ -262,11 +250,7 @@ const getTourById = async id => {
                         value={nuevoTour.longObs}
                         />
                     </Form.Group>
-
                     </Form.Row> 
-
-
-
                     <Form.Group controlId="destacada">
                     <Form.Check 
                         type="checkbox"

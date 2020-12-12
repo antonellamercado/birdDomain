@@ -12,14 +12,14 @@ import { ToastContainer, toast } from 'react-toastify';
     
   //  const [modalShowFaq, setModalShowFaq] = useState(false);
 
-   const showToast = (e) => {
+    const showToast = (e) => {
     e.preventDefault();
     toast("Se ha enviado una notificacion al email provisto", 
     {
             type: "success",
             position: "top-center",
             autoClose: 3000 })
-   }
+    }
     
 
     return (

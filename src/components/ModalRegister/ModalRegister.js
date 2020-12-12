@@ -2,7 +2,7 @@ import React, {useState, useContext} from 'react';
 import {Modal} from 'react-bootstrap';
 import {useHistory} from "react-router-dom";
 import './ModalCuenta.css'
-import Axios from "axios";
+import clienteHeroku from "../../config/prod";
 import {UserContext} from "../../context/UserContext";
 import ErrorNotice from "../misc/ErrorNotice";
 
@@ -20,8 +20,8 @@ export const ModalReg = (props) => {
     e.preventDefault();
     try {
       const newUser = { email, password, passwordCheck, displayName };
-      await Axios.post("http://localhost:5000/api/users/register", newUser);
-      const loginRes = await Axios.post("http://localhost:5000/api/users/login", {
+      await clienteHeroku.post("/users/register", newUser);
+      const loginRes = await clienteHeroku.post("/users/login", {
         email,
         password,
       });

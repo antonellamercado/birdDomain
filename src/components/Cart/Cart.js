@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import {UserContext} from "../../context/UserContext";
 import {Link} from 'react-router-dom';
 import "./Cart.css";
-import clienteAxios from '../../config/axios';
+import clienteHeroku from '../../config/prod';
 
 const Cart = () => {
     const [products, setProducts] = useState([]);
@@ -13,14 +13,14 @@ const Cart = () => {
 
     useEffect(()=>{
         const getBuys = async ()=>{          
-            await clienteAxios.get(`api/users/`, { headers: { "x-auth-token": AuthStr } })
+            await clienteHeroku.get(`/users/`, { headers: { "x-auth-token": AuthStr } })
             .then(response =>{
                 setProducts(response.data.buys)                            
             });
         }
         getBuys();
         const getTours = async ()=>{
-            await clienteAxios.get("api/tours")
+            await clienteHeroku.get("/tours")
             .then(response => {
                 setTours(response.data)
             });
@@ -28,13 +28,13 @@ const Cart = () => {
         getTours();
     },[])
     const updateProduct = async (product)=> {
-        await clienteAxios.put(`api/users/${userData.user.id}`, {buys:[...products, product]});
+        await clienteHeroku.put(`/users/${userData.user.id}`, {buys:[...products, product]});
         setProducts([...products, product]);    
     }
     const deleteProduct = async (e)=>{
         const newProducts = products.filter(product => product._id !== e.target.id);
         setProducts(newProducts);
-        await clienteAxios.put(`api/users/${userData.user.id}`, {buys:newProducts});
+        await clienteHeroku.put(`/users/${userData.user.id}`, {buys:newProducts});
     };
     function buyListOnOff(){
         setCart(!cartList)

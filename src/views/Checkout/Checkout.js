@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import {UserContext} from "../../context/UserContext";
-import clienteAxios from '../../config/axios';
+import clienteHeroku from '../../config/prod';
 import {Button, Modal} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import "./Checkout.css";
@@ -20,7 +20,7 @@ const Checkout =()=>{
     }
     useEffect(()=>{
         const getBuys = async ()=>{          
-            await clienteAxios.get(`api/users/`, { headers: { "x-auth-token": AuthStr } })
+            await clienteHeroku.get(`/users/`, { headers: { "x-auth-token": AuthStr } })
             .then(response =>{
                 setProducts(response.data.buys)                            
             });
@@ -31,7 +31,7 @@ const Checkout =()=>{
     const deleteProduct = async (e)=>{
         const newProducts = products.filter(product => product._id !== e.target.id);
         setProducts(newProducts);
-        await clienteAxios.put(`api/users/${userData.user.id}`, {buys:newProducts});
+        await clienteHeroku.put(`/users/${userData.user.id}`, {buys:newProducts});
     };
     function buyListOnOff(){
         setCart(!cartList);
@@ -53,7 +53,7 @@ const Checkout =()=>{
         const cvc = document.getElementById("cvc").value.trim();
         let time= new Date();
         let nowTime = (time.getFullYear()+"-"+(time.getMonth()+1)+"-"+time.getDate());
-        if((cardNumbers.toString().length)==16&&cardOwner!=""&& expireDate>nowTime && (cvc.toString().length)==3){    
+        if((cardNumbers.toString().length)===16&&cardOwner!==""&& expireDate>nowTime && (cvc.toString().length)===3){    
                 formPayCard.reset();
                 setShow(true);
                 deleteBuys()
@@ -66,7 +66,7 @@ const Checkout =()=>{
         }
     }
     async function deleteBuys(){
-        await clienteAxios.put(`api/users/${userData.user.id}`, {buys:[]});
+        await clienteHeroku.put(`/users/${userData.user.id}`, {buys:[]});
     }
     return (
         <>

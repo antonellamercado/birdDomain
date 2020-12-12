@@ -1,7 +1,8 @@
 import {useEffect, useState} from 'react';
 import {Link} from 'react-router-dom';
 //config
-import clienteAxios from '../../config/axios';
+//import clienteAxios from '../../config/axios';
+import clienteHeroku from '../../config/prod';
 //libreria
 import { Modal, Card } from 'react-bootstrap';
 //style
@@ -30,7 +31,7 @@ getGaleria();
 
 useEffect(()=>{
     const getAves = async ()=>{
-    await clienteAxios.get("api/aves")
+    await clienteHeroku.get("/aves")
     .then(response => {
         setGaleria(response.data)
         });

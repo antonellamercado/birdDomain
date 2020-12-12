@@ -5,14 +5,14 @@ import Axios from '../../config/axios';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import {Link} from 'react-router-dom';
-
+import clienteHeroku from '../../config/prod';
 export const HeroImg = () => {
 
 const [tours, setTours] = useState([]);
     
 useEffect(()=>{
     const getTours = async ()=>{
-    await Axios.get("http://localhost:5000/api/tours")
+    await clienteHeroku.get("/tours")
     .then(response =>{
     setTours(response.data)
 });
