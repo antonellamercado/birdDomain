@@ -3,14 +3,14 @@
     margin-bottom: 2px;
 }
 .comentarios_img{
-    width: 60%;
+    /* width: 60%; */
     text-align: center;
     border-radius: 50%;
 }
 
 .comentarios_caja{
-    height: 100px;
-    width: 200px;
+    height: 70%;
+    /* width: 200px; */
     background: transparent;
     position: relative;
     cursor: pointer;
@@ -35,4 +35,14 @@
 .comentarios_texto{
     font-size: 15px;
     text-justify: auto;
+}
+
+.imgContainer{
+width:60%;
+height:60%;
+}
+
+.imgUser{
+  width:100%;
+  height:100%;
 }

@@ -58,7 +58,7 @@ const Checkout =()=>{
                 setShow(true);
                 deleteBuys()
         }else {
-            toast("Oh! Parece que hubo un problema con tus datos, verifica tus datos y vuelve a intentarlo. Si el problema persiste ponde en contacto con nosotros para facilitarte otro medio de pago.", {
+            toast("Oh! Parece que hubo un problema con tus datos, verifica tus datos y vuelve a intentarlo. Si el problema persiste ponte en contacto con nosotros para facilitarte otro medio de pago.", {
                 type: "error",
                 position: "top-center",
                 autoClose: 10000
@@ -87,7 +87,7 @@ const Checkout =()=>{
             </div>
             <div className="container my-4">
                 <h1>Finalizar Compras</h1>
-                <p>Una vez finalizada la compra, recueda con nos pondremos en contacto con usted a travez de tu email de registro para acordar los detalles de los Tours</p>
+                <p>Una vez finalizada la compra, recuerda que nos pondremos en contacto a través de tu email para acordar los detalles de los Tours</p>
             </div>
             <button className="btn btn-warning"onClick={buyListOnOff}>Tu lista de compras</button>
             { cartList===false?null:
@@ -125,7 +125,8 @@ const Checkout =()=>{
                     </div>
                     <div className="form-group container my-4">
                         <label>Numero completo de la tarjeta de credido</label>
-                        <input id="cardNumbers" name="cardNumbers" onChange={handleOnChange} type="number" placeholder="xxxx-xxxx-xxxx" className="form-control" required minLength="16"></input>
+                        <input id="cardNumbers" name="cardNumbers" onChange={handleOnChange} type="number" placeholder="xxxx-xxxx-xxxx-xxxx" className="form-control" required minLength="16"></input>
+                        <small className="form-text text-muted">Ingresa los 16 números de tu tarjeta de credito</small>
                     </div>
                     <div className="form-group d-flex justify-content-around my-4">
                         <div>

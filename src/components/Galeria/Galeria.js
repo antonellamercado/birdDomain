@@ -66,10 +66,10 @@ return (
             <div className="d-flex row flex-wrap col-lg-4 col-md-4 mt-5">
                 {imgGaleria.map((img,index) => (
                     <Link  className=" col-xs-12 col-sm-12 col-md-4 col-lg-3 m-1 p-0">
-                        <div className="p-0 m-0 card-ave">
+                        <div className="p-0 m-0 ">
                         <div key={index} className="p-0 m-0">
                                 <div>
-                                    <Card.Img className="imagen_pequeña" src={img}  alt="img-aves" onClick = {() => setSelectedImg (img)} onDoubleClick={()=>zoom(img)}/>
+                                    <Card.Img className="card-ave imagen_pequeña" src={img}  alt="img-aves" onClick = {() => setSelectedImg (img)} onDoubleClick={()=>zoom(img)}/>
                                 </div>
                             </div>
                         </div>
