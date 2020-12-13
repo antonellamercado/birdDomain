@@ -63,7 +63,7 @@ const PanelAdmin = () => {
         }
     /////////////////////////////////////////////
     //  si el id actual es vacio -> crea tour
-    // sino -> edita tour
+    // sino -> edita
         const addOrEditTour = (tour) => {
         if (currentId === '')
             {
