@@ -4,7 +4,7 @@ import {Link, useHistory} from 'react-router-dom';
 //import img from '../../img/Fig3.jpg';
 import './ModalCuenta.css';
 import {UserContext} from "../../context/UserContext";
-import clienteHeroku from "../../config/prod";
+import Axios from "axios";
 import ErrorNotice from "../misc/ErrorNotice";
 
 export const ModalIng = (props) => {
@@ -20,8 +20,8 @@ export const ModalIng = (props) => {
     e.preventDefault();
     try {
       const loginUser = { email, password };
-      const loginRes = await clienteHeroku.post(
-        "/users/login",
+      const loginRes = await Axios.post(
+        "https://api-birdomain.herokuapp.com/api/users/login",
         loginUser
       );
       setUserData({

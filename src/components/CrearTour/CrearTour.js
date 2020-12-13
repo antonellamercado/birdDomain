@@ -2,7 +2,7 @@ import {useState, useEffect} from 'react';
 //estilo
 import '../CrearTour/CrearTour.css';
 //libreria
-import {Modal,  Form, Col} from 'react-bootstrap';
+import {Modal,  Form, Col, ListGroup} from 'react-bootstrap';
 //config
 import clienteHeroku from '../../config/prod';
 
@@ -57,7 +57,18 @@ const CrearTour = (props) => {
         setError(false);
         // arma el objeto Tour a enviar
         const newnuevoTour = {
-        ...nuevoTour,
+        //...nuevoTour,
+        title: nuevoTour.title,
+        body: nuevoTour.body,
+        description: nuevoTour.description,
+        info: nuevoTour.info,
+        img: nuevoTour.img,
+        imgD:nuevoTour.imgD,
+        price: nuevoTour.price,
+        dias: nuevoTour.dias,
+        ecoregiones: nuevoTour.ecoregiones,
+        especies: nuevoTour.especies,
+        isDestacado: nuevoTour.isDestacado,
         lat: [parseInt(nuevoTour.latRetiro), parseInt(nuevoTour.longRetiro)],
         latObs: [parseInt(nuevoTour.latObs), parseInt(nuevoTour.longObs)]
         }
@@ -110,6 +121,7 @@ const getTourById = async id => {
         <p className="alert alert-danger desactivado">Todos los campos son obligatorios</p>
     }
     <Modal.Body>
+        {/*Titulo*/}
         <Form.Group controlId="title">
             <Form.Label>Titulo</Form.Label>
             <Form.Control type="text" 
@@ -117,142 +129,133 @@ const getTourById = async id => {
                         onChange={handleOnChange}
                         value={nuevoTour.title}
                         /> 
-            </Form.Group>
-            <Form.Group controlId="body">
+        </Form.Group>
+        {/*Body*/}
+        <Form.Group controlId="body">
             <Form.Label>Body</Form.Label>
             <Form.Control type="textarea" 
                         name="body" 
                         onChange={handleOnChange}
                         value={nuevoTour.body}
                         />
-            </Form.Group>
-            <Form.Group controlId="body">
+        </Form.Group>
+        {/*Info adicional*/}
+        <Form.Group controlId="body">
             <Form.Label>Info adicional</Form.Label>
             <Form.Control type="textarea" 
                         name="info" 
                         onChange={handleOnChange}
                         value={nuevoTour.info}
                         />
-            </Form.Group>
-            <Form.Group controlId="body">
+        </Form.Group>
+        {/*Description*/}
+        <Form.Group controlId="body">
             <Form.Label>Description</Form.Label>
             <Form.Control type="textarea" 
                         name="description" 
                         onChange={handleOnChange}
                         value={nuevoTour.description}
                         />
-            </Form.Group>
-            <Form.Group controlId="img">
+        </Form.Group>
+        {/*Img Portada*/}
+        <Form.Group controlId="img">
             <Form.Label>Imagen Portada Tour</Form.Label>
             <Form.Control type="text" 
                         name="img" 
                         onChange={handleOnChange}
                         value={nuevoTour.img}
                         />
-            </Form.Group>
-            <Form.Group controlId="imgD">
+        </Form.Group>
+        {/*Img Ave destacada*/}
+        <Form.Group controlId="imgD">
             <Form.Label>Imagen Ave destacada</Form.Label>
             <Form.Control type="text" 
                         name="imgD" 
                         onChange={handleOnChange}
                         value={nuevoTour.imgD}
                         />
-            </Form.Group>
-            <Form.Row>
-            <Form.Group as={Col} controlId="price">
+        </Form.Group>
+        {/*Precio*/}
+        <Form.Row>
+        <Form.Group as={Col} controlId="price">
             <Form.Label>Precio</Form.Label>
             <Form.Control type="number" 
                         name="price" 
                         onChange={handleOnChange}
                         value={nuevoTour.price}
                         />
-            </Form.Group>
-            <Form.Group as={Col} controlId="dias">
+        </Form.Group>
+        {/*Dias*/}
+        <Form.Group as={Col} controlId="dias">
             <Form.Label>Cantidad de dias</Form.Label>
             <Form.Control type="number" 
                         name="dias" 
                         onChange={handleOnChange}
                         value={nuevoTour.dias}
                         />
-            </Form.Group>
-            </Form.Row>
-            <Form.Row>
-            <Form.Group as={Col} controlId="ecoregiones">
+        </Form.Group>
+        {/*Ecoregiones*/}    
+        <Form.Group as={Col} controlId="ecoregiones">
             <Form.Label>Ecoregion</Form.Label>
             <Form.Control type="text" 
                         name="ecoregiones" 
                         onChange={handleOnChange}
                         value={nuevoTour.ecoregiones}
             />
-            </Form.Group>
-            <Form.Group as={Col} controlId="especies">
+        </Form.Group>
+        {/*Especies*/}
+        <Form.Group as={Col} controlId="especies">
             <Form.Label>Cantidad de especies</Form.Label>
             <Form.Control type="text" 
                         name="especies"  
                         onChange={handleOnChange}
                         value={nuevoTour.especies}
                         />
-                    </Form.Group>
-                    </Form.Row>
-
-                    <Form.Group as={Col} controlId="latitudretiro">
-                        <Form.Label>Informacion</Form.Label>
-                        <Form.Control type="text" 
-                        name="info" 
-                        onChange={handleOnChange}
-                        value={nuevoTour.info}
-                        />
-                    </Form.Group>
-
-                    <Form.Group as={Col} controlId="latitudretiro">
-                        <Form.Label>Descripcion</Form.Label>
-                        <Form.Control type="text" 
-                        name="description" 
-                        onChange={handleOnChange}
-                        value={nuevoTour.description}
-                        />
-                    </Form.Group>
-
-                                   {/* /PUNTOS/ */}
-                    <Form.Row>
-                    <Form.Group as={Col} controlId="latitudretiro">
-                        <Form.Label>Punto de retiro Lat</Form.Label>
-                        <Form.Control type="number" 
-                        name="latRetiro" 
-                        onChange={handleOnChange}
-                        value={nuevoTour.latRetiro}
-                        />
-                    </Form.Group>
-
-                    <Form.Group as={Col} controlId="latitudretiro">
-                        <Form.Label>Punto de retiro Long</Form.Label>
-                        <Form.Control type="number" 
+        </Form.Group>
+        </Form.Row>
+        {/* /PUNTOS/ */}
+        <ListGroup>
+        <Form.Label className="text-coordenadas my-2">Puntos de coordenadas</Form.Label>
+        <ListGroup.Item>
+        <Form.Row>
+        <Form.Group as={Col} controlId="latitudretiro">
+                <Form.Label>Punto de retiro (Latitud)</Form.Label>
+                <Form.Control type="number" 
+                    name="latRetiro" 
+                    onChange={handleOnChange}
+                    value={nuevoTour.latRetiro}
+                    />
+        </Form.Group>
+        <Form.Group as={Col} controlId="latitudretiro">
+            <Form.Label>Punto de retiro (Longitud)</Form.Label>
+                <Form.Control type="number" 
                         name="longRetiro" 
                         onChange={handleOnChange}
                         value={nuevoTour.longRetiro}
                         />
-                    </Form.Group>
-
-                    <Form.Group as={Col} controlId="latitudobservacion">
-                        <Form.Label>Punto de observacion Lat </Form.Label>
-                        <Form.Control type="number" 
+        </Form.Group>
+        <Form.Group as={Col} controlId="latitudobservacion">
+                <Form.Label>Punto de observacion (Latitud) </Form.Label>
+                <Form.Control type="number" 
                         name="latObs"  
                         onChange={handleOnChange}
-                        value={nuevoTour.lat1}
-                        />
-                    </Form.Group>
-
-                    <Form.Group as={Col} controlId="latitudobservacion">
-                        <Form.Label>Punto de observacion Long</Form.Label>
-                        <Form.Control type="number" 
+                        value={nuevoTour.latObs}
+                />
+        </Form.Group>
+        <Form.Group as={Col} controlId="latitudobservacion">
+                <Form.Label>Punto de observacion (Longitud)</Form.Label>
+                <Form.Control type="number" 
                         name="longObs"  
                         onChange={handleOnChange}
                         value={nuevoTour.longObs}
-                        />
-                    </Form.Group>
-                    </Form.Row> 
-                    <Form.Group controlId="destacada">
-                    <Form.Check 
+                />
+        </Form.Group>
+        </Form.Row> 
+        </ListGroup.Item>
+        </ListGroup>
+        {/* /destacada/ */}
+        <Form.Group controlId="destacada">
+                <Form.Check 
                         type="checkbox"
                         name="isDestacado"
                         label="Destacada"
@@ -260,14 +263,14 @@ const getTourById = async id => {
                         onChange = { (e) => 
                             setNuevoTour({...nuevoTour, isDestacado: e.target.checked})
                         }
-                    />
-            </Form.Group>
-            </Modal.Body>
-            <Modal.Footer>
+                />
+        </Form.Group>
+        </Modal.Body>
+        <Modal.Footer>
                     <button type="submit" className="btn text-dark modal_boton">
                         {props.currentId==='' ? "Crear" : "Editar"}
                     </button>
-            </Modal.Footer>
+        </Modal.Footer>
         </Form>
     </Modal>
                 
