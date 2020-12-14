@@ -20,10 +20,11 @@ background: rgba(12, 11, 11, 0.3);
 
 @media screen and (max-width: 400px){
     .carousel .slide .legend{
-    font-size:10px;
     font-style: inherit;
     font-weight: bold;
-    background: rgba(255, 255, 255, 0.3);
+    font-size: 7px;
+    background: rgba(255, 255, 255, 0.5);
     color: black;
+
     }
 }

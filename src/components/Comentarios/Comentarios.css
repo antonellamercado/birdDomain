@@ -3,14 +3,14 @@
     margin-bottom: 2px;
 }
 .comentarios_img{
-    width: 60%;
+    /* width: 60%; */
     text-align: center;
     border-radius: 50%;
 }
 
 .comentarios_caja{
-    height: 100px;
-    width: 200px;
+    height: 70%;
+    /* width: 200px; */
     background: transparent;
     position: relative;
     cursor: pointer;
@@ -36,3 +36,27 @@
     font-size: 15px;
     text-justify: auto;
 }
+
+.imgContainer{
+width:60%;
+height:60%;
+}
+
+.imgUser{
+  width:100%;
+  height:100%;
+}
+
+@media screen and (max-width: 400px){
+    .imgUser{
+      display: none;
+    }
+    .comentarios_texto{
+      font-size: 12px;
+      text-justify: auto;
+  }
+  .comentario{
+    width: 70%;
+    height: 70%;
+  }
+  }

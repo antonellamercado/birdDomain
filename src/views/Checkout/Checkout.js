@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import {UserContext} from "../../context/UserContext";
-import clienteAxios from '../../config/axios';
+import clienteHeroku from '../../config/prod';
 import {Button, Modal} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import "./Checkout.css";
@@ -20,7 +20,7 @@ const Checkout =()=>{
     }
     useEffect(()=>{
         const getBuys = async ()=>{          
-            await clienteAxios.get(`api/users/`, { headers: { "x-auth-token": AuthStr } })
+            await clienteHeroku.get(`users/`, { headers: { "x-auth-token": AuthStr } })
             .then(response =>{
                 setProducts(response.data.buys)                            
             });
@@ -31,7 +31,7 @@ const Checkout =()=>{
     const deleteProduct = async (e)=>{
         const newProducts = products.filter(product => product._id !== e.target.id);
         setProducts(newProducts);
-        await clienteAxios.put(`api/users/${userData.user.id}`, {buys:newProducts});
+        await clienteHeroku.put(`users/${userData.user.id}`, {buys:newProducts});
     };
     function buyListOnOff(){
         setCart(!cartList);
@@ -53,12 +53,12 @@ const Checkout =()=>{
         const cvc = document.getElementById("cvc").value.trim();
         let time= new Date();
         let nowTime = (time.getFullYear()+"-"+(time.getMonth()+1)+"-"+time.getDate());
-        if((cardNumbers.toString().length)==16&&cardOwner!=""&& expireDate>nowTime && (cvc.toString().length)==3){    
+        if((cardNumbers.toString().length)===16&&cardOwner!==""&& expireDate>nowTime && (cvc.toString().length)===3){    
                 formPayCard.reset();
                 setShow(true);
                 deleteBuys()
         }else {
-            toast("Oh! Parece que hubo un problema con tus datos, verifica tus datos y vuelve a intentarlo. Si el problema persiste ponde en contacto con nosotros para facilitarte otro medio de pago.", {
+            toast("Oh! Parece que hubo un problema con tus datos, verifica tus datos y vuelve a intentarlo. Si el problema persiste ponte en contacto con nosotros para facilitarte otro medio de pago.", {
                 type: "error",
                 position: "top-center",
                 autoClose: 10000
@@ -66,7 +66,8 @@ const Checkout =()=>{
         }
     }
     async function deleteBuys(){
-        await clienteAxios.put(`api/users/${userData.user.id}`, {buys:[]});
+        await clienteHeroku.put(`users/${userData.user.id}`, {buys:[]});
+        setProducts([]);
     }
     return (
         <>
@@ -87,7 +88,7 @@ const Checkout =()=>{
             </div>
             <div className="container my-4">
                 <h1>Finalizar Compras</h1>
-                <p>Una vez finalizada la compra, recueda con nos pondremos en contacto con usted a travez de tu email de registro para acordar los detalles de los Tours</p>
+                <p>Una vez finalizada la compra, recuerda que nos pondremos en contacto a través de tu email para acordar los detalles de los Tours</p>
             </div>
             <button className="btn btn-warning"onClick={buyListOnOff}>Tu lista de compras</button>
             { cartList===false?null:
@@ -117,7 +118,7 @@ const Checkout =()=>{
                 <form id="formPayCard">
                 
                     <fieldset className="fieldset-checkout">
-                        <legend className="legend-checkout"><h3>Datos de la tarjeta</h3></legend>
+                        <legend className="legend-checkout"><h3 className="texto_legend_check">Datos de la tarjeta</h3></legend>
                     <div className="form-group container my-4">
                         <label>Nombre del Titular</label>
                         <input id="cardOwner" name="cardOwner" onChange={handleOnChange} type="text" placeholder="Ej: Cosme Fulanito" className="form-control"></input>
@@ -125,17 +126,18 @@ const Checkout =()=>{
                     </div>
                     <div className="form-group container my-4">
                         <label>Numero completo de la tarjeta de credido</label>
-                        <input id="cardNumbers" name="cardNumbers" onChange={handleOnChange} type="number" placeholder="xxxx-xxxx-xxxx" className="form-control" required minLength="16"></input>
+                        <input id="cardNumbers" name="cardNumbers" onChange={handleOnChange} type="number" placeholder="xxxx-xxxx-xxxx-xxxx" className="form-control" required minLength="16"></input>
+                        <small className="form-text text-muted">Ingresa los 16 números de tu tarjeta de credito</small>
                     </div>
-                    <div className="form-group d-flex justify-content-around my-4">
-                        <div>
+                    <div className="form-group d-flex justify-content-around my-4 checkout_grupo">
+                        <div className="checkout_vencimiento">
                             <label>Fecha de vencimiento</label>
                             <input id="expireDate" name="expireDate"onChange={handleOnChange} type="date" className="form-control"></input>
                         </div>
-                        <div>
-                            <label>Codigo de de seguridad posterior</label>
+                        <div className="checkout_codigo">
+                            <label className="checkout_codigo_text">Codigo de de seguridad posterior</label>
                             <input id="cvc" name="cvc" type="number" onChange={handleOnChange} placeholder="XXX" className="form-control"></input>
-                            <small className="form-text text-muted">Codigo de tres digitos en el reverso de su tarjeta.</small>
+                            <small className="form-text text-muted checkout_codigo_text">Codigo de tres digitos en el reverso de su tarjeta.</small>
                         </div>
                     </div>
                     <div className="form-group">

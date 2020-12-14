@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 //component
 import { Carousel } from 'react-responsive-carousel';
 //config
-import clienteAxios from '../../config/axios';
+import clienteHeroku from '../../config/prod';
 //style
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import '../Carrousel/Carrousel.css'
@@ -15,7 +15,7 @@ const [tours, setTours] = useState([]);
 //probando traer desde bd
 useEffect(()=>{
     const getTours = async ()=>{
-    await clienteAxios.get("api/tours")
+    await clienteHeroku.get("/tours")
     .then(response => {
         setTours(response.data)
         });
@@ -38,7 +38,7 @@ useEffect(()=>{
         <div className="carousel-wrapper">
             <Carousel showStatus={true} showThumbs={false}
             centerMode={true} infiniteLoop={true} 
-            centerSlidePercentage={35} autoPlay={true} onClickItem>
+            centerSlidePercentage={50} autoPlay={true} onClickItem>
                 {                                
                     tours.length === 0 ? <p>'No hay Tours disponible' </p>: 
                     (tours.map((tour, index) => 

@@ -1,10 +1,10 @@
 import React, {useState, useContext} from 'react';
 import {Modal} from 'react-bootstrap';
 import {useHistory} from "react-router-dom";
-import './ModalCuenta.css'
-import Axios from "axios";
+import './ModalCuenta.css';
 import {UserContext} from "../../context/UserContext";
 import ErrorNotice from "../misc/ErrorNotice";
+import clienteHeroku from '../../config/prod';
 
 export const ModalReg = (props) => {
 
@@ -20,8 +20,8 @@ export const ModalReg = (props) => {
     e.preventDefault();
     try {
       const newUser = { email, password, passwordCheck, displayName };
-      await Axios.post("http://localhost:5000/api/users/register", newUser);
-      const loginRes = await Axios.post("http://localhost:5000/api/users/login", {
+      await clienteHeroku.post("users/register", newUser);
+      const loginRes = await clienteHeroku.post("users/login", {
         email,
         password,
       });
@@ -45,11 +45,7 @@ export const ModalReg = (props) => {
       centered
     >
       
-    {error && (
-      <>
-      <ErrorNotice message={error} clearError={() => setError(undefined)} />
-      </>
-      )}
+   
       <Modal.Header closeButton className="modal-body text-dark">
         <Modal.Title id="contained-modal-title-vcenter">
           Registrate  
@@ -60,8 +56,8 @@ export const ModalReg = (props) => {
       <div className="form-group mt-5">
                     <div className="mt-3">
                         <label for="user" className="text-dark">Nombre de Usuario</label>
-                        <input type="text" name="user" className="form-control" id="newUser" placeholder="Nombre de usuario" required minlength="4" maxlength="8" onChange={(e) => setDisplayName(e.target.value)}/>
-                        <small className="form-text text-muted">Debe tener entre 8 y 30 caractares. No puedes utilizar caracteres especiales.</small>
+                        <input type="text" name="user" className="form-control" id="newUser" placeholder="Nombre de usuario" required minlength="4" maxlength="30" onChange={(e) => setDisplayName(e.target.value)}/>
+                        <small className="form-text text-muted">Debe tener entre 8 y 30 caracteres.</small>
                     </div>
                     <div className="mt-3">
                         <label for="pass">Contraseña</label>
@@ -103,6 +99,11 @@ export const ModalReg = (props) => {
                 </div>
                 <input className="btn btn-registrar mt-4 text-white" type="submit" value="Registrate" />
         </form> 
+        {error && (
+      <>
+      <ErrorNotice message={error} clearError={() => setError(undefined)} />
+      </>
+      )}
         </Modal.Body>
     </Modal>
       </>

@@ -7,10 +7,11 @@
 .modal_faqs{
     width: 500px;
 }
-/* .modalbtn{
-    background-color: orangered;
-} */
 
 .modal-content {
     width: 70%;
+}
+
+.modal_faqs{
+    margin: auto;
 }

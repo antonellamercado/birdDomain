@@ -1,8 +1,7 @@
 import React, {useState, useEffect} from 'react';
 //import {Link} from 'react-router-dom';
 // //config
-// import clienteAxios from '../../config/axios';
-import Axios from 'axios';
+import clienteHeroku from '../../config/prod';
 //libreria
 import {Card} from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -26,7 +25,7 @@ const Aves = () => {
 
     useEffect(()=>{
         const getAves = async ()=>{
-        await Axios.get("http://localhost:5000/api/aves")
+        await clienteHeroku.get("/aves")
         .then(response => {
             setAves(response.data)
             });
@@ -57,7 +56,7 @@ const Aves = () => {
                     <Card.Title className="p-2"><FontAwesomeIcon  icon={faBinoculars } /> {ave.nombre}</Card.Title>
                     <Card.Body  className="p-0 m-0" >
                     <div>
-                    <Card.Img className="imagen_pequeña" src={ave.img}  alt="img-aves" />
+                    <Card.Img className="imagen_pequeña img-fluid. max-width: 100%" src={ave.img}  alt="img-aves" />
                     </div>
                     <div className="mx-0 p-2"><strong> <FontAwesomeIcon  icon={faMicroscope} /> Nombre cientifico:</strong> {ave.nombreCientifico}</div>
                     <div className="mx-0 p-2"><strong> <FontAwesomeIcon  icon={faSearch } /> Informacion adicional:</strong> {ave.info}</div>

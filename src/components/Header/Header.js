@@ -39,9 +39,9 @@ const Header = () => {
     
     
 
-        <Navbar className="" expand="lg">
+        <Navbar collapeOnSelect className="" expand="lg">
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
+          <Navbar.Collapse collapeOnSelect id="basic-navbar-nav">
             <Nav className="ml-auto d-flex justify-content-around">
             
             <SearchBar/>

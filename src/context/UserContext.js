@@ -1,5 +1,5 @@
 import {createContext, useState, useEffect} from "react";
-import Axios from "axios";
+import clienteHeroku from '../config/prod';
 
 export const UserContext = createContext()
 export const UserContextProvider = ({children}) => {
@@ -17,16 +17,10 @@ export const UserContextProvider = ({children}) => {
             token = ""; //si no hay token es empty string
           }
           //enviamos al backend 
-          const tokenRes = await Axios.post(
-            "http://localhost:5000/api/users/tokenisvalid",
-            null,
-            { headers: { "x-auth-token": token } }
-          );
+          const tokenRes = await clienteHeroku.post("users/tokenisvalid", null, { headers: { "x-auth-token": token }});
           //tokenRes verificacion si existe un token
           if (tokenRes.data) {
-            const userRes = await Axios.get("http://localhost:5000/api/users/", {
-              headers: { "x-auth-token": token },
-            });
+            const userRes = await clienteHeroku.get("users/", { headers: { "x-auth-token": token }});
             //ponemos la info del usuario en el set
             setUserData({
               token,

@@ -9,3 +9,10 @@
 .form_login_label{
     width: 50%;
 }
+
+
+@media screen and (max-width: 400px){
+.btn-registrar{
+    width: 40%;
+}
+}

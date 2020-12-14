@@ -2,9 +2,9 @@ import {useState, useEffect} from 'react';
 //estilo
 import '../CrearTour/CrearTour.css';
 //libreria
-import {Modal,  Form, Col} from 'react-bootstrap';
+import {Modal,  Form, Col, ListGroup} from 'react-bootstrap';
 //config
-import clienteAxios from '../../config/axios';
+import clienteHeroku from '../../config/prod';
 
 const CrearTour = (props) => {
 // Estados
@@ -12,60 +12,85 @@ const CrearTour = (props) => {
     {
         title:'',
         body:'',
+        description: '',
+        info: '',
         img: '',
         imgD:'',
-        price:'',
-        dias:'',
+        price:null,
+        dias:null,
         ecoregiones:'',
         especies:'',
-        destacado:false,
+        isDestacado:false,
+        latRetiro:'',
+        longRetiro:'',
+        latObs:'',
+        longObs:'',
+
     };
-    
-    //const [dataValide, setDataValide] = useState(false);
+    /////////////////////////////////////////////////////////
+    //states
     const [nuevoTour, setNuevoTour] = useState(initialValues);
     const [show, setShow] = useState(false);
     const [error, setError] = useState(false);    
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    const [formChecked, setFormChecked] = useState(false);
-    
-
-    // funciones
+    ///////////////////////////////////////////////////
+    //1 - Obtiene valores del input y setea en state nuevoTour
     const handleOnChange = (e) => {
             const {name, value} = e.target;
             setNuevoTour({...nuevoTour, [name]: value});
         }
-    //
-    const updateCheckbox = (e) => setFormChecked(e.target.checked)
-    
+    ///////////////////////////////////////////////////7    
+    // Envia objeto para editar o crear
     const handleOnSubmit = (e) => {
+        console.log('nuevo tour', nuevoTour);
         setNuevoTour({...nuevoTour});
         e.preventDefault();
+        // si algun campo esta vacio setea el state error
         if(nuevoTour.title.trim() === '' || nuevoTour.body.trim() === '' || nuevoTour.img.trim() === '' || nuevoTour.imgD.trim() === '' 
         || nuevoTour.price === '' || nuevoTour.dias === ''|| nuevoTour.ecoregiones === '' ||
-        nuevoTour.especies === '') {
+        nuevoTour.especies === '' || nuevoTour.lat === '' || nuevoTour.latObs === '') {
         setError(true);
             return
         }
         else {
         setError(false);
-        props.addOrEditTour(nuevoTour);
+        // arma el objeto Tour a enviar
+        const newnuevoTour = {
+        //...nuevoTour,
+        title: nuevoTour.title,
+        body: nuevoTour.body,
+        description: nuevoTour.description,
+        info: nuevoTour.info,
+        img: nuevoTour.img,
+        imgD:nuevoTour.imgD,
+        price: nuevoTour.price,
+        dias: nuevoTour.dias,
+        ecoregiones: nuevoTour.ecoregiones,
+        especies: nuevoTour.especies,
+        isDestacado: nuevoTour.isDestacado,
+        lat: [parseFloat(nuevoTour.latRetiro), parseFloat(nuevoTour.longRetiro)],
+        latObs: [parseFloat(nuevoTour.latObs), parseFloat(nuevoTour.longObs)]
+        }
+        // enviar a la funcion para crear o editar
+        props.addOrEditTour(newnuevoTour);
         //limpia campos
         setNuevoTour({...initialValues});
         }
         }
-//
+/////////////////////////////////////////////////
+// obtiene tour por id 
 
 const getTourById = async id => {
     try {
-        const response = await clienteAxios.get(`/Tours/${id}`);
+        const response = await clienteHeroku.get(`/tours/${id}`);
         setNuevoTour(response.data);
         setShow(true);
     } catch (error) {
         console.log(error.response)
     }
 }
-//
+////////////////////////////////////////////7///////////7s
         useEffect(() => {
             if (props.currentId === '')
             {
@@ -76,7 +101,7 @@ const getTourById = async id => {
                 getTourById(props.currentId);    
             }
         }, [props.currentId]);
-        
+////////////////////////////////////////////////////        
     return (
     <div>
     <button className="btn modal_boton mt-2" onClick={handleShow}>
@@ -94,8 +119,9 @@ const getTourById = async id => {
         <p className="alert bg-danger text-black d-block">Todos los campos son obligatorios</p>
         : 
         <p className="alert alert-danger desactivado">Todos los campos son obligatorios</p>
-      }
+    }
     <Modal.Body>
+        {/*Titulo*/}
         <Form.Group controlId="title">
             <Form.Label>Titulo</Form.Label>
             <Form.Control type="text" 
@@ -103,107 +129,157 @@ const getTourById = async id => {
                         onChange={handleOnChange}
                         value={nuevoTour.title}
                         /> 
-            </Form.Group>
-            <Form.Group controlId="body">
-            <Form.Label>Descripcion</Form.Label>
+        </Form.Group>
+        {/*Body*/}
+        <Form.Group controlId="body">
+            <Form.Label>Body</Form.Label>
             <Form.Control type="textarea" 
                         name="body" 
                         onChange={handleOnChange}
                         value={nuevoTour.body}
                         />
-            </Form.Group>
-            <Form.Group controlId="img">
+        </Form.Group>
+        {/*Info adicional*/}
+        <Form.Group controlId="body">
+            <Form.Label>Info adicional</Form.Label>
+            <Form.Control type="textarea" 
+                        name="info" 
+                        onChange={handleOnChange}
+                        value={nuevoTour.info}
+                        />
+        </Form.Group>
+        {/*Description*/}
+        <Form.Group controlId="body">
+            <Form.Label>Description</Form.Label>
+            <Form.Control type="textarea" 
+                        name="description" 
+                        onChange={handleOnChange}
+                        value={nuevoTour.description}
+                        />
+        </Form.Group>
+        {/*Img Portada*/}
+        <Form.Group controlId="img">
             <Form.Label>Imagen Portada Tour</Form.Label>
             <Form.Control type="text" 
                         name="img" 
                         onChange={handleOnChange}
                         value={nuevoTour.img}
                         />
-            </Form.Group>
-            <Form.Group controlId="imgD">
+        </Form.Group>
+        {/*Img Ave destacada*/}
+        <Form.Group controlId="imgD">
             <Form.Label>Imagen Ave destacada</Form.Label>
             <Form.Control type="text" 
                         name="imgD" 
                         onChange={handleOnChange}
                         value={nuevoTour.imgD}
                         />
-            </Form.Group>
-            <Form.Row>
-            <Form.Group as={Col} controlId="price">
+        </Form.Group>
+        {/*Precio*/}
+        <Form.Row>
+        <Form.Group as={Col} controlId="price">
             <Form.Label>Precio</Form.Label>
-            <Form.Control type="text" 
+            <Form.Control type="number" 
                         name="price" 
                         onChange={handleOnChange}
                         value={nuevoTour.price}
                         />
-            </Form.Group>
-            <Form.Group as={Col} controlId="dias">
+        </Form.Group>
+        {/*Dias*/}
+        <Form.Group as={Col} controlId="dias">
             <Form.Label>Cantidad de dias</Form.Label>
-            <Form.Control type="text" 
+            <Form.Control type="number" 
                         name="dias" 
                         onChange={handleOnChange}
                         value={nuevoTour.dias}
                         />
-                    </Form.Group>
-                    </Form.Row>
-                    <Form.Row>
-                    <Form.Group as={Col} controlId="ecoregiones">
-                        <Form.Label>Ecoregion</Form.Label>
-                        <Form.Control type="text" 
+        </Form.Group>
+        {/*Ecoregiones*/}    
+        <Form.Group as={Col} controlId="ecoregiones">
+            <Form.Label>Ecoregion</Form.Label>
+            <Form.Control type="text" 
                         name="ecoregiones" 
                         onChange={handleOnChange}
                         value={nuevoTour.ecoregiones}
-                        />
-                    </Form.Group>
-                    <Form.Group as={Col} controlId="especies">
-                        <Form.Label>Cantidad de especies</Form.Label>
-                        <Form.Control type="text" 
+            />
+        </Form.Group>
+        {/*Especies*/}
+        <Form.Group as={Col} controlId="especies">
+            <Form.Label>Cantidad de especies</Form.Label>
+            <Form.Control type="text" 
                         name="especies"  
                         onChange={handleOnChange}
                         value={nuevoTour.especies}
                         />
-                    </Form.Group>
-                    </Form.Row>
-
-
-
-                    {/* <Form.Row>
-                    <Form.Group as={Col} controlId="latitudretiro">
-                        <Form.Label>Punto de retiro</Form.Label>
-                        <Form.Control type="text" 
-                        name="lat" 
+        </Form.Group>
+        </Form.Row>
+        {props.currentId==='' ? (
+            <>
+            {/* /PUNTOS/ */}
+        <ListGroup>
+        <Form.Label className="text-coordenadas my-2">Puntos de coordenadas</Form.Label>
+        <ListGroup.Item>
+        <Form.Row>
+        <Form.Group as={Col} controlId="latitudretiro">
+                <Form.Label>Punto de retiro (Latitud)</Form.Label>
+                <Form.Control type="text" 
+                    name="latRetiro" 
+                    onChange={handleOnChange}
+                    value={nuevoTour.latRetiro}
+                    />
+        </Form.Group>
+        <Form.Group as={Col} controlId="latitudretiro">
+            <Form.Label>Punto de retiro (Longitud)</Form.Label>
+                <Form.Control type="text" 
+                        name="longRetiro" 
                         onChange={handleOnChange}
-                        value={nuevoTour.lat}
+                        value={nuevoTour.longRetiro}
                         />
-                    </Form.Group>
-                    <Form.Group as={Col} controlId="latitudobservacion">
-                        <Form.Label>Punto de observacion</Form.Label>
-                        <Form.Control type="text" 
+        </Form.Group>
+        <Form.Group as={Col} controlId="latitudobservacion">
+                <Form.Label>Punto de observacion (Latitud) </Form.Label>
+                <Form.Control type="text" 
                         name="latObs"  
                         onChange={handleOnChange}
                         value={nuevoTour.latObs}
-                        />
-                    </Form.Group>
-                    </Form.Row> */}
-
-
-
-                    <Form.Group controlId="destacada">
-                    <Form.Check 
+                />
+        </Form.Group>
+        <Form.Group as={Col} controlId="latitudobservacion">
+                <Form.Label>Punto de observacion (Longitud)</Form.Label>
+                <Form.Control type="text" 
+                        name="longObs"  
+                        onChange={handleOnChange}
+                        value={nuevoTour.longObs}
+                />
+        </Form.Group>
+        </Form.Row> 
+        </ListGroup.Item>
+        </ListGroup>
+        </>
+        )
+        :
+        (<></>)
+        }
+        
+        {/* /destacada/ */}
+        <Form.Group controlId="destacada">
+                <Form.Check 
                         type="checkbox"
-                        name="destacado"
+                        name="isDestacado"
                         label="Destacada"
-                        value={nuevoTour.destacado}
-                        onChange = {updateCheckbox}
-                    />
-                    </Form.Group>
-                    </Modal.Body>
-                    <Modal.Footer>
+                        checked={nuevoTour.isDestacado}
+                        onChange = { (e) => 
+                            setNuevoTour({...nuevoTour, isDestacado: e.target.checked})
+                        }
+                />
+        </Form.Group>
+        </Modal.Body>
+        <Modal.Footer>
                     <button type="submit" className="btn text-dark modal_boton">
                         {props.currentId==='' ? "Crear" : "Editar"}
                     </button>
-                    </Modal.Footer>
-                </Form>
+        </Modal.Footer>
+        </Form>
     </Modal>
                 
     </div>

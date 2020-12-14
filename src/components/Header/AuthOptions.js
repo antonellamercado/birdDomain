@@ -29,39 +29,39 @@ const AuthOptions = () => {
         {userData.user ? ( 
 
             <>
-               { userData.user.displayName == "BMaster" ? 
+            { userData.user.admin ?
 
-               (
+            (
                             
             <> 
 
             <div className="d-flex justify-content-between">
             <div className = "imgUserContainer">
-            <img className = "imgUser" src="https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/DT1.jpg?alt=media&token=3e5ec858-73c5-48c5-916b-aec1243cb4d9"></img>
+            <img className = "imgUser" src="https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/DT1.jpg?alt=media&token=3e5ec858-73c5-48c5-916b-aec1243cb4d9"
+            alt="img-header-user"></img>
             </div>
             <Link style={{ textDecoration: 'none' }} to = '/paneladmin'>
-            <button className="buttonHeaderSalir mt-3 ml-3">Panel Admin</button>
+            <button className="buttonHeaderSalir mt-3 ml-3">Admin</button>
             </Link>
             <button className="buttonHeaderSalir mt-3 ml-3" onClick={logout}>Salir</button>
-           </div>
+            </div>
             
-            </>    
-               
+            </>     
             ):(
             
-             <>  
+            <>  
             <div className="d-flex justify-content-between">
             <div className = "imgUserContainer">
-                <img className = "imgUser" src="https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Fig11.jpg?alt=media&token=b7a63dea-8285-4d00-b016-469d4fa47054"></img>
+                <img className = "imgUser" src="https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Fig11.jpg?alt=media&token=b7a63dea-8285-4d00-b016-469d4fa47054"
+                alt="img-user-header"></img>
             </div>
             <button className="buttonHeaderSalir mt-3 ml-3" onClick={logout}>Salir</button>
             </div> 
             
             </>  
-         
             )}
-               
-               </>
+            
+            </>
 
         ) : (
 

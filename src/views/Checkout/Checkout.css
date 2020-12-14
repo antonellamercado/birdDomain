@@ -26,3 +26,17 @@ z-index: 5;
     background-color: #c3e4f5;
     border-radius: 5px;
   }
+
+  
+@media screen and (max-width: 400px){
+  .texto_legend_check{
+    font-size: 15px;
+  }
+  .checkout_vencimiento, .checkout_codigo{
+    display: block;
+    width: 40%;
+  }
+  .checkout_codigo_text{
+    font-size: 13px;
+  }
+}

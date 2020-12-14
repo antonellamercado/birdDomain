@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import {UserContext} from "../../context/UserContext";
-import clienteAxios from '../../config/axios';
+import clienteHeroku from '../../config/prod';
 import { ToastContainer, toast } from 'react-toastify';
 import { useHistory } from "react-router-dom";
 
@@ -17,9 +17,9 @@ const ChangePass = ({match}) => {
     
     useEffect(()=>{   
         const getUserForToken = async ()=>{
-            const tokenRes = await clienteAxios.post("api/users/tokenisvalid",null, { headers: { "x-auth-token": tokenEmail } });        
+            const tokenRes = await clienteHeroku.post("users/tokenisvalid",null, { headers: { "x-auth-token": tokenEmail } });        
             if (tokenRes.data) {
-                const userRes = await clienteAxios.get("api/users/", { headers: { "x-auth-token": tokenEmail }});           
+                const userRes = await clienteHeroku.get("users/", { headers: { "x-auth-token": tokenEmail }});           
                 localStorage.setItem("auth-token", tokenEmail);
                 setUserData({
                     token: tokenEmail,
@@ -35,9 +35,9 @@ const ChangePass = ({match}) => {
         try{
             if(localStorage.getItem('auth-token')===tokenEmail){
                 const sendNewPass = {password, passwordCheck}
-                const backendPass = await clienteAxios.post('api/users/changePass', sendNewPass);
+                const backendPass = await clienteHeroku.post('users/changePass', sendNewPass);
                 if(backendPass.data.password){
-                    await clienteAxios.put(`api/users/${userData.user.id}`, {password:backendPass.data.password});
+                    await clienteHeroku.put(`users/${userData.user.id}`, {password:backendPass.data.password});
                     formChangePass.reset();
                     toast(`Su contraseña fue cambiada correctmente`, {
                         type: "success",

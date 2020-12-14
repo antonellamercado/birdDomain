@@ -3,7 +3,7 @@ import {useState, useEffect, useContext} from 'react';
 import {Link} from 'react-router-dom';
 //config
 import {UserContext} from "../../context/UserContext";
-import clienteAxios from '../../config/axios';
+import clienteHeroku from '../../config/prod';
 //libreria
 import {Card, Accordion, Tooltip} from 'react-bootstrap';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
@@ -25,28 +25,39 @@ const DetalleTour = ({match}) => {
     const [products, setProducts] = useState([]);
     const [colorfav, setColorfav] = useState('black');
     const [modalShowIng, setModalShowIng] = useState(false);
+    const [favs, setFavs] = useState([]);
     const AuthStr = userData.token
 //
-  useEffect(()=>{
+    useEffect(()=>{
         const getTourByID = async id  =>{
-        await clienteAxios.get(`api/tours/${id}`)
+        await clienteHeroku.get(`/tours/${id}`)
         .then(response =>{
         setTour(response.data)
         console.log(response.data)
         });
         }
         getTourByID(idtour);
+
         const getBuys = async ()=>{          
-            await clienteAxios.get(`api/users/`, { headers: { "x-auth-token": AuthStr } })
+            await clienteHeroku.get(`users/`, { headers: { "x-auth-token": AuthStr } })
             .then(response =>{
                 setProducts(response.data.buys)                            
             });
         }
         getBuys();
+
+        const getFavs = async ()=>{          
+            await clienteHeroku.get(`users/`, { headers: { "x-auth-token": AuthStr } })
+            .then(response =>{
+                setFavs(response.data.favs)                            
+            });
+        }
+        getFavs();
+
         }, []);
 //
         const updateProduct = async (product)=> {
-            await clienteAxios.put(`api/users/${userData.user.id}`, {buys:[...products, product]});
+            await clienteHeroku.put(`users/${userData.user.id}`, {buys:[...products, product]});
             setProducts([...products, product]);    
         }
  //   
@@ -58,9 +69,10 @@ const DetalleTour = ({match}) => {
             }
         }
     }
-    const addFavorite = () => {
+    const addFavorite = async (fav)=> {
         setColorfav('#FFD700');
-        console.log('id para fav', match.params.id );
+        await clienteHeroku.put(`users/${userData.user.id}`, {favs:[...favs, fav]});
+        setFavs([...favs, fav]);    
     }
 
     return (
@@ -69,10 +81,12 @@ const DetalleTour = ({match}) => {
                 <div>
                     <div>
                         <div className='tour-title font-weight-bold mt-5 mb-5'> <FontAwesomeIcon  icon={faPlaneDeparture} /> {tour.title} </div>
-                        <div className='d-flex d-inline-block container'>
-                            <img className="col-6 p-0 detalle_imagen mr-3"  width="100%" src={tour.img}  alt="img-tour"></img>
-                            <div className="d-flex d-block col-6 p-0 detalle_imagen" >  
-                                <Mapa  
+                        <div className='container d-flex row  col-lg-12 col-md-12 mt-1 mx-1 justify-content-center'>
+                            <div className="  col-xs-12 col-sm-12 col-md-4 col-lg-4 p-0 mr-3 detalle_imagen ">
+                            <img className=" imgTour mr-3"  src={tour.img}  alt="img-tour"></img>
+                            </div>
+                            <div className=" col-xs-12 col-sm-12 col-md-4 col-lg-4 p-0 detalle_imagen" >  
+                                <Mapa  className="imgMapa"
                                 key={tour._id} 
                                 position={tour.lat}
                                 observation={tour.latObs}
@@ -82,20 +96,22 @@ const DetalleTour = ({match}) => {
                         <div className="col-12 my-4 text-justify detalle_descripcion">  
                         <FontAwesomeIcon  icon={faFeather} /> {tour.body}
                         </div>
-                        <div className="col-12 my-4 text-justify detalle_descripcion">  
+                        <div className="col-12 my-4 text-justify detalle_descripcion detalle_description">  
                         <FontAwesomeIcon  icon={faFeather} /> {tour.description}
                         </div>
-                        <div className="col-12 my-4 text-justify detalle_descripcion">  
+                        <div className="col-12 my-4 text-justify detalle_descripcion detalle_info">  
                         <FontAwesomeIcon  icon={faFeather} /> {tour.info}
                         </div>
-                        <div className="col-3  d-inline"> <FontAwesomeIcon  icon={faDollarSign} /> {tour.price}</div>
-                        <div className="col-3  d-inline"> <FontAwesomeIcon  icon={faCalendarAlt} /> Duracion del tour: {tour.dias} dias
+                        <div className="col-3 d-inline"> <FontAwesomeIcon  icon={faDollarSign} /> {tour.price}</div>
+                        <div className="col-3 d-inline"> <FontAwesomeIcon  icon={faCalendarAlt} /> Duracion del tour: {tour.dias} dias
                         </div>
+                        <div className="detalle_especies">
                         <div className="col-3 d-inline"> <FontAwesomeIcon  icon={faEye} /> Numero de especies probables en avistaje: {tour.especies} </div>
+                        </div>
                         {userData.user ? (
                             <>
                             <OverlayTrigger overlay={<Tooltip id="tooltip-disabled">Agregar a favoritos!</Tooltip>}>
-                                <div className="col-3 d-inline" onClick={addFavorite}>
+                                <div id={tour._id} className="col-3 d-inline col-xs-6" onClick={ e =>{addFavorite(tour)}}>
                                 <FontAwesomeIcon style={{color: colorfav}} className='favorito' icon={faStar} /></div>
                             </OverlayTrigger>
                             <div className="mt-3">
@@ -136,7 +152,7 @@ const DetalleTour = ({match}) => {
                         </Card.Header>
                         <Accordion.Collapse eventKey="0">
                             <Card.Body>
-                                <Comentarios />
+                                <Comentarios className= "col-xs-12 col-sm-12 col-md-6 col-lg-6"/>
                             </Card.Body>
                         </Accordion.Collapse>
                     </Card>

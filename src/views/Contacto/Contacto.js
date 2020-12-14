@@ -39,7 +39,7 @@ const cleanInput = () =>{
         <ToastContainer />
         <Form className="formulario_contacto mt-5">
         <fieldset className="fieldset-contacto">
-            <legend className="legend-contacto"><h3>Completa tus datos y dejanos tu comentario</h3></legend>
+            <legend className="legend-contacto"><h3 className="texto-legend">Completa tus datos y dejanos tu comentario</h3></legend>
         <Form.Row>
         <Col>
         <Form.Group>

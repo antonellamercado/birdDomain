@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import {Form, Button} from 'react-bootstrap';
 //config
-import Axios from '../../config/axios';
+import clienteHeroku from '../../config/prod';
 
 
 
@@ -17,7 +17,7 @@ const SearchBar = () => {
 
   useEffect(()=>{
     const getTours = async ()=>{
-    await Axios.get("http://localhost:5000/api/tours")
+    await clienteHeroku.get("/tours")
     .then(response =>{
     setTours(response.data)
 });
@@ -34,7 +34,6 @@ getTours();
             className="inputSearch mr-sm-2"
             placeholder="Search..."
             onChange={(e => {setSearchText(e.target.value)})}
-            type="text"
             /> 
             <Button  variant="success"><FontAwesomeIcon  icon={faSearch} /></Button>
       </Form>
@@ -42,7 +41,7 @@ getTours();
 
     <div>
         {tours.filter((val)=> {
-            if (searchText == ""){
+            if (searchText === ""){
             } else if (val.title.toLowerCase().includes(searchText.toLowerCase())){
                 return val
             }
@@ -54,7 +53,7 @@ getTours();
                     <p className="nav-links-links tourContainer">{val.title}</p>
                     </div>
                     <div className="searchImgContainer">
-                        <img className="searchImg" src={val.img}></img>
+                        <img className="searchImg" src={val.img} alt="img-search"></img>
                     </div>
                 </div>
                 </Link>
@@ -63,7 +62,7 @@ getTours();
         }
     </div>
 
-  </div>
+    </div>
     );
 }
 

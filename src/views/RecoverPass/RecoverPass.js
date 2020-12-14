@@ -2,8 +2,9 @@ import img from '../../img/DT9.jpg'
 import { ToastContainer, toast } from 'react-toastify';
 import './RecoverPass.css'
 import 'react-toastify/dist/ReactToastify.css';
-import clienteAxios from '../../config/axios';
+import clienteHeroku from '../../config/prod';
 import React, {useState, useContext} from 'react';
+import Axios from 'axios';
 
  const RecoverPass = () => {
     const [email, setEmail] = useState();
@@ -15,7 +16,7 @@ import React, {useState, useContext} from 'react';
         e.preventDefault();
         try {
             const loginUser = { email };
-            const loginRes = await clienteAxios.post("api/users/getTokenNP", loginUser);
+            const loginRes = await clienteHeroku.post("users/getTokenNP", loginUser);
             serChangePass({token: loginRes.data.token});
             localStorage.setItem("changePass-token", loginRes.data.token);
           } catch (err) {
@@ -28,7 +29,7 @@ import React, {useState, useContext} from 'react';
           }
         let userEmail = document.getElementById('userEmail').value;
         let userEmailToken = localStorage.getItem("changePass-token");
-        await clienteAxios.post('/send-email', {
+        await Axios.post('http://localhost:5000/send-email', {
             message:'Hola, al parecer has olvido tu password, sigue el siguiente enlace para poder cambiarla', 
             userEmail,
             token: userEmailToken
