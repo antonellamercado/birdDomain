@@ -18,13 +18,13 @@ export const UserContextProvider = ({children}) => {
           }
           //enviamos al backend 
           const tokenRes = await Axios.post(
-            "http://localhost:5000/api/users/tokenisvalid",
+            "https://api-birdomain.herokuapp.com/api/users/tokenisvalid",
             null,
             { headers: { "x-auth-token": token } }
           );
           //tokenRes verificacion si existe un token
           if (tokenRes.data) {
-            const userRes = await Axios.get("http://localhost:5000/api/users/", {
+            const userRes = await Axios.get("https://api-birdomain.herokuapp.com/api/users/", {
               headers: { "x-auth-token": token },
             });
             //ponemos la info del usuario en el set
