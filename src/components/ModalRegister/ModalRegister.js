@@ -2,9 +2,10 @@ import React, {useState, useContext} from 'react';
 import {Modal} from 'react-bootstrap';
 import {useHistory} from "react-router-dom";
 import './ModalCuenta.css'
-import clienteHeroku from "../../config/prod";
+// import clienteHeroku from "../../config/prod";
 import {UserContext} from "../../context/UserContext";
 import ErrorNotice from "../misc/ErrorNotice";
+import Axios from "axios";
 
 export const ModalReg = (props) => {
 
@@ -20,8 +21,8 @@ export const ModalReg = (props) => {
     e.preventDefault();
     try {
       const newUser = { email, password, passwordCheck, displayName };
-      await clienteHeroku.post("/users/register", newUser);
-      const loginRes = await clienteHeroku.post("/users/login", {
+      await Axios.post("https://api-birdomain.herokuapp.com/api/users/register", newUser);
+      const loginRes = await Axios.post("https://api-birdomain.herokuapp.com/api/users/login", {
         email,
         password,
       });
