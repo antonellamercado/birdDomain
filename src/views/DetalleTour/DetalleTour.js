@@ -3,8 +3,6 @@ import {useState, useEffect, useContext} from 'react';
 import {Link} from 'react-router-dom';
 //config
 import {UserContext} from "../../context/UserContext";
-//import clienteAxios from '../../config/axios';
-//import axios from "axios";
 import clienteHeroku from '../../config/prod';
 //libreria
 import {Card, Accordion, Tooltip} from 'react-bootstrap';
@@ -75,7 +73,7 @@ const DetalleTour = ({match}) => {
 
     const addFavorite = async (fav)=> {
         setColorfav('#FFD700');
-        await clienteHeroku.put(`/users/${userData.user.id}`, {favs:[...favs, fav]});
+        await clienteHeroku.put(`users/${userData.user.id}`, {favs:[...favs, fav]});
         setFavs([...favs, fav]);    
     }
 

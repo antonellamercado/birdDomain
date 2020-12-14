@@ -25,7 +25,7 @@ const PanelAdmin = () => {
     /////////////////////////////////////////////
     //1- Obtiene todos los tour para listar
             const getToursForList = async()  =>{
-            await clienteHeroku.get("/tours")
+            await clienteHeroku.get("tours")
             .then(response =>{
             setListaTours(response.data)
             });
@@ -39,7 +39,7 @@ const PanelAdmin = () => {
         
         const editarTour = async (tour)=> {
             console.log("editando");
-            await clienteHeroku.put(`/tours/${currentId}`, tour);
+            await clienteHeroku.put(`tours/${currentId}`, tour);
             getToursForList();
             toast("Tour editado correctamente", {
                 type: "info",
@@ -52,7 +52,7 @@ const PanelAdmin = () => {
     ////////////////////////////////////////////
     // Crea tour
         const crearTour = async (tour)=> {
-            const result = await clienteHeroku.post('/tours', tour);
+            const result = await clienteHeroku.post('tours', tour);
             console.log('nuevo tour',result);
             getToursForList();
             toast("Tour creado correctamente", {

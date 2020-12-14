@@ -21,7 +21,7 @@ const Favoritos = () => {
         console.log(e.target)
         const newFavs = favs.filter(fav => fav._id !== e.target.id);
         setFavs(newFavs);
-        await clienteHeroku.put(`/users/${userData.user.id}`, {favs:newFavs});
+        await clienteHeroku.put(`users/${userData.user.id}`, {favs:newFavs});
         window.location.reload(true);
     };
 

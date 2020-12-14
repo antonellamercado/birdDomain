@@ -1,8 +1,6 @@
 import React, {useState, useEffect} from 'react';
 //import {Link} from 'react-router-dom';
 // //config
-// import clienteAxios from '../../config/axios';
-//import Axios from 'axios';
 import clienteHeroku from '../../config/prod';
 //libreria
 import {Card} from 'react-bootstrap';

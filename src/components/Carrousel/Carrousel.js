@@ -3,7 +3,6 @@ import {Link} from 'react-router-dom';
 //component
 import { Carousel } from 'react-responsive-carousel';
 //config
-import clienteAxios from '../../config/axios';
 import clienteHeroku from '../../config/prod';
 //style
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader

@@ -11,6 +11,7 @@ import DetalleTour from './views/DetalleTour/DetalleTour';
 import RecoverPass from './views/RecoverPass/RecoverPass';
 import PanelAdmin from './views/PanelAdmin/PanelAdmin';
 import Checkout from './views/Checkout/Checkout'
+import ChangePass from './views/ChangePass/ChangePass'
 import 'react-toastify/dist/ReactToastify.css';
 import './index.css';
 import {UserContextProvider} from "./context/UserContext"
@@ -36,6 +37,7 @@ function App() {
           <Route path="/checkout" exact component={Checkout}></Route>
           <Route path="/recover" exact component={RecoverPass}></Route>
           <Route path="/paneladmin" exact component={PanelAdmin}></Route>
+          <Route path="/changePass/:id" exact component={ChangePass}></Route>
         </Switch>
       </div>
       </Layout>

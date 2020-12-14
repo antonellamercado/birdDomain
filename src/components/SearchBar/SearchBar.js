@@ -7,7 +7,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import {Form, Button} from 'react-bootstrap';
 //config
-import Axios from '../../config/axios';
 import clienteHeroku from '../../config/prod';
 
 

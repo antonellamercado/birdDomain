@@ -20,7 +20,7 @@ const Checkout =()=>{
     }
     useEffect(()=>{
         const getBuys = async ()=>{          
-            await clienteHeroku.get(`/users/`, { headers: { "x-auth-token": AuthStr } })
+            await clienteHeroku.get(`users/`, { headers: { "x-auth-token": AuthStr } })
             .then(response =>{
                 setProducts(response.data.buys)                            
             });
@@ -31,7 +31,7 @@ const Checkout =()=>{
     const deleteProduct = async (e)=>{
         const newProducts = products.filter(product => product._id !== e.target.id);
         setProducts(newProducts);
-        await clienteHeroku.put(`/users/${userData.user.id}`, {buys:newProducts});
+        await clienteHeroku.put(`users/${userData.user.id}`, {buys:newProducts});
     };
     function buyListOnOff(){
         setCart(!cartList);
@@ -66,7 +66,8 @@ const Checkout =()=>{
         }
     }
     async function deleteBuys(){
-        await clienteHeroku.put(`/users/${userData.user.id}`, {buys:[]});
+        await clienteHeroku.put(`users/${userData.user.id}`, {buys:[]});
+        setProducts([]);
     }
     return (
         <>

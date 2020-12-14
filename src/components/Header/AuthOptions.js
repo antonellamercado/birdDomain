@@ -11,21 +11,18 @@ const AuthOptions = () => {
     const [modalShowIng, setModalShowIng] = useState(false);
     const [modalShowReg, setModalShowReg] = useState(false);
 
-const {userData, setUserData} = useContext(UserContext);
+    const {userData, setUserData} = useContext(UserContext);
 
-const logout = () => {
-    setUserData({
-        token:undefined,
-        user:undefined
-    });
+    const logout = () => {
+        setUserData({
+            token:undefined,
+            user:undefined
+        });
 
-    localStorage.setItem("auth-token","");
-    setModalShowReg(false);
-    setModalShowIng(false)
-};
-
-console.log(userData)
-
+        localStorage.setItem("auth-token","");
+        setModalShowReg(false);
+        setModalShowIng(false)
+    };
     return (
     <div className="buttons d-flex justify-content-between">
         
