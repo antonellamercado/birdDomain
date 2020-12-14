@@ -22,6 +22,7 @@ export const ModalReg = (props) => {
     try {
       const newUser = { email, password, passwordCheck, displayName };
       await Axios.post("https://api-birdomain.herokuapp.com/api/users/register", newUser);
+      console.log("msj llega")
       const loginRes = await Axios.post("https://api-birdomain.herokuapp.com/api/users/login", {
         email,
         password,
