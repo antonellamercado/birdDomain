@@ -40,8 +40,8 @@ const DetalleTour = ({match}) => {
         }
         getTourByID(idtour);
 
-        const getBuys = async ()=>{
-            await clienteHeroku.get(`/usuarios/1`)
+        const getBuys = async ()=>{          
+            await clienteHeroku.get(`users/`, { headers: { "x-auth-token": AuthStr } })
             .then(response =>{
                 setProducts(response.data.buys)                            
             });
@@ -49,7 +49,7 @@ const DetalleTour = ({match}) => {
         getBuys();
 
         const getFavs = async ()=>{          
-            await clienteHeroku.get(`/users/`, { headers: { "x-auth-token": AuthStr } })
+            await clienteHeroku.get(`users/`, { headers: { "x-auth-token": AuthStr } })
             .then(response =>{
                 setFavs(response.data.favs)                            
             });
@@ -58,10 +58,10 @@ const DetalleTour = ({match}) => {
 
         }, []);
 //
-    const updateProduct = async (product)=> {
-        await clienteHeroku.patch(`/usuarios/1`, {buys:[...products, product]});
-        setProducts([...products, product]);
-    }
+        const updateProduct = async (product)=> {
+            await clienteHeroku.put(`users/${userData.user.id}`, {buys:[...products, product]});
+            setProducts([...products, product]);    
+        }
  //   
     function checkBuy(id){
         let i=0;
@@ -71,10 +71,7 @@ const DetalleTour = ({match}) => {
             }
         }
     }
-    // const addFavorite = () => {
-    //     setColorfav('#FFD700');
-    //     console.log('id para fav', match.params.id );
-    // }
+  
 
     const addFavorite = async (fav)=> {
         setColorfav('#FFD700');
