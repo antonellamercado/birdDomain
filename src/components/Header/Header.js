@@ -42,8 +42,8 @@ const Header = () => {
         <Navbar collapeOnSelect className="" expand="lg">
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse collapeOnSelect id="basic-navbar-nav">
-            <Nav className="ml-auto d-flex justify-content-around">
             
+            <Nav className="ml-auto d-flex justify-content-around">
             <SearchBar/>
             
                 <Link style={{ textDecoration: 'none' }} to = '/'>

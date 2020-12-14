@@ -69,6 +69,8 @@ const DetalleTour = ({match}) => {
             }
         }
     }
+  
+
     const addFavorite = async (fav)=> {
         setColorfav('#FFD700');
         await clienteHeroku.put(`users/${userData.user.id}`, {favs:[...favs, fav]});
