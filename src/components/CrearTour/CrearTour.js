@@ -69,8 +69,8 @@ const CrearTour = (props) => {
         ecoregiones: nuevoTour.ecoregiones,
         especies: nuevoTour.especies,
         isDestacado: nuevoTour.isDestacado,
-        lat: [parseInt(nuevoTour.latRetiro), parseInt(nuevoTour.longRetiro)],
-        latObs: [parseInt(nuevoTour.latObs), parseInt(nuevoTour.longObs)]
+        lat: [parseFloat(nuevoTour.latRetiro), parseFloat(nuevoTour.longRetiro)],
+        latObs: [parseFloat(nuevoTour.latObs), parseFloat(nuevoTour.longObs)]
         }
         // enviar a la funcion para crear o editar
         props.addOrEditTour(newnuevoTour);
@@ -213,14 +213,16 @@ const getTourById = async id => {
                         />
         </Form.Group>
         </Form.Row>
-        {/* /PUNTOS/ */}
+        {props.currentId==='' ? (
+            <>
+            {/* /PUNTOS/ */}
         <ListGroup>
         <Form.Label className="text-coordenadas my-2">Puntos de coordenadas</Form.Label>
         <ListGroup.Item>
         <Form.Row>
         <Form.Group as={Col} controlId="latitudretiro">
                 <Form.Label>Punto de retiro (Latitud)</Form.Label>
-                <Form.Control type="number" 
+                <Form.Control type="text" 
                     name="latRetiro" 
                     onChange={handleOnChange}
                     value={nuevoTour.latRetiro}
@@ -228,7 +230,7 @@ const getTourById = async id => {
         </Form.Group>
         <Form.Group as={Col} controlId="latitudretiro">
             <Form.Label>Punto de retiro (Longitud)</Form.Label>
-                <Form.Control type="number" 
+                <Form.Control type="text" 
                         name="longRetiro" 
                         onChange={handleOnChange}
                         value={nuevoTour.longRetiro}
@@ -236,7 +238,7 @@ const getTourById = async id => {
         </Form.Group>
         <Form.Group as={Col} controlId="latitudobservacion">
                 <Form.Label>Punto de observacion (Latitud) </Form.Label>
-                <Form.Control type="number" 
+                <Form.Control type="text" 
                         name="latObs"  
                         onChange={handleOnChange}
                         value={nuevoTour.latObs}
@@ -244,7 +246,7 @@ const getTourById = async id => {
         </Form.Group>
         <Form.Group as={Col} controlId="latitudobservacion">
                 <Form.Label>Punto de observacion (Longitud)</Form.Label>
-                <Form.Control type="number" 
+                <Form.Control type="text" 
                         name="longObs"  
                         onChange={handleOnChange}
                         value={nuevoTour.longObs}
@@ -253,6 +255,12 @@ const getTourById = async id => {
         </Form.Row> 
         </ListGroup.Item>
         </ListGroup>
+        </>
+        )
+        :
+        (<></>)
+        }
+        
         {/* /destacada/ */}
         <Form.Group controlId="destacada">
                 <Form.Check 

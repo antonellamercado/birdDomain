@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react'
 //libreria
-import { Table, Modal} from 'react-bootstrap';
+import { Table} from 'react-bootstrap';
 import { ToastContainer, toast } from 'react-toastify';
  import 'react-toastify/dist/ReactToastify.css';
 //config
