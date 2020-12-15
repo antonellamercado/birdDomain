@@ -9,9 +9,15 @@ const Cart = () => {
     const [tours, setTours] = useState([]);
     const [cartList, setCart] = useState(false);
     const { userData } = useContext(UserContext);
+    const [mounted, setMounted] = useState(false);
     const AuthStr = userData.token
 
     useEffect(()=>{
+        if (!mounted) {
+            setMounted(true)
+                window.scrollTo(0,0);
+        }
+        
         const getBuys = async ()=>{          
             await clienteHeroku.get(`/users/`, { headers: { "x-auth-token": AuthStr } })
             .then(response =>{
@@ -111,7 +117,7 @@ const Cart = () => {
                                                 <div className="btnBuyTour">
                                                     {
                                                         checkBuy(tour._id)!==tour._id || checkBuy(tour._id)==null?<button id={tour._id} className="btn btn-success" onClick={ e =>{updateProduct(tour)} }>Comprar Tour</button>:
-                                                        <button className="btn btn-success disabled">Comprado</button>
+                                                        <button className="btn btn-success disabled">Tour en carrito</button>
                                                     }                                             
                                                 </div>                                    
                                             </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 //import {Link} from 'react-router-dom';
 //libreria
 import { Row, Col, Form } from 'react-bootstrap';
@@ -10,6 +10,15 @@ import '../Contacto/Contacto.css'
 
 
 const Contacto = () => {
+
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(()=>{
+        if (!mounted) {
+            setMounted(true)
+                window.scrollTo(0,0);
+        }
+    }, []);
 
 const initialValues = {
     nombre:'',

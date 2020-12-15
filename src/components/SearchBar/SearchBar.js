@@ -14,6 +14,7 @@ import {Nav} from 'react-bootstrap';
 const SearchBar = () => {
   const [searchText, setSearchText] = useState('');
   const [tours, setTours] = useState([]);
+//   const history = useHistory();
 
   useEffect(()=>{
     const getTours = async ()=>{

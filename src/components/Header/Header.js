@@ -27,18 +27,17 @@ const Header = () => {
 
     return (
     <>
-    <div className="myNav sticky-top">
+    <div className="myNav sticky-top p-0 ">
     <div className= "firstrow mr-3 p-0 navbar navbar-expand-lg sticky-top">
     
-    <Link style={{ textDecoration: 'none' }} to = '/' className="logo-wrapper" >
-    <img className="logo" src = {logo} alt = "img-logo"></img> 
+    <Link style={{ textDecoration: 'none' }} to = '/' className="logo-wrapper p-0 " >
+    <img className="logo p-0" src = {logo} alt = "img-logo"></img> 
     </Link>
     <strong>Birds Domain</strong>
     
     <AuthOptions />
 
     </div> 
-    
         <Navbar collapseOnSelect="true" className="" expand="lg">
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">           

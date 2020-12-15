@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import {Link} from 'react-router-dom';
 import {UserContext} from "../../context/UserContext";
 import ModalIng from '../../components/ModalLogin/ModalLogin';
@@ -13,8 +13,14 @@ const Favoritos = () => {
     const { userData } = useContext(UserContext);
     const [modalShowIng, setModalShowIng] = useState(false);
     const [favs, setFavs] = useState([userData?.user?.favs]);
-    console.log(favs);
+    const [mounted, setMounted] = useState(false);
 
+    useEffect(()=>{
+        if (!mounted) {
+            setMounted(true)
+                window.scrollTo(0,0);
+        }
+    } , [favs]);
 
     const deleteFavs = async (e)=>{
         let favs = userData.user.favs;
@@ -22,7 +28,6 @@ const Favoritos = () => {
         const newFavs = favs.filter(fav => fav._id !== e.target.id);
         setFavs(newFavs);
         await clienteHeroku.put(`users/${userData.user.id}`, {favs:newFavs});
-        window.location.reload(true);
     };
 
     return (

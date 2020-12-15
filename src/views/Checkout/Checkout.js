@@ -11,6 +11,7 @@ const Checkout =()=>{
     const [cartList, setCart] = useState(false);
     const [show, setShow] = useState(false);
     const { userData } = useContext(UserContext);
+    const [mounted, setMounted] = useState(false);
     const AuthStr = userData.token
 
     const handleClose = () => setShow(false);
@@ -19,6 +20,10 @@ const Checkout =()=>{
         const {name, value} = e.target;
     }
     useEffect(()=>{
+        if (!mounted) {
+            setMounted(true)
+                window.scrollTo(0,0);
+        }
         const getBuys = async ()=>{          
             await clienteHeroku.get(`users/`, { headers: { "x-auth-token": AuthStr } })
             .then(response =>{
@@ -82,7 +87,7 @@ const Checkout =()=>{
                         <Link to="/">
                             <Button variant="success" onClick={handleClose}>Volver al Home</Button>
                         </Link>
-                        <Button variant="secondary" onClick={handleClose}>Close</Button>                 
+                        <Button variant="secondary" onClick={handleClose}>Cerrar</Button>                 
                     </Modal.Footer>
                 </Modal>
             </div>

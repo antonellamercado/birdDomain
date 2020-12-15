@@ -61,7 +61,7 @@ return (
                 <img src={imgGaleria[0]} alt="selected" className="imgMediana d-block img-fluid"></img>   
                 }
             </div>
-            <Modal id="modalSuccess" show={show} onHide={handleClose}>                                                 
+            <Modal id="modalSuccess" show={show} onHide={handleClose} className='zoomImg'>                                                 
                 <img className="img-fluid" src={imgSource} alt="img-aves"></img>  
             </Modal>
             <div className="d-flex row flex-wrap col-lg-4 col-md-4 mt-5">
