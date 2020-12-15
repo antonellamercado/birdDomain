@@ -17,8 +17,6 @@ import {UserContext} from "../../context/UserContext";
 import { LinkContainer } from "react-router-bootstrap";
 
 
-
-
 const Header = () => {
     const [modalShow, setModalShow] = useState(false);
     const { userData } = useContext(UserContext);
@@ -27,49 +25,43 @@ const Header = () => {
 
     return (
     <>
-    <div className="myNav sticky-top p-0 ">
-    <div className= "firstrow mr-3 p-0 navbar navbar-expand-lg sticky-top">
-    
-    <Link style={{ textDecoration: 'none' }} to = '/' className="logo-wrapper p-0 " >
-    <img className="logo p-0" src = {logo} alt = "img-logo"></img> 
-    </Link>
-    <strong>Birds Domain</strong>
-    
-    <AuthOptions />
-
-    </div> 
-        <Navbar collapseOnSelect="true" className="" expand="lg">
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">           
-            <Nav className="ml-auto d-flex justify-content-around">
-            <SearchBar/>
-                <LinkContainer to="/">
-                  <Nav.Link className="nav-links-links active">Home</Nav.Link>
-                </LinkContainer>
-                <LinkContainer to="/aves">
-                  <Nav.Link className="nav-links-links active">Aves</Nav.Link>
-                </LinkContainer>
-                <LinkContainer to="/contacto">
-                  <Nav.Link className="nav-links-links active">Contacto</Nav.Link>
-                </LinkContainer>
-                <LinkContainer to="/favoritos">
-                  <Nav.Link className="nav-links-links active"><FontAwesomeIcon  icon={faStar} /></Nav.Link>
-                </LinkContainer>
-                {userData.user ? (<>
-                <LinkContainer to="/cart">
-                  <Nav.Link className="nav-links-links active"><FontAwesomeIcon  icon={faShoppingCart} /></Nav.Link>
-                </LinkContainer>
-                </>) :
-                <></>}
-                <div className="nav-links-links active" onClick={() => setModalShow(true)}><FontAwesomeIcon  icon={faQuestionCircle} /></div>           
-                <HelpModal
-                  show={modalShow}
-                  onHide={() => setModalShow(false)}
-                />
-            </Nav>
-          </Navbar.Collapse>
-        </Navbar>
-        </div>
+      <div className="myNav sticky-top p-0 ">
+        <div className= "firstrow mr-3 p-0 navbar navbar-expand-lg sticky-top">     
+          <Link style={{ textDecoration: 'none' }} to = '/' className="logo-wrapper p-0 " >
+            <img className="logo p-0" src = {logo} alt = "img-logo"></img> 
+          </Link>
+          <strong className='d-none d-sm-block'>Birds Domain</strong>     
+          <AuthOptions />
+        </div> 
+          <Navbar collapseOnSelect="true" className="" expand="lg">
+            <Navbar.Toggle aria-controls="basic-navbar-nav" className='toggleButton'/>
+            <Navbar.Collapse id="basic-navbar-nav">           
+              <Nav className="ml-auto d-flex justify-content-around">
+              <SearchBar/>
+                  <LinkContainer to="/">
+                    <Nav.Link className="nav-links-links active">Home</Nav.Link>
+                  </LinkContainer>
+                  <LinkContainer to="/aves">
+                    <Nav.Link className="nav-links-links active">Aves</Nav.Link>
+                  </LinkContainer>
+                  <LinkContainer to="/contacto">
+                    <Nav.Link className="nav-links-links active">Contacto</Nav.Link>
+                  </LinkContainer>
+                  <LinkContainer to="/favoritos">
+                    <Nav.Link className="nav-links-links active"><FontAwesomeIcon  icon={faStar} /></Nav.Link>
+                  </LinkContainer>
+                  {userData.user ? (<>
+                  <LinkContainer to="/cart">
+                    <Nav.Link className="nav-links-links active"><FontAwesomeIcon  icon={faShoppingCart} /></Nav.Link>
+                  </LinkContainer>
+                  </>) :
+                  <></>}
+                  <div className="nav-links-links active" onClick={() => setModalShow(true)}><FontAwesomeIcon  icon={faQuestionCircle} /></div>           
+                  <HelpModal show={modalShow} onHide={() => setModalShow(false)}/>
+              </Nav>
+            </Navbar.Collapse>
+          </Navbar>
+          </div>
         </>
             );
 }

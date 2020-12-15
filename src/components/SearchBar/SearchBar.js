@@ -27,7 +27,7 @@ getTours();
 },[]);
 
     return (
-<div>
+<div className='searchBar'>
     <div >
     <Form inline className="searchForm">
           <input type="search" 

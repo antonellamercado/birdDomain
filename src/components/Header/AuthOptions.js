@@ -36,7 +36,7 @@ const AuthOptions = () => {
             <> 
 
             <div className="d-flex justify-content-between">
-            <div className = "imgUserContainer">
+            <div className = "imgUserContainer d-none d-sm-block">
             <img className = "imgUser img-fluid" src="https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/user1.jpg?alt=media&token=f9169d9a-2d7e-4f04-b6c3-57cd44bfb243"
             alt="img-header-user"></img>
             </div>

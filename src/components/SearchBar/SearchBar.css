@@ -37,8 +37,13 @@
     text-size-adjust: 50%;
     font-weight: bold;
     padding:20px;
- }
+}
 
- .nav-links-links:hover{
+.nav-links-links:hover{
     color: black;
- }
+}
+@media screen and (max-width: 991px){
+    .searchBar {
+        margin: auto;
+    }
+}

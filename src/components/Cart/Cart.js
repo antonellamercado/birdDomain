@@ -112,8 +112,8 @@ const Cart = () => {
                                                 <Link to={`/tours/${tour._id}`} className="text-warning">                             
                                                     <h5 className="card-title">{tour.title}</h5>
                                                 </Link>
-                                                <p className="card-text">Precio por persona: {tour.price}U$D</p>
-                                                <p className="card-text">Duracion del Tour: {tour.dias}</p>                                  
+                                                <p className="card-text d-none d-sm-block">Precio por persona: {tour.price}U$D</p>
+                                                <p className="card-text d-none d-sm-block">Duracion del Tour: {tour.dias}</p>                                  
                                                 <div className="btnBuyTour">
                                                     {
                                                         checkBuy(tour._id)!==tour._id || checkBuy(tour._id)==null?<button id={tour._id} className="btn btn-success" onClick={ e =>{updateProduct(tour)} }>Comprar Tour</button>:

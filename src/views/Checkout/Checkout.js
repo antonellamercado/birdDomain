@@ -78,7 +78,7 @@ const Checkout =()=>{
         <>
         <ToastContainer />
             <div>
-                <Modal id="modalSuccess"show={show} onHide={handleClose}>
+                <Modal id="modalSuccess"show={show} onHide={handleClose} centered>
                     <Modal.Header closeButton className="bg-modal text-black">
                         <Modal.Title>Compra Exitosa</Modal.Title>
                     </Modal.Header>
