@@ -37,7 +37,7 @@ const AuthOptions = () => {
 
             <div className="d-flex justify-content-between">
             <div className = "imgUserContainer">
-            <img className = "imgUser" src="https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/DT1.jpg?alt=media&token=3e5ec858-73c5-48c5-916b-aec1243cb4d9"
+            <img className = "imgUser img-fluid" src="https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/user1.jpg?alt=media&token=f9169d9a-2d7e-4f04-b6c3-57cd44bfb243"
             alt="img-header-user"></img>
             </div>
             <Link style={{ textDecoration: 'none' }} to = '/paneladmin'>
