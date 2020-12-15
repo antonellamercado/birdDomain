@@ -19,6 +19,7 @@ import Mapa from '../../components/Maps/Maps';
 //import { latLng } from 'leaflet';
 
 const DetalleTour = ({match}) => {
+   
     const idtour = match.params.id;
     const { userData } = useContext(UserContext);
     const [tour, setTour] = useState({});
@@ -26,9 +27,15 @@ const DetalleTour = ({match}) => {
     const [colorfav, setColorfav] = useState('black');
     const [modalShowIng, setModalShowIng] = useState(false);
     const [favs, setFavs] = useState([]);
+    const [mounted, setMounted] = useState(false);
     const AuthStr = userData.token
 //
     useEffect(()=>{
+        if (!mounted) {
+            setMounted(true)
+                window.scrollTo(0,0);
+        }
+
         const getTourByID = async id  =>{
         await clienteHeroku.get(`/tours/${id}`)
         .then(response =>{
@@ -54,18 +61,19 @@ const DetalleTour = ({match}) => {
         }
         getFavs();
 
-        }, []);
+        }, [tour]);
 //
         const updateProduct = async (product)=> {
+            console.log("click")
             await clienteHeroku.put(`users/${userData.user.id}`, {buys:[...products, product]});
             setProducts([...products, product]);    
         }
  //   
-    function checkBuy(id){
+    function checkBuy(_id){
         let i=0;
-        for(i=0;i<products.length;i++){
-            if(id===products[i].id){
-                return (products[i].id)       
+            for(i=0;i<products.length;i++){
+            if(_id===products[i]._id){
+            return (products[i]._id)       
             }
         }
     }
@@ -118,7 +126,7 @@ const DetalleTour = ({match}) => {
                             </OverlayTrigger>
                             <div className="mt-3">
                             {
-                                checkBuy(tour.id)!==tour.id || checkBuy(tour.id)==null?<button id={tour.id} className="btn bg-success col-6 my-3 d-block mx-auto " onClick={ e =>{updateProduct(tour)} }>Comprar tour</button>:
+                                checkBuy(tour._id)!==tour._id || checkBuy(tour._id)==null?<button id={tour._id} className="btn bg-success col-6 my-3 d-block mx-auto " onClick={ e =>{updateProduct(tour)} }>Comprar tour</button>:
                                 <button className="d-block col-6 mx-auto btn btn-success disabled">Tour en carrito</button>
                             }
                             </div>   

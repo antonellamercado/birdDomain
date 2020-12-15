@@ -25,11 +25,11 @@ const Header = () => {
 
     return (
     <>
-    <div className="myNav sticky-top">
+    <div className="myNav sticky-top p-0 ">
     <div className= "firstrow mr-3 p-0 navbar navbar-expand-lg sticky-top">
     
-    <Link style={{ textDecoration: 'none' }} to = '/' className="logo-wrapper" >
-    <img className="logo" src = {logo} alt = "img-logo"></img> 
+    <Link style={{ textDecoration: 'none' }} to = '/' className="logo-wrapper p-0 " >
+    <img className="logo p-0" src = {logo} alt = "img-logo"></img> 
     </Link>
     <strong>Birds Domain</strong>
     
@@ -39,11 +39,12 @@ const Header = () => {
     
     
 
-        <Navbar collapeOnSelect className="" expand="lg">
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse collapeOnSelect id="basic-navbar-nav">
-            
-            <Nav className="ml-auto d-flex justify-content-around">
+        <Navbar collapseOnSelect  className="p-0 " expand="lg">
+          <Navbar.Toggle  aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse  id="basic-navbar-nav">
+       
+            <Nav  className="d-block ml-auto d-flex justify-content-around">
+            <li className="nav-links-links ml-0">Bienvenid@ a BirdDomain</li>
             <SearchBar/>
             
                 <Link style={{ textDecoration: 'none' }} to = '/'>

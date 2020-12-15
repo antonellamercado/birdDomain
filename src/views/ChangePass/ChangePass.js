@@ -39,7 +39,7 @@ const ChangePass = ({match}) => {
                 if(backendPass.data.password){
                     await clienteHeroku.put(`users/${userData.user.id}`, {password:backendPass.data.password});
                     formChangePass.reset();
-                    toast(`Su contraseña fue cambiada correctmente`, {
+                    toast(`Su contraseña fue cambiada correctamente`, {
                         type: "success",
                         position: "top-center",
                         autoClose: 3000                       
@@ -68,12 +68,12 @@ const ChangePass = ({match}) => {
                         <legend className="legend-checkout"><h3>Cambiar Contraseña</h3></legend>
                         <div className="form-group container my-4">
                             <label>Nueva Contraseña</label>
-                            <input id="password" name="password" type="password" placeholder="contaseña secreta" className="form-control" required minLength="8" maxLength="16" onChange={(e) => setPassword(e.target.value)}></input>
+                            <input id="password" name="password" type="password" placeholder="Coloca aqui tu nueva contraseña" className="form-control" required minLength="8" maxLength="16" onChange={(e) => setPassword(e.target.value)}></input>
                             <small className="form-text text-muted">La contraseña tiene que tener un minimo de ocho caracteres.</small>
                         </div>
                         <div className="form-group container my-4">
                             <label>Repetir contraseña</label>
-                            <input id="passwordCheck" name="passwordCheck" type="password" placeholder="lo mismo que puso arriba por favor..." className="form-control" required minLength="8" maxLength="16" onChange={(e) => setPasswordCheck(e.target.value)}></input>
+                            <input id="passwordCheck" name="passwordCheck" type="password" placeholder="Re-introduce tu nueva contraseña" className="form-control" required minLength="8" maxLength="16" onChange={(e) => setPasswordCheck(e.target.value)}></input>
                         </div>              
                         <div className="form-group">
                             <button className="btn btn-success" onClick={newPassSend}>Enviar</button>

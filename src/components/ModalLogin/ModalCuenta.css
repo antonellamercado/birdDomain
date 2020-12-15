@@ -2,20 +2,21 @@
     /* background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%); */
     background-color: #c3e4f5;
     color:black;
-    /* width: 500px ; */
 }
 .form_login_input{
-    width: 90%;
+    width: 70%;
 }
 .form_login_label{
-    width: 90%;
+    width: 70%;
 }
 
+/* .div.fade.modal.show{
 
+} */
 
-/* .modal-dialog {
-    margin-left: auto;
-  } */
+  .modal-dialog {
+    width:80%;
+  }  
 
 /* @media screen and (max-width: 400px){
 .btn-registrar{

@@ -8,12 +8,14 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import {Form, Button} from 'react-bootstrap';
 //config
 import clienteHeroku from '../../config/prod';
+// import { useHistory } from "react-router-dom";
 
 
 
 const SearchBar = () => {
   const [searchText, setSearchText] = useState('');
   const [tours, setTours] = useState([]);
+//   const history = useHistory();
 
   useEffect(()=>{
     const getTours = async ()=>{
@@ -48,6 +50,7 @@ getTours();
         }).map((val,key)=>{
             return (
                 <Link to={`/tours/${val._id}`} onClick = {() => setSearchText ("")}>
+                    {/* {history.push(`/tours/${val._id}`)} */}
                 <div key={val._id} className="searchResult row mt-3">
                     <div clasName="mr-5">
                     <p className="nav-links-links tourContainer">{val.title}</p>
