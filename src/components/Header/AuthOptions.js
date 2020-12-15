@@ -24,7 +24,7 @@ const AuthOptions = () => {
         setModalShowIng(false)
     };
     return (
-    <div className="buttons d-flex justify-content-between">
+    <div className="buttons d-flex justify-content-between p-0">
         
         {userData.user ? ( 
 

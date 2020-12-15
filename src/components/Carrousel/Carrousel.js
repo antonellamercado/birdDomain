@@ -22,16 +22,7 @@ useEffect(()=>{
         }
         getTours();
         },[]);
-/*useEffect(()=>{
-    const getTour = async ()=>{
-    await clienteAxios.get("/Tours")
-    .then(response =>{
-    setTours(response.data)
-    });
-    }
-    getTour();
-    },[]);
- */
+
 
 
     return (

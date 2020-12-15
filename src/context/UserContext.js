@@ -30,7 +30,7 @@ export const UserContextProvider = ({children}) => {
         };
     
         checkLoggedIn();
-      }, []);
+      }, [userData]);
 
     return (
         <UserContext.Provider value={{userData, setUserData}}>

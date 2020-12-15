@@ -30,8 +30,8 @@ let toursDestacados = tours.filter(function (tour) {
   
     return (
       toursDestacados.length > 0 ? 
-      <div className="h-25 d-inline-block">
-        <Carousel className="d-md-block heroImgCarousel"
+      <div className="h-25 d-inline-block heroImgCarousel">
+        <Carousel className="d-md-block"
             showStatus={false}
             showIndicators={false}
             showThumbs={false}
@@ -45,7 +45,7 @@ let toursDestacados = tours.filter(function (tour) {
             <Link to={`/tours/${destacado._id}`} key={index} className="container-fluid px-0 d-flex justify-content-center">
             <div className="row mx-0 h-25 ">
               <div className="imgCarouselContainer col-12 px-0">
-                  <img src={destacado.imgD} className="imgCarousel w-100" alt="..."></img>
+                  <img src={destacado.imgD} className="imgCarousel" alt="..."></img>
                 <div className="text-heroimg d-none d-sm-none d-md-none d-lg-block">
                   <h2 className="tituloHero">{destacado.title}</h2>
                 </div>

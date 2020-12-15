@@ -12,18 +12,16 @@ import '../Aves/Aves.css'
 const Aves = () => {
 
  const [aves, setAves] = useState([]);
+ const [mounted, setMounted] = useState(false);
         
-    // useEffect(()=>{
-    //     const getAves = async ()=>{
-    //     await clienteAxios.get("/Aves")
-    //     .then(response =>{
-    //     setAves(response.data)
-    // });
-    // }
-    // getAves();
-    // },[]);
 
     useEffect(()=>{
+
+        if (!mounted) {
+            setMounted(true)
+                window.scrollTo(0,0);
+        }
+
         const getAves = async ()=>{
         await clienteHeroku.get("/aves")
         .then(response => {
@@ -33,18 +31,7 @@ const Aves = () => {
             getAves();
             },[]);
 
-    //         if (response.ok) {
-    //             console.log(response.data)
-    //             return response.data.json()
-                
-    //         }
-    //     }).then (responseJson => setAves (responseJson.aves));
-
-    // }
-    // getAves();
-    // },[]);
-
- 
+   
     
     return (
         <>
