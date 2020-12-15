@@ -21,9 +21,8 @@ export const ModalReg = (props) => {
     e.preventDefault();
     try {
       const newUser = { email, password, passwordCheck, displayName };
-      await Axios.post("https://api-birdomain.herokuapp.com/api/users/register", newUser);
-      
-      const loginRes = await Axios.post("https://api-birdomain.herokuapp.com/api/users/login", {
+      await clienteHeroku.post("users/register", newUser);
+      const loginRes = await clienteHeroku.post("users/login", {
         email,
         password,
       });
@@ -41,21 +40,15 @@ export const ModalReg = (props) => {
     return (
         <div>
             <>
-            <Modal {...props}
-      size="md"
-      aria-labelledby="contained-modal-title-vcenter"
-      centered
-    >
-      
-   
-      <Modal.Header closeButton className="modal-body text-dark">
-        <Modal.Title id="contained-modal-title-vcenter">
-          Registrate  
-        </Modal.Title>
-      </Modal.Header>
-      <Modal.Body className="modal-body text-dark">
-      <form className="mt-1" id="form" onSubmit={submit}>
-      <div className="form-group mt-5">
+            <Modal {...props} size="md" aria-labelledby="contained-modal-title-vcenter" centered>
+              <Modal.Header closeButton className="modal-body text-dark">
+                <Modal.Title id="contained-modal-title-vcenter">
+                  Registrate  
+                </Modal.Title>
+              </Modal.Header>
+              <Modal.Body className="modal-body text-dark">
+                  <form className="mt-1" id="form" onSubmit={submit}>
+                  <div className="form-group mt-5">
                     <div className="mt-3">
                         <label for="user" className="text-dark">Nombre de Usuario</label>
                         <input type="text" name="user" className="form-control" id="newUser" placeholder="Nombre de usuario" required minlength="4" maxlength="30" onChange={(e) => setDisplayName(e.target.value)}/>

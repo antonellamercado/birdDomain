@@ -108,7 +108,7 @@ const getTourById = async id => {
         Crear nuevo tour
     </button>
 
-    <Modal show={show} onHide={handleClose} className="modal-crear-tour">
+    <Modal show={show} onHide={handleClose} className="modal-crear-tour modalTour" centered>
 
     <Form className="formulario_modal  m-1 p-2" onSubmit={handleOnSubmit}>
     <Modal.Header closeButton>
@@ -187,7 +187,7 @@ const getTourById = async id => {
         </Form.Group>
         {/*Dias*/}
         <Form.Group as={Col} controlId="dias">
-            <Form.Label>Cantidad de dias</Form.Label>
+            <Form.Label>Días</Form.Label>
             <Form.Control type="number" 
                         name="dias" 
                         onChange={handleOnChange}
@@ -205,7 +205,7 @@ const getTourById = async id => {
         </Form.Group>
         {/*Especies*/}
         <Form.Group as={Col} controlId="especies">
-            <Form.Label>Cantidad de especies</Form.Label>
+            <Form.Label>Especies</Form.Label>
             <Form.Control type="text" 
                         name="especies"  
                         onChange={handleOnChange}
