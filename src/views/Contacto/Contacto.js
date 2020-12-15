@@ -1,24 +1,14 @@
 import React from 'react';
-import {useState, useEffect} from 'react';
-//import {Link} from 'react-router-dom';
+import {useState} from 'react';
 //libreria
 import { Row, Col, Form } from 'react-bootstrap';
 import { ToastContainer, toast } from 'react-toastify';
- import 'react-toastify/dist/ReactToastify.css';
 //estilos
-import '../Contacto/Contacto.css'
+import '../Contacto/Contacto.css';
+import 'react-toastify/dist/ReactToastify.css'
 
 
 const Contacto = () => {
-
-    const [mounted, setMounted] = useState(false);
-
-    useEffect(()=>{
-        if (!mounted) {
-            setMounted(true)
-                window.scrollTo(0,0);
-        }
-    }, []);
 
 const initialValues = {
     nombre:'',
@@ -28,25 +18,38 @@ const initialValues = {
     mensaje:''
 };    
 const [valuesInput, setValuesInput] = useState(initialValues);
-
+const [error, setError] = useState(false);  
 const handleOnChange = (e) => {
     const {name, value} = e.target;
     setValuesInput({...valuesInput, [name]:value});
    // validarCampos();
 }
 
-const cleanInput = () =>{
-    setValuesInput (initialValues);
+const sendForm = (e) => {
+
+        e.preventDefault();
+        // si algun campo esta vacio setea el state error
+        if(valuesInput.nombre=== '' || valuesInput.apellido === '' || valuesInput.telefono === '' || 
+        valuesInput.email === '' || valuesInput.mensaje === '') {
+        setError(true);
+            return
+        }
+        else {
+        setError(false);
+        setValuesInput (initialValues);
     toast("Mensaje enviado correctamente", {
         type: "success",
         position: "top-center",
-        autoClose: 2000
+        autoClose: 4000,
+        transition:"zoom"
     });
+}
 }
     return (
     <>
         <ToastContainer />
-        <Form className="formulario_contacto mt-5">
+       
+        <Form className="formulario_contacto mt-5" onSubmit={sendForm}>
         <fieldset className="fieldset-contacto">
             <legend className="legend-contacto"><h3 className="texto-legend">Completa tus datos y dejanos tu comentario</h3></legend>
         <Form.Row>
@@ -71,7 +74,7 @@ const cleanInput = () =>{
             id="apellido" 
             placeholder=""
             onChange={handleOnChange}
-            value={valuesInput.apellido} />
+            value={valuesInput.apellido}/>
         </Form.Group>
         </Col>
         </Form.Row>
@@ -121,7 +124,13 @@ const cleanInput = () =>{
             onChange={handleOnChange}
             value={valuesInput.mensaje} />
         </Form.Group>
-        <button className="formulario_boton btn" type="submit" onClick={cleanInput} >Enviar</button>
+        {
+        error ?
+        <p className="alert bg-danger text-black d-block">Todos los campos son obligatorios</p>
+        : 
+        <p className="alert alert-danger desactivado-contacto">Todos los campos son obligatorios</p>
+    }
+        <button className="formulario_boton btn" type="submit">Enviar</button>
         </fieldset>
         </Form>
         <div className="home_separador"></div>

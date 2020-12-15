@@ -5,7 +5,7 @@ import ModalIng from '../../components/ModalLogin/ModalLogin';
 import './Favoritos.css';
 import {Card} from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBinoculars } from '@fortawesome/free-solid-svg-icons';
+import { faBinoculars, faTrash } from '@fortawesome/free-solid-svg-icons';
 import clienteHeroku from '../../config/prod';
 
 const Favoritos = () => {
@@ -44,13 +44,12 @@ const Favoritos = () => {
 
         {userData.user.favs.map((tour,index) => (
             <div>
-            <button id={tour._id} className="btnFavorito mt-3" onClick={deleteFavs} >Borrar de favoritos</button>
+            <div className="d-flex justify-content-center mb-3">
+                        <Card.Title className="titleFavoritos p-2 mr-3 "><FontAwesomeIcon  icon={faBinoculars } /> {tour.title}</Card.Title> <FontAwesomeIcon  className="mr-3 text-black" icon={faTrash } id={tour._id} onClick={deleteFavs} />
+                    </div>  
             <Link to={`/tours/${tour._id}`} style={{ textDecoration: 'none' }} className=" col-xs-12 col-sm-12 col-md-4 col-lg-3 m-1 p-0">
                 <div className="p-0 m-0 ">
                 <div key={index} className="p-0 m-0">
-                    <div className="d-flex justify-content-center mb-3">
-                        <Card.Title className="titleFavoritos p-2 mr-3 "><FontAwesomeIcon  icon={faBinoculars } /> {tour.title}</Card.Title>
-                    </div>        
                             <div className=" d-flex justify-content-center">
                             <div className="imgContainer">
                             <img className="imgTour" src={tour.img}  alt="img-tour"></img>
