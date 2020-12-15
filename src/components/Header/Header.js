@@ -14,6 +14,8 @@ import HelpModal from '../ModalFaqs/ModalFaqs.js';
 // import ModalReg from '../ModalRegister/ModalRegister';
 import AuthOptions from './AuthOptions';
 import {UserContext} from "../../context/UserContext";
+import { LinkContainer } from "react-router-bootstrap";
+
 
 
 
@@ -37,34 +39,30 @@ const Header = () => {
 
     </div> 
     
-    
-
-        <Navbar collapeOnSelect className="" expand="lg">
+        <Navbar collapseOnSelect="true" className="" expand="lg">
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse collapeOnSelect id="basic-navbar-nav">
-            
+          <Navbar.Collapse id="basic-navbar-nav">           
             <Nav className="ml-auto d-flex justify-content-around">
             <SearchBar/>
-            
-                <Link style={{ textDecoration: 'none' }} to = '/'>
-                <li className="nav-links-links">Home</li>
-                </Link>
-                <Link style={{ textDecoration: 'none' }} to = '/aves'>
-                <li className="nav-links-links">Aves</li>
-                </Link>
-                <Link style={{ textDecoration: 'none' }} to = '/contacto'>
-                <li className="nav-links-links">Contacto</li>
-                </Link>
-                <Link style={{ textDecoration: 'none' }} to = '/favoritos'>
-                <li className="nav-links-links"><FontAwesomeIcon  icon={faStar} /></li>
-                </Link>
+                <LinkContainer to="/">
+                  <Nav.Link className="nav-links-links active">Home</Nav.Link>
+                </LinkContainer>
+                <LinkContainer to="/aves">
+                  <Nav.Link className="nav-links-links active">Aves</Nav.Link>
+                </LinkContainer>
+                <LinkContainer to="/contacto">
+                  <Nav.Link className="nav-links-links active">Contacto</Nav.Link>
+                </LinkContainer>
+                <LinkContainer to="/favoritos">
+                  <Nav.Link className="nav-links-links active"><FontAwesomeIcon  icon={faStar} /></Nav.Link>
+                </LinkContainer>
                 {userData.user ? (<>
-                <Link style={{ textDecoration: 'none' }} to = '/cart'>
-                <li className="nav-links-links"><FontAwesomeIcon  icon={faShoppingCart} /></li>
-                </Link>
+                <LinkContainer to="/cart">
+                  <Nav.Link className="nav-links-links active"><FontAwesomeIcon  icon={faShoppingCart} /></Nav.Link>
+                </LinkContainer>
                 </>) :
                 <></>}
-                <div className="nav-links-links" onClick={() => setModalShow(true)}><FontAwesomeIcon  icon={faQuestionCircle} /></div>           
+                <div className="nav-links-links active" onClick={() => setModalShow(true)}><FontAwesomeIcon  icon={faQuestionCircle} /></div>           
                 <HelpModal
                   show={modalShow}
                   onHide={() => setModalShow(false)}

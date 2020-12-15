@@ -11,13 +11,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes,faEdit } from '@fortawesome/free-solid-svg-icons';
 //componente
 import CrearTour from '../../components/CrearTour/CrearTour';
+import { Modal } from 'react-bootstrap';
 
 const PanelAdmin = () => {
 
     //estados
-    //const [show, setShow] = useState(false);
-   // const handleClose = () => setShow(false);
-   // const handleShow = () => setShow(true);
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
    // const [buttonYes, setButtonYes] = useState(false);
     const [listaTours, setListaTours] = useState([]);
     const [currentId, setCurrentId] = useState("");
@@ -76,23 +77,33 @@ const PanelAdmin = () => {
         }
     ///////////////////////////////////////////    
     //Eliminar tour
-        const deleteTour = async (id) => {
-           // if (buttonYes)
-            if(window.confirm("seguro que quieres eliminar?"))
-            {console.log('id para eliminar', id);
-            const tourEliminado = await clienteHeroku.delete(`/tours/${id}`);
-            console.log('tour eliminado', tourEliminado);
-            toast("Tour eliminado correctamente", {
-                type: "error",
-                position: "top-center",
-                autoClose: 2000
-            });
-            }
-            getToursForList();
-        }
+    const [tourForDelete, setTourForDelete] = useState();
+    const showModalDelete = async (id) => {
+        handleShow();
+        setTourForDelete(id)      
+    }
+    const deleteTour = async ()=>{
+        await clienteHeroku.delete(`/tours/${tourForDelete}`);       
+        toast("Tour eliminado correctamente", {
+            type: "error",
+            position: "top-center",
+            autoClose: 4000
+        });
+        handleClose();      
+        getToursForList();
+    }
     //////////////////////////////////////////
     return(
         <>
+        <Modal show={show} onHide={handleClose} centered>                                                 
+            <Modal.Body>
+                <p>Seguro que quieres eliminar el Tour?</p>
+            </Modal.Body>
+            <Modal.Footer>
+                <button className='btn btn-danger' onClick={deleteTour}>Eliminar</button>
+                <button className='btn btn-secondary' onClick={handleClose}>Cerrar</button>
+            </Modal.Footer>
+        </Modal>
         <ToastContainer />
         <p className="font-weight-bold t-2 title-panelAdmin">Bienvenido al panel de administracion.
             Aqui podra <em className="initialism">Crear</em> nuevos tours, <em className="initialism">Editar</em> los mismos y cambiar la imagen destacada de la pagina principal, ademas de <em className="initialism">Eliminar</em> tours obsoletos.
@@ -125,7 +136,7 @@ const PanelAdmin = () => {
                         <td>
                             <div 
                             className="btn btn-danger mr-2 admin_delete"
-                            onClick={()=> deleteTour(tour._id) }
+                            onClick={()=> showModalDelete(tour._id) }
                             ><FontAwesomeIcon  icon={faTimes}  /> </div>
                             <div  
                             className="btn btn-light admin_edit"

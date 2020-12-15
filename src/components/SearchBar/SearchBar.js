@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import {Link} from 'react-router-dom';
 //styles
 import "bootstrap/dist/css/bootstrap.css";
 import './SearchBar.css';
@@ -8,7 +7,8 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import {Form, Button} from 'react-bootstrap';
 //config
 import clienteHeroku from '../../config/prod';
-
+import { LinkContainer } from "react-router-bootstrap";
+import {Nav} from 'react-bootstrap';
 
 
 const SearchBar = () => {
@@ -47,7 +47,8 @@ getTours();
             }
         }).map((val,key)=>{
             return (
-                <Link to={`/tours/${val._id}`} onClick = {() => setSearchText ("")}>
+                <LinkContainer to={`/tours/${val._id}`}  onClick = {() => setSearchText ("")}>
+                <Nav.Link>
                 <div key={val._id} className="searchResult row mt-3">
                     <div clasName="mr-5">
                     <p className="nav-links-links tourContainer">{val.title}</p>
@@ -56,7 +57,8 @@ getTours();
                         <img className="searchImg" src={val.img} alt="img-search"></img>
                     </div>
                 </div>
-                </Link>
+                </Nav.Link>
+                </LinkContainer>
             )
         })
         }
