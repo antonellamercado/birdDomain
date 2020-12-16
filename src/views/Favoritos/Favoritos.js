@@ -45,7 +45,7 @@ const Favoritos = () => {
         {userData.user.favs.map((tour,index) => (
             <div>
             <div className="d-flex justify-content-center mb-3">
-                        <Card.Title className="titleFavoritos p-2 mr-3 "><FontAwesomeIcon  icon={faBinoculars } /> {tour.title}</Card.Title> <FontAwesomeIcon  className="mr-3 text-black" icon={faTrash } id={tour._id} onClick={deleteFavs} />
+            <Card.Title className="titleFavoritos p-2 mr-3 "><FontAwesomeIcon  icon={faBinoculars } /> {tour.title}</Card.Title> <FontAwesomeIcon  className="mr-3 text-black" icon={faTrash } id={tour._id} onClick={deleteFavs} />
                     </div>  
             <Link to={`/tours/${tour._id}`} style={{ textDecoration: 'none' }} className=" col-xs-12 col-sm-12 col-md-4 col-lg-3 m-1 p-0">
                 <div className="p-0 m-0 ">
