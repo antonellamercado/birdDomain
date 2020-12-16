@@ -5,7 +5,7 @@ import clienteHeroku from '../../config/prod';
 //libreria
 import {Card} from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBinoculars , faSearch, faMicroscope, faInfoCircle} from '@fortawesome/free-solid-svg-icons';
+import { faBinoculars , faMicroscope, faInfoCircle} from '@fortawesome/free-solid-svg-icons';
 //estilos
 import '../Aves/Aves.css'
 
@@ -29,6 +29,7 @@ const Aves = () => {
             });
             }
             getAves();
+            // eslint-disable-next-line react-hooks/exhaustive-deps
             },[]);
 
    

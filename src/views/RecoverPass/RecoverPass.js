@@ -3,7 +3,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import './RecoverPass.css'
 import 'react-toastify/dist/ReactToastify.css';
 import clienteHeroku from '../../config/prod';
-import React, {useState, useContext} from 'react';
+import React, {useState} from 'react';
 import Axios from 'axios';
 
  const RecoverPass = () => {
@@ -11,7 +11,8 @@ import Axios from 'axios';
     const [error, setError] = useState();
     const [changePass, serChangePass] = useState();
     const formSendEmail = document.getElementById('formSendEmail')
-
+    console.log(changePass)
+    
     async function sendEmail(e){
         e.preventDefault();
         try {
