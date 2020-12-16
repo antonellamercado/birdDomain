@@ -5,7 +5,7 @@ import clienteHeroku from '../../config/prod';
 //libreria
 import {Card} from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBinoculars , faSearch, faMicroscope} from '@fortawesome/free-solid-svg-icons';
+import { faBinoculars , faSearch, faMicroscope, faInfoCircle} from '@fortawesome/free-solid-svg-icons';
 //estilos
 import '../Aves/Aves.css'
 
@@ -40,14 +40,14 @@ const Aves = () => {
         {aves.map((ave,index) => (
             <div className=" col-xs-12 col-sm-12 col-md-3 col-lg-3 m-3 p-0">
                     <Card key={index} className="p-0 m-0 card-ave">
-                    <Card.Title className="p-2"><FontAwesomeIcon  icon={faBinoculars } /> {ave.nombre}</Card.Title>
+                    <Card.Title className="aveInfoTitle p-2"><FontAwesomeIcon  icon={faBinoculars } /> {ave.nombre}</Card.Title>
                     <Card.Body  className="p-0 m-0" >
                     <div>
                     <Card.Img className="imagen_pequeña img-fluid. max-width: 100%" src={ave.img}  alt="img-aves" />
                     </div>
-                    <div className="mx-0 p-2"><strong> <FontAwesomeIcon  icon={faMicroscope} /> Nombre cientifico:</strong> {ave.nombreCientifico}</div>
-                    <div className="mx-0 p-2"><strong> <FontAwesomeIcon  icon={faSearch } /> Informacion adicional:</strong> {ave.info}</div>
-                    <div className="mx-0 p-2"><strong> <FontAwesomeIcon  icon={faSearch } /></strong> {ave.body}</div>
+                    <div className="aveInfo mx-0 p-2"><strong> <FontAwesomeIcon  icon={faMicroscope} /> Nombre cientifico:</strong> {ave.nombreCientifico}</div>
+                    <div className="aveInfo mx-0 p-2"> <FontAwesomeIcon  icon={faInfoCircle } />  {ave.info}</div>
+                    <div className="aveInfo mx-0 p-2"><strong> <FontAwesomeIcon  icon={faInfoCircle } /></strong> {ave.body}</div>
                     </Card.Body>
                     
                     </Card>

@@ -33,7 +33,7 @@ const Header = () => {
           <strong className='d-none d-sm-block'>Birds Domain</strong>     
           <AuthOptions />
         </div> 
-          <Navbar collapseOnSelect="true" className="" expand="lg">
+          <Navbar collapseOnSelect="true" className="p-0" expand="lg">
             <Navbar.Toggle aria-controls="basic-navbar-nav" className='toggleButton'/>
             <Navbar.Collapse id="basic-navbar-nav">           
               <Nav className="ml-auto d-flex justify-content-around">
