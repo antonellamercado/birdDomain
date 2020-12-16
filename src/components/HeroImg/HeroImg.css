@@ -38,7 +38,7 @@ width: 300px;  width of container
     width:100vw;
     height:70vh;
     object-fit: cover;
-    object-position: 30% 60%;
+    object-position: 60% 50%;
     border: 5px solid black;
 }
 
