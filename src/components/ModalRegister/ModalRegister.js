@@ -5,7 +5,7 @@ import './ModalCuenta.css';
 import {UserContext} from "../../context/UserContext";
 import ErrorNotice from "../misc/ErrorNotice";
 import clienteHeroku from '../../config/prod';
-import Axios from "axios";
+
 
 export const ModalReg = (props) => {
 

@@ -1,5 +1,5 @@
 // import React, { Component } from 'react';
-import {a} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import advertising1 from './img/advertising1.png'
@@ -9,6 +9,7 @@ import advertising4 from './img/advertising4.png'
 
 function Banner (){
     return (
+        <>
         <Carousel className="d-none d-md-block mb-0"
             showStatus={false}
             showIndicators={false}
@@ -18,34 +19,35 @@ function Banner (){
             autoPlay={true} onClickItem
         >
             <div>
-                <a href="https://rollingcodeschool.com/">
+                <Link to="https://rollingcodeschool.com/">
                     <div> 
                         <img src={advertising1} alt="anuncio1"/>
                     </div>
-                </a>
+                </Link>
             </div>
             <div>
-                <a href="https://rollingcodeschool.com/">
+                <Link to="https://rollingcodeschool.com/">
                 <div> 
                         <img src={advertising2} alt="anuncio2"/>
                     </div>
-                </a>
+                </Link>
             </div>
             <div>
-                <a href="https://rollingcodeschool.com/">
+                <Link to="https://rollingcodeschool.com/">
                 <div> 
                         <img src={advertising3} alt="anuncio3"/>
                     </div>
-                </a>
+                </Link>
             </div>
             <div>
-                <a href="https://rollingcodeschool.com/">
+                <Link to="https://rollingcodeschool.com/">
                 <div>  
                         <img src={advertising4} alt="anuncio4"/>
                     </div>
-                </a>
+                </Link>
             </div>
         </Carousel>
+        </>
     );
 }
 

@@ -31,6 +31,7 @@ const Checkout =()=>{
             });
         }
         getBuys();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
 
     const deleteProduct = async (e)=>{

@@ -100,6 +100,7 @@ const getTourById = async id => {
             {
                 getTourById(props.currentId);    
             }
+            // eslint-disable-next-line react-hooks/exhaustive-deps
         }, [props.currentId]);
 ////////////////////////////////////////////////////        
     return (

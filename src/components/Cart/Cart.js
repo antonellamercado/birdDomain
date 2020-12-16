@@ -32,7 +32,9 @@ const Cart = () => {
             });
         }
         getTours();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
+
     const updateProduct = async (product)=> {
         await clienteHeroku.put(`/users/${userData.user.id}`, {buys:[...products, product]});
         setProducts([...products, product]);    
