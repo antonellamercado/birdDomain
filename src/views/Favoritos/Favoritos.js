@@ -20,7 +20,7 @@ const Favoritos = () => {
             setMounted(true)
                 window.scrollTo(0,0);
         }
-    } , [favs]);
+    } , [favs, mounted]);
 
     const deleteFavs = async (e)=>{
         let favs = userData.user.favs;
@@ -34,7 +34,7 @@ const Favoritos = () => {
         <Link className="links-links" to = '/favoritos'>
     {userData.user ? (
         <>
-        <h1 className="">Favoritos de {userData.user.displayName}</h1>
+        <h1 className="mb-3">Favoritos de {userData.user.displayName}</h1>
         {/* {userData.user.favs.length > 0 ? (<> mapealo </>) : (<> Aun no tienes favoritos </>)  } */}
 
         {userData.user.favs.length > 0 ? 
@@ -44,8 +44,13 @@ const Favoritos = () => {
 
         {userData.user.favs.map((tour,index) => (
             <div>
-            <div className="d-flex justify-content-center mb-3">
-            <Card.Title className="titleFavoritos p-2 mr-3 "><FontAwesomeIcon  icon={faBinoculars } /> {tour.title}</Card.Title> <FontAwesomeIcon  className="mr-3 text-black" icon={faTrash } id={tour._id} onClick={deleteFavs} />
+            <div className="d-flex justify-content-center mb-3 mt-3">
+                        <Card.Title className="titleFavoritos p-2 mr-3">
+                            <FontAwesomeIcon  icon={ faBinoculars } /> {tour.title}</Card.Title> 
+                            <button id={tour._id} onClick={deleteFavs} className = "btn btnFavorito mr-3"> Borrar
+                            <FontAwesomeIcon  className="mr-3 ml-2 text-black insideBtn" icon={ faTrash } id={tour._id} onClick={deleteFavs} />
+                            </button> 
+                            
                     </div>  
             <Link to={`/tours/${tour._id}`} style={{ textDecoration: 'none' }} className=" col-xs-12 col-sm-12 col-md-4 col-lg-3 m-1 p-0">
                 <div className="p-0 m-0 ">

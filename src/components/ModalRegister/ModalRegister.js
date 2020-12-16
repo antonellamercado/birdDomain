@@ -68,29 +68,7 @@ export const ModalReg = (props) => {
                         <label for="email">Correo Electrónico</label>
                         <input type="email" name="email" className="form-control" id="newEmail" placeholder="ejemplo@email.com" required onChange={(e) => setEmail(e.target.value)}/>
                         <small className="form-text text-muted">Tu dirección de correo electrónico se utiliza para confirmar las compras y enviarte notificaciones de los tours.</small>
-                    </div>
-                    {/* <div className="mt-3">
-                        <label for="email">Confirme correo electronico</label>
-                        <input type="email" name="email" className="form-control" id="newEmailV" placeholder="ejemplo@email.com" required/>
-                        <small className="form-text text-muted">Coloque su correo electronico nuevamente.</small>
-                    </div> */}
-                    {/* <label for="contry" className="mt-4">País de residencia</label>
-                    <select name="contry" id="contry" className="text-black" value="" required>
-                        <option value="AR">Argentina</option>
-                        <option value="UR">Uruguay</option>
-                        <option value="CH">Chile</option>
-                        <option value="EU">Estados Unidos</option>
-                        <option value="EN">Inglaterra</option>
-                        <option value="DI">Dinamarca</option>
-                        <option value="HO">Holanda</option>
-                        <option value="AU">Australia</option>
-                        <option value="BO">Bolivia</option>
-                        <option value="JA">Japon</option>
-                        <option value="CHI">China</option>
-                        <option value="IN">India</option>
-                    </select>
-                    <div id="modalError" className="pt-2"></div> */}
-                   
+                    </div>                  
                 </div>
                 <input className="btn btn-registrar mt-4 text-white" type="submit" value="Registrate" />
         </form> 
