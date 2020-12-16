@@ -60,7 +60,7 @@ const DetalleTour = ({match}) => {
             });
         }
         getFavs();
-
+// eslint-disable-next-line react-hooks/exhaustive-deps
         }, [tour]);
 //
         const updateProduct = async (product)=> {

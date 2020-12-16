@@ -27,7 +27,8 @@ const ChangePass = ({match}) => {
                 });
             }
         };
-        getUserForToken(tokenEmail);                  
+        getUserForToken(tokenEmail);      
+        // eslint-disable-next-line react-hooks/exhaustive-deps            
     }, []);
     
     async function newPassSend(e){
