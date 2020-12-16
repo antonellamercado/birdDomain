@@ -61,9 +61,6 @@ export const ModalIng = (props) => {
                 <label for="userpassword" className="mt-4 mr-sm-2 form_login_label">Contraseña</label>
                 <input type="password" id="userPass" placeholder="Ingresa tu contraseña" className="border p-1 rounded form_login_input" required onChange={(e) => setPassword(e.target.value)}/>
                 <br></br>                            
-                {/* <Button type="submit" id="submit" className="mt-4 btn text-white">Login</Button>
-                <p className="mt-4">¿Has olvidado tu Contraseña? </p>
-                <br></br> */}
                 <div className="">
                 <input className="btn btn-registrar mt-4 mx-2 text-white" type="submit" value="Login" />
                 <Link to ='/Recover'>

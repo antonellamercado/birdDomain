@@ -3,7 +3,7 @@ import ModalIng from '../ModalLogin/ModalLogin';
 import ModalReg from '../ModalRegister/ModalRegister';
 import './Header.css';
 import {UserContext} from '../../context/UserContext';
-import {Link} from 'react-router-dom';
+import {Link, useHistory} from 'react-router-dom';
 
 
 const AuthOptions = () => { 
@@ -12,6 +12,7 @@ const AuthOptions = () => {
     const [modalShowReg, setModalShowReg] = useState(false);
 
     const {userData, setUserData} = useContext(UserContext);
+    const history = useHistory();
 
     const logout = () => {
         setUserData({
@@ -22,6 +23,7 @@ const AuthOptions = () => {
         localStorage.setItem("auth-token","");
         setModalShowReg(false);
         setModalShowIng(false)
+        history.push("/");
     };
     return (
     <div className="buttons d-flex justify-content-between p-0">
@@ -37,7 +39,7 @@ const AuthOptions = () => {
 
             <div className="d-flex justify-content-between">
             <div className = "imgUserContainer d-none d-sm-block">
-            <img className = "imgUser img-fluid" src="https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/user1.jpg?alt=media&token=f9169d9a-2d7e-4f04-b6c3-57cd44bfb243"
+            <img className = "imgUser img-fluid" src=" https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/adminlogo.png?alt=media&token=b08cc4b0-43db-4eac-b53d-1f79a79dac5c"
             alt="img-header-user"></img>
             </div>
             <Link style={{ textDecoration: 'none' }} to = '/paneladmin'>
@@ -52,7 +54,7 @@ const AuthOptions = () => {
             <>  
             <div className="d-flex justify-content-between">
             <div className = "imgUserContainer">
-                <img className = "imgUser" src="https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/Fig11.jpg?alt=media&token=b7a63dea-8285-4d00-b016-469d4fa47054"
+                <img className = "imgUser" src="https://firebasestorage.googleapis.com/v0/b/bd-aves.appspot.com/o/userlogo.png?alt=media&token=57755dad-ffca-487a-b632-ae7e8d72ce3d"
                 alt="img-user-header"></img>
             </div>
             <button className="buttonHeaderSalir mt-3 ml-3" onClick={logout}>Salir</button>
