@@ -3,6 +3,7 @@ font-style: italic;
 font-weight: bold;
 font-size: 15px;
 background: rgba(12, 11, 11, 0.3);
+opacity: 1;
 }
 
 .carrousel_card{
@@ -18,13 +19,27 @@ background: rgba(12, 11, 11, 0.3);
 }
 
 
-@media screen and (max-width: 400px){
+@media screen and (max-width: 576px){
     .carousel .slide .legend{
     font-style: inherit;
     font-weight: bold;
-    font-size: 7px;
+    font-size: 0.85rem;
     background: rgba(255, 255, 255, 0.5);
     color: black;
-
+    opacity: 1;
     }
+
+    .carousel .slide .legend:hover{
+        font-style: inherit;
+        font-weight: bold;
+        font-size: 10px;
+        background: rgba(255, 255, 255, 0.5);
+        color: black;
+    }
+        
+    .carrousel_cont{
+        opacity: 1;
+        width: 500px;
+    }
+
 }
