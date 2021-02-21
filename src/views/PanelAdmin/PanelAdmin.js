@@ -117,7 +117,7 @@ const PanelAdmin = () => {
             Aqui podra <em className="initialism">Crear</em> nuevos tours, <em className="initialism">Editar</em> los mismos y cambiar la imagen destacada de la pagina principal, ademas de <em className="initialism">Eliminar</em> tours obsoletos.
         </p>
         <div></div>
-        <CrearTour {...{addOrEditTour, currentId,listaTours }}/>
+        <CrearTour {...{addOrEditTour, currentId, setCurrentId, listaTours }}/>
         <Table variant="dark" bordered hover responsive className="my-2">
             <thead className="h2 initialism">
                 <tr>
