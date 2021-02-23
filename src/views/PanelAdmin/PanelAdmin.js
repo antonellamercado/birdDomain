@@ -42,7 +42,7 @@ const PanelAdmin = () => {
         
         const editarTour = async (tour)=> {
             console.log("editando");
-            await clienteHeroku.put(`tours/${currentId}`, tour);
+            await clienteHeroku.patch(`tours/${currentId}`, tour);
             getToursForList();
             toast("Tour editado correctamente", {
                 type: "info",
