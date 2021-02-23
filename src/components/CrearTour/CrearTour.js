@@ -234,7 +234,7 @@ const cleanID = (e) => {
                     value={nuevoTour.lat[0]}
                     />
         </Form.Group>
-        <Form.Group as={Col} controlId="latitudretiro">
+        <Form.Group as={Col} controlId="longitudretiro">
             <Form.Label>Punto de retiro (Longitud)</Form.Label>
                 <Form.Control type="text" 
                         name="longRetiro" 
@@ -245,15 +245,15 @@ const cleanID = (e) => {
         <Form.Group as={Col} controlId="latitudobservacion">
                 <Form.Label>Punto de observacion (Latitud) </Form.Label>
                 <Form.Control type="text" 
-                        name="latObs"  
+                        name="latObser"  
                         onChange={handleOnChange}
                         value={nuevoTour.latObs[0]}
                 />
         </Form.Group>
-        <Form.Group as={Col} controlId="latitudobservacion">
+        <Form.Group as={Col} controlId="longitudbservacion">
                 <Form.Label>Punto de observacion (Longitud)</Form.Label>
                 <Form.Control type="text" 
-                        name="longObs"  
+                        name="longObser"  
                         onChange={handleOnChange}
                         value={nuevoTour.latObs[1]}
                 />
