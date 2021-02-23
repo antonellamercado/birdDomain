@@ -21,11 +21,8 @@ const CrearTour = (props) => {
         ecoregiones:'',
         especies:'',
         isDestacado:false,
-        latRetiro:'',
-        longRetiro:'',
-        latObs:'',
-        longObs:'',
-
+        lat:[],
+        latObs:[],
     };
     /////////////////////////////////////////////////////////
     //states
@@ -69,8 +66,8 @@ const CrearTour = (props) => {
         ecoregiones: nuevoTour.ecoregiones,
         especies: nuevoTour.especies,
         isDestacado: nuevoTour.isDestacado,
-        lat: [parseFloat(nuevoTour.latRetiro), parseFloat(nuevoTour.longRetiro)],
-        latObs: [parseFloat(nuevoTour.latObs), parseFloat(nuevoTour.longObs)]
+        lat: [parseFloat(nuevoTour.lat[0]), parseFloat(nuevoTour.lat[1])],
+        latObs: [parseFloat(nuevoTour.latObs[0]), parseFloat(nuevoTour.latObs[1])]
         }
         // enviar a la funcion para crear o editar
         props.addOrEditTour(newnuevoTour);
@@ -224,8 +221,6 @@ const cleanID = (e) => {
                         />
         </Form.Group>
         </Form.Row>
-        {props.currentId==='' ? (
-            <>
             {/* /PUNTOS/ */}
         <ListGroup>
         <Form.Label className="text-coordenadas my-2">Puntos de coordenadas</Form.Label>
@@ -236,7 +231,7 @@ const cleanID = (e) => {
                 <Form.Control type="text" 
                     name="latRetiro" 
                     onChange={handleOnChange}
-                    value={nuevoTour.latRetiro}
+                    value={nuevoTour.lat[0]}
                     />
         </Form.Group>
         <Form.Group as={Col} controlId="latitudretiro">
@@ -244,7 +239,7 @@ const cleanID = (e) => {
                 <Form.Control type="text" 
                         name="longRetiro" 
                         onChange={handleOnChange}
-                        value={nuevoTour.longRetiro}
+                        value={nuevoTour.lat[1]}
                         />
         </Form.Group>
         <Form.Group as={Col} controlId="latitudobservacion">
@@ -252,7 +247,7 @@ const cleanID = (e) => {
                 <Form.Control type="text" 
                         name="latObs"  
                         onChange={handleOnChange}
-                        value={nuevoTour.latObs}
+                        value={nuevoTour.latObs[0]}
                 />
         </Form.Group>
         <Form.Group as={Col} controlId="latitudobservacion">
@@ -260,18 +255,14 @@ const cleanID = (e) => {
                 <Form.Control type="text" 
                         name="longObs"  
                         onChange={handleOnChange}
-                        value={nuevoTour.longObs}
+                        value={nuevoTour.latObs[1]}
                 />
         </Form.Group>
         </Form.Row> 
         </ListGroup.Item>
         </ListGroup>
-        </>
-        )
-        :
-        (<></>)
-        }
         
+
         {/* /destacada/ */}
         <Form.Group controlId="destacada">
                 <Form.Check 
