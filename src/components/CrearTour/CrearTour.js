@@ -21,11 +21,8 @@ const CrearTour = (props) => {
         ecoregiones:'',
         especies:'',
         isDestacado:false,
-        latRetiro:'',
-        longRetiro:'',
-        latObs:'',
-        longObs:'',
-
+        lat:[], 
+        latObs:[]
     };
     /////////////////////////////////////////////////////////
     //states
@@ -43,7 +40,7 @@ const CrearTour = (props) => {
     ///////////////////////////////////////////////////7    
     // Envia objeto para editar o crear
     const handleOnSubmit = (e) => {
-        console.log('nuevo tour', nuevoTour);
+        console.log('Crear Tour', nuevoTour);
         setNuevoTour({...nuevoTour});
         e.preventDefault();
         // si algun campo esta vacio setea el state error
@@ -70,7 +67,7 @@ const CrearTour = (props) => {
         especies: nuevoTour.especies,
         isDestacado: nuevoTour.isDestacado,
         lat: [parseFloat(nuevoTour.latRetiro), parseFloat(nuevoTour.longRetiro)],
-        latObs: [parseFloat(nuevoTour.latObs), parseFloat(nuevoTour.longObs)]
+        latObs: [parseFloat(nuevoTour.latObser), parseFloat(nuevoTour.longObser)]
         }
         // enviar a la funcion para crear o editar
         props.addOrEditTour(newnuevoTour);
@@ -213,7 +210,7 @@ const getTourById = async id => {
                         />
         </Form.Group>
         </Form.Row>
-        {props.currentId==='' ? (
+  
             <>
             {/* /PUNTOS/ */}
         <ListGroup>
@@ -225,42 +222,38 @@ const getTourById = async id => {
                 <Form.Control type="text" 
                     name="latRetiro" 
                     onChange={handleOnChange}
-                    value={nuevoTour.latRetiro}
+                    value={nuevoTour.lat[0]}
                     />
         </Form.Group>
-        <Form.Group as={Col} controlId="latitudretiro">
+        <Form.Group as={Col} controlId="longitudretiro">
             <Form.Label>Punto de retiro (Longitud)</Form.Label>
                 <Form.Control type="text" 
                         name="longRetiro" 
                         onChange={handleOnChange}
-                        value={nuevoTour.longRetiro}
+                        value={nuevoTour.lat[1]}
                         />
         </Form.Group>
         <Form.Group as={Col} controlId="latitudobservacion">
                 <Form.Label>Punto de observacion (Latitud) </Form.Label>
                 <Form.Control type="text" 
-                        name="latObs"  
+                        name="latObser"  
                         onChange={handleOnChange}
-                        value={nuevoTour.latObs}
+                        value={nuevoTour.latObs[0]}
                 />
         </Form.Group>
-        <Form.Group as={Col} controlId="latitudobservacion">
+        <Form.Group as={Col} controlId="longitudobservacion">
                 <Form.Label>Punto de observacion (Longitud)</Form.Label>
                 <Form.Control type="text" 
-                        name="longObs"  
+                        name="longObser"  
                         onChange={handleOnChange}
-                        value={nuevoTour.longObs}
+                        value={nuevoTour.latObs[1]}
                 />
         </Form.Group>
         </Form.Row> 
         </ListGroup.Item>
         </ListGroup>
         </>
-        )
-        :
-        (<></>)
-        }
-        
+ 
         {/* /destacada/ */}
         <Form.Group controlId="destacada">
                 <Form.Check 
