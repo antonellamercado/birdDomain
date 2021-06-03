@@ -29,12 +29,16 @@
     height:70%;
     object-fit: cover;
 }
+/* 
+width: 300px;  width of container 
+    height: 400px; height of container */
 
 .imgCarousel{
-    width: 300px; /* width of container */
-    height: 400px; /* height of container */
+    display:block;
+    width:100vw;
+    height:70vh;
     object-fit: cover;
-    object-position: 60% 60%;
+    object-position: 60% 50%;
     border: 5px solid black;
 }
 

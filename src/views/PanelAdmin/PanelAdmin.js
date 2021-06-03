@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react'
+import {useState, useEffect, useContext} from 'react'
 //libreria
 import { Table} from 'react-bootstrap';
 import { ToastContainer, toast } from 'react-toastify';
@@ -12,9 +12,11 @@ import { faTimes,faEdit } from '@fortawesome/free-solid-svg-icons';
 //componente
 import CrearTour from '../../components/CrearTour/CrearTour';
 import { Modal } from 'react-bootstrap';
+import {UserContext} from "../../context/UserContext";
 
 const PanelAdmin = () => {
-
+    const { userData } = useContext(UserContext);
+    
     //estados
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
@@ -93,8 +95,14 @@ const PanelAdmin = () => {
         getToursForList();
     }
     //////////////////////////////////////////
+    
+
     return(
         <>
+        {userData.user ? (
+        <>
+        { userData.user.admin ? (
+        <> 
         <Modal show={show} onHide={handleClose} centered>                                                 
             <Modal.Body>
                 <p>Seguro que quieres eliminar el Tour?</p>
@@ -109,7 +117,7 @@ const PanelAdmin = () => {
             Aqui podra <em className="initialism">Crear</em> nuevos tours, <em className="initialism">Editar</em> los mismos y cambiar la imagen destacada de la pagina principal, ademas de <em className="initialism">Eliminar</em> tours obsoletos.
         </p>
         <div></div>
-        <CrearTour {...{addOrEditTour, currentId,listaTours }}/>
+        <CrearTour {...{addOrEditTour, currentId, setCurrentId, listaTours }}/>
         <Table variant="dark" bordered hover responsive className="my-2">
             <thead className="h2 initialism">
                 <tr>
@@ -148,7 +156,15 @@ const PanelAdmin = () => {
             ))
             }
         </Table> 
-    </>
+        </>
+        ) : ( <> <div>Intruso</div></>) }
+        </>
+        ):(
+            <>
+            <div>Intruso</div>
+            </>
+        )}
+        </>
     );
 }
 

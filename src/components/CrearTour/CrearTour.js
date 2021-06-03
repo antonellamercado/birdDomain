@@ -97,8 +97,17 @@ const getTourById = async id => {
             {
                 getTourById(props.currentId);    
             }
+            // eslint-disable-next-line react-hooks/exhaustive-deps
         }, [props.currentId]);
 ////////////////////////////////////////////////////        
+//limpiar id si no edita ningun campo
+
+const cleanID = (e) => { 
+    props.setCurrentId('');
+}
+
+
+//////////////////////////////////////////////////////7
     return (
     <div>
     <button className="btn modal_boton mt-2" onClick={handleShow}>
@@ -108,7 +117,7 @@ const getTourById = async id => {
     <Modal show={show} onHide={handleClose} className="modal-crear-tour modalTour" centered>
 
     <Form className="formulario_modal  m-1 p-2" onSubmit={handleOnSubmit}>
-    <Modal.Header closeButton>
+    <Modal.Header closeButton onClick={cleanID}>
     <p className='d-block'>Complete los campos para crear un nuevo tour</p> 
     </Modal.Header>
     {
@@ -125,6 +134,8 @@ const getTourById = async id => {
                         name="title" 
                         onChange={handleOnChange}
                         value={nuevoTour.title}
+                        maxlength="50" 
+                        oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                         /> 
         </Form.Group>
         {/*Body*/}

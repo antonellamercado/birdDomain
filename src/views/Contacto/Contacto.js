@@ -1,5 +1,5 @@
 import React from 'react';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 //libreria
 import { Row, Col, Form } from 'react-bootstrap';
 import { ToastContainer, toast } from 'react-toastify';
@@ -9,6 +9,15 @@ import 'react-toastify/dist/ReactToastify.css'
 
 
 const Contacto = () => {
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(()=>{
+        if (!mounted) {
+            setMounted(true)
+                window.scrollTo(0,0);
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[]);
 
 const initialValues = {
     nombre:'',
@@ -41,7 +50,6 @@ const sendForm = (e) => {
         type: "success",
         position: "top-center",
         autoClose: 4000,
-        transition:"zoom"
     });
 }
 }
