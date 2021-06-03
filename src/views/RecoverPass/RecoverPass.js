@@ -30,7 +30,7 @@ import Axios from 'axios';
           }
         let userEmail = document.getElementById('userEmail').value;
         let userEmailToken = localStorage.getItem("changePass-token");
-        await Axios.post("https://api-birdomain.herokuapp.com/send-email", {
+        await Axios.post("https://api-bird-domain.herokuapp.com/send-email", {
             message:'Hola, al parecer has olvido tu password, sigue el siguiente enlace para poder cambiarla', 
             userEmail,
             token: userEmailToken
