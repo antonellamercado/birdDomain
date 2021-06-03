@@ -21,8 +21,8 @@ const CrearTour = (props) => {
         ecoregiones:'',
         especies:'',
         isDestacado:false,
-        lat:[],
-        latObs:[],
+        lat:[], 
+        latObs:[]
     };
     /////////////////////////////////////////////////////////
     //states
@@ -40,7 +40,7 @@ const CrearTour = (props) => {
     ///////////////////////////////////////////////////7    
     // Envia objeto para editar o crear
     const handleOnSubmit = (e) => {
-        console.log('nuevo tour', nuevoTour);
+        console.log('Crear Tour', nuevoTour);
         setNuevoTour({...nuevoTour});
         e.preventDefault();
         // si algun campo esta vacio setea el state error
@@ -66,8 +66,8 @@ const CrearTour = (props) => {
         ecoregiones: nuevoTour.ecoregiones,
         especies: nuevoTour.especies,
         isDestacado: nuevoTour.isDestacado,
-        lat: [parseFloat(nuevoTour.lat[0]), parseFloat(nuevoTour.lat[1])],
-        latObs: [parseFloat(nuevoTour.latObs[0]), parseFloat(nuevoTour.latObs[1])]
+        lat: [parseFloat(nuevoTour.latRetiro), parseFloat(nuevoTour.longRetiro)],
+        latObs: [parseFloat(nuevoTour.latObser), parseFloat(nuevoTour.longObser)]
         }
         // enviar a la funcion para crear o editar
         props.addOrEditTour(newnuevoTour);
@@ -221,6 +221,8 @@ const cleanID = (e) => {
                         />
         </Form.Group>
         </Form.Row>
+  
+            <>
             {/* /PUNTOS/ */}
         <ListGroup>
         <Form.Label className="text-coordenadas my-2">Puntos de coordenadas</Form.Label>
@@ -250,7 +252,7 @@ const cleanID = (e) => {
                         value={nuevoTour.latObs[0]}
                 />
         </Form.Group>
-        <Form.Group as={Col} controlId="longitudbservacion">
+        <Form.Group as={Col} controlId="longitudobservacion">
                 <Form.Label>Punto de observacion (Longitud)</Form.Label>
                 <Form.Control type="text" 
                         name="longObser"  
@@ -261,8 +263,8 @@ const cleanID = (e) => {
         </Form.Row> 
         </ListGroup.Item>
         </ListGroup>
-        
-
+        </>
+ 
         {/* /destacada/ */}
         <Form.Group controlId="destacada">
                 <Form.Check 

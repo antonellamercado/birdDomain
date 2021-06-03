@@ -41,7 +41,7 @@ const PanelAdmin = () => {
     //  Edita tour    
         
         const editarTour = async (tour)=> {
-            console.log("editando");
+            console.log("Editar", tour);
             await clienteHeroku.patch(`tours/${currentId}`, tour);
             getToursForList();
             toast("Tour editado correctamente", {
